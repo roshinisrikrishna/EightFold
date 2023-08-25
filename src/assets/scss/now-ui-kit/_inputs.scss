@@ -82,7 +82,11 @@
 .has-success,
 .has-danger{
     &:after{
+<<<<<<< HEAD
         font-family: 'Museo Sans Rounded';
+=======
+        font-family: 'Nucleo Outline';
+>>>>>>> 88ad1ebc7275d958cea744ed0dfd7269c948288c
         content: "\ea22";
         display: inline-block;
         position: absolute;
