@@ -122,13 +122,9 @@
 
         &:hover,
         &:focus{
-<<<<<<< HEAD
             background-color: $white-color !important;
             color: $info-color-alert !important;
             border: 1px solid $info-color-alert !important;
-=======
-            color: $primary-states-color !important;
->>>>>>> 88ad1ebc7275d958cea744ed0dfd7269c948288c
 
             &:not(.nav-link){
                 box-shadow: none;

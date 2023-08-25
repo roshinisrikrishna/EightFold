@@ -1,8 +1,5 @@
 @mixin modal-colors($bg-color, $color) {
-<<<<<<< HEAD
     
-=======
->>>>>>> 88ad1ebc7275d958cea744ed0dfd7269c948288c
     .modal-content{
         background-color: $bg-color;
         color: $color;
@@ -11,10 +8,6 @@
     .modal-header .close{
         color: $color;
     }
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 88ad1ebc7275d958cea744ed0dfd7269c948288c
 
 }
