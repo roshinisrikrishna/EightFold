@@ -5,8 +5,23 @@ import { Alert, Container } from "reactstrap";
 import thunderImg from "../../assets/img/thunderimg.svg";
 import fldrImg from "../../assets/img/fldrImg.svg";
 import magnetImg from "../../assets/img/magnetImg.svg";
+import {motion} from "framer-motion";
 
-
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.1 * index,
+      duration: 1, // Duration set to 1000ms (1 second)
+      ease: "easeInOut", // Use a valid easing function here
+    },
+  }),
+};
 
 
 function Notifications() {
@@ -42,8 +57,16 @@ function Notifications() {
     }}
   >
     {/* Your card content goes here */}
-    <h2 style={{fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "38px",fontWeight: 600, marginBottom: "60px"}} className="mt-5">
-      Solutions</h2>
+    <motion.h2 
+    style={{fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "38px",fontWeight: 600, marginBottom: "60px"}} 
+    className="mt-5"
+    variants={fadeInAnimationVariants}
+    initial="initial"
+    whileInView="animate"
+    viewport={{once: true,}}
+    custom={1}>
+      Solutions
+      </motion.h2>
     <div
   style={{
     display: "flex",
@@ -57,7 +80,12 @@ function Notifications() {
 >
   {/* Left section */}
   <div style={{ flex: 1, padding: "10px", maxWidth: "700px", marginTop: "60px" }} className="mb-5 ml-5 mr-5">
-  <img src={thunderImg} alt="Logo" 
+  <motion.img src={thunderImg} alt="Logo"
+         variants={fadeInAnimationVariants}
+         initial="initial"
+         whileInView="animate"
+         viewport={{once: true,}}
+         custom={2}
   // style={{ width: "50px", height: "50px", borderRadius: "50%" }} 
   />
 
@@ -74,7 +102,12 @@ function Notifications() {
   <div style={{ borderLeft: "1px solid #ccc" }}></div>
 
   <div style={{ flex: 1, padding: "10px", maxWidth: "600px", marginTop: "60px" }} className="mb-5 ml-5 mr-5">
-  <img src={fldrImg} alt="Logo" 
+  <motion.img src={fldrImg} alt="Logo" 
+        variants={fadeInAnimationVariants}
+        initial="initial"
+        whileInView="animate"
+        viewport={{once: true,}}
+        custom={2}
   // style={{ width: "50px", height: "50px", borderRadius: "50%" }} 
   />
     <h2 style={{ fontSize: "22px", fontWeight: 700, fontFamily: "Roboto, sans-serif" }}>
@@ -105,7 +138,12 @@ function Notifications() {
   }}
 >
 <div style={{ flex: 1,  maxWidth: "500px", marginRight: "71px", marginTop: "60px" }} className="mb-5 ml-5">
-  <img src={magnetImg} alt="Logo" 
+  <motion.img src={magnetImg} alt="Logo" 
+        variants={fadeInAnimationVariants}
+        initial="initial"
+        whileInView="animate"
+        viewport={{once: true,}}
+        custom={3}
   // style={{ width: "50px", height: "50px", borderRadius: "50%" }} 
   />
     <h2 style={{fontSize: "22px", fontWeight: 700 ,fontFamily: "Roboto, sans-serif"}}>Support and further DEI goals</h2>
@@ -116,7 +154,12 @@ function Notifications() {
   <div style={{ borderLeft: "1px solid #ccc"}}></div>
 
   <div style={{ flex: 1, maxWidth: "500px", marginTop: "60px" }} className="mb-5 ml-5 mr-5">
-  <img src={magnetImg} alt="Logo" 
+  <motion.img src={magnetImg} alt="Logo"
+        variants={fadeInAnimationVariants}
+        initial="initial"
+        whileInView="animate"
+        viewport={{once: true,}}
+        custom={3} 
   // style={{ width: "50px", height: "50px", borderRadius: "50%" }} 
   />
     <h2 style={{fontSize: "22px", fontWeight: 700 ,fontFamily: "Roboto, sans-serif"}}>Responsible and ethical Al</h2>

@@ -6,6 +6,8 @@ import Slider from "nouislider";
 import React, { useEffect, useRef } from "react";
 import noUiSlider from "nouislider";
 import "nouislider/dist/nouislider.css";
+import {motion} from "framer-motion";
+
 
 // reactstrap components
 import {
@@ -23,7 +25,21 @@ import {
   CardBody
 } from "reactstrap";
 
-// core components
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.1 * index,
+      duration: 1, // Duration set to 1000ms (1 second)
+      ease: "easeInOut", // Use a valid easing function here
+    },
+  }),
+};
 
 function BasicElements() {
   const sliderRegularRef = useRef(null);
@@ -63,7 +79,6 @@ function BasicElements() {
     filter: "blur(60px)"
   }}>
     <CardBody>
-      {/* Add content for the card */}
     </CardBody>
   </Card>
 </Col>
@@ -77,7 +92,7 @@ function BasicElements() {
                 <Row>
                   <Col md="12">
                     <div className="brand" style={{ paddingTop: "160px", marginLeft: "-100px",textAlign: "center", width: "1000px" }}>
-                      <h1
+                      <motion.h1
                         style={{
                           fontWeight: 500,
                           fontSize: "40px",
@@ -86,12 +101,17 @@ function BasicElements() {
                           WebkitBackgroundClip: "text",
                           WebkitTextFillColor: "transparent",
                         }}
+                        variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{once: true,}}
+          custom={1}
                       >
                         We are transforming the world of work by pairing people with possibilities. From talent acquisition to <a href="/link-to-text-management" style={{background:
                             "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
                           WebkitBackgroundClip: "text",
                           WebkitTextFillColor: "transparent"}}>text management</a> and talent insights, this is the single AI platform that does it all.
-                      </h1>
+                      </motion.h1>
         
                     </div>
                   </Col>

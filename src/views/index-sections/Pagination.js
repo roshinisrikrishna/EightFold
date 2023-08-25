@@ -28,9 +28,10 @@ function PaginationSection() {
               <Container className="mt-2" style={{marginLeft:"-20px"}}>
                 <Row>
                   <Col>
-                    <h2 style={{ fontWeight: 700, fontFamily: "Museo Sans Rounded, sans-serif" }}>Why Eightfold</h2>
+                    <h2 style={{ fontWeight: 700, fontFamily: "Museo Sans Rounded, sans-serif" }}>
+                      Why Eightfold</h2>
                     <p style={{ fontSize: "17px", width: "480px", fontWeight: 500, fontFamily: "Roboto, sans-serif" }}>
-                      Great talent teams deserve a great platform. That’s why we built a single AI platform that does it all:
+                      Great talent teams deserve a great platform. That's why we built a single AI platform that does it all:
                     </p>
                     <div className="dropdown ml-2">
                       <p
@@ -108,8 +109,3 @@ function PaginationSection() {
 }
 
 export default PaginationSection;
-
-
-
-
-

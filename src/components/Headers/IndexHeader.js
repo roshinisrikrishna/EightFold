@@ -1,8 +1,44 @@
-import React from "react";
-
-// reactstrap components
+ import React from "react";
 import { Container } from "reactstrap";
-// core components
+import {motion} from "framer-motion";
+
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.1 * index,
+      duration: 1, // Duration set to 1000ms (1 second)
+      ease: "easeInOut", // Use a valid easing function here
+    },
+  }),
+};
+const fadeImageVariants = {
+  animate: {
+    opacity: 1,
+    visibility: "visible",
+    transform: "translateY(0px)",
+    transition: {
+      delay: 0.5,
+      duration: 1,
+      ease: "ease"
+    }
+  },
+  initial: {
+    opacity: 0,
+    visibility: "hidden",
+    transform: "translateY(-20px)",
+    transition: {
+      delay: 0.1,
+      duration: 2,
+      ease: "ease"
+    }
+  },
+};
 
 function IndexHeader() {
   let pageHeader = React.createRef();
@@ -24,57 +60,132 @@ function IndexHeader() {
   return (
     <>
       <div className="page-header clear-filter" filter-color="black">
-        
-      <div
-            className="page-header-image"
+        <div
+          className="page-header-image"
+          style={{
+            background:
+              "linear-gradient(to right , rgba(0, 0, 0), rgba(0, 0, 0, 0.9) 50%, rgba(6, 18, 70, 0.88))",
+          }}
+          ref={pageHeader}
+        >
+          <motion.img
+            alt="..."
+            src={require("assets/img/dotted_waves.png")}
             style={{
-              background: "rgba(0, 0, 0, 0.6)", // Semi-transparent black background
-              background: "linear-gradient(to right , rgba(0, 0, 0), rgba(0, 0, 0, 0.9) 50%, rgba(6, 18, 70, 0.88))", // Gradient with increased transparency
+              width: "500px",
+              height: "auto",
+              position: "absolute",
+              top: 0,
+              left: "10px",
             }}
-            ref={pageHeader}
-          >
-                <img
-      alt="..."
-      src={require("assets/img/dotted_waves.png")}
-      style={{ width: "500px", height: "auto", position: "absolute", top: 0, left: "10px" }}
-    />
-          </div>
+             variants={fadeImageVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{once: true,}}
+            
+          />
+        </div>
 
         <Container>
-          <div className="content-center brand">
           
-          <h1 style={{ fontWeight: 800, fontFamily: "Museo Sans Rounded, sans-serif" }}>
-              Everything talent,</h1>
-              <h1
-                style={{
-                  background: "-webkit-linear-gradient(45deg, #FFFFFF, #008BE8 85%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  fontFamily: "Museo Sans Rounded, sans-serif",
-                  fontWeight: "bolder" 
-                }}
-              >
-                powered by AI
-              </h1>
+          <div className="content-center brand"
+          >
+            <motion.h1
+              style={{
+                fontWeight: "bolder",
+                fontFamily: "Museo Sans Rounded, sans-serif",
+              }}
+              variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{once: true,}}
+          custom={4}
+            >
+              Everything talent,
+            </motion.h1>
+            <motion.h1
+              style={{
+                background:
+                  "-webkit-linear-gradient(45deg, #FFFFFF, #0fb3fa 85%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                fontFamily: "Museo Sans Rounded, sans-serif",
+                fontWeight: "bolder",
+              }}
+              variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{once: true,}}
+          custom={3}
+            >
+              powered by AI
+            </motion.h1>
 
-
-            <p style={{ fontSize: "22px", fontFamily: "Museo Sans Rounded, sans-serif" }}>
-              Our AI platform for all talent brings to light everything you need to hire and develop people to their highest potential
-            </p>
+            <motion.p
+              style={{
+                fontSize: "22px",
+                fontFamily: "Museo Sans Rounded, sans-serif",
+              }}
+              variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{once: true,}}
+          custom={2}
+            >
+              Our AI platform for all talent brings to light everything you need
+              to hire and develop people to their highest potential
+            </motion.p>
+            <motion.button
+              className="hover-white-button"
+              style={{
+                borderRadius: "60px",
+                color: "#fff",
+                border: "none",
+                cursor: "pointer",
+                marginTop: "10px",
+                fontWeight: "bolder",
+                fontSize: "17px",
+                width: "230px",
+                padding: "12px",
+                fontFamily: "Museo Sans Rounded, sans-serif",
+              }}
+              variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{once: true,}}
+          custom={1}
+            >
+              Ready for greatness
+            </motion.button>
           </div>
-         </Container>
-         <img
-      alt="..."
-      className="n-logo"
-      src={require("assets/img/dotted_waves_reversed.png")}
-      style={{ width: "600px", height: "auto", position: "absolute", bottom: 0, right: "5px" }}
-    />
-       
-        
+        </Container>
+        <motion.img
+          alt="..."
+          className="n-logo"
+          src={require("assets/img/dotted_waves_reversed.png")}
+          style={{
+            width: "600px",
+            height: "auto",
+            position: "absolute",
+            bottom: 0,
+            right: "5px",
+          }}
+          variants={fadeImageVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{once: true,}}
+        />
       </div>
       <style>
         {`
-      
+          .hover-white-button {
+            background-color: #1b9af5;
+            color: #fff;
+            transition: background-color 0.3s, color 0.3s;
+          }
+          .hover-white-button:hover {
+            background-color: #28607E;
+          }
         `}
       </style>
     </>

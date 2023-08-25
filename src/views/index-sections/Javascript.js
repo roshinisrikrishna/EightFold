@@ -16,10 +16,27 @@ import {
   PopoverHeader,
   UncontrolledPopover,
 } from "reactstrap";
+import {motion} from "framer-motion";
 
 import js1Img from "../../assets/img/JS1.webp";
 import js2Img from "../../assets/img/JS2.jpg";
 import js3Img from "../../assets/img/JS3.jpg";
+
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.1 * index,
+      duration: 1, // Duration set to 1000ms (1 second)
+      ease: "easeInOut", // Use a valid easing function here
+    },
+  }),
+};
 
 function Javascript() {
   const [modal1, setModal1] = React.useState(false);
@@ -40,15 +57,21 @@ function Javascript() {
     maxWidth: "1280px", // Adjust this value to match the screen width
   }}
 >
-<h2 style={{ fontSize: "48px", textAlign: "center", fontWeight: 600, fontFamily: "Museo Sans Rounded, sans-serif" }}>
+<motion.h2 
+style={{ fontSize: "48px", textAlign: "center", fontWeight: 600, fontFamily: "Museo Sans Rounded, sans-serif" }}
+variants={fadeInAnimationVariants}
+initial="initial"
+whileInView="animate"
+viewport={{once: true,}}
+custom={1}>
   See how great organizations<br />are transforming their workforces with AI.
-</h2>
+</motion.h2>
 
 
  
 
 <div style={{ width: "1200px", display: "flex", flexDirection: "row", marginTop: "40px", justifyContent: "center", alignItems: "center" }}>
-<Card style={{ 
+<motion.Card style={{ 
   borderBottom: "1px solid transparent", 
   borderRight: "1px solid transparent", 
   borderLeft: "1px solid transparent", 
@@ -64,7 +87,12 @@ function Javascript() {
   borderRadius: "10px", 
   boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", // Adding a subtle shadow
   borderImage: "linear-gradient(to right, #a90bde, #002aeb) 1", // Gradient border
-}}>
+}}
+variants={fadeInAnimationVariants}
+initial="initial"
+whileInView="animate"
+viewport={{once: true,}}
+custom={2}>
     <img src={js1Img} alt="Logo" 
   style={{ width: "450px", height: "200px" }} 
   />
@@ -79,10 +107,10 @@ function Javascript() {
       Vodafone has created a system that makes learning personal and purposeful. 
     </p>
     <p style={{  paddingLeft: "20px",fontSize: "16px", fontWeight: 500, paddingRight: "20px" }}>Read customer story</p>
-</Card>
+</motion.Card>
 
 
-<Card style={{ 
+<motion.Card style={{ 
   borderBottom: "1px solid transparent", 
   borderRight: "1px solid transparent", 
   borderLeft: "1px solid transparent", 
@@ -98,7 +126,12 @@ function Javascript() {
   borderRadius: "10px", 
   boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", // Adding a subtle shadow
   borderImage: "linear-gradient(to right, #a90bde, #002aeb) 1", // Gradient border
-}}>
+}}
+variants={fadeInAnimationVariants}
+initial="initial"
+whileInView="animate"
+viewport={{once: true,}}
+custom={3}>
     <img src={js2Img} alt="Logo" 
   style={{ width: "450px", height: "200px" }} 
   />
@@ -113,9 +146,9 @@ function Javascript() {
     How Chevron drilled into its HR data to tap into new talent.
     </p>
     <p style={{  paddingLeft: "20px",fontSize: "16px", fontWeight: 500, paddingRight: "20px" }}>Read customer story</p>
-</Card>
+</motion.Card>
 
-<Card style={{ 
+<motion.Card style={{ 
   borderBottom: "1px solid transparent", 
   borderRight: "1px solid transparent", 
   borderLeft: "1px solid transparent", 
@@ -131,7 +164,12 @@ function Javascript() {
   borderRadius: "10px", 
   boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", // Adding a subtle shadow
   borderImage: "linear-gradient(to right, #a90bde, #002aeb) 1", // Gradient border
-}}>
+}}
+variants={fadeInAnimationVariants}
+initial="initial"
+whileInView="animate"
+viewport={{once: true,}}
+custom={4}>
     <img src={js3Img} alt="Logo" 
   style={{ width: "450px", height: "200px" }} 
   />
@@ -147,7 +185,7 @@ function Javascript() {
       at scale.
           </p>
     <p style={{  paddingLeft: "20px",fontSize: "16px", fontWeight: 500, paddingRight: "20px" }}>View customer story</p>
-</Card>
+</motion.Card>
 </div>
 
 <p style={{ fontSize: "17px", fontWeight: 500,  

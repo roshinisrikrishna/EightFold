@@ -3,9 +3,24 @@ import React from "react";
 // reactstrap components
 import { Container, Row, Col, Card } from "reactstrap";
 import typoImg from "../../assets/img/woman.jpg";
+import {motion} from "framer-motion";
 
 
-// core components
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.1 * index,
+      duration: 1, // Duration set to 1000ms (1 second)
+      ease: "easeInOut", // Use a valid easing function here
+    },
+  }),
+};
 
 function Typography() {
   return (
@@ -22,15 +37,28 @@ function Typography() {
     maxWidth: "1280px", // Adjust this value to match the screen width
   }}
 >
-  <h1>What's new?</h1>
+  <motion.h1
+   variants={fadeInAnimationVariants}
+   initial="initial"
+   whileInView="animate"
+   viewport={{once: true,}}
+   custom={1}
+  >What's new?
+  </motion.h1>
   <img src={typoImg} alt="Logo" 
     style={{ width: "1000px", height: "auto", borderRadius: "1%", display: "block", marginTop: "20px" }} 
   />
 
 <div style={{ width: "1200px", display: "flex", flexDirection: "row", marginTop: "40px", justifyContent: "center", alignItems: "center" }}>
-  <Card style={{ paddingLeft: "20px", backgroundColor: "rgb(247,245,245,0.5)", height: "400px", 
-  maxWidth: "380px", flex: 1, display: "flex", flexDirection: "column", 
-  justifyContent: "center", alignItems: "flex-start", margin: "0 10px" }}>
+  <motion.Card style={{ paddingLeft: "20px", backgroundColor: "rgb(247,245,245,0.5)", 
+  height: "400px", maxWidth: "380px", flex: 1, display: "flex", flexDirection: "column", 
+  justifyContent: "center", alignItems: "flex-start", margin: "0 10px" }}
+  variants={fadeInAnimationVariants}
+  initial="initial"
+  whileInView="animate"
+  viewport={{once: true,}}
+  custom={2}
+  >
     <h4 style={{ fontWeight: 700, maxWidth: "320px", 
     fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "20px", 
     paddingRight: "20px", marginTop: "0px" }}>
@@ -51,11 +79,16 @@ function Typography() {
     </p>
     <p style={{ fontSize: "14px", fontWeight: "bold", color: "#008FBF", 
     paddingRight: "20px", marginTop: "0px" }}>Read blog</p>
-  </Card>
+  </motion.Card>
 
-  <Card style={{ paddingLeft: "20px", backgroundColor: "rgb(247,245,245,0.5)", height: "400px",
-   maxWidth: "380px", flex: 1, display: "flex", flexDirection: "column", 
-   justifyContent: "center", alignItems: "flex-start", margin: "0 10px" }}>
+  <motion.Card style={{ paddingLeft: "20px", backgroundColor: "rgb(247,245,245,0.5)", 
+  height: "400px", maxWidth: "380px", flex: 1, display: "flex", flexDirection: "column", 
+   justifyContent: "center", alignItems: "flex-start", margin: "0 10px" }}
+   variants={fadeInAnimationVariants}
+   initial="initial"
+   whileInView="animate"
+   viewport={{once: true,}}
+   custom={3}>
     <h4 style={{ fontWeight: 700, maxWidth: "300px", 
     fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "20px", paddingRight: "20px", 
     marginTop: "-5px" }}>
@@ -75,11 +108,16 @@ function Typography() {
     </p>
     <p style={{ fontSize: "14px", fontWeight: "bold", color: "#008FBF", 
     paddingRight: "20px", paddingTop: "40px" }}>Download report</p>
-  </Card>
+  </motion.Card>
 
-  <Card style={{ paddingLeft: "20px", backgroundColor: "rgb(247,245,245,0.5)", height: "400px", 
-  maxWidth: "380px", flex: 1, display: "flex", flexDirection: "column", 
-  justifyContent: "center", alignItems: "flex-start", margin: "0 10px" }}>
+  <motion.Card style={{ paddingLeft: "20px", backgroundColor: "rgb(247,245,245,0.5)", 
+  height: "400px", maxWidth: "380px", flex: 1, display: "flex", flexDirection: "column", 
+  justifyContent: "center", alignItems: "flex-start", margin: "0 10px" }}
+  variants={fadeInAnimationVariants}
+  initial="initial"
+  whileInView="animate"
+  viewport={{once: true,}}
+  custom={4}>
     <h4 style={{ fontWeight: 700, maxWidth: "300px", 
     fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "20px", 
     paddingRight: "20px", marginTop: "-40px" }}>
@@ -98,7 +136,7 @@ function Typography() {
     </p>
     <p style={{ fontSize: "14px", fontWeight: "bold", color: "#008FBF", 
     paddingRight: "20px", marginTop: "40px", marginBottom:"-20px" }}>Read blog</p>
-  </Card>
+  </motion.Card>
 </div>
 
 <p style={{ fontSize: "17px", fontWeight: 500, color: "#008FBF", 

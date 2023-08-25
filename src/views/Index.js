@@ -57,12 +57,9 @@ function Index() {
           <Javascript />
           <Carousel />
           <NucleoIcons />
-          {/* <CompleteExamples /> */}
-          {/* <SignUp /> */}
-          <Examples />
-          <Download />
+         
         </div>
-        <DarkFooter />
+        <Examples />
       </div>
     </>
   );

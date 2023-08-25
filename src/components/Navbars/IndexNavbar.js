@@ -33,6 +33,7 @@ function IndexNavbar() {
   const [collapseOpen, setCollapseOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
 
+
   const [dropdowns, setDropdowns] = useState([
     { id: "products", isOpen: false },
     { id: "solutions", isOpen: false },
@@ -57,13 +58,12 @@ function IndexNavbar() {
     };
 
     document.addEventListener("mousedown", handler);
-    
 
     return() =>{
       document.removeEventListener("mousedown", handler);
     }
 
-  });
+  },[]);
   const toggleDropdown = (dropdownId) => {
     setDropdowns((prevDropdowns) =>
       prevDropdowns.map((dropdown) =>
@@ -137,7 +137,8 @@ function IndexNavbar() {
   onMouseEnter={() => openDropdownOnMouseEnter("products")}
   onMouseLeave={() => closeDropdownOnMouseLeave("products")}
 >
-  <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2 menu-trigger" 
+  <DropdownToggle color="default" 
+  nav className="custom-dropdown-toggle mr-2 menu-trigger" 
   onClick={()=>setOpen(!open)}>
     <p>Products</p>
   </DropdownToggle>
@@ -601,7 +602,7 @@ function IndexNavbar() {
   right: 20px;
   height: 20px;
   width: 20px;
-  transform: rotate(45deg);
+  // transform: rotate(45deg);
 }
 
 .custom-dropdown-menu.active{
@@ -662,7 +663,6 @@ function IndexNavbar() {
   }
   
 
-  /* Add this CSS class to reduce font weight */
   .custom-dropdown-toggle p {
     font-size: 14px;
   }

@@ -6,6 +6,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "framer-motion": "^10.16.1",
     "mdb-react-ui-kit": "^6.2.0",
     "moment": "2.29.4",
     "nouislider": "15.4.0",

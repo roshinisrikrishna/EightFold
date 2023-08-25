@@ -7,7 +7,23 @@ import {
   CarouselItem,
   CarouselIndicators,
 } from "reactstrap";
-import Swiper from "swiper";
+import {motion} from "framer-motion";
+
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.1 * index,
+      duration: 1, // Duration set to 1000ms (1 second)
+      ease: "easeInOut", // Use a valid easing function here
+    },
+  }),
+};
 
 const items = [
   {
@@ -21,22 +37,17 @@ const items = [
     caption: "img2"
   },
   {
-    src: require("assets/img/Bayer_White.webp"),
-    altText: "img3",
-    caption: "img3"
+    src: require("assets/img/bayer_logo.png"),
+    altText: "img2",
+    caption: "img2"
   }
   ,
   {
-    src: require("assets/img/Chevron.webp"),
+    src: require("assets/img/Chevron-modified.webp"),
     altText: "img4",
     caption: "img4"
   },
-  {
-    src: require("assets/img/logo_dexcom.webp"),
-    altText: "img5",
-    caption: "img5"
-  }
-  ,
+   ,
   {
     src: require("assets/img/logo_noom.webp"),
     altText: "img6",
@@ -70,88 +81,90 @@ const items = [
 ];
 
 function CarouselSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [animating, setAnimating] = useState(false);
-  const swiperRef = useRef(null);
-
-  const onExiting = () => {
-    setAnimating(true);
-  };
-
-  const onExited = () => {
-    setAnimating(false);
-  };
-
-  const next = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-    setActiveIndex(nextIndex);
-  };
-
-  const previous = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-    setActiveIndex(nextIndex);
-  };
-
-  const goToIndex = (newIndex) => {
-    if (animating) return;
-    setActiveIndex(newIndex);
-  };
-
-  useEffect(() => {
-    swiperRef.current = new Swiper(".swiper-container", {
-      loop: true,
-      initialSlide: 1,
-      centeredSlides: true,
-      autoplay: {
-        delay: 1,
-        pauseOnMouseEnter: true,
-        disableOnInteraction: false,
-        reverseDirection: false,
-      },
-      speed: 5000,
-      keyboard: {
-        enabled: true,
-        onlyInViewport: false,
-      },
-      grabCursor: true,
-      slidesPerView: "auto",
-      breakpoints: {
-        1200: {
-          spaceBetween: 160,
-        },
-        992: {
-          spaceBetween: 40,
-        },
-      },
-      spaceBetween: 30,
-    });
-  }, []);
-
   return (
-    <>
-      <div className="section" id="carousel">
-        <Container
-  style={{
-    display: "flex",
-    flexDirection: "column", // Display items in a column
-    justifyContent: "center",
-    alignItems: "center",
-    marginLeft: "30px",
-    marginTop: "130px",
-    marginBottom: "130px",
-    maxWidth: "1280px", // Adjust this value to match the screen width
-  }}
->
-<h2 style={{ fontSize: "32px", textAlign: "center", fontWeight: 600, fontFamily: "Museo Sans Rounded, sans-serif" }}>
-            Companies trust Eightfold with their talent transformation
-          </h2>
-        
-       
-        </Container>
-      </div>
-    </>
+    <div style={{fontWeight:"bolder"}} >
+      <Container
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          marginLeft: "30px",
+          marginTop: "130px",
+          marginBottom: "130px",
+          maxWidth: "1280px",
+        }}
+      >
+        <motion.h2
+          style={{
+            fontSize: "32px",
+            textAlign: "center",
+            fontWeight: "bolder", // Increase the fontWeight
+            fontFamily: "Museo Sans Rounded, sans-serif"
+          }}
+          variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{once: true,}}
+          custom={1}
+        >
+          Companies trust Eightfold with their talent transformation
+        </motion.h2>
+        <div className="logos">
+          <div className="logos-slide">
+            {items.map((item, index) => (
+              <img
+                key={index}
+                src={item.src}
+                alt={item.altText}
+                className="carousel-image" 
+                style={{paddingRight: "100px"}}
+              />
+            ))}
+            {items.map((item, index) => (
+              <img
+                key={index}
+                src={item.src}
+                alt={item.altText}
+                className="carousel-image" 
+                style={{paddingRight: "100px"}}
+              />
+            ))}
+          </div>
+        </div>
+      </Container>
+      <style>
+        {`
+          .logos {
+            overflow: hidden;
+            padding: 60px 0;
+            background: white;
+          }
+          .logos-slide {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            animation: 20s slide infinite linear;
+          }
+          
+          .carousel-image {
+            height: 120px; // Set a fixed height
+            margin-right: 120px;
+          }
+          .carousel-image:hover {
+            fill: blue; /* Increase brightness on hover */
+          }
+          @keyframes slide{
+            from{
+              transform: translateX(0);
+            }
+            to{
+              transform: translateX(-100%);
+            }
+          }
+        `}
+      </style>
+    </div>
   );
 }
 
