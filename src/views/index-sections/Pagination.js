@@ -28,13 +28,13 @@ function PaginationSection() {
               <Container className="mt-2" style={{marginLeft:"-20px"}}>
                 <Row>
                   <Col>
-                    <h2 style={{ fontWeight: 500 }}>Why Eightfold</h2>
-                    <p style={{ fontSize: "18px", width: "500px", fontWeight: 500 }}>
+                    <h2 style={{ fontWeight: 700, fontFamily: "Museo Sans Rounded, sans-serif" }}>Why Eightfold</h2>
+                    <p style={{ fontSize: "17px", width: "480px", fontWeight: 500, fontFamily: "Roboto, sans-serif" }}>
                       Great talent teams deserve a great platform. That’s why we built a single AI platform that does it all:
                     </p>
                     <div className="dropdown ml-2">
                       <p
-                        style={{ fontSize: "20px", fontWeight: 600, cursor: "pointer" }}
+                        style={{ fontSize: "20px", fontWeight: 500, cursor: "pointer" }}
                         onClick={() => toggleDropdown(0)}
                       >
                         Best-in-class intelligence and talent insights{" "}
@@ -45,7 +45,7 @@ function PaginationSection() {
                       </p>
                       {dropdownVisible[0] && (
                         <div className="dropdown-content">
-                          <p style={{ fontSize: "17px" }}>Powered by deep-learning AI, we surface insights when and where you need them most →</p>
+                          <p style={{ fontSize: "16px" }}>Powered by deep-learning AI, we surface insights when and where you need them most →</p>
                         </div>
                       )}
                     </div>
@@ -53,7 +53,7 @@ function PaginationSection() {
                      
                     <div className="dropdown ml-2">
   <p
-    style={{ fontSize: "20px", fontWeight: 600, cursor: "pointer" }}
+    style={{ fontSize: "20px", fontWeight: 500, cursor: "pointer" }}
     onClick={() => toggleDropdown(1)}
   >
     Unparalleled AI technology helps you make better decisions{" "}
@@ -64,7 +64,7 @@ function PaginationSection() {
   </p>
   {dropdownVisible[1] && (
     <div className="dropdown-content">
-      <p style={{ fontSize: "17px" }}>We harness the data of 1B+ career trajectories and 1M+ skills worldwide to give a truly global view of talent and skills insights. Learn more about responsible AI in HR →</p>
+      <p style={{ fontSize: "16px" }}>We harness the data of 1B+ career trajectories and 1M+ skills worldwide to give a truly global view of talent and skills insights. Learn more about responsible AI in HR →</p>
     </div>
   )}
 </div>
@@ -72,7 +72,7 @@ function PaginationSection() {
 
 <div className="dropdown ml-2">
   <p
-    style={{ fontSize: "20px", fontWeight: 600, cursor: "pointer" }}
+    style={{ fontSize: "20px", fontWeight: 500, cursor: "pointer" }}
     onClick={() => toggleDropdown(2)}
   >
     Our products are designed to deliver greatness{" "}
@@ -83,7 +83,7 @@ function PaginationSection() {
   </p>
   {dropdownVisible[2] && (
     <div className="dropdown-content">
-      <p style={{ fontSize: "17px" }}>Our Talent Intelligence Platform is easy to use, insightful, and delivers fast results →</p>
+      <p style={{ fontSize: "16px" }}>Our Talent Intelligence Platform is easy to use, insightful, and delivers fast results →</p>
     </div>
   )}
 </div>

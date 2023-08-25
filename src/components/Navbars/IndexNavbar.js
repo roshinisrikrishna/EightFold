@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Button,
@@ -44,6 +44,26 @@ function IndexNavbar() {
 
   ]);
 
+  const [open, setOpen] = useState(false);
+
+  const menuRef = useRef();
+
+  useEffect(() => {
+    let handler = (e)=>{
+      if(!menuRef.current.contains(e.target)){
+        setOpen(false);
+        console.log(menuRef.current);
+      }      
+    };
+
+    document.addEventListener("mousedown", handler);
+    
+
+    return() =>{
+      document.removeEventListener("mousedown", handler);
+    }
+
+  });
   const toggleDropdown = (dropdownId) => {
     setDropdowns((prevDropdowns) =>
       prevDropdowns.map((dropdown) =>
@@ -74,7 +94,7 @@ function IndexNavbar() {
   };
 
   return (
-    <>
+    <div ref={menuRef}>
       {collapseOpen ? (
         <div
           id="bodyClick"
@@ -117,10 +137,11 @@ function IndexNavbar() {
   onMouseEnter={() => openDropdownOnMouseEnter("products")}
   onMouseLeave={() => closeDropdownOnMouseLeave("products")}
 >
-  <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
+  <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2 menu-trigger" 
+  onClick={()=>setOpen(!open)}>
     <p>Products</p>
   </DropdownToggle>
-  <DropdownMenu className="custom-dropdown-menu">
+  <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`}>
     <Container style={{ width: "950px", height: "250px" }}>
       <Row>
       <Col md="3">
@@ -192,7 +213,7 @@ function IndexNavbar() {
           <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
               <p>Solutions</p>
             </DropdownToggle>
-            <DropdownMenu className="custom-dropdown-menu">
+            <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`}>
                   <DropdownItem to="/index" tag={Link}     style={{ marginBottom: "-15px" }}
 >
                     {/* <i className="now-ui-icons business_chart-pie-36 mr-1"></i> */}
@@ -265,7 +286,8 @@ function IndexNavbar() {
           >            <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
               <p>Learn</p>
             </DropdownToggle>
-            <DropdownMenu className="custom-dropdown-menu" style={{ marginLeft: "-250px"}}>
+            <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`} 
+            style={{ marginLeft: "-250px"}}>
   <Container style={{ width: "950px", height: "250px" }}>
     <Row>
       <Col md="3">
@@ -327,10 +349,11 @@ function IndexNavbar() {
             nav
             onMouseEnter={() => openDropdownOnMouseEnter("customers")}
             onMouseLeave={() => closeDropdownOnMouseLeave("customers")}
-          >            <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
+          >           
+           <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
               <p>Customers</p>
             </DropdownToggle>
-            <DropdownMenu className="custom-dropdown-menu">
+            <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`}>
                   <DropdownItem to="/index" tag={Link}     style={{ marginBottom: "-15px" }}
 >
                     {/* <i className="now-ui-icons business_chart-pie-36 mr-1"></i> */}
@@ -364,7 +387,8 @@ function IndexNavbar() {
           <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
               <p>Events</p>
             </DropdownToggle>
-            <DropdownMenu className="custom-dropdown-menu" style={{ marginLeft: "-400px"}}>
+            <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`}
+             style={{ marginLeft: "-400px"}}>
     <Container style={{ width: "950px", height: "250px" }}>
       <Row>
       <Col md="3">
@@ -422,10 +446,12 @@ function IndexNavbar() {
             nav
             onMouseEnter={() => openDropdownOnMouseEnter("company")}
             onMouseLeave={() => closeDropdownOnMouseLeave("company")}
-          >            <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
+          >            
+          <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
               <p>Company</p>
             </DropdownToggle>
-            <DropdownMenu className="custom-dropdown-menu" style={{ marginLeft: "-450px"}}>
+            <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`}
+             style={{ marginLeft: "-450px"}}>
     <Container style={{ width: "950px" }}>
       <Row>
       <Col md="3">
@@ -478,7 +504,7 @@ function IndexNavbar() {
   
 </Col>
 
-                  <Col md="9" style={{ marginTop: "-7px" ,background: "linear-gradient(to right, #4d98fa, #a903fc)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
+                  <Col md="9" style={{ marginTop: "-7px", background: "linear-gradient(to right, #4d98fa, #a903fc)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
   {/* First Column */}
   <div style={{ flex: 1, padding: "20px" }}>
     <h5 style={{ fontSize: "20px", fontWeight: 700 }}>The New York State Department of Labor announces expansion of virtual career center</h5>
@@ -536,7 +562,7 @@ function IndexNavbar() {
         href="https://demos.creative-tim.com/now-ui-kit-react/#/index?ref=nukr-index-navbar"
         target="_blank"
         id="navbar-brand"
-        style={{fontWeight:500}}
+        style={{fontWeight:700}}
       >
         Login                
       </NavbarBrand>
@@ -549,21 +575,63 @@ function IndexNavbar() {
 <style>
   {`
 
+.menu-trigger dropdown-toggle{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.custom-dropdown-menu{
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  padding: 10px 20px;
+  max-width: 800px;
+}
+
+.custom-dropdown-menu::before{
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  transform: rotate(45deg);
+}
+
+.custom-dropdown-menu.active{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: 1000ms ease;
+}
+
+.custom-dropdown-menu.inactive{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: 1000ms ease;
+}
 
   .custom-dropdown-menu a {
-  text-decoration: none; /* Remove the default underline */
-  border-bottom: 2px solid transparent; /* Start with a transparent border */
-  transition: border-bottom 0.3s ease-in-out; 
-  /* Adjust this value to move the border closer to the text */
+  text-decoration: none; 
+  border-bottom: 2px solid transparent; 
+  transition: border-bottom 0.3s ease-in-out;
+ 
 
 }
 
 .custom-dropdown-menu a:hover {
   background-image: linear-gradient(to right, #1d212b, #1d212b);
   background-size: 100% 3px;
-  background-position: 0 90%; /* Adjust this value to shift the border up */
+  background-position: 0 90%; 
   background-clip: text;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2.5px solid transparent;
   border-image: linear-gradient(0.25turn, rgba(50, 94, 168), rgba(24, 9, 230), rgba(169, 11, 227));
   border-image-slice: 1;
   width:100%;
@@ -603,9 +671,8 @@ function IndexNavbar() {
 </style>
 </Navbar>
 
-</>
+</div>
 );
 }
 
 export default IndexNavbar;
-

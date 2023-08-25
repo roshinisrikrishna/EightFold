@@ -10,246 +10,151 @@ import {
   ModalBody,
   Row,
   Col,
+  Card,
   UncontrolledTooltip,
   PopoverBody,
   PopoverHeader,
   UncontrolledPopover,
 } from "reactstrap";
 
-// core components
+import js1Img from "../../assets/img/JS1.webp";
+import js2Img from "../../assets/img/JS2.jpg";
+import js3Img from "../../assets/img/JS3.jpg";
 
 function Javascript() {
   const [modal1, setModal1] = React.useState(false);
   const [modal2, setModal2] = React.useState(false);
   return (
     <>
-      <div className="section section-javascript" id="javascriptComponents">
-        <Container>
-          <h3 className="title">Javascript components</h3>
-          <Row id="modals">
-            <Col md="6">
-              <h4>Modal</h4>
-              <Button
-                color="primary"
-                className="mr-1"
-                onClick={() => setModal1(true)}
-              >
-                Launch Modal
-              </Button>
-              <Button color="info" onClick={() => setModal2(true)}>
-                Launch Modal Mini
-              </Button>
-              <Modal isOpen={modal1} toggle={() => setModal1(false)}>
-                <div className="modal-header justify-content-center">
-                  <button
-                    className="close"
-                    type="button"
-                    onClick={() => setModal1(false)}
-                  >
-                    <i className="now-ui-icons ui-1_simple-remove"></i>
-                  </button>
-                  <h4 className="title title-up">Modal title</h4>
-                </div>
-                <ModalBody>
-                  <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts. Separated they live in Bookmarksgrove right at the
-                    coast of the Semantics, a large language ocean. A small
-                    river named Duden flows by their place and supplies it with
-                    the necessary regelialia. It is a paradisematic country, in
-                    which roasted parts of sentences fly into your mouth.
-                  </p>
-                </ModalBody>
-                <div className="modal-footer">
-                  <Button color="default" type="button">
-                    Nice Button
-                  </Button>
-                  <Button
-                    color="danger"
-                    type="button"
-                    onClick={() => setModal1(false)}
-                  >
-                    Close
-                  </Button>
-                </div>
-              </Modal>
-              <Modal
-                modalClassName="modal-mini modal-info"
-                toggle={() => setModal2(false)}
-                isOpen={modal2}
-              >
-                <div className="modal-header justify-content-center">
-                  <div className="modal-profile">
-                    <i className="now-ui-icons users_circle-08"></i>
-                  </div>
-                </div>
-                <ModalBody>
-                  <p>Always have an access to your profile</p>
-                </ModalBody>
-                <div className="modal-footer">
-                  <Button className="btn-neutral" color="link" type="button">
-                    Back
-                  </Button>
-                  <Button
-                    className="btn-neutral"
-                    color="link"
-                    type="button"
-                    onClick={() => setModal2(false)}
-                  >
-                    Close
-                  </Button>
-                </div>
-              </Modal>
-            </Col>
-            <Col md="6">
-              <h4>Popovers</h4>
-              <Button
-                color="default"
-                id="tooltip175489643"
-                type="button"
-                className="mr-1"
-              >
-                On left
-              </Button>
-              <UncontrolledPopover
-                placement={window.innerWidth < 768 ? "top" : "left"}
-                target="tooltip175489643"
-                className="popover-primary"
-              >
-                <PopoverHeader>Popover On Left</PopoverHeader>
-                <PopoverBody>
-                  Here will be some very useful information about his popover.
-                </PopoverBody>
-              </UncontrolledPopover>
-              <Button
-                color="default"
-                id="tooltip768569110"
-                type="button"
-                className="mr-1"
-              >
-                On top
-              </Button>
-              <UncontrolledPopover placement="top" target="tooltip768569110">
-                <PopoverHeader>Popover on Top</PopoverHeader>
-                <PopoverBody>
-                  Here will be some very useful information about his popover.
-                </PopoverBody>
-              </UncontrolledPopover>
-              <Button
-                color="default"
-                id="tooltip966745638"
-                type="button"
-                className="mr-1"
-              >
-                On right
-              </Button>
-              <UncontrolledPopover
-                placement={window.innerWidth < 768 ? "bottom" : "right"}
-                target="tooltip966745638"
-              >
-                <PopoverHeader>Popover on Right</PopoverHeader>
-                <PopoverBody>
-                  Here will be some very useful information about his popover.
-                  <br /> Here will be some very useful information about his
-                  popover.
-                </PopoverBody>
-              </UncontrolledPopover>
-              <Button color="default" id="tooltip822900491" type="button">
-                On bottom
-              </Button>
-              <UncontrolledPopover placement="bottom" target="tooltip822900491">
-                <PopoverHeader>Popover on Bottom</PopoverHeader>
-                <PopoverBody>
-                  Here will be some very useful information about his popover.
-                </PopoverBody>
-              </UncontrolledPopover>
-            </Col>
-            <br></br>
-            <br></br>
-            <Col md="6">
-              <h4>Datepicker</h4>
-              <Row>
-                <Col md="6">
-                  <div className="datepicker-container">
-                    <FormGroup>
-                      <Datetime
-                        timeFormat={false}
-                        inputProps={{ placeholder: "Datetime Picker Here" }}
-                      />
-                    </FormGroup>
-                  </div>
-                </Col>
-              </Row>
-            </Col>
-            <Col md="6">
-              <h4>Tooltips</h4>
-              <Button
-                className="btn-tooltip mr-1"
-                color="default"
-                id="tooltip116884155"
-                type="button"
-              >
-                On left
-              </Button>
-              <UncontrolledTooltip
-                delay={0}
-                placement="left"
-                target="tooltip116884155"
-              >
-                Tooltip on left
-              </UncontrolledTooltip>
-              <Button
-                className="btn-tooltip mr-1"
-                color="default"
-                id="tooltip502327420"
-                type="button"
-              >
-                On top
-              </Button>
-              <UncontrolledTooltip
-                delay={0}
-                placement="top"
-                target="tooltip502327420"
-              >
-                Tooltip on top
-              </UncontrolledTooltip>
-              <Button
-                className="btn-tooltip mr-1"
-                color="default"
-                id="tooltip243887155"
-                type="button"
-              >
-                On bottom
-              </Button>
-              <UncontrolledTooltip
-                delay={0}
-                placement="bottom"
-                target="tooltip243887155"
-              >
-                Tooltip on bottom
-              </UncontrolledTooltip>
-              <Button
-                className="btn-tooltip"
-                color="default"
-                id="tooltip542703310"
-                type="button"
-              >
-                On right
-              </Button>
-              <UncontrolledTooltip
-                delay={0}
-                placement="right"
-                target="tooltip542703310"
-              >
-                Tooltip on right
-              </UncontrolledTooltip>
-              <div className="clearfix"></div>
-              <br></br>
-              <br></br>
-            </Col>
-          </Row>
-        </Container>
+     
+     <div className="mt-5" style={{ backgroundColor: "#242f40", color: "#FFFFFF",  paddingTop: "10px", paddingBottom: "1px" }}>
+     <div
+  style={{
+    display: "flex",
+    flexDirection: "column", // Display items in a column
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: "30px",
+    marginTop: "130px",
+    marginBottom: "130px",
+    maxWidth: "1280px", // Adjust this value to match the screen width
+  }}
+>
+<h2 style={{ fontSize: "48px", textAlign: "center", fontWeight: 600, fontFamily: "Museo Sans Rounded, sans-serif" }}>
+  See how great organizations<br />are transforming their workforces with AI.
+</h2>
+
+
+ 
+
+<div style={{ width: "1200px", display: "flex", flexDirection: "row", marginTop: "40px", justifyContent: "center", alignItems: "center" }}>
+<Card style={{ 
+  borderBottom: "1px solid transparent", 
+  borderRight: "1px solid transparent", 
+  borderLeft: "1px solid transparent", 
+  backgroundColor: "#242f40", 
+  color: "#FFFFFF", 
+  height: "450px", 
+  maxWidth: "380px", 
+  flex: 1, 
+  display: "flex", 
+  flexDirection: "column", 
+  alignItems: "flex-start", 
+  margin: "0 10px", 
+  borderRadius: "10px", 
+  boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", // Adding a subtle shadow
+  borderImage: "linear-gradient(to right, #a90bde, #002aeb) 1", // Gradient border
+}}>
+    <img src={js1Img} alt="Logo" 
+  style={{ width: "450px", height: "200px" }} 
+  />
+    <h4 style={{ fontWeight: 700, maxWidth: "320px", 
+    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "20px",
+    paddingLeft: "20px", paddingRight: "20px" }}>
+      Talent acquisition & talent management improvements at Vodafone
+    </h4>
+    
+
+    <p style={{  paddingLeft: "20px",fontWeight: 400, fontSize: "16px", maxWidth: "330px", paddingRight: "20px" }}>
+      Vodafone has created a system that makes learning personal and purposeful. 
+    </p>
+    <p style={{  paddingLeft: "20px",fontSize: "16px", fontWeight: 500, paddingRight: "20px" }}>Read customer story</p>
+</Card>
+
+
+<Card style={{ 
+  borderBottom: "1px solid transparent", 
+  borderRight: "1px solid transparent", 
+  borderLeft: "1px solid transparent", 
+  backgroundColor: "#242f40", 
+  color: "#FFFFFF", 
+  height: "450px", 
+  maxWidth: "380px", 
+  flex: 1, 
+  display: "flex", 
+  flexDirection: "column", 
+  alignItems: "flex-start", 
+  margin: "0 10px", 
+  borderRadius: "10px", 
+  boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", // Adding a subtle shadow
+  borderImage: "linear-gradient(to right, #a90bde, #002aeb) 1", // Gradient border
+}}>
+    <img src={js2Img} alt="Logo" 
+  style={{ width: "450px", height: "200px" }} 
+  />
+    <h4 style={{ fontWeight: 700, maxWidth: "320px", 
+    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "20px", 
+    paddingLeft: "20px", paddingRight: "20px" }}>
+      A new way to find talent at Chevron
+    </h4>
+    
+
+    <p style={{  paddingLeft: "20px",fontWeight: 400, fontSize: "16px", maxWidth: "330px", paddingRight: "20px" }}>
+    How Chevron drilled into its HR data to tap into new talent.
+    </p>
+    <p style={{  paddingLeft: "20px",fontSize: "16px", fontWeight: 500, paddingRight: "20px" }}>Read customer story</p>
+</Card>
+
+<Card style={{ 
+  borderBottom: "1px solid transparent", 
+  borderRight: "1px solid transparent", 
+  borderLeft: "1px solid transparent", 
+  backgroundColor: "#242f40", 
+  color: "#FFFFFF", 
+  height: "450px", 
+  maxWidth: "380px", 
+  flex: 1, 
+  display: "flex", 
+  flexDirection: "column", 
+  alignItems: "flex-start", 
+  margin: "0 10px", 
+  borderRadius: "10px", 
+  boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", // Adding a subtle shadow
+  borderImage: "linear-gradient(to right, #a90bde, #002aeb) 1", // Gradient border
+}}>
+    <img src={js3Img} alt="Logo" 
+  style={{ width: "450px", height: "200px" }} 
+  />
+    <h4 style={{  paddingLeft: "20px",fontWeight: 700, maxWidth: "320px", 
+    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "20px", 
+    paddingRight: "20px" }}>
+      Transforming talent at scale at Bayer
+    </h4>
+    
+
+    <p style={{  paddingLeft: "20px",fontWeight: 400, fontSize: "16px", maxWidth: "330px", paddingRight: "20px" }}>
+      How Eightfold helped Bayerto deliver its technology ambitions from a talent perspective
+      at scale.
+          </p>
+    <p style={{  paddingLeft: "20px",fontSize: "16px", fontWeight: 500, paddingRight: "20px" }}>View customer story</p>
+</Card>
+</div>
+
+<p style={{ fontSize: "17px", fontWeight: 500,  
+     paddingTop: "80px" }}>See more customer stories</p>
+
+</div>
+
       </div>
     </>
   );

@@ -1,171 +1,111 @@
 import React from "react";
 
 // reactstrap components
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Card } from "reactstrap";
+import typoImg from "../../assets/img/woman.jpg";
+
 
 // core components
 
 function Typography() {
   return (
     <>
-      <div className="section">
-        <Container>
-          <h3 className="title">Typography</h3>
-          <div id="typography">
-            <Row>
-              <Col md="12">
-                <div className="typography-line">
-                  <h1>
-                    <span>Header 1</span>
-                    The Life of Now UI Kit
-                  </h1>
-                </div>
-                <div className="typography-line">
-                  <h2>
-                    <span>Header 2</span>
-                    The Life of Now UI Kit
-                  </h2>
-                </div>
-                <div className="typography-line">
-                  <h3>
-                    <span>Header 3</span>
-                    The Life of Now UI Kit
-                  </h3>
-                </div>
-                <div className="typography-line">
-                  <h4>
-                    <span>Header 4</span>
-                    The Life of Now UI Kit
-                  </h4>
-                </div>
-                <div className="typography-line">
-                  <h5>
-                    <span>Header 5</span>
-                    The Life of Now UI Kit
-                  </h5>
-                </div>
-                <div className="typography-line">
-                  <h6>
-                    <span>Header 6</span>
-                    The Life of Now UI Kit
-                  </h6>
-                </div>
-                <div className="typography-line">
-                  <p>
-                    <span>Paragraph</span>I will be the leader of a company that
-                    ends up being worth billions of dollars, because I got the
-                    answers. I understand culture. I am the nucleus. I think
-                    that’s a responsibility that I have, to push possibilities,
-                    to show people, this is the level that things could be at.
-                  </p>
-                </div>
-                <div className="typography-line">
-                  <span>Quote</span>
-                  <blockquote>
-                    <p className="blockquote blockquote-primary">
-                      "I will be the leader of a company that ends up being
-                      worth billions of dollars, because I got the answers. I
-                      understand culture. I am the nucleus. I think that’s a
-                      responsibility that I have, to push possibilities, to show
-                      people, this is the level that things could be at."{" "}
-                      <br></br>
-                      <br></br>
-                      <small>- Noaa</small>
-                    </p>
-                  </blockquote>
-                </div>
-                <div className="typography-line">
-                  <span>Muted Text</span>
-                  <p className="text-muted">
-                    I will be the leader of a company that ends up being worth
-                    billions of dollars, because I got the answers...
-                  </p>
-                </div>
-                <div className="typography-line">
-                  <span>Primary Text</span>
-                  <p className="text-primary">
-                    I will be the leader of a company that ends up being worth
-                    billions of dollars, because I got the answers...
-                  </p>
-                </div>
-                <div className="typography-line">
-                  <span>Info Text</span>
-                  <p className="text-info">
-                    I will be the leader of a company that ends up being worth
-                    billions of dollars, because I got the answers...
-                  </p>
-                </div>
-                <div className="typography-line">
-                  <span>Success Text</span>
-                  <p className="text-success">
-                    I will be the leader of a company that ends up being worth
-                    billions of dollars, because I got the answers...
-                  </p>
-                </div>
-                <div className="typography-line">
-                  <span>Warning Text</span>
-                  <p className="text-warning">
-                    I will be the leader of a company that ends up being worth
-                    billions of dollars, because I got the answers...
-                  </p>
-                </div>
-                <div className="typography-line">
-                  <span>Danger Text</span>
-                  <p className="text-danger">
-                    I will be the leader of a company that ends up being worth
-                    billions of dollars, because I got the answers...
-                  </p>
-                </div>
-                <div className="typography-line">
-                  <h2>
-                    <span>Small Tag</span>
-                    Header with small subtitle <br></br>
-                    <small>Use "small" tag for the headers</small>
-                  </h2>
-                </div>
-              </Col>
-            </Row>
-          </div>
-          <div className="space-50"></div>
-          <div id="images">
-            <h4>Images</h4>
-            <Row>
-              <Col sm="2">
-                <p className="category">Image</p>
-                <img
-                  alt="..."
-                  className="rounded"
-                  src={require("assets/img/julie.jpg")}
-                ></img>
-              </Col>
-              <Col sm="2">
-                <p className="category">Circle Image</p>
-                <img
-                  alt="..."
-                  className="rounded-circle"
-                  src={require("assets/img/julie.jpg")}
-                ></img>
-              </Col>
-              <Col sm="2">
-                <p className="category">Raised</p>
-                <img
-                  alt="..."
-                  className="rounded img-raised"
-                  src={require("assets/img/julie.jpg")}
-                ></img>
-              </Col>
-              <Col sm="2">
-                <p className="category">Circle Raised</p>
-                <img
-                  alt="..."
-                  className="rounded-circle img-raised"
-                  src={require("assets/img/julie.jpg")}
-                ></img>
-              </Col>
-            </Row>
-          </div>
-        </Container>
-      </div>
+<div
+  style={{
+    display: "flex",
+    flexDirection: "column", // Display items in a column
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: "30px",
+    marginTop: "130px",
+    marginBottom: "130px",
+    maxWidth: "1280px", // Adjust this value to match the screen width
+  }}
+>
+  <h1>What's new?</h1>
+  <img src={typoImg} alt="Logo" 
+    style={{ width: "1000px", height: "auto", borderRadius: "1%", display: "block", marginTop: "20px" }} 
+  />
+
+<div style={{ width: "1200px", display: "flex", flexDirection: "row", marginTop: "40px", justifyContent: "center", alignItems: "center" }}>
+  <Card style={{ paddingLeft: "20px", backgroundColor: "rgb(247,245,245,0.5)", height: "400px", 
+  maxWidth: "380px", flex: 1, display: "flex", flexDirection: "column", 
+  justifyContent: "center", alignItems: "flex-start", margin: "0 10px" }}>
+    <h4 style={{ fontWeight: 700, maxWidth: "320px", 
+    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "20px", 
+    paddingRight: "20px", marginTop: "0px" }}>
+      State of AI in HR: Josh Bersin and our CEO Ashutosh Garg talk emerging tech in talent
+    </h4>
+    <div style={{ alignItems: "center", justifyContent: "center", fontWeight: "bold", 
+    fontSize: "12px", backgroundColor: "#7E3A77", color: "white", borderRadius: "25px", 
+    display: "flex", alignItems: "center", padding: "5px" }}>
+  <i className="fas fa-folder" style={{ marginRight: "5px" }}></i>
+  <p className="mt-0 ml-1 mr-1 mb-0" style={{ fontWeight: 400 }}>Blog</p>
+</div>
+
+    <p style={{ fontWeight: 400, fontSize: "16px", maxWidth: "330px", paddingRight: "20px",
+     marginTop: "10px" }}>
+      In this exclusive Q&A, HR expert Josh Bersin interviews our CEO and Co-founder
+      Ashutosh Garg on the state of AI - the benefits, regulations, and how this revolutionary
+      technology can help any organization reach its goals.
+    </p>
+    <p style={{ fontSize: "14px", fontWeight: "bold", color: "#008FBF", 
+    paddingRight: "20px", marginTop: "0px" }}>Read blog</p>
+  </Card>
+
+  <Card style={{ paddingLeft: "20px", backgroundColor: "rgb(247,245,245,0.5)", height: "400px",
+   maxWidth: "380px", flex: 1, display: "flex", flexDirection: "column", 
+   justifyContent: "center", alignItems: "flex-start", margin: "0 10px" }}>
+    <h4 style={{ fontWeight: 700, maxWidth: "300px", 
+    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "20px", paddingRight: "20px", 
+    marginTop: "-5px" }}>
+      Eightfold recognised as a Strategic Leader by Europe's #1 HR industry analyst
+    </h4>
+    <div style={{ alignItems: "center", justifyContent: "center", fontWeight: "bold", 
+    fontSize: "12px", backgroundColor: "#7E3A77", color: "white", borderRadius: "25px", 
+    display: "flex", alignItems: "center", padding: "5px" }}>
+  <i className="fas fa-folder" style={{ marginRight: "5px" }}></i>
+  <p className="mt-0 ml-1 mr-1 mb-0" style={{ fontWeight: 400 }}>Blog</p>
+</div>
+
+    <p style={{ fontWeight: 400, fontSize: "16px", maxWidth: "280px", paddingRight: "20px", 
+    marginTop: "10px" }}>
+      This achievement is a testament to Eightfold's unwavering dedication to delivering
+      top-notch solutions in the Talent Acquisition space.
+    </p>
+    <p style={{ fontSize: "14px", fontWeight: "bold", color: "#008FBF", 
+    paddingRight: "20px", paddingTop: "40px" }}>Download report</p>
+  </Card>
+
+  <Card style={{ paddingLeft: "20px", backgroundColor: "rgb(247,245,245,0.5)", height: "400px", 
+  maxWidth: "380px", flex: 1, display: "flex", flexDirection: "column", 
+  justifyContent: "center", alignItems: "flex-start", margin: "0 10px" }}>
+    <h4 style={{ fontWeight: 700, maxWidth: "300px", 
+    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "20px", 
+    paddingRight: "20px", marginTop: "-40px" }}>
+      Why it's time for AI-powered talent intelligence in your HR tech stack
+    </h4>
+    <div style={{ alignItems: "center", justifyContent: "center", fontWeight: "bold", 
+    fontSize: "12px", backgroundColor: "#7E3A77", color: "white", borderRadius: "25px", 
+    display: "flex", alignItems: "center", padding: "5px" }}>
+  <i className="fas fa-folder" style={{ marginRight: "5px" }}></i>
+  <p className="mt-0 ml-1 mr-1 mb-0" style={{ fontWeight: 400 }}>Blog</p>
+</div>
+
+    <p style={{ fontWeight: 400, fontSize: "16px", maxWidth: "350px", paddingRight: "20px", marginTop: "10px" }}>
+      AI-powered talent intelligence is the key to building a stronger, adaptable, and more agile 
+      workforce to face the many business challenges ahead.
+    </p>
+    <p style={{ fontSize: "14px", fontWeight: "bold", color: "#008FBF", 
+    paddingRight: "20px", marginTop: "40px", marginBottom:"-20px" }}>Read blog</p>
+  </Card>
+</div>
+
+<p style={{ fontSize: "17px", fontWeight: 500, color: "#008FBF", 
+     paddingTop: "80px" }}>View all resources</p>
+
+</div>
+
     </>
   );
 }
