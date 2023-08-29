@@ -46,13 +46,23 @@ function Typography() {
   >What's new?
   </motion.h1>
   <img src={typoImg} alt="Logo" 
-    style={{ width: "1000px", height: "auto", borderRadius: "1%", display: "block", marginTop: "20px" }} 
+    style={{ width: "800px", height: "auto", borderRadius: "1%", display: "block", marginTop: "20px" }} 
   />
 
 <div style={{ width: "1200px", display: "flex", flexDirection: "row", marginTop: "40px", justifyContent: "center", alignItems: "center" }}>
-  <motion.Card style={{ paddingLeft: "20px", backgroundColor: "rgb(247,245,245,0.5)", 
-  height: "400px", maxWidth: "380px", flex: 1, display: "flex", flexDirection: "column", 
-  justifyContent: "center", alignItems: "flex-start", margin: "0 10px" }}
+  <motion.Card   style={{
+    paddingLeft: "20px",
+    backgroundColor: "#FFFFFF",
+    height: "400px",
+    maxWidth: "380px",
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    margin: "0 10px",
+    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
+  }}
   variants={fadeInAnimationVariants}
   initial="initial"
   whileInView="animate"
@@ -81,9 +91,19 @@ function Typography() {
     paddingRight: "20px", marginTop: "0px" }}>Read blog</p>
   </motion.Card>
 
-  <motion.Card style={{ paddingLeft: "20px", backgroundColor: "rgb(247,245,245,0.5)", 
-  height: "400px", maxWidth: "380px", flex: 1, display: "flex", flexDirection: "column", 
-   justifyContent: "center", alignItems: "flex-start", margin: "0 10px" }}
+  <motion.Card   style={{
+    paddingLeft: "20px",
+    backgroundColor: "#FFFFFF",
+    height: "400px",
+    maxWidth: "380px",
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    margin: "0 10px",
+    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
+  }}
    variants={fadeInAnimationVariants}
    initial="initial"
    whileInView="animate"
@@ -110,9 +130,19 @@ function Typography() {
     paddingRight: "20px", paddingTop: "40px" }}>Download report</p>
   </motion.Card>
 
-  <motion.Card style={{ paddingLeft: "20px", backgroundColor: "rgb(247,245,245,0.5)", 
-  height: "400px", maxWidth: "380px", flex: 1, display: "flex", flexDirection: "column", 
-  justifyContent: "center", alignItems: "flex-start", margin: "0 10px" }}
+  <motion.Card   style={{
+    paddingLeft: "20px",
+    backgroundColor: "#FFFFFF",
+    height: "400px",
+    maxWidth: "380px",
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    margin: "0 10px",
+    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
+  }}
   variants={fadeInAnimationVariants}
   initial="initial"
   whileInView="animate"

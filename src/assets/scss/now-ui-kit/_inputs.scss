@@ -2,12 +2,14 @@
 
 .form-control {
     background-color: $transparent-bg;
-    border: 1px solid $light-gray;
-    border-radius: $btn-round-radius;
+    border: 1px solid rgba(176, 174, 174, 0.982);
+    border-radius: 10px;
     color: $black-color;
     height: auto;
     line-height: normal;
-    font-size: $font-size-small;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: 'Museo Sans Rounded';
     @include transition-input-focus-color();
     @include box-shadow(none);
 
@@ -16,15 +18,15 @@
     }
 
     &:focus{
-        border: 1px solid $primary-color;
+        // border: 1px solid $primary-color;
         @include box-shadow(none);
         outline: 0 !important;
         color: $black-color;
 
         & + .input-group-text,
         & ~ .input-group-text{
-            border: 1px solid $primary-color;
-            border-left: none;
+            // border: 1px solid $primary-color;
+            // border-left: none;
             background-color: $transparent-bg;
         }
     }
@@ -60,7 +62,7 @@
     }
 
     & + .form-control-feedback{
-        border-radius: $border-radius-large;
+        border-radius: 50%;
         font-size: $font-size-base;
         margin-top: -7px;
         position: absolute;
@@ -70,8 +72,8 @@
     }
 
     .open &{
-        border-radius: $border-radius-large $border-radius-large 0 0;
-        border-bottom-color: transparent;
+        // border-radius: $border-radius-large $border-radius-large 0 0;
+        // border-bottom-color: transparent;
     }
 
     // & + .input-group-text{
@@ -115,11 +117,11 @@
     .form-control,
     .form-control + .input-group-text{
         background-color: $opacity-gray-3;
-        border: medium none;
+        // border: medium none;
         &:focus,
         &:active,
         &:active{
-            border: medium none;
+            // border: medium none;
             background-color: $opacity-gray-5;
         }
     }
@@ -134,8 +136,8 @@
     .input-group-prepend{
       .input-group-text{
           background-color: $opacity-gray-3;
-          border: none;
-          border-left: transparent !important;
+        //   border: none;
+        //   border-left: transparent !important;
       }
     }
 
@@ -161,15 +163,15 @@
 
 .input-group-text {
     background-color: $white-bg;
-    border: 1px solid $light-gray;
-    border-radius: $btn-round-radius;
+    // border: 1px solid $light-gray;
+    // border-radius: 50%;
     color: $dark-background;
 
     @include transition-input-focus-color();
 
     .input-group-focus &{
       background-color: $white-bg;
-      border-color: $primary-color;
+    //   border-color: $primary-color;
     }
 
     .has-success &,
@@ -186,7 +188,7 @@
     & + .form-control,
     & ~ .form-control{
         @include input-size($padding-base-vertical - 1, $padding-base-horizontal);
-        padding-left: 18px;
+        // padding-left: 18px;
     }
 
     i{
@@ -211,24 +213,24 @@
     margin-right: 0;
 
     .input-group-text {
-      border-left: 1px solid #E3E3E3;
+    //   border-left: 1px solid #E3E3E3;
     }
   }
   .input-group-append .input-group-text {
-    border-right: 1px solid #E3E3E3;
+    // border-right: 1px solid #E3E3E3;
     padding: 10px 18px 10px 0;
   }
 
   &.input-group-focus {
     .input-group-prepend .input-group-text {
-      border-left: 1px solid #f96332;
+    //   border-left: 1px solid #f96332;
     }
     .input-group-append .input-group-text {
-      border-right: 1px solid #f96332;
+    //   border-right: 1px solid #f96332;
     }
     &.no-border{
       .input-group-prepend .input-group-text{
-        border-left: transparent;
+        // border-left: transparent;
       }
     }
   }
@@ -238,13 +240,13 @@
 .input-group-text:first-child,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
-    border-right: 0 none;
+    // border-right: 0 none;
 }
 .input-group .form-control:last-child,
 .input-group-text:last-child,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child) {
-    border-left: 0 none;
+    // border-left: 0 none;
 }
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
     background-color: $light-gray;
@@ -268,16 +270,16 @@ textarea.form-control{
     max-height: 80px;
     padding: 10px 10px 0 0;
     resize: none;
-    border: none;
-    border-bottom: 1px solid $light-gray;
-    border-radius: 0;
+    // border: none;
+    // border-bottom: 1px solid $light-gray;
+    border-radius: 10px;
     line-height: 2;
 
     &:focus,
     &:active{
-        border-left: none;
-        border-top: none;
-        border-right: none;
+        // border-left: none;
+        // border-top: none;
+        // border-right: none;
     }
 }
 

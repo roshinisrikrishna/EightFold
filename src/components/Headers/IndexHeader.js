@@ -64,7 +64,7 @@ function IndexHeader() {
           className="page-header-image"
           style={{
             background:
-              "linear-gradient(to right , rgba(0, 0, 0), rgba(0, 0, 0, 0.9) 50%, rgba(6, 18, 70, 0.88))",
+              "linear-gradient(to right , rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9) 50%, rgba(6, 18, 70, 0.88))",
           }}
           ref={pageHeader}
         >
@@ -88,38 +88,37 @@ function IndexHeader() {
 
         <Container>
           
-          <div className="content-center brand"
-          >
-            <motion.h1
-              style={{
-                fontWeight: "bolder",
-                fontFamily: "Museo Sans Rounded, sans-serif",
-              }}
-              variants={fadeInAnimationVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{once: true,}}
-          custom={4}
-            >
-              Everything talent,
-            </motion.h1>
-            <motion.h1
-              style={{
-                background:
-                  "-webkit-linear-gradient(45deg, #FFFFFF, #0fb3fa 85%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                fontFamily: "Museo Sans Rounded, sans-serif",
-                fontWeight: "bolder",
-              }}
-              variants={fadeInAnimationVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{once: true,}}
-          custom={3}
-            >
-              powered by AI
-            </motion.h1>
+        <div className="content-center brand" style={{ marginTop: "140px", marginLeft: "-10px" }}>
+  <motion.h1
+    style={{
+      fontWeight: "bolder",
+      fontFamily: "Museo Sans Rounded, sans-serif",
+    }}
+    variants={fadeInAnimationVariants}
+    initial="initial"
+    whileInView="animate"
+    viewport={{ once: true }}
+    custom={4}
+  >
+    Everything talent,
+  </motion.h1>
+  <motion.h1
+    style={{
+      background: "-webkit-linear-gradient(45deg, #FFFFFF, #0fb3fa 85%)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+      fontFamily: "Museo Sans Rounded, sans-serif",
+      fontWeight: "bolder",
+      marginTop: "-30px", // Adjust this margin to reduce space
+    }}
+    variants={fadeInAnimationVariants}
+    initial="initial"
+    whileInView="animate"
+    viewport={{ once: true }}
+    custom={3}
+  >
+    powered by AI
+  </motion.h1>
 
             <motion.p
               style={{
@@ -146,7 +145,7 @@ function IndexHeader() {
                 fontWeight: "bolder",
                 fontSize: "17px",
                 width: "230px",
-                padding: "12px",
+                padding: "10px",
                 fontFamily: "Museo Sans Rounded, sans-serif",
               }}
               variants={fadeInAnimationVariants}

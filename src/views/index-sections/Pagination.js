@@ -94,13 +94,19 @@ function PaginationSection() {
               </Container>
             </Col>
             <Col md="7" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <img
-                src={logo}
-                alt="Eightfold.ai Logo"
-                className="navbar-logo"
-                style={{ width: "580px", height: "auto", marginTop: "0px", borderRadius: "15px", marginRight:"-40px" }} // Adjust the margin-top value as needed
-              />
-            </Col>
+  <div style={{ position: "relative" }}>
+    <img
+      src={logo}
+      alt="Eightfold.ai Logo"
+      className="navbar-logo"
+      style={{ width: "580px", height: "auto", marginTop: "0px", borderRadius: "15px", marginRight: "-40px" }} // Adjust the margin-top value as needed
+    />
+    
+  </div>
+ 
+</Col>
+
+
           </Row>
         </Container>
       </div>

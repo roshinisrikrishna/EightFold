@@ -552,7 +552,10 @@ function IndexNavbar() {
     <NavItem>
       <Button
         className="nav-link btn-neutral mr-2"
-        style={{borderRadius:"50px",padding:"12px 35px",fontWeight: 600, backgroundColor:"#17eba8",color: "black",fontSize:"16.4px"}}
+        style={{borderRadius:"50px",padding:"12px 35px",fontWeight: 600, 
+        backgroundColor:"#17eba8",color: "black",fontSize:"16.4px"}}
+        to='/review-demo'
+        tag={Link}
       >
         <p>Request Demo</p>
       </Button>
