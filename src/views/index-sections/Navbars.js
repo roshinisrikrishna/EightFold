@@ -88,7 +88,7 @@ const sendEmail = (e) => {
       <div >
 
       <div id="menu-dropdown" style={{ display: "flex" }}>
-          <div className="left-sidebar">
+          <div className="left-sidebar" md="6">
    <div className="space-50"></div>
    <a href="/" style={{ textDecoration: "none", color: "inherit" }}>
     <p className="back-link" style={{fontSize: "12px"}}>
@@ -114,36 +114,42 @@ const sendEmail = (e) => {
      
       </Container>
      
-      <div style={{  width: "500px", height: "auto" }}>
-       <img src={reviewImage} alt="Logo" />
-      </div>
+      <div
+  style={{
+    position: "fixed",
+    left: "35%",
+    transform: "translateX(-50%)",
+    bottom: "-5%",
+    marginBottom: 0,
+    width: "500px",
+    height: "auto",
+  }}
+>
+  <img src={reviewImage} alt="Review" style={{ width: "100%" }} />
 </div>
- {/* <div style={{ width: "100%", overflow: "hidden" }}>
- <img src={reviewImage} alt="Logo" style={{ width: "188px", height: "auto" ,borderRadius: "20%" }} />
-                </div> */}
-        <div  >
+</div>
+
+<div md="6"  style={{ flex: 1 }}>
         <img src={dottedImg} alt="Logo" style={{ width: "400px", height: "100px" }} />
 
-            <div style={{
-            display: 'flex',
-            // alignItems: 'center',
-            // justifyContent: 'center',
-            flexDirection: 'column',
-            paddingLeft: "160px"
-        }}>
+        <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    paddingLeft: "160px"
+}}>
+    <h4 style={{
+        fontWeight: "bolder",
+        fontSize: "32px",
+        fontFamily: "Museo Sans Rounded, sans-serif",
+    }}>Request a live demo</h4>
+    <p style={{ fontSize: "16px", fontWeight: 400, color: "#484B58", maxWidth: "400px" }}>
+        Powered by AI, the Eightfold Talent Intelligence Platform empowers
+        organizations, over 2,999 employees, to recruit and retain a
+        diverse global workforce.
+    </p>
+    <div className="space-50"></div>
 
-                          <h4 style={{
-                fontWeight: "bolder",
-                fontSize: "32px",
-                fontFamily: "Museo Sans Rounded, sans-serif",
-              }}>Request a live demo</h4>
-              <p 
-              style={{fontSize: "16px", fontWeight: 400, color: "#484B58",maxWidth: "400px"}}>Powered by AI, the Eightfold Talent Intelligence Platform empowers 
-                organizations, over 2,999 employees, to recruit and retain a 
-                diverse global workforce.</p>
-                <div className="space-50"></div>
-
-                <form ref={form} onSubmit={sendEmail} action="" className="form" method="">
+    <form ref={form} onSubmit={sendEmail} action="" className="form" method="">
 
             
                 <InputGroup className="mb-3">
@@ -482,48 +488,54 @@ const sendEmail = (e) => {
         style={{ maxWidth: "400px" }}                     
                     ></Input>
                   </InputGroup>
-                  <Button
-                    className="btn-round"
-                    type="submit"
-                    // onClick={(e) => e.preventDefault()}
-                    size="sm"
-                    style={{ backgroundColor: "#2f77ba", fontWeight: "bold", 
-                    fontSize: "16px",padding: "12px 35px 12px 35px" }} 
-                >
-                    Submit
-                </Button>
-
-              </form>
-            </div>
+                  <div style={{ display: 'flex', justifyContent: "flex-start", marginTop: '20px' }}>
+            <Button
+                className="btn-round"
+                type="submit"
+                size="sm"
+                style={{
+                    backgroundColor: "#2f77ba",
+                    fontWeight: "bold",
+                    fontSize: "16px",
+                    padding: "12px 35px",
+                }}
+            >
+                Submit
+            </Button>
+        </div>
+    </form>
+</div>
 <div className="space-50"></div>
               <div className="space-50"></div>
 
 
-              <div id="card-two" style={{display: "flex", textAlign: "center", paddingLeft: "90px"}}>
-                <div id="card1" style={{width: "230px", display: "flex", flexDirection: "column",
-              alignItems: "center" }}>
-                  <h2 
-                  style={{fontFamily: "Museo Sans Rounded, sans-serif",
-                          fontSize: "58px",
-                          fontWeight: "bold",
-                           background:"-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent"}}>
-                            33%</h2>
-                  <p style={{fontSize: "14px", fontWeight: 400}} >Time saved in interview scheduling for Dexcom</p>
-                </div>
-                <div id="card2" style={{marginLeft: "10px",width: "200px",  display: "flex", flexDirection: "column",
-              alignItems: "center"}}>
-                  <h2 style={{fontFamily: "Museo Sans Rounded, sans-serif",
-                            fontSize: "58px",
-                            fontWeight: "bold",
-                            background:"-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent"}}>
-                              120+</h2>
-                  <p style={{fontSize: "14px", fontWeight: 400}}>Countries deployed at Ericsson with our technology</p>
-                </div>
-              </div>
+              <div id="card-two" style={{ display: "flex", textAlign: "center", paddingLeft: "90px", justifyContent: "center", alignItems: "center" }}>
+  <div id="card1" style={{ width: "230px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+    <h2 style={{
+      fontFamily: "Museo Sans Rounded, sans-serif",
+      fontSize: "58px",
+      fontWeight: "bold",
+      background: "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent"
+    }}>
+      33%</h2>
+    <p style={{ fontSize: "14px", fontWeight: 400 }}>Time saved in interview scheduling for Dexcom</p>
+  </div>
+  <div id="card2" style={{ marginLeft: "10px", width: "200px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+    <h2 style={{
+      fontFamily: "Museo Sans Rounded, sans-serif",
+      fontSize: "58px",
+      fontWeight: "bold",
+      background: "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent"
+    }}>
+      120+</h2>
+    <p style={{ fontSize: "14px", fontWeight: 400 }}>Countries deployed at Ericsson with our technology</p>
+  </div>
+</div>
+
 
               <div className="space-50"></div>
               <div style={{
@@ -534,68 +546,72 @@ const sendEmail = (e) => {
     justifyContent: "center",
     fontFamily: "Museo Sans Rounded, sans-serif", 
     textAlign: "center",
-    width: "630px"
+    width: "100%" /* Set width to 100% to match container column width */
 }}>
-    <h5 className="mt-5" style={{width: "520px", fontWeight: 600, color: "rgb(0,0,0,0.7)" }}>Organizations <span style={{background: "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
+    <h5 className="mt-5" style={{width: "520px", fontWeight: 600, color: "rgba(0, 0, 0, 0.7)" }}>Organizations <span style={{background: "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
                           WebkitBackgroundClip: "text",
                           WebkitTextFillColor: "transparent"}}>trust us </span>
                           with their talent transformation</h5>
     <div className="logos">
-          <div className="logos-slide">
+        <div className="logos-slide">
             {items.map((item, index) => (
-              <img
-                key={index}
-                src={item.src}
-                alt={item.altText}
-                className="carousel-image" 
-                style={{paddingRight: "30px"}}
-              />
+                <img
+                    key={index}
+                    src={item.src}
+                    alt={item.altText}
+                    className="carousel-image" 
+                    style={{paddingRight: "30px"}}
+                />
             ))}
-           
-          </div>
         </div>
+    </div>
 </div>
+
 <div className="space-50"></div>
-<div style={{display: "flex",
-fontFamily: "Museo Sans Rounded, sans-serif", 
+<div style={{
+    display: "flex",
+    fontFamily: "Museo Sans Rounded, sans-serif",
     paddingLeft: "50px",
     flexDirection: "column",
     alignItems: "center",
     textAlign: "center",
-    // justifyContent: "center",
-    width: "560px"}}>
-  <h2 style={{fontWeight: "bold",
-  fontSize: "35px",
- background:"-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
- WebkitBackgroundClip: "text",
- WebkitTextFillColor: "transparent"}}>
-  Why customers love us</h2>
-  <h4 style={{
-    fontWeight: "bold",
-    fontSize: "28px",
+    width: "100%", /* Set width to 100% to match column width */
+    maxWidth: "560px", /* Add maxWidth to limit width on larger screens */
+    margin: "0 auto" /* Center the div horizontally */
 }}>
-    “We’ve been able to lean on the platform to surface the gems already in our system who wanted to work with us but had previously not been 100% qualified for a particular position.”
-</h4>
-<div className="elementor-element color-bar">
-    <div className="elementor-testimonial__cite:before" style={{
-        content: "",
-        width: "240px",
-        height: "3px",
-        position: "relative",
-        top: 0,
-        left: "50%",
-        transform: "translateX(-50%)",
-        marginBottom: "36px",
-        background: "linear-gradient(115.67deg, #008FBF 15.9%, #7E3A77 67.54%)",
-        borderRadius: "5px",
-    }}></div>
+    <h2 style={{
+        fontWeight: "bold",
+        fontSize: "35px",
+        background: "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent"
+    }}>
+        Why customers love us
+    </h2>
+    <h4 style={{
+        fontWeight: "bold",
+        fontSize: "28px",
+    }}>
+        “We’ve been able to lean on the platform to surface the gems already in our system who wanted to work with us but had previously not been 100% qualified for a particular position.”
+    </h4>
+    <div className="elementor-element color-bar">
+        <div className="elementor-testimonial__cite:before" style={{
+            content: "",
+            width: "240px",
+            height: "3px",
+            position: "relative",
+            top: 0,
+            left: "50%",
+            transform: "translateX(-50%)",
+            marginBottom: "36px",
+            background: "linear-gradient(115.67deg, #008FBF 15.9%, #7E3A77 67.54%)",
+            borderRadius: "5px",
+        }}></div>
+    </div>
+    <p style={{ fontSize: "18px", fontWeight: "bold" }}>Justin Ghio</p>
+    <p style={{ fontSize: "14px", fontWeight: 500 }}>Director of Talent Sourcing, Activision</p>
 </div>
-<p style={{ fontSize: "18px", fontWeight: "bold" }}>Justin Ghio</p>
 
-
-
-  <p style={{fontSize: "14px", fontWeight: 500}}>Director of Talent Sourcing, Activision</p>
-</div>
 
 
 
@@ -635,13 +651,14 @@ fontFamily: "Museo Sans Rounded, sans-serif",
         .left-sidebar {
           position: sticky;
           top: 0;
-          max-width: 520px;
+          width: calc(50% - 30px); /* Subtract any desired spacing or padding */
           background: linear-gradient(to bottom, #045d78, #0bb4de);
           padding-left: 90px;
           color: #fff;
-          max-height: 540px;
+          height: 100vh; /* Set the height to 100% of the viewport height */
           /* Other styles for your left sidebar */
-        }
+      }
+      
         .back-link {
           font-size: 14px;
           font-weight: 500;
