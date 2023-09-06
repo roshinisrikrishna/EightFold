@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import Select from "react-select";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import countries from "countries-list";
 
 import {
@@ -22,7 +22,7 @@ import {
   Input,
   InputGroup,
   InputGroupAddon,
-  InputGroupText
+  InputGroupText,
 } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -31,119 +31,154 @@ import reviewImage from "../../assets/img/review-demo.webp";
 import dottedImg from "../../assets/img/dotted_waves.png";
 
 const items = [
-
   {
     src: require("assets/img/mellon_logo-removebg-preview.png"),
     altText: "img2",
-    caption: "img2"
+    caption: "img2",
   },
-  
   {
     src: require("assets/img/lg_log-removebg-preview.png"),
     altText: "img4",
-    caption: "img4"
-  }
-  ,
+    caption: "img4",
+  },
   {
     src: require("assets/img/Vodaphone_logo.webp"),
     altText: "img10",
-    caption: "img10"
+    caption: "img10",
   },
   {
     src: require("assets/img/bayer_color-removebg-preview.png"),
     altText: "img2",
-    caption: "img2"
-  }
-  
-
+    caption: "img2",
+  },
 ];
 
 function Navbars() {
-
   const form = useRef(); // Create a ref for the form element
 
-
-const customStyles = {
+  const customStyles = {
     control: (provided) => ({
-        ...provided,
-        borderColor: "red" 
-    })
-};
+      ...provided,
+      borderColor: "red",
+    }),
+  };
 
-const sendEmail = (e) => {
-  e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  emailjs
-    .sendForm("service_wyejb7i", "template_x1q0igm", form.current, "0_YtEx01a1OusTTDW")
-    .then((result) => {
-      console.log(result.text);
-    })
-    .catch((error) => {
-      console.log(error.text);
-    });
-  e.target.reset();
-};
+    emailjs
+      .sendForm(
+        "service_wyejb7i",
+        "template_x1q0igm",
+        form.current,
+        "0_YtEx01a1OusTTDW"
+      )
+      .then((result) => {
+        console.log(result.text);
+      })
+      .catch((error) => {
+        console.log(error.text);
+      });
+    e.target.reset();
+  };
   return (
     <>
-      <div >
-
       <div id="menu-dropdown" style={{ display: "flex" }}>
-          <div className="left-sidebar">
-   <div className="space-50"></div>
-   <a href="/" style={{ textDecoration: "none", color: "inherit" }}>
-    <p className="back-link" style={{fontSize: "12px"}}>
-        <FontAwesomeIcon icon={faArrowLeft} style={{ marginRight: "5px" }} />
-        Back to homepage
-        <img src={logo} alt="Logo" style={{ width: "30px", height: "auto", borderRadius: "20%", paddingLeft: "10px" }} />
+      <div
+  className="left-sidebar"
+  md="6"
+  style={{
+    width: "50%", // Set the left sidebar to 50% of the screen width
+  }}
+>
+  <div className="space-50"></div>
+  <a href="/" style={{ textDecoration: "none", color: "inherit" }}>
+    <p className="back-link" style={{ fontSize: "12px" }}>
+      <FontAwesomeIcon icon={faArrowLeft} style={{ marginRight: "5px" }} />
+      Back to homepage
+      <img
+        src={logo}
+        alt="Logo"
+        style={{
+          width: "30px",
+          height: "auto",
+          borderRadius: "20%",
+          paddingLeft: "10px",
+        }}
+      />
     </p>
-</a>
+  </a>
 
-            <div className="space-50"></div>
-  <Container style={{  display: 'flex',
-    // alignItems: 'flex-start',
-    // justifyContent: 'center',
-    flexDirection: 'column',
-}}> 
-    <h2 style={{fontFamily: "Museo Sans Rounded, sans-serif", 
-    fontSize: "38px", fontWeight: 600, maxWidth: "450px"}}>
+  <div className="space-50"></div>
+  <Container
+    style={{
+      display: "flex",
+      flexDirection: "column",
+    }}
+  >
+    <h2
+      style={{
+        fontFamily: "Museo Sans Rounded, sans-serif",
+        fontSize: "38px",
+        fontWeight: 600,
+        maxWidth: "450px",
+      }}
+    >
       Transform how you hire and retain a diverse global workforce
-      </h2>
-      <p style={{fontSize: "18px", fontWeight: 400}}>See our Talent Intelligence Platform in action​​​.</p>
+    </h2>
+    <p style={{ fontSize: "18px", fontWeight: 400 }}>
+      See our Talent Intelligence Platform in action​​​.
+    </p>
+  </Container>
 
-       
-     
-      </Container>
-     
-      <div style={{  width: "500px", height: "auto" }}>
-       <img src={reviewImage} alt="Logo" />
-      </div>
+  <div
+  style={{
+    position: "fixed",
+    left: "35%", // Center horizontally
+    transform: "translateX(-50%)",
+    bottom: "-5%", // Adjust this value to control the distance from the bottom
+    width: "50%", // Adjust the width to cover the entire screen width
+    maxWidth: "500px", // Limit the maximum width for larger screens
+    height: "auto", // Auto-adjust the height
+  }}
+>
+  <img src={reviewImage} alt="Review" style={{ width: "100%" }} />
 </div>
- {/* <div style={{ width: "100%", overflow: "hidden" }}>
- <img src={reviewImage} alt="Logo" style={{ width: "188px", height: "auto" ,borderRadius: "20%" }} />
-                </div> */}
-        <div  >
+
+
+
+</div>
+
+
+        <div
+          md="6"
+          style={{
+            flex: 1,
+            width: "50%", // Set the right content area to 50% of the screen width
+          }}
+        >
         <img src={dottedImg} alt="Logo" style={{ width: "400px", height: "100px" }} />
 
-            <div style={{
-            display: 'flex',
-            // alignItems: 'center',
-            // justifyContent: 'center',
-            flexDirection: 'column',
-            paddingLeft: "160px"
-        }}>
+        <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: "20px"
+}}>
+    <h4 style={{
+        fontWeight: "bolder",
+        fontSize: "32px",
+        fontFamily: "Museo Sans Rounded, sans-serif",
+    }}>Request a live demo</h4>
+    <p style={{ fontSize: "16px", fontWeight: 400, color: "#484B58", maxWidth: "400px" }}>
+        Powered by AI, the Eightfold Talent Intelligence Platform empowers
+        organizations, over 2,999 employees, to recruit and retain a
+        diverse global workforce.
+    </p>
+    <div className="space-50"></div>
 
-                          <h4 style={{
-                fontWeight: "bolder",
-                fontSize: "32px",
-                fontFamily: "Museo Sans Rounded, sans-serif",
-              }}>Request a live demo</h4>
-              <p 
-              style={{fontSize: "16px", fontWeight: 400, color: "#484B58",maxWidth: "400px"}}>Powered by AI, the Eightfold Talent Intelligence Platform empowers 
-                organizations, over 2,999 employees, to recruit and retain a 
-                diverse global workforce.</p>
-                <div className="space-50"></div>
-
-                <form ref={form} onSubmit={sendEmail} action="" className="form" method="">
+    <form ref={form} onSubmit={sendEmail} action="" className="form" method="">
 
             
                 <InputGroup className="mb-3">
@@ -482,120 +517,142 @@ const sendEmail = (e) => {
         style={{ maxWidth: "400px" }}                     
                     ></Input>
                   </InputGroup>
-                  <Button
-                    className="btn-round"
-                    type="submit"
-                    // onClick={(e) => e.preventDefault()}
-                    size="sm"
-                    style={{ backgroundColor: "#2f77ba", fontWeight: "bold", 
-                    fontSize: "16px",padding: "12px 35px 12px 35px" }} 
-                >
-                    Submit
-                </Button>
-
-              </form>
-            </div>
+                  <div style={{ display: 'flex', justifyContent: "center", marginTop: '20px' }}>
+            <Button
+                className="btn-round"
+                type="submit"
+                size="sm"
+                style={{
+                    backgroundColor: "#2f77ba",
+                    fontWeight: "bold",
+                    fontSize: "16px",
+                    padding: "12px 35px",
+                }}
+            >
+                Submit
+            </Button>
+        </div>
+    </form>
+</div>
 <div className="space-50"></div>
               <div className="space-50"></div>
 
+              <div id="card-two" style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "20px" }}>
+  <div id="card1" style={{ width: "230px", height: "300px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+    <h2 style={{
+      fontFamily: "Museo Sans Rounded, sans-serif",
+      fontSize: "58px",
+      fontWeight: "bold",
+      background: "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent"
+    }}>
+      33%
+    </h2>
+    <p style={{ fontSize: "14px", fontWeight: 400 }}>Time saved in interview scheduling for Dexcom</p>
+  </div>
+  <div id="card2" style={{ marginLeft: "10px", width: "200px", height: "300px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+    <h2 style={{
+      fontFamily: "Museo Sans Rounded, sans-serif",
+      fontSize: "58px",
+      fontWeight: "bold",
+      background: "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent"
+    }}>
+      120+
+    </h2>
+    <p style={{ fontSize: "14px", fontWeight: 400, textAlign: "center" }}>Countries deployed at Ericsson with our technology</p>
+  </div>
+</div>
 
-              <div id="card-two" style={{display: "flex", textAlign: "center", paddingLeft: "90px"}}>
-                <div id="card1" style={{width: "230px", display: "flex", flexDirection: "column",
-              alignItems: "center" }}>
-                  <h2 
-                  style={{fontFamily: "Museo Sans Rounded, sans-serif",
-                          fontSize: "58px",
-                          fontWeight: "bold",
-                           background:"-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent"}}>
-                            33%</h2>
-                  <p style={{fontSize: "14px", fontWeight: 400}} >Time saved in interview scheduling for Dexcom</p>
-                </div>
-                <div id="card2" style={{marginLeft: "10px",width: "200px",  display: "flex", flexDirection: "column",
-              alignItems: "center"}}>
-                  <h2 style={{fontFamily: "Museo Sans Rounded, sans-serif",
-                            fontSize: "58px",
-                            fontWeight: "bold",
-                            background:"-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent"}}>
-                              120+</h2>
-                  <p style={{fontSize: "14px", fontWeight: 400}}>Countries deployed at Ericsson with our technology</p>
-                </div>
-              </div>
+
+
 
               <div className="space-50"></div>
               <div style={{
-    backgroundColor: "#f7f7f7",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    fontFamily: "Museo Sans Rounded, sans-serif", 
-    textAlign: "center",
-    width: "630px"
+  backgroundColor: "#f7f7f7",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  fontFamily: "Museo Sans Rounded, sans-serif", 
+  textAlign: "center",
+  width: "100%" /* Set width to 100% to match the container width */
 }}>
-    <h5 className="mt-5" style={{width: "520px", fontWeight: 600, color: "rgb(0,0,0,0.7)" }}>Organizations <span style={{background: "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent"}}>trust us </span>
-                          with their talent transformation</h5>
-    <div className="logos">
-          <div className="logos-slide">
-            {items.map((item, index) => (
-              <img
-                key={index}
-                src={item.src}
-                alt={item.altText}
-                className="carousel-image" 
-                style={{paddingRight: "30px"}}
-              />
-            ))}
-           
-          </div>
-        </div>
+  <h5 className="mt-5" style={{ fontWeight: 600, color: "rgba(0, 0, 0, 0.7)" }}>
+    Organizations <span style={{ background: "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent" }}>trust us </span>
+    with their talent transformation
+  </h5>
+  <div className="logos">
+    <div className="logos-slide">
+      {items.map((item, index) => (
+        <img
+          key={index}
+          src={item.src}
+          alt={item.altText}
+          className="carousel-image"
+          style={{
+            maxWidth: "20%", // Ensure the image fits the container width
+            height: "auto" // Maintain aspect ratio
+          }}
+        />
+      ))}
+    </div>
+  </div>
 </div>
+
+
+
 <div className="space-50"></div>
-<div style={{display: "flex",
-fontFamily: "Museo Sans Rounded, sans-serif", 
-    paddingLeft: "50px",
+<div style={{
+    display: "flex",
+    fontFamily: "Museo Sans Rounded, sans-serif",
     flexDirection: "column",
     alignItems: "center",
+    justifyContent: "center", // Center vertically
     textAlign: "center",
-    // justifyContent: "center",
-    width: "560px"}}>
-  <h2 style={{fontWeight: "bold",
-  fontSize: "35px",
- background:"-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
- WebkitBackgroundClip: "text",
- WebkitTextFillColor: "transparent"}}>
-  Why customers love us</h2>
-  <h4 style={{
-    fontWeight: "bold",
-    fontSize: "28px",
+    width: "80%",
+    margin: "0 auto",
+    height: "100vh", // Make the div take up the full viewport height
 }}>
-    “We’ve been able to lean on the platform to surface the gems already in our system who wanted to work with us but had previously not been 100% qualified for a particular position.”
-</h4>
-<div className="elementor-element color-bar">
-    <div className="elementor-testimonial__cite:before" style={{
-        content: "",
-        width: "240px",
-        height: "3px",
-        position: "relative",
-        top: 0,
-        left: "50%",
-        transform: "translateX(-50%)",
-        marginBottom: "36px",
-        background: "linear-gradient(115.67deg, #008FBF 15.9%, #7E3A77 67.54%)",
-        borderRadius: "5px",
-    }}></div>
+    <h2 style={{
+        fontWeight: "bold",
+        fontSize: "35px",
+        background: "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent"
+    }}>
+        Why customers love us
+    </h2>
+    <h4 style={{
+        fontWeight: "bold",
+        fontSize: "28px",
+    }}>
+        “We’ve been able to lean on the platform to surface the gems already in our system who wanted to work with us but had previously not been 100% qualified for a particular position.”
+    </h4>
+    <div className="elementor-element color-bar">
+        <div className="elementor-testimonial__cite:before" style={{
+            content: "",
+            width: "240px",
+            height: "3px",
+            position: "relative",
+            top: 0,
+            left: "50%",
+            transform: "translateX(-50%)",
+            marginBottom: "36px",
+            background: "linear-gradient(115.67deg, #008FBF 15.9%, #7E3A77 67.54%)",
+            borderRadius: "5px",
+        }}></div>
+    </div>
+    <p style={{ fontSize: "18px", fontWeight: "bold" }}>Justin Ghio</p>
+    <p style={{ fontSize: "14px", fontWeight: 500 }}>Director of Talent Sourcing, Activision</p>
 </div>
-<p style={{ fontSize: "18px", fontWeight: "bold" }}>Justin Ghio</p>
 
 
 
-  <p style={{fontSize: "14px", fontWeight: 500}}>Director of Talent Sourcing, Activision</p>
-</div>
 
 
 
@@ -608,18 +665,34 @@ fontFamily: "Museo Sans Rounded, sans-serif",
         </div>
 </div>
 
-      </div>
+      {/* </div> */}
       <style>
         {`
+        
+         @media (max-width: 768px) {
+          /* Media query for small screens */
+          .left-sidebar,
+          div[md="6"] {
+            width: 100%;
+          }
+          .left-sidebar {
+            padding-left: 0;
+          }
+        }
      
 .logos {
       overflow: hidden;
       padding: 60px 0;
       background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .logos-slide {
       display: flex;
       align-items: center;
+      justify-content: center;
+
       white-space: nowrap;
     }
 
@@ -632,16 +705,26 @@ fontFamily: "Museo Sans Rounded, sans-serif",
           position: relative;
         }
 
-        .left-sidebar {
-          position: sticky;
-          top: 0;
-          max-width: 520px;
-          background: linear-gradient(to bottom, #045d78, #0bb4de);
-          padding-left: 90px;
-          color: #fff;
-          max-height: 540px;
-          /* Other styles for your left sidebar */
-        }
+        /* Default styles for larger screens */
+.left-sidebar {
+  position: sticky;
+  top: 0;
+  width: calc(50% - 30px); /* Subtract any desired spacing or padding */
+  background: linear-gradient(to bottom, #045d78, #0bb4de);
+  padding-left: 90px;
+  color: #fff;
+  height: 100vh; /* Set the height to 100% of the viewport height */
+  /* Other styles for your left sidebar */
+}
+
+/* Media query for smaller screens (adjust the breakpoint as needed) */
+@media (max-width: 768px) {
+  .left-sidebar {
+    display: none; /* Hide the left sidebar */
+  }
+}
+
+      
         .back-link {
           font-size: 14px;
           font-weight: 500;
