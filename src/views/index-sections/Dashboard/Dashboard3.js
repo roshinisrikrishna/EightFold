@@ -21,7 +21,7 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 
-import logo from "../../assets/img/ryan.jpg";
+import logo from "../../../assets/img/ryan.jpg";
 
 
 // core components

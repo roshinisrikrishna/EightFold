@@ -18,9 +18,9 @@ import {
 } from "reactstrap";
 import {motion} from "framer-motion";
 
-import js1Img from "../../assets/img/JS1.webp";
-import js2Img from "../../assets/img/JS2.jpg";
-import js3Img from "../../assets/img/JS3.jpg";
+import js1Img from "../../../assets/img/JS1.webp";
+import js2Img from "../../../assets/img/JS2.jpg";
+import js3Img from "../../../assets/img/JS3.jpg";
 
 const fadeInAnimationVariants = {
   initial: {

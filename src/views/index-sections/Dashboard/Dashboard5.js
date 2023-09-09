@@ -2,9 +2,9 @@ import React from "react";
 
 // reactstrap components
 import { Alert, Container } from "reactstrap";
-import thunderImg from "../../assets/img/thunderimg.svg";
-import fldrImg from "../../assets/img/fldrImg.svg";
-import magnetImg from "../../assets/img/magnetImg.svg";
+import thunderImg from "../../../assets/img/thunderimg.svg";
+import fldrImg from "../../../assets/img/fldrImg.svg";
+import magnetImg from "../../../assets/img/magnetImg.svg";
 import {motion} from "framer-motion";
 
 const fadeInAnimationVariants = {

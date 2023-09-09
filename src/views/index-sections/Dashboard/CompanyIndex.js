@@ -7,19 +7,18 @@ import React from "react";
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import SearchModal from "components/Navbars/SearchModal.js";
-import DashboardHome from "components/Headers/DashboardHome.js";
+import CompanyHome from "views/index-sections/Company/CompanyHome";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
 // sections for this page
-import Dashboard2 from "./index-sections/Dashboard/Dashboard2.js";
-import Dashboard3 from "./index-sections/Dashboard/Dashboard3.js";
-import Dashboard4 from "./index-sections/Dashboard/Dashboard4.js";
-import Dashboard5 from "./index-sections/Dashboard/Dashboard5.js";
-import Dashboard6 from "./index-sections/Dashboard/Dashboard6.js";
-import Dashboard7 from "./index-sections/Dashboard/Dashboard7.js";
-import Dashboard8 from "./index-sections/Dashboard/Dashboard8.js";
-import Dashboard9 from "./index-sections/Dashboard/Dashboard9.js";
-import DashboardLast from "./index-sections/Dashboard/DashboardLast.js";
+import Company2 from "views/index-sections/Company/Company2";
+import Company3 from "views/index-sections/Company/Company3";
+import Company4 from "views/index-sections/Company/Company4";
+import Company5 from "views/index-sections/Company/Company5";
+import Company6 from "views/index-sections/Company/Company6";
+
+import DashboardLast from "views/index-sections/Dashboard/DashboardLast";
+
 
 function Index() {
   React.useEffect(() => {
@@ -39,21 +38,19 @@ function Index() {
       {/* <SearchModal isOpen={searchModalOpen} toggleSearchModal={toggleSearchModal} /> Display the SearchModal */}
 
       <div className="wrapper">
-        <DashboardHome />
+        <CompanyHome />
         <div className="main">
-          {/* <Images /> */}
-          <Dashboard2 />
-          <Dashboard3 />
-        
-          <Dashboard4 />
-          <Dashboard5 />
-          <Dashboard6 />
-          <Dashboard7 />
-          <Dashboard8 />
-          <Dashboard9 />
+          <Company2 />
+          <Company3 />
+          <Company4 />
+          <Company5 />
+          <Company6 />
+
+      
          
         </div>
         <DashboardLast />
+
       </div>
     </>
   );

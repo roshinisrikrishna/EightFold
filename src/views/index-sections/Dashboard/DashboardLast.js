@@ -8,7 +8,7 @@ import { Button,
   UncontrolledTooltip,
   Col
  } from "reactstrap"; // Import UncontrolledTooltip
-import logo from "../../assets/img/logoeightfold-fotor-bg-remover-20230823133343.png";
+import logo from "../../../assets/img/logoeightfold-fotor-bg-remover-20230823133343.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
