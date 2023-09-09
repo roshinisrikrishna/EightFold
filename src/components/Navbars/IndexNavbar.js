@@ -24,9 +24,9 @@ import logo from "../../assets/img/logoeightfold-fotor-bg-remover-20230823133343
 import SearchModal from "./SearchModal";
 import cmpImg from "../../assets/img/demo_tip_mega_menu.webp";
 import learnImg from "../../assets/img/learn.webp";
-import cmpnyImg from "../../assets/img/company.webp";
+import cmpnyImg from "../../assets/img/forbes.webp";
 import evtImg from "../../assets/img/events.webp";
-
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 
 function IndexNavbar() {
@@ -104,7 +104,7 @@ function IndexNavbar() {
           }}
         />
       ) : null}
-      <Navbar className="fixed-top" expand="lg" color="default" style={{fontFamily: "Museo Sans Rounded, sans-serif"}}>
+      <Navbar className="fixed-top" expand="lg" color="default" style={{ fontFamily: "Museo Sans Rounded, sans-serif" }}>
         <Container fluid>
           <Collapse
             className="navbar-collapse justify-content-start"
@@ -114,11 +114,11 @@ function IndexNavbar() {
             <Nav navbar>
               <NavItem>
               <NavbarBrand
-                  href="https://demos.creative-tim.com/now-ui-kit-react/#/index?ref=nukr-index-navbar"
                   target="_blank"
                   id="navbar-brand"
-                  style={{fontFamily: "Museo Sans Rounded, sans-serif",
-                fontSize: "18px"}}
+                  href="/"
+                  style={{fontFamily: "Museo Sans Rounded, sans-serif",fontWeight: "bold",
+                fontSize: "80%"}}
                 >
                   <img
                       src={logo}
@@ -130,75 +130,66 @@ function IndexNavbar() {
                   eightfold.ai
                 </NavbarBrand>
               </NavItem>
-              <Dropdown
-  isOpen={dropdowns.find((d) => d.id === "products").isOpen}
-  toggle={() => toggleDropdown("products")}
-  nav
-  onMouseEnter={() => openDropdownOnMouseEnter("products")}
-  onMouseLeave={() => closeDropdownOnMouseLeave("products")}
->
-  <DropdownToggle color="default" 
-  nav className="custom-dropdown-toggle mr-2 menu-trigger" 
-  onClick={()=>setOpen(!open)}>
+
+              <Dropdown isOpen={dropdowns.find((d) => d.id === "products").isOpen} toggle={() => toggleDropdown("products")} nav onMouseEnter={() => openDropdownOnMouseEnter("products")} onMouseLeave={() => closeDropdownOnMouseLeave("products")}>
+  <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2 menu-trigger" onClick={() => setOpen(!open)}>
     <p>Products</p>
   </DropdownToggle>
-  <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`}>
-    <Container style={{ width: "950px", height: "250px" }}>
+  <DropdownMenu className={`custom-dropdown-menu ${open ? 'active' : 'inactive'}`} 
+  style={{ marginTop: "20%", marginLeft: "-100%", height: "500%" }}>
+  <Container style={{ width: "950px", height: "100%", display: "flex" }}>
       <Row>
-      <Col md="3">
-  {/* Dropdown items */}
-  <DropdownItem to="/index" tag={Link} style={{ marginBottom: "-15px" }}>
-    Talent Intelligence Platform
-  </DropdownItem>
-  <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
-    target="_blank"
-    style={{ marginBottom: "-15px" }}
-  >
-    Talent Flex
-  </DropdownItem>
-  <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
-    target="_blank"
-    style={{ marginBottom: "-15px" }}
-  >
-    Talent Acquisition
-  </DropdownItem>
-  <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
-    target="_blank"
-    style={{ marginBottom: "-15px" }}
-  >
-    Talent Management
-  </DropdownItem>
-  <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
-    target="_blank"
-    style={{ marginBottom: "15px" }}
-  >
-    Workforce Exchange
-  </DropdownItem>
-</Col>
+      <Col md="3" style={{ marginBottom: "-15px" }}>
+        {/* Dropdown items */}
+        <DropdownItem to="/index" tag={Link} style={{ marginBottom: "-20px" }}>
+          Talent Intelligence Platform
+        </DropdownItem>
+        <DropdownItem
+          href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+          target="_blank"
+          style={{ marginBottom: "-20px" }}
+        >
+          Talent Flex
+        </DropdownItem>
+        <DropdownItem
+          href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+          target="_blank"
+          style={{ marginBottom: "-20px" }}
+        >
+          Talent Acquisition
+        </DropdownItem>
+        <DropdownItem
+          href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+          target="_blank"
+          style={{ marginBottom: "-20px" }}
+        >
+          Talent Management
+        </DropdownItem>
+        <DropdownItem
+          href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+          target="_blank"
+        >
+          Workforce Exchange
+        </DropdownItem>
+      </Col>
 
-                  <Col md="9" style={{ marginTop: "-7px" ,height: "265px", background: "linear-gradient(to right, #7cf3f7, #04b6d1)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
-  {/* First Column */}
-  <div style={{ flex: 1, padding: "20px" }}>
-    <h5 style={{ fontSize: "20px", fontWeight: 700 }}>A single AI platform for all talent</h5>
-    <p style={{ fontSize: "14px", fontWeight: 500 }}>Powered by global talent datasets so you can realize the full potential of your workforce</p>
-  </div>
-  
-  {/* Second Column */}
-  <div style={{ flex: 1, display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
-    <img
-      src={cmpImg}
-      alt="Eightfold.ai Logo"
-      className="navbar-logo"
-      style={{ width: "580px", height: "auto", borderRadius: "15px" }} // Adjust the width and other styles as needed
-    />
-  </div>
-</Col>
+ <Col md="9" style={{ marginTop: "-1%", height: "111%", background: "linear-gradient(to right, #7cf3f7, #04b6d1)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px"}}>
+          {/* Second Column */}
+          <div style={{ flex: 1, height: "100%", paddingTop: "7%" }}>
+            <h5 style={{ fontSize: "20px", fontWeight: 1000 }}>A single AI platform for all talent</h5>
+            <p style={{ fontSize: "14px", fontWeight: 500, whiteSpace: "normal" }}>Powered by global talent datasets so you can realize the full potential of your workforce</p>
+            <a href="your-link-url-here" style={{ fontSize: "13px", fontWeight: 500, color: "black" }}>Explore talent suite  <FontAwesomeIcon icon={faArrowRight} /></a>
 
-
+          </div>
+          <div style={{ flex: 1, display: "flex", justifyContent: "flex-end", alignItems: "center", height: "100%" }}>
+            <img
+              src={cmpImg}
+              alt="Eightfold.ai Logo"
+              className="navbar-logo"
+              style={{ width: "90%", height: "auto", borderRadius: "15px" }}
+            />
+          </div>
+        </Col>
       </Row>
     </Container>
   </DropdownMenu>
@@ -214,8 +205,8 @@ function IndexNavbar() {
           <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
               <p>Solutions</p>
             </DropdownToggle>
-            <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`}>
-                  <DropdownItem to="/index" tag={Link}     style={{ marginBottom: "-15px" }}
+            <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`} style={{marginTop: "20%",}}>
+                  <DropdownItem to="/index" tag={Link}     style={{ marginBottom: "-20px" }}
 >
                     {/* <i className="now-ui-icons business_chart-pie-36 mr-1"></i> */}
                     For enterprise
@@ -223,7 +214,7 @@ function IndexNavbar() {
                   <DropdownItem
                     href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
                     target="_blank"
-                    style={{ marginBottom: "-15px" }}
+                    style={{ marginBottom: "-20px" }}
 
                   >
                     {/* <i className="now-ui-icons design_bullet-list-67 mr-1"></i> */}
@@ -232,7 +223,7 @@ function IndexNavbar() {
                   <DropdownItem
                     href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
                     target="_blank"
-                    style={{ marginBottom: "-15px" }}
+                    style={{ marginBottom: "-20px" }}
 
                   >
                     {/* <i className="now-ui-icons design_bullet-list-67 mr-1"></i> */}
@@ -241,7 +232,7 @@ function IndexNavbar() {
                   <DropdownItem
                     href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
                     target="_blank"
-                    style={{ marginBottom: "-15px" }}
+                    style={{ marginBottom: "-20px" }}
 
                   >
                     {/* <i className="now-ui-icons design_bullet-list-67 mr-1"></i> */}
@@ -250,7 +241,7 @@ function IndexNavbar() {
                   <DropdownItem
                     href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
                     target="_blank"
-                    style={{ marginBottom: "-15px" }}
+                    style={{ marginBottom: "-20px" }}
 
                   >
                     {/* <i className="now-ui-icons design_bullet-list-67 mr-1"></i> */}
@@ -273,7 +264,7 @@ function IndexNavbar() {
     tag={Link}
     className="nav-link"
   >
-    <p>Services</p>
+    <p style={{fontSize: "100%"}}>Services</p>
   </NavLink>
 </NavItem>
 
@@ -287,11 +278,13 @@ function IndexNavbar() {
           >            <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
               <p>Learn</p>
             </DropdownToggle>
-            <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`} 
-            style={{ marginLeft: "-250px"}}>
-  <Container style={{ width: "950px", height: "250px" }}>
+            <DropdownMenu
+  className={`custom-dropdown-menu ${open ? 'active' : 'inactive'}`}
+  style={{ marginTop: "20%", marginLeft: "-500%", height: "500%"}}
+>
+  <Container style={{ width: "950px", height: "100%" , display: "flex"}}>
     <Row>
-      <Col md="3">
+      <Col md="3" style={{ marginBottom: "-15px" }}>
   {/* Dropdown items */}
   <DropdownItem to="/index" tag={Link} style={{ marginBottom: "-15px" }}>
     Talent intelligence library
@@ -313,28 +306,29 @@ function IndexNavbar() {
   <DropdownItem
     href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
     target="_blank"
-    style={{ marginBottom: "15px" }}
   >
     Blog
   </DropdownItem>
   
 </Col>
 
-                  <Col md="9" style={{ marginTop: "-7px" ,height: "265px",background: "linear-gradient(to right, #4d98fa, #a903fc)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
+                  <Col md="9" style={{ marginTop: "-7px" ,height: "110%",background: "linear-gradient(to right, #008BE8, #5B4B6E )", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
   {/* First Column */}
   <div style={{ flex: 1, padding: "20px" }}>
     <h5 style={{ fontSize: "20px", fontWeight: 700 }}>Responsible Al at Eightfold</h5>
-    <p style={{ fontSize: "14px", fontWeight: 500 }}>We believe in helping everyone see their full potential - and the career opportunities 
+    <p style={{ fontSize: "13px", fontWeight: 500 }}>We believe in helping everyone see their full potential - and the career opportunities 
     that come with that view</p>
+    <a href="your-link-url-here" style={{ fontSize: "13px", fontWeight: 500, color: "black" }}>Learn more <FontAwesomeIcon icon={faArrowRight} /></a>
+
   </div>
   
   {/* Second Column */}
-  <div style={{ flex: 1, display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
+  <div style={{ height: "100%", flex: 1, display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
     <img
       src={learnImg}
       alt="Eightfold.ai Logo"
       className="navbar-logo"
-      style={{ width: "580px", height: "auto", borderRadius: "15px" }} // Adjust the width and other styles as needed
+      style={{ width: "90%", height: "auto", borderRadius: "0" }} // Adjust the width and other styles as needed
     />
   </div>
 </Col>
@@ -351,10 +345,11 @@ function IndexNavbar() {
             onMouseEnter={() => openDropdownOnMouseEnter("customers")}
             onMouseLeave={() => closeDropdownOnMouseLeave("customers")}
           >           
-           <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
+           <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2"
+           >
               <p>Customers</p>
             </DropdownToggle>
-            <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`}>
+            <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`} style={{marginTop: "20%",}}>
                   <DropdownItem to="/index" tag={Link}     style={{ marginBottom: "-15px" }}
 >
                     {/* <i className="now-ui-icons business_chart-pie-36 mr-1"></i> */}
@@ -388,11 +383,13 @@ function IndexNavbar() {
           <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
               <p>Events</p>
             </DropdownToggle>
-            <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`}
-             style={{ marginLeft: "-400px"}}>
-    <Container style={{ width: "950px", height: "250px" }}>
+            <DropdownMenu
+  className={`custom-dropdown-menu ${open ? 'active' : 'inactive'}`}
+  style={{  marginTop: "20%",marginLeft: "-700%", height: "500%"}}
+>
+    <Container style={{ width: "950px", height: "100%", display: "flex" }}>
       <Row>
-      <Col md="3">
+      <Col md="3" style={{ marginBottom: "-15px" }}>
   <DropdownItem
     href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
     target="_blank"
@@ -410,19 +407,20 @@ function IndexNavbar() {
   <DropdownItem
     href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
     target="_blank"
-    style={{ marginBottom: "15px" }}
   >
     Webinars
   </DropdownItem>
 </Col>
 
   <Col md="9"  
-  style={{ marginTop: "-7px" ,height: "265px",background: "linear-gradient(to right, #7cf3f7, #04b6d1)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
+  style={{ marginTop: "-7px" ,height: "110%",background: "linear-gradient(to right, #7cf3f7, #04b6d1)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
   {/* First Column */}
-  <div style={{ flex: 1, padding: "20px" }}>
+        <div style={{ flex: 1, padding: "20px", height: "100%" }}>
     <h5 style={{ fontSize: "20px", fontWeight: 700 }}>Let's get you future ready</h5>
     <p style={{ fontSize: "14px", fontWeight: 500 }}>Cultivate is the premier global HR industry event for champions of talent excellence, 
     delivering innovation, inspiration, insights, and best practices from today'top talent leaders.</p>
+    <a href="your-link-url-here" style={{ fontSize: "13px", fontWeight: 500, color: "black" }}>Watch on demand <FontAwesomeIcon icon={faArrowRight} /></a>
+
   </div>
   
   {/* Second Column */}
@@ -431,7 +429,7 @@ function IndexNavbar() {
       src={evtImg}
       alt="Eightfold.ai Logo"
       className="navbar-logo"
-      style={{ width: "580px", height: "auto", borderRadius: "15px" }} // Adjust the width and other styles as needed
+      style={{ width: "800%", height: "auto", borderRadius: "15px" }} // Adjust the width and other styles as needed
     />
   </div>
 </Col>
@@ -448,81 +446,94 @@ function IndexNavbar() {
             onMouseEnter={() => openDropdownOnMouseEnter("company")}
             onMouseLeave={() => closeDropdownOnMouseLeave("company")}
           >            
-          <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
-              <p>Company</p>
+          <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2"
+         
+           >
+                  <Link to="/company" style={{textDecoration: "none"}}>Company</Link> {/* Link to "/company" */}
             </DropdownToggle>
-            <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`}
-             style={{ marginLeft: "-450px"}}>
-    <Container style={{ width: "950px" }}>
+            <DropdownMenu
+  className={`custom-dropdown-menu ${open ? 'active' : 'inactive'}`}
+  style={{ marginTop: "20%", marginLeft: "-600%", height: "500%"}}
+>
+  <Container style={{ width: "950px", height: "100%", display: "flex" }}>
       <Row>
-      <Col md="3">
+      <Col md="3" style={{ marginBottom: "-15px" }}>
   {/* Dropdown items */}
-  <DropdownItem to="/index" tag={Link} style={{ marginBottom: "-15px" }}>
+  <DropdownItem to="/index" tag={Link} style={{ marginBottom: "-20px" }}>
     About Eightfold
   </DropdownItem>
   <DropdownItem
     href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
     target="_blank"
-    style={{ marginBottom: "-15px" }}
+    style={{ marginBottom: "-20px" }}
   >
     Leadership & Advisory Board
   </DropdownItem>
   <DropdownItem
     href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
     target="_blank"
-    style={{ marginBottom: "-15px" }}
+    style={{ marginBottom: "-20px" }}
   >
     Ethics council
   </DropdownItem>
   <DropdownItem
     href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
     target="_blank"
-    style={{ marginBottom: "-15px" }}
+    style={{ marginBottom: "-20px" }}
   >
     Careers
   </DropdownItem>
   <DropdownItem
     href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
     target="_blank"
-    style={{ marginBottom: "-15px" }}
+    style={{ marginBottom: "-20px" }}
   >
     Partners
   </DropdownItem>
   <DropdownItem
     href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
     target="_blank"
-    style={{ marginBottom: "-15px" }}
+    style={{ marginBottom: "-20px" }}
   >
     Press
   </DropdownItem>
   <DropdownItem
     href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
     target="_blank"
-    style={{ marginBottom: "15px" }}
   >
     Contact Us
   </DropdownItem>
   
 </Col>
 
-                  <Col md="9" style={{ marginTop: "-7px", background: "linear-gradient(to right, #4d98fa, #a903fc)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
+                  <Col md="9" style={{ marginTop: "-1%" ,height: "111%",background: "linear-gradient(to right, #008BE8, #5B4B6E )", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
+
   {/* First Column */}
-  <div style={{ flex: 1, padding: "20px" }}>
-    <h5 style={{ fontSize: "20px", fontWeight: 700 }}>The New York State Department of Labor announces expansion of virtual career center</h5>
-    <p style={{ fontSize: "14px", fontWeight: 500 }}>As part of its ongoing commitment to support businesses stetewide, the New York State Department of Labor today 
-    announced a new service to help businesses swiflty find skilled job candidates, at no cost.</p>
+  <div style={{ flex: 2, padding: "20px", color: "white" }}>
+    <h5 style={{ fontSize: "20px", fontWeight: 700 }}>
+      Eightfold featured in Forbes AI 50 2023
+      </h5>
+    <p style={{ fontSize: "14px", fontWeight: 500 }}>
+      We are proud to be the only HR technology company featured in Forbes annual list recognizing the most promising
+      privately held global companies building business out of AI.
+    </p>
+    <a href="your-link-url-here" style={{ fontSize: "13px", fontWeight: 500 }}> Read article <FontAwesomeIcon icon={faArrowRight} /></a>
+
   </div>
-  
+
   {/* Second Column */}
-  <div style={{ flex: 1, display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
+  <div style={{ flex: 1, display: "flex", justifyContent: "flex-end", alignItems: "center", height: "100%" }}>
     <img
       src={cmpnyImg}
       alt="Eightfold.ai Logo"
       className="navbar-logo"
-      style={{ width: "580px", height: "auto", borderRadius: "15px" }} // Adjust the width and other styles as needed
+      style={{ width: "800%", height: "auto", borderRadius: "15px" }}
     />
   </div>
 </Col>
+
+
+
 
 
       </Row>
@@ -532,34 +543,44 @@ function IndexNavbar() {
               </Nav>
               </Collapse>
 
-<Collapse
+              <Collapse
   className="justify-content-end"
   isOpen={collapseOpen}
   navbar
 >
   <Nav navbar>
-    <NavItem>
-    <FontAwesomeIcon
-      className="mt-4 mr-1"
-      icon={faSearch}
-      style={{ color: "white", cursor: "pointer" }}
-      onClick={toggleSearchModal} // Open the search modal on click
-      />
-    </NavItem>
+  <NavItem>
+  <FontAwesomeIcon
+    className="mt-3 mr-1"
+    icon={faSearch}
+    style={{ color: "white", cursor: "pointer", fontSize: "70%" }} // Adjust the fontSize as needed
+    onClick={toggleSearchModal} // Open the search modal on click
+  />
+</NavItem>
+
     <NavItem className="d-flex align-items-center">
       <div style={{ height: '40px', borderLeft: '1px solid #585959', margin: '0 10px' }}></div>
     </NavItem>
     <NavItem>
-      <Button
-        className="nav-link btn-neutral mr-2"
-        style={{borderRadius:"50px",padding:"12px 35px",fontWeight: 600, 
-        backgroundColor:"#17eba8",color: "black",fontSize:"16.4px"}}
-        to='/review-demo'
-        tag={Link}
-      >
-        <p>Request Demo</p>
-      </Button>
-    </NavItem>
+    <Button
+  className="nav-link btn-neutral mr-2 mt-2"
+  style={{
+    borderRadius: "50px",
+    // padding: "8% 20% 5% 5%", // Adjust padding to increase button size
+    fontWeight: 600,
+    backgroundColor: "#17eba8",
+    color: "black",
+    fontSize: "80%",
+    whiteSpace: "nowrap", // Prevent line breaks
+  }}
+  to="/review-demo"
+  tag={Link}
+>
+  Request Demo
+</Button>
+
+</NavItem>
+
     <NavItem>
       <NavbarBrand
         className="mt-2"
@@ -583,28 +604,32 @@ function IndexNavbar() {
   position: absolute;
   top: 20px;
   right: 20px;
-  height: 60px;
+  height: 60%;
   width: 60px;
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
 }
 
-.custom-dropdown-menu{
+.custom-dropdown-menu {
   position: absolute;
-  top: 100px;
-  right: 20px;
+  // top: 1000px;
+  // right: 20px;
   padding: 10px 20px;
-  max-width: 800px;
+  max-width: 800%;
+  max-height: 430%;
+
 }
+
 
 .custom-dropdown-menu::before{
   content: '';
   position: absolute;
   top: -5px;
   right: 20px;
-  height: 20px;
-  width: 20px;
+  height: 0.1%;
+  width: 0.1%;
+  color: rgb(29, 33, 43);
   // transform: rotate(45deg);
 }
 
@@ -667,7 +692,7 @@ function IndexNavbar() {
   
 
   .custom-dropdown-toggle p {
-    font-size: 14px;
+    font-size: 100%;
   }
   ` 
   }

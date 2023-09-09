@@ -2,7 +2,7 @@ import React from "react";
 
 // reactstrap components
 import { Container, Row, Col, Card } from "reactstrap";
-import typoImg from "../../assets/img/woman.jpg";
+import typoImg from "../../../assets/img/woman.jpg";
 import {motion} from "framer-motion";
 
 

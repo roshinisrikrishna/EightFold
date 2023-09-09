@@ -13,7 +13,8 @@ import NucleoIcons from "views/NucleoIcons.js";
 import LoginPage from "views/examples/LoginPage.js";
 import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
-import Navbars from "views/index-sections/Navbars";
+import DemoReview from "views/index-sections/DemoReview";
+import CompanyIndex from "views/index-sections/Dashboard/CompanyIndex";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -25,7 +26,9 @@ root.render(
       <Route path="landing-page" element={<LandingPage />} />
       <Route path="profile-page" element={<ProfilePage />} />
       <Route path="login-page" element={<LoginPage />} />
-      <Route path="review-demo" element={<Navbars />} />
+      <Route path="review-demo" element={<DemoReview />} />
+      <Route path="company" element={<CompanyIndex />} />
+
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

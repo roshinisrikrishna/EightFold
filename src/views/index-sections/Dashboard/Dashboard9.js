@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Container, Row, Col } from "reactstrap";
-import intImg from "../../assets/img/interface.webp";
+import intImg from "../../../assets/img/interface.webp";
 import {motion} from "framer-motion";
 
 const fadeInAnimationVariants = {
