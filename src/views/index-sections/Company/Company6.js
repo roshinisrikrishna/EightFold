@@ -46,7 +46,7 @@ function Company6() {
          background:
          "linear-gradient(to right , #199BC2, #043a4a)",
          color: "#FFFFFF",
-         maxWidth: "1050px",
+         maxWidth: "91%",
          borderTopLeftRadius: "80px",
          borderTopRightRadius: "25px",
          borderBottomLeftRadius: "25px",
@@ -119,7 +119,7 @@ function Company6() {
          background:
          "linear-gradient(to right , #3decf2 5%, #008BE8 95%)",
          color: "#FFFFFF",
-         maxWidth: "1050px",
+         maxWidth: "91%",
          borderRadius: "15px",
          marginBottom: "100px"
      }}>
