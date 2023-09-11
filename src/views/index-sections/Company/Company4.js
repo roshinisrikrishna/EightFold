@@ -75,18 +75,18 @@ style={{
   >Our core values drive everything we do
   </motion.p>
 <div style={{ 
-    width: "1000px", 
+    width: "100%", 
     display: "flex", 
     flexDirection: "row", 
-    marginTop: "80px", 
-    marginBottom: "100px",
+    marginTop: "6vw", 
+    marginBottom: "8vw",
     justifyContent: "center", 
     alignItems: "center" }}>
   <motion.Card   style={{
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    marginRight: "-20px",
+    marginRight: "-5vw",
     // margin: "0 -1px", // Reduce the margin here
     // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
   }}
@@ -102,11 +102,11 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "70px", height: "auto" }} 
+  style={{ width: "55%", height: "auto" }} 
   />
     <h4 style={{ fontWeight: 700, 
     // maxWidth: "320px", 
-    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "18px", 
+    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "100%", 
     // paddingRight: "20px", marginTop: "0px" 
     }}>
         Extreme ownership
@@ -120,11 +120,11 @@ style={{
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    marginRight: "20px",
+    marginRight: "2vw",
 
     // margin: "0 -1px", // Remove or adjust the margin here
     // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
-    marginTop: "-100px", // Adjust this value to move the image upwards
+    marginTop: "-2vw", // Adjust this value to move the image upwards
   }}
   variants={fadeInAnimationVariants}
   initial="initial"
@@ -140,7 +140,7 @@ style={{
     whileInView="animate"
     viewport={{ once: true }}
     custom={2}
-    style={{ width: "400px", height: "100px" }}
+    style={{ width: "90%", height: "auto" }}
   />
 </motion.Card>
 
@@ -149,8 +149,8 @@ style={{
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    marginTop: "-20px", 
-    marginRight: "-20px",
+    marginTop: "-2vw", 
+    marginRight: "-4vw",
     // Adjust this value to move the image upwards
     // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
   }}
@@ -165,11 +165,12 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "70px", height: "auto" }} 
+  style={{ width: "55%", height: "auto" }} 
   />
     <h4 style={{ fontWeight: 700, 
     // maxWidth: "300px", 
-    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "18px", 
+    fontFamily: "Museo Sans Rounded, sans-serif", 
+    fontSize: "100%", 
     // paddingRight: "20px", 
     // marginTop: "-5px" 
     }}>
@@ -181,8 +182,8 @@ style={{
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    marginTop: "-40px", // Adjust this value to move the image upwards
-    marginRight: "20px",
+    marginTop: "-4vw", // Adjust this value to move the image upwards
+    marginRight: "1vw",
 
     // margin: "0 -1px", // Reduce the margin here
     // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
@@ -198,7 +199,7 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "400px", height: "auto" }} 
+  style={{ width: "90%", height: "auto" }} 
   />
     
   </motion.Card>
@@ -207,8 +208,8 @@ style={{
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    marginTop: "-20px", // Adjust this value to move the image upwards
-    marginRight: "-20px",
+    marginTop: "-2vw", // Adjust this value to move the image upwards
+    marginRight: "-4vw",
 
 
     // margin: "0 -1px", // Reduce the margin here
@@ -225,11 +226,12 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "70px", height: "auto" }} 
+  style={{ width: "55%", height: "auto" }} 
   />
     <h4 style={{ fontWeight: 700, 
     // maxWidth: "300px", 
-    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "18px", 
+    fontFamily: "Museo Sans Rounded, sans-serif", 
+    fontSize: "100%", 
     // paddingRight: "20px", marginTop: "-40px"
      }}>
         Integrity
@@ -244,8 +246,8 @@ style={{
     flexDirection: "column",
     // margin: "0 -1px", // Remove or adjust the margin here
     // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
-    marginTop: "-100px", // Adjust this value to move the image upwards
-    marginRight: "20px",
+    marginTop: "-2vw", // Adjust this value to move the image upwards
+    marginRight: "1vw",
 
   }}
   variants={fadeInAnimationVariants}
@@ -262,7 +264,7 @@ style={{
     whileInView="animate"
     viewport={{ once: true }}
     custom={2}
-    style={{ width: "400px", height: "100px" }}
+    style={{ width: "90%", height: "auto" }}
   />
 </motion.Card>
 
@@ -270,8 +272,8 @@ style={{
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    marginTop: "-20px", // Adjust this value to move the image upwards
-    marginRight: "-20px",
+    marginTop: "-3vw", // Adjust this value to move the image upwards
+    marginRight: "-4vw",
 
 
     // margin: "0 -1px", // Reduce the margin here
@@ -288,11 +290,11 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "70px", height: "auto" }} 
+  style={{ width: "55%", height: "auto" }} 
   />
     <h4 style={{ fontWeight: 700,
     //  maxWidth: "300px", 
-    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "18px", 
+    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "100%", 
     // paddingRight: "20px", 
     // marginTop: "-5px" 
     }}>
@@ -305,8 +307,8 @@ style={{
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    marginTop: "-40px", // Adjust this value to move the image upwards
-    marginRight: "20px",
+    marginTop: "-4%", // Adjust this value to move the image upwards
+    marginRight: "0%",
 
     // margin: "0 -1px", // Reduce the margin here
     // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
@@ -322,7 +324,7 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "400px", height: "auto" }} 
+  style={{ width: "90%", height: "auto" }} 
   />
     
   </motion.Card>
@@ -345,11 +347,11 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "70px", height: "auto" }} 
+  style={{ width: "55%", height: "auto" }} 
   />
     <h4 style={{ fontWeight: 700, 
     // maxWidth: "300px", 
-    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "18px",
+    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "100%",
     //  paddingRight: "20px", 
     // marginTop: "-5px" 
     }}>

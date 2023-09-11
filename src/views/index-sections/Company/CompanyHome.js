@@ -40,22 +40,32 @@ const fadeImageVariants = {
   },
 };
 
+
 function CompanyHome() {
  
 
   return (
     <>
-      <div className="page-header clear-filter" filter-color="black"
+      <div
+        className="page-header clear-filter"
+        filter-color="black"
       style={{
-        background:
-          "linear-gradient(to right , #045d78, #043a4a)",
-      }}>
-      
-
+        background: "linear-gradient(to right, #045d78, #043a4a)",
+      // minHeight: "100vh", // Set a minimum height for the page
+          height: "100%",
+          display: "flex",
+          flexDirection: "column", // Align content vertically
+          justifyContent: "center", // Center content vertically
+        }}
+      >
         <Container>
-          
-        <div className="brand" style={{ paddingTop: "200px",textAlign: "center", width: "1000px" }}>
-
+          <div
+            className="brand"
+            style={{
+              textAlign: "center",
+              maxWidth: "100%",
+            }}
+          >
   <motion.h2
     style={{
       background: "-webkit-linear-gradient(45deg, #FFFFFF, #199BC2)",
@@ -63,9 +73,8 @@ function CompanyHome() {
       WebkitTextFillColor: "transparent",
       fontFamily: "Museo Sans Rounded, sans-serif",
       fontWeight: "bolder",
-      fontSize: "60px",
-
-      marginTop: "-30px", // Adjust this margin to reduce space
+      fontSize: "4vw", // Responsive font size
+      marginTop: "10vw", // Adjust margin for responsiveness
     }}
     variants={fadeInAnimationVariants}
     initial="initial"
@@ -82,9 +91,9 @@ function CompanyHome() {
       WebkitTextFillColor: "transparent",
       fontFamily: "Museo Sans Rounded, sans-serif",
       fontWeight: "bolder",
-      fontSize: "60px",
+      fontSize: "4vw", // Responsive font size
       fontWeight: 800,
-      marginTop: "-30px", // Adjust this margin to reduce space
+      marginTop: "-1vw", // Adjust margin for responsiveness
     }}
     variants={fadeInAnimationVariants}
     initial="initial"
@@ -103,16 +112,16 @@ function CompanyHome() {
           className="n-logo"
           src={require("assets/img/dotted_waves_reversed.png")}
           style={{
-            width: "450px",
+            width: "50vw", // Responsive image width
             height: "auto",
             position: "absolute",
-            top: 0,
-            right: 0,
+            bottom: "0", // Place image at the bottom
+            right: "0", // Place image at the right
           }}
           variants={fadeImageVariants}
           initial="initial"
           whileInView="animate"
-          viewport={{once: true,}}
+          viewport={{ once: true }}
         />
       </div>
       <style>
@@ -124,6 +133,14 @@ function CompanyHome() {
           }
           .hover-white-button:hover {
             background-color: #28607E;
+          }
+
+          @media (max-width: 768px) {
+            /* Add styles for screens with a maximum width of 768px */
+            .brand h2 {
+              font-size: 6vw; // Adjust font size for smaller screens
+              margin-top: -2vw; // Adjust margin for smaller screens
+            }
           }
         `}
       </style>

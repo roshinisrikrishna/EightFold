@@ -49,18 +49,18 @@ function Company2() {
           fontFamily: "Museo Sans Rounded, sans-serif",
           fontWeight: 700,
           paddingTop: "10px", // Adjust the top padding
-          marginBottom: "-45%"
+          height: "10%"
         }}
       >
         <Container>
           <div
             className="brand"
-            style={{ paddingTop: "30px", textAlign: "center", width: "1000px" }}
+            style={{ paddingTop: "30px", textAlign: "center", maxWidth: "100%" }}
           >
             <motion.h1
               style={{
                 fontWeight: 500,
-                fontSize: "40px",
+                fontSize: "4vw", // Responsive font size
                 background:
                   "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
                 WebkitBackgroundClip: "text",
@@ -77,7 +77,7 @@ function Company2() {
             <motion.h1
               style={{
                 fontWeight: 500,
-                fontSize: "40px",
+                fontSize: "4vw", // Responsive font size
                 background:
                   "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
                 WebkitBackgroundClip: "text",
@@ -98,11 +98,11 @@ function Company2() {
           className="n-logo"
           src={require("assets/img/dotted_waves.png")}
           style={{
-            width: "400px",
+            width: "30%", // Responsive image width
             height: "auto",
             position: "absolute",
             top: 0,
-            left: "0",
+            left: 0,
           }}
           variants={fadeImageVariants}
           initial="initial"
@@ -119,6 +119,14 @@ function Company2() {
           }
           .hover-white-button:hover {
             background-color: #28607E;
+          }
+
+          @media (max-width: 768px) {
+            /* Add styles for screens with a maximum width of 768px */
+            // Example: Adjust font size for smaller screens
+            .brand h1 {
+              font-size: 5vw;
+            }
           }
         `}
       </style>
