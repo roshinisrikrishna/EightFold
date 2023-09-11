@@ -49,7 +49,7 @@ function Company2() {
           fontFamily: "Museo Sans Rounded, sans-serif",
           fontWeight: 700,
           paddingTop: "10px", // Adjust the top padding
-          height: "10%"
+          marginBottom: "-40%"
         }}
       >
         <Container>
