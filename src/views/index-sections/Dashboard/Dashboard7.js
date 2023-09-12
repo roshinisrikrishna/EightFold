@@ -44,21 +44,28 @@ function Javascript() {
   return (
     <>
      
-     <div className="mt-5" style={{ backgroundColor: "#242f40", color: "#FFFFFF",  paddingTop: "10px", paddingBottom: "1px" }}>
-     <div
+     <Container className="mt-5" 
+     style={{ backgroundColor: "#242f40", 
+     color: "#FFFFFF",  
+     paddingTop: "5%", 
+     paddingBottom: "1%",
+     maxWidth: "100%",
+
+     }}>
+     <Container
   style={{
     display: "flex",
     flexDirection: "column", // Display items in a column
     justifyContent: "center",
     alignItems: "center",
-    marginLeft: "30px",
-    marginTop: "130px",
-    marginBottom: "130px",
-    maxWidth: "1280px", // Adjust this value to match the screen width
+    // marginLeft: "30px",
+    // marginTop: "130px",
+    // marginBottom: "130px",
+    maxWidth: "100%", // Adjust this value to match the screen width
   }}
 >
 <motion.h2 
-style={{ fontSize: "48px", textAlign: "center", fontWeight: 600, fontFamily: "Museo Sans Rounded, sans-serif" }}
+style={{ fontSize: "230%", textAlign: "center", fontWeight: 600, fontFamily: "Museo Sans Rounded, sans-serif" }}
 variants={fadeInAnimationVariants}
 initial="initial"
 whileInView="animate"
@@ -70,20 +77,31 @@ custom={1}>
 
  
 
-<div style={{ width: "1200px", display: "flex", flexDirection: "row", marginTop: "40px", justifyContent: "center", alignItems: "center" }}>
+<Container style={{ 
+  maxWidth: "100%", 
+  // display: "flex", 
+  // flexDirection: "row", 
+  marginTop: "5%", 
+  justifyContent: "center", 
+  alignItems: "center" }}>
+
+<Row style={{ display: "flex" }}>
+            <Col xs={12} md={4} xl={4} style={{ margin: "10px 0", display: "flex" , 
+}}>
+
 <motion.Card style={{ 
   borderBottom: "1px solid transparent", 
   borderRight: "1px solid transparent", 
   borderLeft: "1px solid transparent", 
   backgroundColor: "#242f40", 
   color: "#FFFFFF", 
-  height: "450px", 
-  maxWidth: "380px", 
+  height: "100%", 
+  // maxWidth: "100%", 
   flex: 1, 
   display: "flex", 
   flexDirection: "column", 
   alignItems: "flex-start", 
-  margin: "0 10px", 
+  margin: "0 0", 
   borderRadius: "10px", 
   boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", // Adding a subtle shadow
   borderImage: "linear-gradient(to right, #a90bde, #002aeb) 1", // Gradient border
@@ -94,21 +112,25 @@ whileInView="animate"
 viewport={{once: true,}}
 custom={2}>
     <img src={js1Img} alt="Logo" 
-  style={{ width: "450px", height: "200px" }} 
+  style={{ width: "100%", height: "40%" }} 
   />
-    <h4 style={{ fontWeight: 700, maxWidth: "320px", 
-    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "20px",
-    paddingLeft: "20px", paddingRight: "20px" }}>
+    <h4 style={{   paddingLeft: "5%",paddingRight: "2%",
+fontWeight: 700, maxWidth: "100%", 
+    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "100%",
+    }}>
       Talent acquisition & talent management improvements at Vodafone
     </h4>
     
 
-    <p style={{  paddingLeft: "20px",fontWeight: 400, fontSize: "16px", maxWidth: "330px", paddingRight: "20px" }}>
+    <p style={{   paddingLeft: "5%",paddingRight: "2%",
+fontWeight: 400, fontSize: "80%", maxWidth: "100%", }}>
       Vodafone has created a system that makes learning personal and purposeful. 
     </p>
-    <p style={{  paddingLeft: "20px",fontSize: "16px", fontWeight: 500, paddingRight: "20px" }}>Read customer story</p>
+    <p style={{   paddingLeft: "5%",paddingRight: "2%",
+fontSize: "80%", fontWeight: 500, }}>Read customer story</p>
 </motion.Card>
-
+</Col>
+<Col xs={12} md={4} xl={4} style={{ margin: "10px 0", display: "flex" }}>
 
 <motion.Card style={{ 
   borderBottom: "1px solid transparent", 
@@ -116,13 +138,13 @@ custom={2}>
   borderLeft: "1px solid transparent", 
   backgroundColor: "#242f40", 
   color: "#FFFFFF", 
-  height: "450px", 
-  maxWidth: "380px", 
+  height: "100%", 
+  // maxWidth: "100%", 
   flex: 1, 
   display: "flex", 
   flexDirection: "column", 
   alignItems: "flex-start", 
-  margin: "0 10px", 
+  margin: "0 0", 
   borderRadius: "10px", 
   boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", // Adding a subtle shadow
   borderImage: "linear-gradient(to right, #a90bde, #002aeb) 1", // Gradient border
@@ -133,29 +155,33 @@ whileInView="animate"
 viewport={{once: true,}}
 custom={3}>
     <img src={js2Img} alt="Logo" 
-  style={{ width: "450px", height: "200px" }} 
+  style={{ width: "100%", height: "40%" }} 
   />
-    <h4 style={{ fontWeight: 700, maxWidth: "320px", 
-    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "20px", 
-    paddingLeft: "20px", paddingRight: "20px" }}>
+    <h4 style={{   paddingLeft: "5%",paddingRight: "2%",
+fontWeight: 700, maxWidth: "100%", 
+    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "100%", 
+     }}>
       A new way to find talent at Chevron
     </h4>
     
 
-    <p style={{  paddingLeft: "20px",fontWeight: 400, fontSize: "16px", maxWidth: "330px", paddingRight: "20px" }}>
+    <p style={{   paddingLeft: "5%",paddingRight: "2%",
+fontWeight: 400, fontSize: "80%", maxWidth: "100%",  }}>
     How Chevron drilled into its HR data to tap into new talent.
     </p>
-    <p style={{  paddingLeft: "20px",fontSize: "16px", fontWeight: 500, paddingRight: "20px" }}>Read customer story</p>
+    <p style={{   paddingLeft: "5%",paddingRight: "2%",
+fontSize: "80%", fontWeight: 500,  }}>Read customer story</p>
 </motion.Card>
-
+</Col>
+<Col xs={12} md={4} xl={4} style={{ margin: "10px 0", display: "flex" }}>
 <motion.Card style={{ 
   borderBottom: "1px solid transparent", 
   borderRight: "1px solid transparent", 
   borderLeft: "1px solid transparent", 
   backgroundColor: "#242f40", 
   color: "#FFFFFF", 
-  height: "450px", 
-  maxWidth: "380px", 
+  height: "100%", 
+  // maxWidth: "380px", 
   flex: 1, 
   display: "flex", 
   flexDirection: "column", 
@@ -171,29 +197,34 @@ whileInView="animate"
 viewport={{once: true,}}
 custom={4}>
     <img src={js3Img} alt="Logo" 
-  style={{ width: "450px", height: "200px" }} 
+  style={{ width: "100%", height: "40%" }} 
   />
-    <h4 style={{  paddingLeft: "20px",fontWeight: 700, maxWidth: "320px", 
-    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "20px", 
-    paddingRight: "20px" }}>
+    <h4 style={{    paddingLeft: "5%",paddingRight: "2%",
+fontWeight: 700, maxWidth: "100%", 
+    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "100%", 
+     }}>
       Transforming talent at scale at Bayer
     </h4>
     
 
-    <p style={{  paddingLeft: "20px",fontWeight: 400, fontSize: "16px", maxWidth: "330px", paddingRight: "20px" }}>
+    <p style={{    paddingLeft: "5%",paddingRight: "2%",
+fontWeight: 400, fontSize: "80%", maxWidth: "100%",  }}>
       How Eightfold helped Bayerto deliver its technology ambitions from a talent perspective
       at scale.
           </p>
-    <p style={{  paddingLeft: "20px",fontSize: "16px", fontWeight: 500, paddingRight: "20px" }}>View customer story</p>
+    <p style={{    paddingLeft: "5%",paddingRight: "2%",
+fontSize: "80%", fontWeight: 500,  }}>View customer story</p>
 </motion.Card>
-</div>
+</Col>
+          </Row>
+</Container>
 
 <p style={{ fontSize: "17px", fontWeight: 500,  
      paddingTop: "80px" }}>See more customer stories</p>
 
-</div>
+</Container>
 
-      </div>
+      </Container>
     </>
   );
 }

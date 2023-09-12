@@ -32,6 +32,8 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 function IndexNavbar() {
   const [collapseOpen, setCollapseOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
+  const [closeTimeout, setCloseTimeout] = useState(null);
+
 
 
   const [dropdowns, setDropdowns] = useState([
@@ -86,12 +88,23 @@ function IndexNavbar() {
   };
 
   const closeDropdownOnMouseLeave = (dropdownId) => {
-    setDropdowns((prevDropdowns) =>
-      prevDropdowns.map((dropdown) =>
-        dropdown.id === dropdownId ? { ...dropdown, isOpen: false } : dropdown
-      )
-    );
+    // Clear any existing timeout
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+    }
+  
+    // Set a new timeout to close the dropdown after a delay
+    const timeoutId = setTimeout(() => {
+      setDropdowns((prevDropdowns) =>
+        prevDropdowns.map((dropdown) =>
+          dropdown.id === dropdownId ? { ...dropdown, isOpen: false } : dropdown
+        )
+      );
+    }, 200); // You can adjust the delay (in milliseconds) as needed
+  
+    setCloseTimeout(timeoutId); // Store the new timeout ID
   };
+  
 
   return (
     <div ref={menuRef}>
@@ -145,35 +158,35 @@ function IndexNavbar() {
           Talent Intelligence Platform
         </DropdownItem>
         <DropdownItem
-          href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+          href=""
           target="_blank"
           style={{ marginBottom: "-20px" }}
         >
           Talent Flex
         </DropdownItem>
         <DropdownItem
-          href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+          href=""
           target="_blank"
           style={{ marginBottom: "-20px" }}
         >
           Talent Acquisition
         </DropdownItem>
         <DropdownItem
-          href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+          href=""
           target="_blank"
           style={{ marginBottom: "-20px" }}
         >
           Talent Management
         </DropdownItem>
         <DropdownItem
-          href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+          href=""
           target="_blank"
         >
           Workforce Exchange
         </DropdownItem>
       </Col>
 
- <Col md="9" style={{ marginTop: "-1%", height: "111%", background: "linear-gradient(to right, #7cf3f7, #04b6d1)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px"}}>
+ <Col md="9" style={{ marginTop: "-1.4%", height: "111%", background: "linear-gradient(to right, #7cf3f7, #04b6d1)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px"}}>
           {/* Second Column */}
           <div style={{ flex: 1, height: "100%", paddingTop: "7%" }}>
             <h5 style={{ fontSize: "20px", fontWeight: 1000 }}>A single AI platform for all talent</h5>
@@ -212,7 +225,7 @@ function IndexNavbar() {
                     For enterprise
                   </DropdownItem>
                   <DropdownItem
-                    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+                    href=""
                     target="_blank"
                     style={{ marginBottom: "-20px" }}
 
@@ -221,7 +234,7 @@ function IndexNavbar() {
                     For public sector
                   </DropdownItem>
                   <DropdownItem
-                    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+                    href=""
                     target="_blank"
                     style={{ marginBottom: "-20px" }}
 
@@ -230,7 +243,7 @@ function IndexNavbar() {
                     For public sector
                   </DropdownItem>
                   <DropdownItem
-                    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+                    href=""
                     target="_blank"
                     style={{ marginBottom: "-20px" }}
 
@@ -239,7 +252,7 @@ function IndexNavbar() {
                     For DE&I
                   </DropdownItem>
                   <DropdownItem
-                    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+                    href=""
                     target="_blank"
                     style={{ marginBottom: "-20px" }}
 
@@ -248,7 +261,7 @@ function IndexNavbar() {
                     For governance
                   </DropdownItem>
                   <DropdownItem
-                    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+                    href=""
                     target="_blank"
                     style={{ marginBottom: "15px" }}
 
@@ -264,7 +277,7 @@ function IndexNavbar() {
     tag={Link}
     className="nav-link"
   >
-    <p style={{fontSize: "100%"}}>Services</p>
+    <p style={{fontSize: "120%"}}>Services</p>
   </NavLink>
 </NavItem>
 
@@ -290,21 +303,21 @@ function IndexNavbar() {
     Talent intelligence library
   </DropdownItem>
   <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+    href=""
     target="_blank"
     style={{ marginBottom: "-15px" }}
   >
     Eightfold AI talent research
   </DropdownItem>
   <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+    href=""
     target="_blank"
-    style={{ marginBottom: "-15px" }}
+    style={{ marginBottom: "-15px" }}tyj
   >
     The New Talent Code podcast
   </DropdownItem>
   <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+    href=""
     target="_blank"
   >
     Blog
@@ -312,7 +325,7 @@ function IndexNavbar() {
   
 </Col>
 
-                  <Col md="9" style={{ marginTop: "-7px" ,height: "110%",background: "linear-gradient(to right, #008BE8, #5B4B6E )", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
+                  <Col md="9" style={{ marginTop: "-1.2%" ,height: "110%",background: "linear-gradient(to right, #008BE8, #5B4B6E )", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
   {/* First Column */}
   <div style={{ flex: 1, padding: "20px" }}>
     <h5 style={{ fontSize: "20px", fontWeight: 700 }}>Responsible Al at Eightfold</h5>
@@ -356,7 +369,7 @@ function IndexNavbar() {
                     Eightfold customers
                   </DropdownItem>
                   <DropdownItem
-                    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+                    href=""
                     target="_blank"
                     style={{ marginBottom: "-15px" }}
 
@@ -391,21 +404,21 @@ function IndexNavbar() {
       <Row>
       <Col md="3" style={{ marginBottom: "-15px" }}>
   <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+    href=""
     target="_blank"
     style={{ marginBottom: "-15px" }}
   >
     All Events
   </DropdownItem>
   <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+    href=""
     target="_blank"
     style={{ marginBottom: "-15px" }}
   >
     Cultivate
   </DropdownItem>
   <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
+    href=""
     target="_blank"
   >
     Webinars
@@ -413,7 +426,7 @@ function IndexNavbar() {
 </Col>
 
   <Col md="9"  
-  style={{ marginTop: "-7px" ,height: "110%",background: "linear-gradient(to right, #7cf3f7, #04b6d1)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
+  style={{ marginTop: "-1.15%" ,height: "110%",background: "linear-gradient(to right, #7cf3f7, #04b6d1)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
   {/* First Column */}
         <div style={{ flex: 1, padding: "20px", height: "100%" }}>
     <h5 style={{ fontSize: "20px", fontWeight: 700 }}>Let's get you future ready</h5>
@@ -449,7 +462,7 @@ function IndexNavbar() {
           <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2"
          
            >
-                  <Link to="/company" style={{textDecoration: "none"}}>Company</Link> {/* Link to "/company" */}
+                  <Link to="/company" style={{textDecoration: "none", fontSize: "120%"}}>Company</Link> {/* Link to "/company" */}
             </DropdownToggle>
             <DropdownMenu
   className={`custom-dropdown-menu ${open ? 'active' : 'inactive'}`}
@@ -459,54 +472,54 @@ function IndexNavbar() {
       <Row>
       <Col md="3" style={{ marginBottom: "-15px" }}>
   {/* Dropdown items */}
-  <DropdownItem to="/index" tag={Link} style={{ marginBottom: "-20px" }}>
-    About Eightfold
+  <DropdownItem style={{ marginBottom: "-20px" }}>
+    
+    <Link to="/company">About Eightfold</Link>
+
   </DropdownItem>
   <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
-    target="_blank"
     style={{ marginBottom: "-20px" }}
   >
-    Leadership & Advisory Board
+          <Link to="/company/leadership">Leadership & Advisory Board</Link>
+
+    
   </DropdownItem>
   <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
-    target="_blank"
     style={{ marginBottom: "-20px" }}
   >
-    Ethics council
+      <Link to="/ethics">Ethics council</Link>
   </DropdownItem>
   <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
-    target="_blank"
     style={{ marginBottom: "-20px" }}
   >
-    Careers
+          <Link to="/careers">Careers</Link>
+
+    
   </DropdownItem>
   <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
-    target="_blank"
     style={{ marginBottom: "-20px" }}
   >
-    Partners
+              <Link to="/partners">Partners</Link>
+
+    
   </DropdownItem>
   <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
-    target="_blank"
     style={{ marginBottom: "-20px" }}
   >
-    Press
+                  <Link to="/press">Press</Link>
+
+    
   </DropdownItem>
   <DropdownItem
-    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
-    target="_blank"
   >
-    Contact Us
+                      <Link to="/contact"> Contact Us</Link>
+
+   
   </DropdownItem>
   
 </Col>
 
-                  <Col md="9" style={{ marginTop: "-1%" ,height: "111%",background: "linear-gradient(to right, #008BE8, #5B4B6E )", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
+                  <Col md="9" style={{ marginTop: "-1.4%" ,height: "111%",background: "linear-gradient(to right, #008BE8, #5B4B6E )", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
 
   {/* First Column */}
   <div style={{ flex: 2, padding: "20px", color: "white" }}>
@@ -617,7 +630,7 @@ function IndexNavbar() {
   // right: 20px;
   padding: 10px 20px;
   max-width: 800%;
-  max-height: 430%;
+  max-height: 500%;
 
 }
 
@@ -647,23 +660,22 @@ function IndexNavbar() {
   transition: 1000ms ease;
 }
 
-  .custom-dropdown-menu a {
-  text-decoration: none; 
-  border-bottom: 2px solid transparent; 
+.custom-dropdown-menu a {
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
   transition: border-bottom 0.3s ease-in-out;
- 
-
 }
 
+/* Hover effect for dropdown menu items */
 .custom-dropdown-menu a:hover {
   background-image: linear-gradient(to right, #1d212b, #1d212b);
-  background-size: 100% 3px;
-  background-position: 0 90%; 
+  background-size: 100% 100%;
+  background-position: 0 90%;
   background-clip: text;
   border-bottom: 2.5px solid transparent;
   border-image: linear-gradient(0.25turn, rgba(50, 94, 168), rgba(24, 9, 230), rgba(169, 11, 227));
   border-image-slice: 1;
-  width:100%;
+  width: 100%;
 }
 
  
@@ -677,7 +689,7 @@ function IndexNavbar() {
   
   .dropdown-menu {
     background-color: rgb(29, 33, 43); 
-    font-size: 16px;
+    font-size: 120%;
     font-weight: 200;
     color: white; 
     border-radius: 20px;
@@ -692,7 +704,7 @@ function IndexNavbar() {
   
 
   .custom-dropdown-toggle p {
-    font-size: 100%;
+    font-size: 120%;
   }
   ` 
   }

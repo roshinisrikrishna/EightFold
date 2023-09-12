@@ -119,7 +119,9 @@ function Examples() {
               className="copyright mt-5"
               id="copyright" 
                     style={{
-                paddingTop: "20px", // Adjust spacing for responsiveness
+                paddingTop: "2vw", // Adjust spacing for responsiveness
+                paddingBottom: "5vw", // Adjust spacing for responsiveness
+
                 fontSize: "14px",
                 fontWeight: 400,
                 color: "white",
@@ -131,7 +133,7 @@ function Examples() {
             // href="https://www.invisionapp.com?ref=nukr-dark-footer"
             target="_blank"
           >
-            Invision
+            RFLabs
           </a>
           . Coded by{" "}
           <a

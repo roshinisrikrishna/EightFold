@@ -31,7 +31,7 @@ function Tabs() {
   const [pills, setPills] = React.useState("1");
   return (
     <>
-      <div className="mt-4">
+      <div className="mt-4" style={{maxWidth: "100%"}}>
         <Container>
           <Row>
             <Col className="ml-auto mr-auto" md="10" xl="12">
@@ -39,8 +39,8 @@ function Tabs() {
                       <h1
                         style={{
                           textAlign: "center",
-                          fontWeight: 500,
-                          fontSize: "50px",
+                          fontWeight: 600,
+                          fontSize: "230%",
                           fontFamily: "Museo Sans Rounded, sans-serif",
                           // fontStyle: "museo-sans-rounded, sans-serif"
                         }}
@@ -48,13 +48,17 @@ function Tabs() {
                        The Talent Intelligence Platform
                       </h1>
                     </div>
-                    <p className="ml-auto mr-auto" style={{color: "rgb(72, 75, 88, 0.8)",fontWeight: 400,fontSize: "18px", textAlign: "center", width: "800px"}}>Powered by deep-learning AI, our unrivaled Talent Intelligence Platform shows you what you need, when you need it. Whether you’re finding or developing talent, our skills-driven approach backed by our unparalleled talent insights enables the outcomes you need to stay ahead.</p>
+                    <p className="ml-auto mr-auto" 
+                    style={{color: "rgb(72, 75, 88, 0.8)",fontWeight: 400,
+                    fontSize: "90%", textAlign: "center", width: "92%"}}>
+                      Powered by deep-learning AI, our unrivaled Talent Intelligence Platform shows you what you need, when you need it. Whether you’re finding or developing talent, our skills-driven approach backed by our unparalleled talent insights enables the outcomes you need to stay ahead.</p>
               
                 <Widget>
                   <Nav
                     className="justify-content-center"
                     role="tablist"
                     tabs
+                    style={{maxWidth: "100%"}}
                   >
                     <NavItem>
                       <NavLink
@@ -106,14 +110,14 @@ function Tabs() {
                     </NavItem>
                   </Nav>
                 </Widget>
-                <Container className="mt-2" style={{fontFamily: "Museo Sans Rounded, sans-serif",}}>
+                <Container className="mt-0" style={{fontFamily: "Museo Sans Rounded, sans-serif"}}>
                   <TabContent
                     className="text-center"
                     activeTab={"pills" + pills}
                   >
                     <TabPane tabId="pills1" style={{fontSize:"16px", textAlign:"left"}}>
                             <Row>
-                            <Col className="mt-5" md="5" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                            <Col className="mt-5" md="6" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                                 <iframe
                                 className="mt-5"
                                   width="85%"
@@ -127,9 +131,9 @@ function Tabs() {
                               </Col>
 
 
-                              <Col md="7">
-  <h4 style={{ fontWeight: 600 }}>Go beyond reviewing résumés</h4>
-  <p style={{ fontSize: "14.5px", width: "600px", fontWeight: 400, color: "RGB(72, 75, 88)" }}>
+                              <Col md="6">
+  <h4 style={{ fontWeight: "600", fontSize: "140%"}}>Go beyond reviewing résumés</h4>
+  <p style={{ fontSize: "80%", width: "100%", fontWeight: 500, color: "RGB(72, 75, 88)" }}>
     Our intuitive and agile deep-learning AI makes it easier to find candidates and work with your talent management team to overcome informational silos.
   </p>
   <Row>
@@ -147,7 +151,7 @@ function Tabs() {
  <p style={{ fontSize: "14.5px", fontWeight: 400, color: "RGB(72, 75, 88)" }}>Discover greatness — see what candidates can do</p>
   </Col>
 </Row>
-<div style={{ width: "600px",backgroundColor: "#f5f5f5", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
+<div style={{ width: "100%",backgroundColor: "#f5f5f5", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
   <div style={{ display: "flex", alignItems: "center" }}>
     <div style={{ border: "2px solid #007bff", borderRadius: "50%", padding: "5px", marginRight: "10px" }}>
       <img src={logo} alt="Logo" style={{ width: "50px", height: "50px", borderRadius: "50%" }} />
@@ -395,6 +399,36 @@ function Tabs() {
           </Row>
         </Container>
       </div>
+      <style>
+        {`
+        /* For small screens (e.g., mobile phones) */
+        @media (max-width: 576px) {
+          /* Add your responsive styles here */
+          .mt-4 {
+            margin-top: 1rem;
+          }
+          /* Adjust other styles as needed */
+        }
+        
+        /* For medium screens (e.g., tablets) */
+        @media (min-width: 576px) and (max-width: 992px) {
+          /* Add your responsive styles here */
+          .mt-4 {
+            margin-top: 2rem;
+          }
+          /* Adjust other styles as needed */
+        }
+        
+        /* For large screens (e.g., desktops) */
+        @media (min-width: 992px) {
+          /* Add your responsive styles here */
+          .mt-4 {
+            margin-top: 4rem;
+          }
+          /* Adjust other styles as needed */
+        }
+        `}
+      </style>
     </>
   );
 }
