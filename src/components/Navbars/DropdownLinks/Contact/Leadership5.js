@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Container,
   Row,
@@ -7,7 +7,7 @@ import {
   CarouselItem,
   CarouselIndicators,
 } from "reactstrap";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -19,12 +19,11 @@ const fadeInAnimationVariants = {
     y: 0,
     transition: {
       delay: 0.1 * index,
-      duration: 1,
-      ease: "easeInOut",
+      duration: 1, // Duration set to 1000ms (1 second)
+      ease: "easeInOut", // Use a valid easing function here
     },
   }),
 };
-
 
 const items = [
   {
@@ -83,64 +82,62 @@ const items = [
 
 function CarouselSection() {
   return (
-    <Container style={{ maxWidth: "100%",fontWeight: "bolder", paddingTop: "7%" }}>
+    <div style={{fontWeight:"bolder"}} >
       <Container
         style={{
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          margin: "0 15px", // Adjust margin
-          paddingTop: "5vh", // Adjust padding based on height
-          paddingBottom: "5vh", // Adjust padding based on height
-          maxWidth: "100%",
+          marginLeft: "30px",
+          marginTop: "130px",
+          marginBottom: "130px",
+          maxWidth: "1280px",
         }}
       >
         <motion.h2
           style={{
-            fontSize: "160%",
+            fontSize: "32px",
             textAlign: "center",
-            fontWeight: "bolder",
-            fontFamily: "Museo Sans Rounded, sans-serif",
-            paddingBottom: "3%"
+            fontWeight: "bolder", // Increase the fontWeight
+            fontFamily: "Museo Sans Rounded, sans-serif"
           }}
           variants={fadeInAnimationVariants}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true }}
+          viewport={{once: true,}}
           custom={1}
         >
-          Companies trust Eightfold with their talent transformation
+          Investors
         </motion.h2>
-        <Container className="logos" style={{maxWidth: "100%", paddingBottom: "10%"
-}}>
-          <Container className="logos-slide">
+        <div className="logos">
+          <div className="logos-slide">
             {items.map((item, index) => (
               <img
                 key={index}
                 src={item.src}
                 alt={item.altText}
-                className="carousel-image"
-                style={{ paddingRight: "10vw" }} // Adjust spacing based on width
+                className="carousel-image" 
+                style={{paddingRight: "100px"}}
               />
             ))}
-             {items.map((item, index) => (
+            {items.map((item, index) => (
               <img
                 key={index}
                 src={item.src}
                 alt={item.altText}
-                className="carousel-image"
-                style={{ paddingRight: "10vw" }} // Adjust spacing based on width
+                className="carousel-image" 
+                style={{paddingRight: "100px"}}
               />
             ))}
-          </Container>
-        </Container>
+          </div>
+        </div>
       </Container>
       <style>
         {`
           .logos {
             overflow: hidden;
-            padding: 2vh 0; // Adjust padding based on height
+            padding: 60px 0;
             background: white;
           }
           .logos-slide {
@@ -149,40 +146,25 @@ function CarouselSection() {
             white-space: nowrap;
             animation: 20s slide infinite linear;
           }
-
+          
           .carousel-image {
-            height: 15vh; // Set a fixed height based on height
-            max-width: 100%; // Adjust based on width
-            margin-right: 2vw; // Adjust spacing based on width
+            height: 120px; // Set a fixed height
+            margin-right: 120px;
           }
-
           .carousel-image:hover {
-            fill: blue;
+            fill: blue; /* Increase brightness on hover */
           }
-
-          @keyframes slide {
-            from {
+          @keyframes slide{
+            from{
               transform: translateX(0);
             }
-            to {
+            to{
               transform: translateX(-100%);
-            }
-          }
-
-          @media (max-width: 768px) {
-            // Adjust styles for smaller screens (e.g., tablets and mobile)
-            .logos-slide {
-              animation: none; // Disable the animation on small screens
-              justify-content: center; // Center logos on smaller screens
-            }
-            .carousel-image {
-              height: 10vh; // Adjust height for smaller screens
-              margin-right: 1vw; // Adjust spacing for smaller screens
             }
           }
         `}
       </style>
-    </Container>
+    </div>
   );
 }
 

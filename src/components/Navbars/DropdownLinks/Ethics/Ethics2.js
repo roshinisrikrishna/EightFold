@@ -1,0 +1,345 @@
+import React, { useState } from "react";
+
+// reactstrap components
+import { Container, Row, Col, Card } from "reactstrap";
+import img1 from "../../../../assets/img/Victoria-Lipnic.webp";
+import img2 from "../../../../assets/img/Craig-Leen.webp";
+import img3 from "../../../../assets/img/Roy-Wang.webp";
+import img4 from "../../../../assets/img/Ayisha-Piotti.webp";
+
+
+import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.1 * index,
+      duration: 1, // Duration set to 1000ms (1 second)
+      ease: "easeInOut", // Use a valid easing function here
+    },
+  }),
+};
+
+function Typography() {
+  const [dropdownVisible, setDropdownVisible] = useState([false, false, false]);
+
+  const toggleDropdown = (index) => {
+    const updatedVisibility = [...dropdownVisible];
+    updatedVisibility[index] = !updatedVisibility[index];
+    setDropdownVisible(updatedVisibility);
+  };
+  return (
+    <>
+    
+      <div
+        style={{
+          // background: "#000",
+          // color: "#FFF",
+          display: "flex",
+          flexDirection: "column", // Display items in a column
+          justifyContent: "center",
+          alignItems: "center",
+          maxWidth: "100%", // Adjust this value to match the screen width
+        }}
+      >
+          <Container 
+            style={{
+              background: "#fff",
+              maxWidth: "70%",
+              height: "auto", // Adjust the height as needed
+              padding: "2vw",
+              borderRadius: "0.5vw",
+              justifyContent: "center",
+              textAlign: "center"
+            }}
+          >
+         <h4
+  style={{
+    color: "#484B58",
+    fontWeight: "normal",
+    fontFamily: "roboto, sans-serif",
+    fontSize: "1.8vw",
+    letterSpacing: "0.05em", // Adjust the letter spacing as needed
+    lineHeight: "2em", // Adjust the line height as needed
+  }}
+>
+  The Eightfold AI Ethics Council believes that AI can be used for good, mitigating bias and promoting equality throughout the entire talent experience, from acquisition to management. These leaders provide recommendations to Eightfold on how to responsibly use AI throughout our entire Talent Intelligence Platform.
+</h4>
+
+        
+          </Container>
+     
+        
+ <Container
+          style={{
+            maxWidth: "100%",
+            // display: "flex",
+            // flexDirection: "row",
+            // marginTop: "40px",
+            // justifyContent: "center",
+            // alignItems: "stretch",
+            // paddingBottom: "7vw"
+          }}
+        >
+         <div style={{ width: "100%", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
+  <div style={{ display: "flex", alignItems: "center" }}>
+    <div style={{  flex:1, padding: "5px", marginRight: "10px" }}>
+      <img src={img1} alt="Logo" style={{ width: "15vw", height: "auto", borderRadius: "50%" }} />
+    </div>
+    <div style={{ flex: 3.5}}>
+      <h2 style={{fontSize: "24px"}}>Victoria Ann Lipnic</h2>
+      <h4 style={{fontSize: "18px", color: "#484B58", marginTop: "-2vw"}}>Former EEOC Commissioner</h4>
+      <h4 style={{fontSize: "16px", color: "#484B58", marginTop: "0vw",
+      lineHeight: "1.5em", // Adjust the line height as needed
+}}>An American lawyer and public figure. She served in multiple senior United States
+      government positions. She was Commissioner of the U.S. Equal Employment Opportunity 
+      Commission (EEOC), nominated to two terms by President Barack Obama, 2010 – 2020.
+      </h4>
+      <div className="dropdown">
+              {dropdownVisible[0] && (
+                <div className="dropdown-content">
+              <h4 style={{fontSize: "18px", color: "#484B58", marginTop: "0vw",
+                  lineHeight: "1.5em", // Adjust the line height as needed
+                }}>
+                    She served as Chair (Acting) of the EEOC under President Donald J. Trump 
+                  from 2017 – 2019. Before her appointment to the EEOC, she was Assistant 
+                  Secretary of Labor under President George W. Bush. The United States 
+                  Senate confirmed her unanimously to each of these positions.
+                  </h4>
+                </div>
+              )}
+
+              <p
+                style={{
+                  fontSize: "1.4vw",
+                  color: "#008FBF",
+                  fontWeight: "normal",
+                  cursor: "pointer",
+                }}
+                onClick={() => toggleDropdown(0)}
+              >
+                Expand{" "}
+                <FontAwesomeIcon
+                  icon={faAngleDown}
+                  style={{
+                    fontSize: "20px",
+                    transform: dropdownVisible[0] ? "rotate(180deg)" : "rotate(0deg)",
+                  }}
+                />
+              </p>
+            </div>
+    </div>
+  </div>
+</div>
+
+        </Container>
+
+        <Container
+          style={{
+            maxWidth: "100%",
+            // display: "flex",
+            // flexDirection: "row",
+            // marginTop: "40px",
+            // justifyContent: "center",
+            // alignItems: "stretch",
+            // paddingBottom: "7vw"
+          }}
+        >
+         <div style={{ width: "100%", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
+  <div style={{ display: "flex", alignItems: "center" }}>
+    <div style={{  flex:1, padding: "5px", marginRight: "10px" }}>
+      <img src={img2} alt="Logo" style={{ width: "15vw", height: "auto", borderRadius: "50%" }} />
+    </div>
+    <div style={{ flex: 3.5}}>
+      <h2 style={{fontSize: "24px"}}>Craig E. Leen</h2>
+      <h4 style={{fontSize: "18px", color: "#484B58", marginTop: "-2vw"}}>Former OFCCP Director</h4>
+      <h4 style={{fontSize: "17px", color: "#484B58", marginTop: "0vw",
+                      lineHeight: "1.5em", // Adjust the line height as needed
+                    }}>Craig Leen is an attorney, adjunct 
+      professor, and former senior executive, who has served as a public official at the 
+      federal and local levels, and also worked in the private sector. Craig was formerly 
+      Director of the Office of Federal Contract Compliance Programs at the U.S. Department 
+      of Labor, where he helped enforce federal civil rights requirements, including their 
+      impact on artificial intelligence in employment.
+      </h4>
+      <div className="dropdown">
+              {dropdownVisible[1] && (
+                <div className="dropdown-content">
+              <h4 style={{fontSize: "17px", color: "#484B58", marginTop: "0vw",
+                              lineHeight: "1.5em", // Adjust the line height as needed
+                            }}>
+              Prior to serving at OFCCP, Craig also was formerly City Attorney of Coral Gables, Florida, where he served as the chief ethics officer among other responsibilities.
+
+                  </h4>
+                  <h4 style={{fontSize: "17px", color: "#484B58", marginTop: "0vw",
+                                  lineHeight: "1.5em", // Adjust the line height as needed
+                                }}>
+
+In addition to serving on Eightfold’s Advisory Board (including on this AI Ethics Council), Craig is a partner at K&L Gates in the Labor, Employment, and Workplace Safety practice group, where he co-leads the OFCCP & Affirmative Action Compliance area of focus. Craig also serves as a Professorial Lecturer in Law at The George Washington University Law School, Vice Chair of the DC Advisory Committee to the U.S. Commission on Civil Rights, Chair of the Civil and Human Rights Committee of the Bar Association of the District of Columbia, and as a member of various other boards and committees.
+                  </h4>
+                </div>
+              )}
+
+              <p
+                style={{
+                  fontSize: "1.4vw",
+                  color: "#008FBF",
+                  fontWeight: "normal",
+                  cursor: "pointer",
+                }}
+                onClick={() => toggleDropdown(1)}
+              >
+                Expand{" "}
+                <FontAwesomeIcon
+                  icon={faAngleDown}
+                  style={{
+                    fontSize: "20px",
+                    transform: dropdownVisible[1] ? "rotate(180deg)" : "rotate(0deg)",
+                  }}
+                />
+              </p>
+            </div>
+    </div>
+  </div>
+</div>
+
+        </Container>
+
+        <Container
+          style={{
+            maxWidth: "100%",
+            // display: "flex",
+            // flexDirection: "row",
+            // marginTop: "40px",
+            // justifyContent: "center",
+            // alignItems: "stretch",
+            // paddingBottom: "7vw"
+          }}
+        >
+         <div style={{ width: "100%", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
+  <div style={{ display: "flex", alignItems: "center" }}>
+    <div style={{  flex:1, padding: "5px", marginRight: "10px" }}>
+      <img src={img3} alt="Logo" style={{ width: "15vw", height: "auto", borderRadius: "50%" }} />
+    </div>
+    <div style={{ flex: 3.5}}>
+      <h2 style={{fontSize: "24px"}}>Roy Wang</h2>
+      <h4 style={{fontSize: "18px", color: "#484B58", marginTop: "-2vw"}}>General Counsel</h4>
+      <h4 style={{fontSize: "17px", color: "#484B58", marginTop: "0vw",
+                      lineHeight: "1.5em", // Adjust the line height as needed
+                    }}>Roy is a seasoned business lawyer as well as an AI expert. He has spent his entire legal career advising technology companies on wide-ranging legal issues, from navigating complex commercial transactions and litigation issues to expanding enterprise value through numerous mergers and acquisitions.
+
+      </h4>
+      
+      <div className="dropdown">
+              {dropdownVisible[2] && (
+                <div className="dropdown-content">
+              <h4 style={{fontSize: "17px", color: "#484B58", marginTop: "0vw",
+                              lineHeight: "1.5em", // Adjust the line height as needed
+                            }}>Before joining Eightfold, Roy was Associate General Counsel at Marvell Technology Group Ltd. Before that; he was a partner of Kirkland & Ellis LLP. He received his J.D. from U.C. Berkeley, and his Ph.D. in machine learning from UIUC.
+      </h4>
+                </div>
+              )}
+
+              <p
+                style={{
+                  fontSize: "1.4vw",
+                  color: "#008FBF",
+                  fontWeight: "normal",
+                  cursor: "pointer",
+                }}
+                onClick={() => toggleDropdown(2)}
+              >
+                Expand{" "}
+                <FontAwesomeIcon
+                  icon={faAngleDown}
+                  style={{
+                    fontSize: "20px",
+                    transform: dropdownVisible[2] ? "rotate(180deg)" : "rotate(0deg)",
+                  }}
+                />
+              </p>
+            </div>
+    </div>
+  </div>
+</div>
+
+        </Container>
+
+        <Container
+          style={{
+            maxWidth: "100%",
+            // display: "flex",
+            // flexDirection: "row",
+            // marginTop: "40px",
+            // justifyContent: "center",
+            // alignItems: "stretch",
+            // paddingBottom: "7vw"
+          }}
+        >
+         <div style={{ width: "100%", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
+  <div style={{ display: "flex", alignItems: "center" }}>
+    <div style={{  flex:1, padding: "5px", marginRight: "10px" }}>
+      <img src={img4} alt="Logo" style={{ width: "15vw", height: "auto", borderRadius: "50%" }} />
+    </div>
+    <div style={{ flex: 3.5}}>
+      <h2 style={{fontSize: "24px"}}>Ayisha Piotti</h2>
+      <h4 style={{fontSize: "18px", color: "#484B58", marginTop: "-2vw"}}>Managing Partner at RegHorizon,
+</h4>
+<h4 style={{fontSize: "18px", color: "#484B58", marginTop: "0vw"}}>
+Director of AI Policy at ETH Zurich</h4>
+      <h4 style={{fontSize: "17px", color: "#484B58", marginTop: "0vw",
+                      lineHeight: "1.5em", // Adjust the line height as needed
+                    }}>Ayisha is the Managing Partner at the Swiss-based firm RegHorizon and the Director of AI Policy at the Center for Law and Economics of the Swiss Federal Institute of Technology (ETH Zurich).
+      </h4>
+      <div className="dropdown">
+              {dropdownVisible[3] && (
+                <div className="dropdown-content">
+              <h4 style={{fontSize: "17px", color: "#484B58", marginTop: "0vw",
+                              lineHeight: "1.5em", // Adjust the line height as needed
+                            }}>
+              Ayisha is a strategic alliance builder with a strong business background and extensive experience in Government Affairs, tackling complex regulatory & fiscal challenges through working with politicians, diplomatic missions, international organizations, government ministries, and consumer and business associations.
+                  </h4>
+                </div>
+              )}
+
+              <p
+                style={{
+                  fontSize: "1.4vw",
+                  color: "#008FBF",
+                  fontWeight: "normal",
+                  cursor: "pointer",
+                }}
+                onClick={() => toggleDropdown(3)}
+              >
+                Expand{" "}
+                <FontAwesomeIcon
+                  icon={faAngleDown}
+                  style={{
+                    fontSize: "20px",
+                    transform: dropdownVisible[3] ? "rotate(180deg)" : "rotate(0deg)",
+                  }}
+                />
+              </p>
+            </div>
+    </div>
+  </div>
+</div>
+
+        </Container>
+
+        
+      </div>
+    </>
+  );
+}
+
+export default Typography;
+

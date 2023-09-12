@@ -72,7 +72,7 @@ function IndexHeader() {
             alt="..."
             src={require("assets/img/dotted_waves.png")}
             style={{
-              width: "500px",
+              width: "30%",
               height: "auto",
               position: "absolute",
               top: 0,
@@ -88,11 +88,13 @@ function IndexHeader() {
 
         <Container>
           
-        <div className="content-center brand" style={{ marginTop: "140px", marginLeft: "-10px" }}>
+        <div className="content-center brand" 
+        style={{ marginTop: "30%", marginLeft: "0%" , maxWidth: "100%", minHeight: "100vh"}}>
   <motion.h1
     style={{
       fontWeight: "bolder",
       fontFamily: "Museo Sans Rounded, sans-serif",
+      fontSize: "310%"
     }}
     variants={fadeInAnimationVariants}
     initial="initial"
@@ -110,6 +112,8 @@ function IndexHeader() {
       fontFamily: "Museo Sans Rounded, sans-serif",
       fontWeight: "bolder",
       marginTop: "-30px", // Adjust this margin to reduce space
+      fontSize: "310%"
+
     }}
     variants={fadeInAnimationVariants}
     initial="initial"
@@ -122,8 +126,9 @@ function IndexHeader() {
 
             <motion.p
               style={{
-                fontSize: "22px",
+                fontSize: "90%",
                 fontFamily: "Museo Sans Rounded, sans-serif",
+                fontWeight: "bold"
               }}
               variants={fadeInAnimationVariants}
           initial="initial"
@@ -135,27 +140,29 @@ function IndexHeader() {
               to hire and develop people to their highest potential
             </motion.p>
             <motion.button
-              className="hover-white-button"
-              style={{
-                borderRadius: "60px",
-                color: "#fff",
-                border: "none",
-                cursor: "pointer",
-                marginTop: "10px",
-                fontWeight: "bolder",
-                fontSize: "17px",
-                width: "230px",
-                padding: "10px",
-                fontFamily: "Museo Sans Rounded, sans-serif",
-              }}
-              variants={fadeInAnimationVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{once: true,}}
-          custom={1}
-            >
-              Ready for greatness
-            </motion.button>
+  className="hover-white-button"
+  style={{
+    borderRadius: "60px",
+    color: "#fff",
+    backgroundColor: "#2285ba",
+    border: "none",
+    cursor: "pointer",
+    marginTop: "10px",
+    fontWeight: "bolder",
+    fontSize: "70%", // Set font size relative to viewport width
+    maxWidth: "100%", // Ensure the button takes up the full width
+    padding: "2% 7%", // Set padding as a percentage of the button's width and height
+    fontFamily: "Museo Sans Rounded, sans-serif",
+  }}
+  variants={fadeInAnimationVariants}
+  initial="initial"
+  whileInView="animate"
+  viewport={{ once: true }}
+  custom={1}
+>
+  Ready for greatness?
+</motion.button>
+
           </div>
         </Container>
         <motion.img
@@ -163,7 +170,7 @@ function IndexHeader() {
           className="n-logo"
           src={require("assets/img/dotted_waves_reversed.png")}
           style={{
-            width: "600px",
+            width: "35%",
             height: "auto",
             position: "absolute",
             bottom: 0,
@@ -184,6 +191,15 @@ function IndexHeader() {
           }
           .hover-white-button:hover {
             background-color: #28607E;
+          }
+          /* Media query for screens less than 768px wide */
+          @media (max-width: 768px) {
+            .page-header-image {
+              min-height: 80vh; /* Adjust the header height for smaller screens */
+            }
+            .brand {
+              margin-top: 10vh; /* Adjust the top margin for smaller screens */
+            }
           }
         `}
       </style>

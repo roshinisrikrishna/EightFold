@@ -67,10 +67,10 @@ function BasicElements() {
 
  return (
   <>
-    <div className="section section-basic" id="basic-elements" style={{fontFamily: "Museo Sans Rounded, sans-serif"}}>
+    <div className="section section-basic" id="basic-elements" style={{paddingTop: "12%",fontFamily: "Museo Sans Rounded, sans-serif", justifyContent:"flex-start"}}>
       <Container>
         <Row>
-        <Col className="justify-content-start" md="3" style={{ paddingTop: "100px", marginLeft: "-120px" }}>
+        <Col className="justify-content-start" md="1" xl="1">
   <Card style={{ 
     background: "linear-gradient(45deg, rgba(0, 139, 232, 0.2) 50%, rgba(147, 112, 219, 0.5)) 50%", 
     width: "200px", 
@@ -86,16 +86,16 @@ function BasicElements() {
 
 
 
-          <Col md="10">
+          <Col md="11" xl="11">
             <div className="content-center gradient-background">
               <Container>
-                <Row>
-                  <Col md="12">
-                    <div className="brand" style={{ paddingTop: "160px", marginLeft: "-100px",textAlign: "center", width: "1000px" }}>
+               
+                    <div className="brand" style={{  marginLeft: "0%",textAlign: "center", width: "100%" }}>
                       <motion.h1
                         style={{
-                          fontWeight: 500,
-                          fontSize: "40px",
+                          fontWeight: 600,
+                          letterSpacing: "0.01em",
+                          fontSize: "200%",
                           background:
                             "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
                           WebkitBackgroundClip: "text",
@@ -114,9 +114,7 @@ function BasicElements() {
                       </motion.h1>
         
                     </div>
-                  </Col>
-  
-                </Row>
+                  
               </Container>
             </div>
           </Col>
