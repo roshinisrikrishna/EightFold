@@ -25,6 +25,7 @@ const fadeInAnimationVariants = {
   }),
 };
 
+
 function Typography() {
   const [dropdownVisible, setDropdownVisible] = useState([false, false, false]);
 
@@ -33,6 +34,10 @@ function Typography() {
     updatedVisibility[index] = !updatedVisibility[index];
     setDropdownVisible(updatedVisibility);
   };
+
+ 
+
+
   return (
     <>
     
@@ -49,6 +54,8 @@ function Typography() {
       >
           <Container 
             style={{
+marginTop: "-10%",
+
               background: "#fff",
               maxWidth: "98%",
               height: "auto", // Adjust the height as needed
@@ -64,36 +71,16 @@ function Typography() {
                 color: "#484B58",
                 fontWeight: "normal",
                 fontFamily: "roboto, sans-serif",
-                fontSize: "2vw",
+                fontSize: "22px",
+lineHeight: "2em"
                 // maxWidth: "70%"
                             }}
               
             >
               We're proud to work with exceptional partners who share our vision of talent
-            </h4>
-            <h4
-              style={{
-                color: "#484B58",
-                fontWeight: "normal",
-                fontFamily: "roboto, sans-serif",
-                fontSize: "2vw",
-                marginTop: "-0.5%"
-
-              }}
-              
-            >
-greatness. Together, we're revolutionizing the ways organizations manage talent,          </h4>
-<h4
-              style={{
-                color: "#484B58",
-                fontWeight: "normal",
-                fontFamily: "roboto, sans-serif",
-                fontSize: "2vw",
-                marginTop: "-0.5%"
-
-              }}
-              
-            >
+            <br/>
+greatness. Together, we're revolutionizing the ways organizations manage talent,         
+<br />
   create more equitable workforces, drive innovation, and shape the future of work.           </h4>
           </Container>
        

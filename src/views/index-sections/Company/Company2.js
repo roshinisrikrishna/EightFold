@@ -46,6 +46,7 @@ function Company2() {
       <div
         className="page-header clear-filter"
         style={{
+          minHeight: "50px",
           fontFamily: "Museo Sans Rounded, sans-serif",
           fontWeight: 700,
           paddingTop: "10px", // Adjust the top padding
@@ -59,8 +60,9 @@ function Company2() {
           >
             <motion.h1
               style={{
-                fontWeight: 500,
-                fontSize: "4vw", // Responsive font size
+                fontWeight: 600,
+                fontSize: "36px", // Responsive font size
+                lineHeight: 1.5,
                 background:
                   "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
                 WebkitBackgroundClip: "text",
@@ -73,22 +75,7 @@ function Company2() {
               custom={1}
             >
               We believe in helping everyone see their full potential
-            </motion.h1>
-            <motion.h1
-              style={{
-                fontWeight: 500,
-                fontSize: "4vw", // Responsive font size
-                background:
-                  "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-              variants={fadeInAnimationVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              custom={1}
-            >
+            <br />
               - and finding them the right job
             </motion.h1>
           </div>

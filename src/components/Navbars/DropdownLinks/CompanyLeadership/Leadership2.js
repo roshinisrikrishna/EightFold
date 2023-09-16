@@ -102,7 +102,7 @@ function Typography() {
           whileInView="animate"
           viewport={{ once: true }}
           custom={2}
-          style={{fontSize: "16px", fontWeight: 400, textAlign: "center", maxWidth: "75%"}}
+          style={{fontSize: "17px", fontWeight: 400, textAlign: "center", maxWidth: "75%"}}
         >
           Our company started based on the mission of finding everyone the right career in the 
           world. Our founders come from some of the world’s leading tech companies, including 
@@ -112,7 +112,7 @@ function Typography() {
         </motion.p>
  <Container
           style={{
-            maxWidth: "100%",
+            maxWidth: "95%",
             display: "flex",
             flexDirection: "row",
             marginTop: "40px",
@@ -128,7 +128,7 @@ function Typography() {
               borderLeft: "2px solid transparent",
               borderTop: "2px solid transparent",
               borderImage: "linear-gradient(to right, #a90bde, #002aeb) 2",
-              padding: "5vw",
+              padding: "4%",
               height: "auto",
               flex: "0.5",
               display: "flex",
@@ -144,15 +144,15 @@ function Typography() {
             viewport={{ once: true }}
             custom={2}
           >
-            <img src={img1} alt="Logo" style={{ width: "10vw", height: "auto" }} />
-            <h4 style={{ fontWeight: 700, fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "20px" }}>
+            <img src={img1} alt="Logo" style={{  width: "10vw", height: "auto" }} />
+            <h4 style={{ fontWeight: 700, fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "120%" }}>
               Ashutosh Garg
             </h4>
-            <h4 style={{ fontWeight: 700, fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "20px" }}>
+            <h4 style={{ marginTop : "0%", fontWeight: 500, fontFamily: "roboto, sans-serif", fontSize: "90%" }}>
               CEO & Co-Founder
             </h4>
 
-            <p style={{ fontWeight: 400, fontSize: "1.1vw" }}>
+            <p style={{ paddingTop: "5%", fontWeight: 400, fontSize: "70%" }}>
               With 6000+ research citations, 50+ patents, 35+ peer-reviewed research publications, and the
               outstanding PhD thesis award from UIUC for his PhD thesis in Machine Learning, it’s fair to say
               that Ashu is one of the world’s experts in machine learning.
@@ -224,7 +224,7 @@ function Typography() {
   >
     Varun Kacholia
   </h4>
-  <h4 style={{ fontWeight: 700, fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "20px" }}>
+  <h4 style={{ marginTop : "0%", fontWeight: 500, fontFamily: "roboto, sans-serif", fontSize: "90%" }}>
     CEO & Co-Founder
   </h4>
 

@@ -28,14 +28,14 @@ function Company5() {
                       style={{
                         fontWeight: 700,
                         fontFamily: "Museo Sans Rounded, sans-serif",
-                        fontSize: "2.5vw", // Responsive font size
+                        fontSize: "36px", // Responsive font size
                       }}
                     >
                       Why Eightfold
                     </h2>
                     <p
                       style={{
-                        fontSize: "1.5vw", // Responsive font size
+                        fontSize: "17px", // Responsive font size
                         maxWidth: "100%",
                         fontWeight: 400,
                         fontFamily: "Roboto, sans-serif",
@@ -46,7 +46,7 @@ function Company5() {
                     <div className="dropdown ml-2">
                       <p
                         style={{
-                          fontSize: "1.6vw", // Responsive font size
+                          fontSize: "18px", // Responsive font size
                           fontWeight: 500,
                           cursor: "pointer",
                         }}
@@ -56,7 +56,7 @@ function Company5() {
                         <FontAwesomeIcon
                           icon={faAngleDown}
                           style={{
-                            fontSize: "1.5vw", // Responsive font size
+                            fontSize: "17px", // Responsive font size
                             color: "#11a6f7",
                             marginLeft: "5px",
                             transform: dropdownVisible[0] ? "rotate(180deg)" : "rotate(0deg)",
@@ -65,7 +65,7 @@ function Company5() {
                       </p>
                       {dropdownVisible[0] && (
                         <div className="dropdown-content">
-                          <p style={{ fontSize: "1.2vw", color: "#383838", fontWeight: "normal" }}>
+                          <p style={{ fontSize: "14px", color: "#383838", fontWeight: "normal" }}>
                             Powered by deep-learning AI, we surface insights when and where you need them most →
                           </p>
                         </div>
@@ -76,7 +76,7 @@ function Company5() {
                     <div className="dropdown ml-2">
   <p
     style={{
-                          fontSize: "1.6vw", // Responsive font size
+                          fontSize: "18px", // Responsive font size
                           fontWeight: 500,
                           cursor: "pointer",
                         }}
@@ -86,7 +86,7 @@ function Company5() {
     <FontAwesomeIcon
       icon={faAngleDown}
       style={{
-                            fontSize: "1.5vw", // Responsive font size
+                            fontSize: "17px", // Responsive font size
                             color: "#11a6f7",
                             marginLeft: "5px",
                             transform: dropdownVisible[1] ? "rotate(180deg)" : "rotate(0deg)",
@@ -95,7 +95,7 @@ function Company5() {
   </p>
   {dropdownVisible[1] && (
     <div className="dropdown-content">
-      <p style={{ fontSize: "1.2vw", color: "#383838", fontWeight: "normal" }}>
+      <p style={{ fontSize: "14px", color: "#383838", fontWeight: "normal" }}>
                           Our Talent Intelligence Platform is easy to use, insightful, and delivers fast results →                          </p>
     </div>
   )}
@@ -105,7 +105,7 @@ function Company5() {
 <div className="dropdown ml-2">
   <p
     style={{
-                          fontSize: "1.6vw", // Responsive font size
+                          fontSize: "18px", // Responsive font size
                           fontWeight: 500,
                           cursor: "pointer",
                         }}
@@ -115,7 +115,7 @@ function Company5() {
     <FontAwesomeIcon
       icon={faAngleDown}
       style={{
-                            fontSize: "1.5vw", // Responsive font size
+                            fontSize: "17px", // Responsive font size
                             color: "#11a6f7",
                             marginLeft: "5px",
                             transform: dropdownVisible[2] ? "rotate(180deg)" : "rotate(0deg)",
@@ -124,7 +124,7 @@ function Company5() {
   </p>
   {dropdownVisible[2] && (
     <div className="dropdown-content">
-      <p style={{ fontSize: "1.2vw", color: "#383838", fontWeight: "normal" }}>
+      <p style={{ fontSize: "14px", color: "#383838", fontWeight: "normal" }}>
                           We harness the data of 1B+ career trajectories and 1M+ skills worldwide to give a 
                           truly global view of talent and skills insights. Learn more about responsible AI 
                           in HR →                          </p>

@@ -42,25 +42,34 @@ const fadeImageVariants = {
 
 function CompanyLeadership() {
   return (
-    <>
+    <div>
+      
       <div
         className="page-header clear-filter"
         filter-color="black"
         style={{
+minHeight: "700px",
           background: "linear-gradient(to right, #008BE8, #5B4B6E )",
           height: "100%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
+borderBottomLeftRadius: "15%"
+
         }}
       >
+{/* <p className="ml-5" style={{ textAlign: "left",fontSize: "13px", fontWeight: 500 }}>
+      Company  {`  >  `}  Contact Us     
+        </p> */}
+        
         <Container>
           <div
             className="brand"
             style={{
               textAlign: "center",
               maxWidth: "100%",
-              borderBottomLeftRadius: "5vw"
+              borderBottomLeftRadius: "5vw",
+              // bottom: "30%"
             }}
           >
             <motion.h2
@@ -68,8 +77,8 @@ function CompanyLeadership() {
                 
                 fontFamily: "Museo Sans Rounded, sans-serif",
                 fontWeight: "bolder",
-                fontSize: "4.5vw",
-                marginTop: "10vw",
+                fontSize: "52px",
+                // marginTop: "10vw",
               }}
               variants={fadeInAnimationVariants}
               initial="initial"
@@ -79,21 +88,7 @@ function CompanyLeadership() {
             >
               Our partners in driving 
 
-            </motion.h2>
-            <motion.h2
-              style={{
-                
-                fontFamily: "Museo Sans Rounded, sans-serif",
-                fontWeight: "bolder",
-                fontSize: "4.5vw",
-                marginTop: "-2vw",
-              }}
-              variants={fadeInAnimationVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              custom={3}
-            >
+            <br />
 talent transformation
             </motion.h2>
             
@@ -103,8 +98,22 @@ talent transformation
         </Container>
 
       
-
-        {/* Your image */}
+<motion.img
+          alt="..."
+          className="n-logo"
+          src={require("assets/img/dotted_waves.png")}
+          style={{
+            width: "50vw",
+            height: "auto",
+            position: "absolute",
+            bottom: "0",
+            left: "0",
+          }}
+          variants={fadeImageVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        />
         <motion.img
           alt="..."
           className="n-logo"
@@ -143,7 +152,7 @@ talent transformation
           }
         `}
       </style>
-    </>
+    </div>
   );
 }
 

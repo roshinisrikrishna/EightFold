@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
 import { motion } from "framer-motion";
+import mapImage from '../../../../assets/img/worldmap.jpg';
 
 const fadeInAnimationVariants = {
   initial: {
@@ -41,26 +42,60 @@ const fadeImageVariants = {
 };
 
 function CompanyLeadership() {
+useEffect(() => {
+    document.body.style.backgroundImage = `linear-gradient(rgba(2, 115, 191, 0.9), rgba(67, 50, 87, 0.9)), url(${mapImage})`;
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+    // document.body.style.borderBottomRadius = "20%";
+
+    return () => {
+      document.body.style.backgroundImage = null;
+      document.body.style.backgroundSize = null;
+      document.body.style.backgroundPosition = null;
+      document.body.style.backgroundRepeat = null;
+      document.body.style.backgroundAttachment = null;
+      document.body.style.backgroundColor = null;
+      // document.body.style.borderBottomRadius = null;
+
+    };
+  }, []);
+
   return (
-    <>
+    <div style={{borderBottomRadius: "50%",minHeight:"570px", height: "100%"}}>
       <div
         className="page-header clear-filter"
         filter-color="black"
         style={{
-          background: "linear-gradient(to right, #008BE8, #5B4B6E )",
+          // background: "linear-gradient(to right, #008BE8, #5B4B6E )",
           height: "100%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
+        borderBottomLeftRadius: "50%"
+
         }}
       >
-        <Container>
+        <div className="space-50"></div>
+
+          {/* <div style={{textAlign: "left"}}>
+        <p className="ml-5 mt-5" style={{ fontSize: "13px", fontWeight: 500 }}>
+      Company  {`  >  `}  Contact Us     
+        </p>
+        </div> */}
+
+        <Container style={{              
+           borderBottomLeftRadius: "15vw",
+}}>
+        
+
           <div
             className="brand"
             style={{
               textAlign: "center",
               maxWidth: "100%",
-              borderBottomLeftRadius: "5vw"
+              borderBottomLeftRadius: "5vw",
             }}
           >
             <motion.h2
@@ -69,7 +104,7 @@ function CompanyLeadership() {
                 fontFamily: "Museo Sans Rounded, sans-serif",
                 fontWeight: "bolder",
                 fontSize: "4.5vw",
-                marginTop: "10vw",
+                // marginTop: "10vw",
               }}
               variants={fadeInAnimationVariants}
               initial="initial"
@@ -127,7 +162,7 @@ function CompanyLeadership() {
           }
         `}
       </style>
-    </>
+    </div>
   );
 }
 

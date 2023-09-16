@@ -150,7 +150,7 @@ function Company6() {
     marginTop: "10px",
     fontWeight: 900, // Increase the fontWeight value for more boldness
     fontSize: "15px",
-    // width: "300px",
+    width: "180px",
     padding: "5% 15%",
     fontFamily: "Museo Sans Rounded, sans-serif",
   }}

@@ -22,17 +22,17 @@ function Company3() {
 
   return (
     <>
-      <div className="mt-5 mb-5">
-        <Container className="mt-5 mb-5" style={{ paddingTop: "5vh" }}>
+      <div className="mb-5">
+        <Container className=" mb-5" style={{  }}>
           <Row>
             <Col md="7" style={{ marginTop: "5%" }}>
               <Container className="mt-5">
                 <Row>
                   <Col>
-                    <h3 style={{ fontSize: "3vw", fontWeight: 600, fontFamily: "Museo Sans Rounded, sans-serif" }}>
+                    <h3 style={{ fontSize: "32px", fontWeight: 600, fontFamily: "Museo Sans Rounded, sans-serif" }}>
                       Illuminating career paths, opening up a world of possibilities
                     </h3>
-                    <p style={{ color: "#484b58", fontSize: "1.5vw", maxWidth: "500px", fontWeight: 500, fontFamily: "Roboto, sans-serif" }}>
+                    <p style={{ color: "#484b58", fontSize: "17px", maxWidth: "500px", fontWeight: 500, fontFamily: "Roboto, sans-serif" }}>
                       In Buddhism, the Eightfold Path of eight practices guides each person to wisdom 
                       and nirvana. Inspired by this ideal, we want to empower everyone to discover and
                       pursue the right career path, where they can showcase their skills, take pride 
@@ -73,10 +73,10 @@ function Company3() {
               <Container className="mt-5">
                 <Row>
                   <Col>
-                    <h3 style={{ fontSize: "3vw", fontWeight: 600, fontFamily: "Museo Sans Rounded, sans-serif" }}>
+                    <h3 style={{ fontSize: "32px", fontWeight: 600, fontFamily: "Museo Sans Rounded, sans-serif" }}>
                       Achieving talent greatness takes a great team
                     </h3>
-                    <p style={{ color: "#484b58", fontSize: "1.5vw", maxWidth: "500px", fontWeight: 500, fontFamily: "Roboto, sans-serif" }}>
+                    <p style={{ color: "#484b58", fontSize: "17px", maxWidth: "500px", fontWeight: 500, fontFamily: "Roboto, sans-serif" }}>
                       We’ve assembled the world’s best and brightest in AI and HR to help our customers create 
                       and build their ideal future workforces. Our experts in machine learning, artificial 
                       intelligence, search, personalization, enterprise solutions, and more are dedicated to 
