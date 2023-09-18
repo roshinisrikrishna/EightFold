@@ -20,13 +20,13 @@ function Examples() {
       style={{
         backgroundColor: "#242f40",
         color: "#FFFFFF",
-        minHeight: "100vh", // Ensure the content covers the whole viewport
+        minHeight: "80vh", // Ensure the content covers the whole viewport
         display: "flex",
         flexDirection: "column", // Stack content vertically
         justifyContent: "space-between", // Space content vertically
       }}
     >
-       <Container className="mt-5 mb-5">
+       <Container className="mt-5">
           <Row>
             <Col lg="6" md="6">
               
@@ -120,7 +120,7 @@ function Examples() {
               id="copyright" 
                     style={{
                 paddingTop: "2vw", // Adjust spacing for responsiveness
-                paddingBottom: "5vw", // Adjust spacing for responsiveness
+                paddingBottom: "0vw", // Adjust spacing for responsiveness
 
                 fontSize: "14px",
                 fontWeight: 400,

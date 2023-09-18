@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
+
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
@@ -36,77 +37,86 @@ function Typography() {
     updatedVisibility[index] = !updatedVisibility[index];
     setDropdownVisible(updatedVisibility);
   };
+
   return (
     <>
-    
-      <div
+    <div className="mb-5 pb-5"
         style={{
           // background: "#000",
           // color: "#FFF",
           display: "flex",
-          flexDirection: "column", // Display items in a column
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          maxWidth: "100%", // Adjust this value to match the screen width
+          maxWidth: "100%",
         }}
       >
+{/* <DottedWaves /> */}
+
           <Container 
             style={{
               background: "#fff",
-              maxWidth: "70%",
-              height: "auto", // Adjust the height as needed
-              padding: "2vw",
-              borderRadius: "0.5vw",
-              justifyContent: "center",
-              textAlign: "center"
+              maxWidth: "97%", // Adjust the width as needed
+height: "auto",
+              padding: "2%",
+              borderRadius: "0.5%",
+              justifyContent: "flex-end",
+              textAlign: "center",
+            marginTop: "-10%",
             }}
           >
+
+          <Container className="content-center">
          <h4
   style={{
     color: "#484B58",
     fontWeight: "normal",
     fontFamily: "roboto, sans-serif",
-    fontSize: "1.8vw",
-    letterSpacing: "0.05em", // Adjust the letter spacing as needed
-    lineHeight: "2em", // Adjust the line height as needed
+    fontSize: "120%",
+    letterSpacing: "0.005em",
+    lineHeight: "2em",
+              width: "95%",
+              paddingLeft: "15%"
   }}
 >
-  The Eightfold AI Ethics Council believes that AI can be used for good, mitigating bias and promoting equality throughout the entire talent experience, from acquisition to management. These leaders provide recommendations to Eightfold on how to responsibly use AI throughout our entire Talent Intelligence Platform.
+  The Eightfold AI Ethics Council believes that AI can be used for
+            good, mitigating bias and promoting equality throughout the entire
+            talent experience, from acquisition to management. These leaders
+            provide recommendations to Eightfold on how to responsibly use AI
+            throughout our entire Talent Intelligence Platform.
 </h4>
-
-        
+</Container>
           </Container>
      
         
- <Container
+ <Container className="pt-5"
           style={{
             maxWidth: "100%",
-            // display: "flex",
-            // flexDirection: "row",
-            // marginTop: "40px",
-            // justifyContent: "center",
-            // alignItems: "stretch",
-            // paddingBottom: "7vw"
+            alignItems: "stretch",
           }}
         >
-         <div style={{ width: "100%", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
-  <div style={{ display: "flex", alignItems: "center" }}>
-    <div style={{  flex:1, padding: "5px", marginRight: "10px" }}>
-      <img src={img1} alt="Logo" style={{ width: "15vw", height: "auto", borderRadius: "50%" }} />
-    </div>
-    <div style={{ flex: 3.5}}>
-      <h2 style={{fontSize: "24px"}}>Victoria Ann Lipnic</h2>
-      <h4 style={{fontSize: "18px", color: "#484B58", marginTop: "-2vw"}}>Former EEOC Commissioner</h4>
-      <h4 style={{fontSize: "16px", color: "#484B58", marginTop: "0vw",
-      lineHeight: "1.5em", // Adjust the line height as needed
-}}>An American lawyer and public figure. She served in multiple senior United States
+         <Container style={{ maxWidth: "95%", height: "100%", display: "flex" , alignItems: "center", justifyContent: "center"}}>
+      <Row>
+      <Col md={2} xl={2} xs={6} >
+  {/* Dropdown items */}
+  <img src={img1} alt="Logo" style={{ width: "100%" }} />
+
+  
+    </Col>
+
+                  <Col md={10} xl={10} xs={12} style={{ justifyContent: "center",alignItems: "center", width: "90%" }}>
+
+      <h2 style={{ fontSize: "130%", fontWeight: 500 }}>Victoria Ann Lipnic</h2>
+      <h4 style={{ fontSize: "90%", color: "#484B58", marginTop: "-2%" }}>Former EEOC Commissioner</h4>
+      <h4 style={{fontSize: "87%", color: "#484B58",  lineHeight: "1.5em", }}>An American lawyer and public figure. She served in multiple senior United States
       government positions. She was Commissioner of the U.S. Equal Employment Opportunity 
       Commission (EEOC), nominated to two terms by President Barack Obama, 2010 – 2020.
       </h4>
-      <div className="dropdown">
+      <Container className="dropdown" style={{marginLeft: "-3.5%"}}>
               {dropdownVisible[0] && (
-                <div className="dropdown-content">
-              <h4 style={{fontSize: "18px", color: "#484B58", marginTop: "0vw",
+                <Container className="dropdown-content">
+              <h4 style={{
+              fontSize: "87%", color: "#484B58", marginTop: "0%",
                   lineHeight: "1.5em", // Adjust the line height as needed
                 }}>
                     She served as Chair (Acting) of the EEOC under President Donald J. Trump 
@@ -114,19 +124,18 @@ function Typography() {
                   Secretary of Labor under President George W. Bush. The United States 
                   Senate confirmed her unanimously to each of these positions.
                   </h4>
-                </div>
+                </Container>
               )}
 
               <p
-                style={{
-                  fontSize: "1.4vw",
+                style={{marginLeft: "2%",
+                  fontSize: "17px",
                   color: "#008FBF",
                   fontWeight: "normal",
                   cursor: "pointer",
                 }}
                 onClick={() => toggleDropdown(0)}
-              >
-                Expand{" "}
+              >Expand{" "}
                 <FontAwesomeIcon
                   icon={faAngleDown}
                   style={{
@@ -135,62 +144,68 @@ function Typography() {
                   }}
                 />
               </p>
-            </div>
-    </div>
-  </div>
-</div>
+            </Container> 
+
+  
+</Col>
+
+
+
+
+
+      </Row>
+</Container>
+         
 
         </Container>
 
-        <Container
+        <Container className="mt-5"
           style={{
-            maxWidth: "100%",
-            // display: "flex",
-            // flexDirection: "row",
-            // marginTop: "40px",
-            // justifyContent: "center",
-            // alignItems: "stretch",
-            // paddingBottom: "7vw"
+            maxWidth: "100%"
           }}
         >
-         <div style={{ width: "100%", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
-  <div style={{ display: "flex", alignItems: "center" }}>
-    <div style={{  flex:1, padding: "5px", marginRight: "10px" }}>
-      <img src={img2} alt="Logo" style={{ width: "15vw", height: "auto", borderRadius: "50%" }} />
-    </div>
-    <div style={{ flex: 3.5}}>
-      <h2 style={{fontSize: "24px"}}>Craig E. Leen</h2>
-      <h4 style={{fontSize: "18px", color: "#484B58", marginTop: "-2vw"}}>Former OFCCP Director</h4>
-      <h4 style={{fontSize: "17px", color: "#484B58", marginTop: "0vw",
-                      lineHeight: "1.5em", // Adjust the line height as needed
-                    }}>Craig Leen is an attorney, adjunct 
-      professor, and former senior executive, who has served as a public official at the 
+           <Container style={{ maxWidth: "95%", height: "100%", display: "flex" , alignItems: "center", justifyContent: "center"}}>
+      <Row>
+      <Col md={2} xl={2} xs={6} >
+  {/* Dropdown items */}
+  <img src={img2} alt="Logo" style={{ width: "100%" }} />
+
+  
+    </Col>
+
+                  <Col md={10} xl={10} xs={12} style={{ width: "90%" }}>
+
+      <h2 style={{fontSize: "130%", fontWeight: 500}}>Craig E. Leen</h2>
+      <h4 style={{fontSize: "90%", color: "#484B58", marginTop: "-2%"}}>Former OFCCP Director</h4>
+      <h4 style={{fontSize: "87%", color: "#484B58",  lineHeight: "1.5em",  }}>
+        Craig Leen is an attorney, adjunct  professor, and former senior executive, who has 
+        served as a public official at the 
       federal and local levels, and also worked in the private sector. Craig was formerly 
       Director of the Office of Federal Contract Compliance Programs at the U.S. Department 
       of Labor, where he helped enforce federal civil rights requirements, including their 
       impact on artificial intelligence in employment.
       </h4>
-      <div className="dropdown">
+      <Container className="dropdown" style={{marginLeft: "-3.5%"}}>
               {dropdownVisible[1] && (
-                <div className="dropdown-content">
-              <h4 style={{fontSize: "17px", color: "#484B58", marginTop: "0vw",
+                <Container className="dropdown-content">
+              <h4 style={{fontSize: "87%", color: "#484B58", marginTop: "0%",
                               lineHeight: "1.5em", // Adjust the line height as needed
                             }}>
               Prior to serving at OFCCP, Craig also was formerly City Attorney of Coral Gables, Florida, where he served as the chief ethics officer among other responsibilities.
 
                   </h4>
-                  <h4 style={{fontSize: "17px", color: "#484B58", marginTop: "0vw",
+                  <h4 style={{fontSize: "87%", color: "#484B58", marginTop: "0%",
                                   lineHeight: "1.5em", // Adjust the line height as needed
                                 }}>
 
 In addition to serving on Eightfold’s Advisory Board (including on this AI Ethics Council), Craig is a partner at K&L Gates in the Labor, Employment, and Workplace Safety practice group, where he co-leads the OFCCP & Affirmative Action Compliance area of focus. Craig also serves as a Professorial Lecturer in Law at The George Washington University Law School, Vice Chair of the DC Advisory Committee to the U.S. Commission on Civil Rights, Chair of the Civil and Human Rights Committee of the Bar Association of the District of Columbia, and as a member of various other boards and committees.
                   </h4>
-                </div>
+                </Container>
               )}
 
               <p
-                style={{
-                  fontSize: "1.4vw",
+                style={{marginLeft: "2%",
+                  fontSize: "17px",
                   color: "#008FBF",
                   fontWeight: "normal",
                   cursor: "pointer",
@@ -206,14 +221,22 @@ In addition to serving on Eightfold’s Advisory Board (including on this AI Eth
                   }}
                 />
               </p>
-            </div>
-    </div>
-  </div>
-</div>
+            </Container> 
+
+  
+</Col>
+
+
+
+
+
+      </Row>
+</Container>
+       
 
         </Container>
 
-        <Container
+        <Container className="mt-5"
           style={{
             maxWidth: "100%",
             // display: "flex",
@@ -221,27 +244,29 @@ In addition to serving on Eightfold’s Advisory Board (including on this AI Eth
             // marginTop: "40px",
             // justifyContent: "center",
             // alignItems: "stretch",
-            // paddingBottom: "7vw"
+            // paddingBottom: "7%"
           }}
         >
-         <div style={{ width: "100%", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
-  <div style={{ display: "flex", alignItems: "center" }}>
-    <div style={{  flex:1, padding: "5px", marginRight: "10px" }}>
-      <img src={img3} alt="Logo" style={{ width: "15vw", height: "auto", borderRadius: "50%" }} />
-    </div>
-    <div style={{ flex: 3.5}}>
-      <h2 style={{fontSize: "24px"}}>Roy Wang</h2>
-      <h4 style={{fontSize: "18px", color: "#484B58", marginTop: "-2vw"}}>General Counsel</h4>
-      <h4 style={{fontSize: "17px", color: "#484B58", marginTop: "0vw",
-                      lineHeight: "1.5em", // Adjust the line height as needed
-                    }}>Roy is a seasoned business lawyer as well as an AI expert. He has spent his entire legal career advising technology companies on wide-ranging legal issues, from navigating complex commercial transactions and litigation issues to expanding enterprise value through numerous mergers and acquisitions.
+         <Container style={{ maxWidth: "95%", height: "100%", display: "flex" , alignItems: "center", justifyContent: "center"}}>
+      <Row>
+      <Col md={2} xl={2} xs={6} >
+  {/* Dropdown items */}
+  <img src={img3} alt="Logo" style={{  width: "100%" }} />
 
+  
+    </Col>
+
+                  <Col md={10} xl={10} xs={12} style={{ width: "90%" }}>
+
+      <h2 style={{fontSize: "130%", fontWeight: 500}}>Roy Wang</h2>
+      <h4 style={{fontSize: "90%", color: "#484B58", marginTop: "-2%"}}>General Counsel</h4>
+      <h4 style={{fontSize: "87%", color: "#484B58",  lineHeight: "1.5em",  }}>
+      Roy is a seasoned business lawyer as well as an AI expert. He has spent his entire legal career advising technology companies on wide-ranging legal issues, from navigating complex commercial transactions and litigation issues to expanding enterprise value through numerous mergers and acquisitions.
       </h4>
-      
-      <div className="dropdown">
+      <Container className="dropdown" style={{marginLeft: "-3.5%"}}>
               {dropdownVisible[2] && (
                 <div className="dropdown-content">
-              <h4 style={{fontSize: "17px", color: "#484B58", marginTop: "0vw",
+              <h4 style={{fontSize: "87%", color: "#484B58", marginTop: "0%",
                               lineHeight: "1.5em", // Adjust the line height as needed
                             }}>Before joining Eightfold, Roy was Associate General Counsel at Marvell Technology Group Ltd. Before that; he was a partner of Kirkland & Ellis LLP. He received his J.D. from U.C. Berkeley, and his Ph.D. in machine learning from UIUC.
       </h4>
@@ -249,8 +274,8 @@ In addition to serving on Eightfold’s Advisory Board (including on this AI Eth
               )}
 
               <p
-                style={{
-                  fontSize: "1.4vw",
+                style={{marginLeft: "2%",
+                  fontSize: "17px",
                   color: "#008FBF",
                   fontWeight: "normal",
                   cursor: "pointer",
@@ -266,14 +291,22 @@ In addition to serving on Eightfold’s Advisory Board (including on this AI Eth
                   }}
                 />
               </p>
-            </div>
-    </div>
-  </div>
-</div>
+            </Container> 
+
+  
+</Col>
+
+
+
+
+
+      </Row>
+</Container>
+       
 
         </Container>
 
-        <Container
+        <Container className="mt-5"
           style={{
             maxWidth: "100%",
             // display: "flex",
@@ -281,28 +314,29 @@ In addition to serving on Eightfold’s Advisory Board (including on this AI Eth
             // marginTop: "40px",
             // justifyContent: "center",
             // alignItems: "stretch",
-            // paddingBottom: "7vw"
+            // paddingBottom: "7%"
           }}
         >
-         <div style={{ width: "100%", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
-  <div style={{ display: "flex", alignItems: "center" }}>
-    <div style={{  flex:1, padding: "5px", marginRight: "10px" }}>
-      <img src={img4} alt="Logo" style={{ width: "15vw", height: "auto", borderRadius: "50%" }} />
-    </div>
-    <div style={{ flex: 3.5}}>
-      <h2 style={{fontSize: "24px"}}>Ayisha Piotti</h2>
-      <h4 style={{fontSize: "18px", color: "#484B58", marginTop: "-2vw"}}>Managing Partner at RegHorizon,
-</h4>
-<h4 style={{fontSize: "18px", color: "#484B58", marginTop: "0vw"}}>
+         <Container style={{ maxWidth: "95%", height: "100%", display: "flex" , alignItems: "center", justifyContent: "center"}}>
+      <Row>
+      <Col md={2} xl={2} xs={6} >
+  {/* Dropdown items */}
+  <img src={img4} alt="Logo" style={{ width: "100%" }} />
+
+  
+    </Col>
+
+                  <Col md={10} xl={10} xs={12} style={{ width: "90%" }}>
+      <h2 style={{fontSize: "130%", fontWeight: 500}}>Ayisha Piotti</h2>
+      <h4 style={{fontSize: "90%", color: "#484B58", marginTop: "-2%"}}>Managing Partner at RegHorizon,
+<br />
 Director of AI Policy at ETH Zurich</h4>
-      <h4 style={{fontSize: "17px", color: "#484B58", marginTop: "0vw",
-                      lineHeight: "1.5em", // Adjust the line height as needed
-                    }}>Ayisha is the Managing Partner at the Swiss-based firm RegHorizon and the Director of AI Policy at the Center for Law and Economics of the Swiss Federal Institute of Technology (ETH Zurich).
+      <h4 style={{fontSize: "87%", color: "#484B58",  lineHeight: "1.5em", }}>Ayisha is the Managing Partner at the Swiss-based firm RegHorizon and the Director of AI Policy at the Center for Law and Economics of the Swiss Federal Institute of Technology (ETH Zurich).
       </h4>
-      <div className="dropdown">
+      <Container className="dropdown" style={{marginLeft: "-3.5%"}}>
               {dropdownVisible[3] && (
                 <div className="dropdown-content">
-              <h4 style={{fontSize: "17px", color: "#484B58", marginTop: "0vw",
+              <h4 style={{fontSize: "87%", color: "#484B58", marginTop: "0%",
                               lineHeight: "1.5em", // Adjust the line height as needed
                             }}>
               Ayisha is a strategic alliance builder with a strong business background and extensive experience in Government Affairs, tackling complex regulatory & fiscal challenges through working with politicians, diplomatic missions, international organizations, government ministries, and consumer and business associations.
@@ -311,8 +345,8 @@ Director of AI Policy at ETH Zurich</h4>
               )}
 
               <p
-                style={{
-                  fontSize: "1.4vw",
+                style={{marginLeft: "2%",
+                  fontSize: "17px",
                   color: "#008FBF",
                   fontWeight: "normal",
                   cursor: "pointer",
@@ -328,12 +362,23 @@ Director of AI Policy at ETH Zurich</h4>
                   }}
                 />
               </p>
-            </div>
-    </div>
-  </div>
-</div>
+            </Container> 
+
+  
+</Col>
+
+
+
+
+
+      </Row>
+</Container>
+       
 
         </Container>
+
+
+       
 
         
       </div>

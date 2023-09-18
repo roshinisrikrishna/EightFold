@@ -34,11 +34,13 @@ function Typography() {
     setDropdownVisible(updatedVisibility);
   };
   return (
-    <>
+    <div style={{background: "linear-gradient(rgba(0, 139, 232, 0.2) 50%, rgba(147, 112, 219, 0.2) 50%, rgba(255,255,255))", 
+   minHeight: "180px",
+    backdropFilter: "blur(50px)"}}>
     
       <div
         style={{
-          // background: "#000",
+         // background: "#000",
           // color: "#FFF",
           display: "flex",
           flexDirection: "column", // Display items in a column
@@ -52,56 +54,32 @@ function Typography() {
               background: "#fff",
               maxWidth: "98%",
               height: "auto", // Adjust the height as needed
-              padding: "0vw",
+              padding: "2vw",
               borderRadius: "0.5vw",
               justifyContent: "center",
-              textAlign: "center",
-              lineHeight: "1.2em"
+              textAlign: "center"
             }}
           >
-            <h4
+              <h4
               style={{
                 color: "#484B58",
                 fontWeight: "normal",
                 fontFamily: "roboto, sans-serif",
-                fontSize: "2vw",
+                fontSize: "22px",
                 // maxWidth: "70%"
                             }}
               
             >
-              We're proud to work with exceptional partners who share our vision of talent
+              The latest news and announcements from the Eightfold AI team
             </h4>
-            <h4
-              style={{
-                color: "#484B58",
-                fontWeight: "normal",
-                fontFamily: "roboto, sans-serif",
-                fontSize: "2vw",
-                marginTop: "-0.5%"
-
-              }}
-              
-            >
-greatness. Together, we're revolutionizing the ways organizations manage talent,          </h4>
-<h4
-              style={{
-                color: "#484B58",
-                fontWeight: "normal",
-                fontFamily: "roboto, sans-serif",
-                fontSize: "2vw",
-                marginTop: "-0.5%"
-
-              }}
-              
-            >
-  create more equitable workforces, drive innovation, and shape the future of work.           </h4>
+            
           </Container>
-       
+        
  
 
         
       </div>
-    </>
+    </div>
   );
 }
 

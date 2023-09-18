@@ -1,26 +1,29 @@
 .pagination{
 
     .page-item .page-link{
-        border: 0;
-        border-radius: 30px !important;
-        transition: all .3s;
-        padding: 0px 11px;
-        margin: 0 3px;
-        min-width: 30px;
-        text-align: center;
-        box-shadow: none;
-        height: 30px;
-        line-height: 30px;
-        color: $black-color;
+        background-color: transparent; /* Blue background color */
+        color: #2285ba; /* Text color */
+        border: 1px solid #d5d5d5;
         cursor: pointer;
-        font-size: $font-size-base;
+        font-weight: bold;
+        font-size: 16px; /* Adjust the font size to increase the size */
+        padding: 2px 10px; /* Increase padding to make the buttons larger */
+        margin: 2px; /* Adjust margin as needed */
+        min-width: 40px; /* Increase min-width to make the buttons wider */
+        text-align: center;
+        border-radius: 5px !important;
+        font-family: "roboto, sans-serif";
+        transition: all 0.3s;
+        height: 38px; /* Increase height to make the buttons taller */
+        line-height: 36px; /* Increase line-height to vertically center text */
         text-transform: uppercase;
+
         background: transparent;
 
         &:hover,
         &:focus{
-            color: $black-color;
-            background-color: $opacity-gray-3;
+            color: #2285ba;
+            background-color: rgba(240,240,240);
             border: none;
         }
     }
@@ -45,7 +48,7 @@
         &,
         &:focus,
         &:hover{
-            background-color: $default-color;
+            background-color: #2285ba;
             border-color: $default-color;
             color: $white-color;
         }

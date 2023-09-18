@@ -75,18 +75,20 @@ style={{
   >Our core values drive everything we do
   </motion.p>
 <div style={{ 
-    width: "100%", 
+    width: "80%", 
     display: "flex", 
     flexDirection: "row", 
-    marginTop: "6vw", 
-    marginBottom: "8vw",
+    marginTop: "6%", 
+    marginBottom: "8%",
     justifyContent: "center", 
-    alignItems: "center" }}>
+    alignItems: "center",
+       flexWrap: "wrap", // Allow items to wrap to the next line
+    }}>
   <motion.Card   style={{
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    marginRight: "-5vw",
+    marginRight: "-5%",
     // margin: "0 -1px", // Reduce the margin here
     // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
   }}
@@ -102,7 +104,7 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "55%", height: "auto" }} 
+  style={{ width: "70px", height: "auto" }} 
   />
     <h4 style={{ fontWeight: 700, 
     // maxWidth: "320px", 
@@ -120,11 +122,11 @@ style={{
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    marginRight: "2vw",
+    marginRight: "-1%",
 
     // margin: "0 -1px", // Remove or adjust the margin here
     // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
-    marginTop: "-2vw", // Adjust this value to move the image upwards
+    marginTop: "-15%", // Adjust this value to move the image upwards
   }}
   variants={fadeInAnimationVariants}
   initial="initial"
@@ -149,8 +151,8 @@ style={{
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    marginTop: "-2vw", 
-    marginRight: "-4vw",
+    marginTop: "-2%", 
+    marginRight: "-4.5%",
     // Adjust this value to move the image upwards
     // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
   }}
@@ -165,7 +167,7 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "55%", height: "auto" }} 
+  style={{ width: "70px", height: "auto" }} 
   />
     <h4 style={{ fontWeight: 700, 
     // maxWidth: "300px", 
@@ -182,8 +184,8 @@ style={{
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    marginTop: "-4vw", // Adjust this value to move the image upwards
-    marginRight: "1vw",
+    marginTop: "-5%", // Adjust this value to move the image upwards
+    marginRight: "-1%",
 
     // margin: "0 -1px", // Reduce the margin here
     // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
@@ -208,8 +210,8 @@ style={{
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    marginTop: "-2vw", // Adjust this value to move the image upwards
-    marginRight: "-4vw",
+    marginTop: "-2%", // Adjust this value to move the image upwards
+    marginRight: "-4%",
 
 
     // margin: "0 -1px", // Reduce the margin here
@@ -226,7 +228,7 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "55%", height: "auto" }} 
+  style={{ width: "70px", height: "auto" }} 
   />
     <h4 style={{ fontWeight: 700, 
     // maxWidth: "300px", 
@@ -246,8 +248,8 @@ style={{
     flexDirection: "column",
     // margin: "0 -1px", // Remove or adjust the margin here
     // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
-    marginTop: "-2vw", // Adjust this value to move the image upwards
-    marginRight: "1vw",
+    marginTop: "-15%", // Adjust this value to move the image upwards
+    marginRight: "2%",
 
   }}
   variants={fadeInAnimationVariants}
@@ -272,8 +274,8 @@ style={{
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    marginTop: "-3vw", // Adjust this value to move the image upwards
-    marginRight: "-4vw",
+    marginTop: "-2%", // Adjust this value to move the image upwards
+    marginLeft: "-2%",
 
 
     // margin: "0 -1px", // Reduce the margin here
@@ -290,7 +292,7 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "55%", height: "auto" }} 
+  style={{ width: "70px", height: "auto" }} 
   />
     <h4 style={{ fontWeight: 700,
     //  maxWidth: "300px", 
@@ -308,7 +310,7 @@ style={{
     display: "flex",
     flexDirection: "column",
     marginTop: "-4%", // Adjust this value to move the image upwards
-    marginRight: "0%",
+    marginLeft: "-4%",
 
     // margin: "0 -1px", // Reduce the margin here
     // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
@@ -347,7 +349,7 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "55%", height: "auto" }} 
+  style={{ width: "70px", height: "auto" }} 
   />
     <h4 style={{ fontWeight: 700, 
     // maxWidth: "300px", 

@@ -27,12 +27,16 @@ import learnImg from "../../assets/img/learn.webp";
 import cmpnyImg from "../../assets/img/forbes.webp";
 import evtImg from "../../assets/img/events.webp";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import NavbarShort from "./NavbarShort";
 
 
 function IndexNavbar() {
-  const [collapseOpen, setCollapseOpen] = useState(false);
+const [collapseOpen, setCollapseOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [closeTimeout, setCloseTimeout] = useState(null);
+const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [click, setClick] = useState(false); // Add a click state
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
 
 
@@ -51,27 +55,34 @@ function IndexNavbar() {
 
   const menuRef = useRef();
 
+// Add logic to set click to true when screen width is 1000px
   useEffect(() => {
-    let handler = (e)=>{
-      if(!menuRef.current.contains(e.target)){
-        setOpen(false);
-        console.log(menuRef.current);
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+      if (window.innerWidth >= 1000) {
+        setClick(true);
+      } else {
+        setClick(false);
       }      
     };
 
-    document.addEventListener("mousedown", handler);
+    handleResize(); // Initial call to set the click state
 
-    return() =>{
-      document.removeEventListener("mousedown", handler);
-    }
+    window.addEventListener("resize", handleResize);
 
-  },[]);
-  const toggleDropdown = (dropdownId) => {
-    setDropdowns((prevDropdowns) =>
-      prevDropdowns.map((dropdown) =>
-        dropdown.id === dropdownId ? { ...dropdown, isOpen: !dropdown.isOpen } : dropdown
-      )
-    );
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const toggleDropdown = (id) => {
+    const updatedDropdowns = dropdowns.map((dropdown) => {
+      if (dropdown.id === id) {
+        return { ...dropdown, isOpen: !dropdown.isOpen };
+      }
+      return dropdown;
+    });
+    setDropdowns(updatedDropdowns);
   };
 
 
@@ -100,7 +111,7 @@ function IndexNavbar() {
           dropdown.id === dropdownId ? { ...dropdown, isOpen: false } : dropdown
         )
       );
-    }, 200); // You can adjust the delay (in milliseconds) as needed
+    }, 300); // You can adjust the delay (in milliseconds) as needed
   
     setCloseTimeout(timeoutId); // Store the new timeout ID
   };
@@ -108,22 +119,11 @@ function IndexNavbar() {
 
   return (
     <div ref={menuRef}>
-      {collapseOpen ? (
-        <div
-          id="bodyClick"
-          onClick={() => {
-            document.documentElement.classList.toggle("nav-open");
-            setCollapseOpen(false);
-          }}
-        />
-      ) : null}
+      {screenWidth >= 1100 || click ? ( // Check screenWidth or click state
+    
       <Navbar className="fixed-top" expand="lg" color="default" style={{ fontFamily: "Museo Sans Rounded, sans-serif" }}>
         <Container fluid>
-          <Collapse
-            className="navbar-collapse justify-content-start"
-            isOpen={collapseOpen}
-            navbar
-          >
+          
             <Nav navbar>
               <NavItem>
               <NavbarBrand
@@ -144,49 +144,81 @@ function IndexNavbar() {
                 </NavbarBrand>
               </NavItem>
 
-              <Dropdown isOpen={dropdowns.find((d) => d.id === "products").isOpen} toggle={() => toggleDropdown("products")} nav onMouseEnter={() => openDropdownOnMouseEnter("products")} onMouseLeave={() => closeDropdownOnMouseLeave("products")}>
-  <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2 menu-trigger" onClick={() => setOpen(!open)}>
-    <p>Products</p>
+              <NavItem>
+              <Dropdown 
+              // isOpen={dropdowns.find((d) => d.id === "products").isOpen} 
+              toggle={() => toggleDropdown("products")} 
+              nav 
+              onMouseEnter={() => setActiveDropdown("products")} // Set active dropdown on mouse enter
+                onMouseLeave={() => setActiveDropdown(null)} // Reset active dropdown on mouse leave
+              
+              // onMouseEnter={() => openDropdownOnMouseEnter("products")}
+              //  onMouseLeave={() => closeDropdownOnMouseLeave("products")}
+              >
+  <DropdownToggle color="default" 
+  nav 
+  className="custom-dropdown-toggle mr-2 menu-trigger"
+  //  onClick={() => setOpen(!open)}
+  // onClick={() => {
+  //   toggleDropdown("products");
+  //   console.log("state ",dropdowns.find((d) => d.id === "products").isOpen);
+  // }} // Toggle dropdown on click
+   >
+    <Link style={{textDecoration: "none"}}>Products</Link>
   </DropdownToggle>
-  <DropdownMenu className={`custom-dropdown-menu ${open ? 'active' : 'inactive'}`} 
-  style={{ marginTop: "20%", marginLeft: "-100%", height: "500%" }}>
+  {/* {dropdowns.find((d) => d.id === "products").isOpen && ( */}
+
+  <DropdownMenu 
+ className={`custom-dropdown-menu ${
+  activeDropdown === "products" ? "active" : "inactive"
+}`} 
+  style={{ marginTop: "50%", marginLeft: "-100%", height: "500%" }}>
   <Container style={{ width: "950px", height: "100%", display: "flex" }}>
       <Row>
-      <Col md="3" style={{ marginBottom: "-15px" }}>
+      
+      <Col md="3" style={{left: "-2%", justifyContent: "flex-start",
+    textAlign: "left", alignItems: "flex-start" }}>
         {/* Dropdown items */}
-        <DropdownItem to="/index" tag={Link} style={{ marginBottom: "-20px" }}>
+        <DropdownItem style={{ marginBottom: "-20px" }}>
+<Link>        
           Talent Intelligence Platform
+</Link>
         </DropdownItem>
         <DropdownItem
           href=""
           target="_blank"
           style={{ marginBottom: "-20px" }}
         >
-          Talent Flex
+          <Link>Talent Flex</Link>
+          
         </DropdownItem>
         <DropdownItem
           href=""
           target="_blank"
           style={{ marginBottom: "-20px" }}
         >
-          Talent Acquisition
+          <Link>Talent Acquisition</Link>
+          
         </DropdownItem>
         <DropdownItem
           href=""
           target="_blank"
           style={{ marginBottom: "-20px" }}
         >
-          Talent Management
+          <Link> Talent Management</Link>
+         
         </DropdownItem>
         <DropdownItem
           href=""
           target="_blank"
+style={{ marginBottom: "15px" }}
         >
-          Workforce Exchange
+          <Link>Workforce Exchange</Link>
+          
         </DropdownItem>
       </Col>
 
- <Col md="9" style={{ marginTop: "-1.4%", height: "111%", background: "linear-gradient(to right, #7cf3f7, #04b6d1)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px"}}>
+ <Col md="9" style={{ marginTop: "-1%", height: "110%", background: "linear-gradient(to right, #7cf3f7, #04b6d1)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px"}}>
           {/* Second Column */}
           <div style={{ flex: 1, height: "100%", paddingTop: "7%" }}>
             <h5 style={{ fontSize: "20px", fontWeight: 1000 }}>A single AI platform for all talent</h5>
@@ -206,23 +238,36 @@ function IndexNavbar() {
       </Row>
     </Container>
   </DropdownMenu>
+{/* )} */}
 </Dropdown>
+</NavItem>
 
+<NavItem>
           <Dropdown
-            isOpen={dropdowns.find((d) => d.id === "solutions").isOpen}
+            // isOpen={dropdowns.find((d) => d.id === "solutions").isOpen}
             toggle={() => toggleDropdown("solutions")}
             nav
-            onMouseEnter={() => openDropdownOnMouseEnter("solutions")}
-            onMouseLeave={() => closeDropdownOnMouseLeave("solutions")}
+            onMouseEnter={() => setActiveDropdown("solutions")} // Set active dropdown on mouse enter
+            onMouseLeave={() => setActiveDropdown(null)} // Reset active dropdown on mouse leave
+            // onMouseEnter={() => openDropdownOnMouseEnter("solutions")}
+            // onMouseLeave={() => closeDropdownOnMouseLeave("solutions")}
           >     
-          <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
-              <p>Solutions</p>
+          <DropdownToggle color="default" nav 
+          //  onClick={() => toggleDropdown("solutions")} // Toggle dropdown on click
+          className="custom-dropdown-toggle mr-2 menu-trigger"
+          >
+              <Link style={{textDecoration: "none"}}>Solutions</Link>
             </DropdownToggle>
-            <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`} style={{marginTop: "20%",}}>
-                  <DropdownItem to="/index" tag={Link}     style={{ marginBottom: "-20px" }}
+            {/* {dropdowns.find((d) => d.id === "solutions").isOpen && ( */}
+
+            <DropdownMenu 
+className={`custom-dropdown-menu ${
+  activeDropdown === "solutions" ? "active" : "inactive"
+}`}        style={{marginTop: "50%",}}>
+                  <DropdownItem style={{ marginBottom: "-20px" }}
 >
-                    {/* <i className="now-ui-icons business_chart-pie-36 mr-1"></i> */}
-                    For enterprise
+                    <Link> For enterprise</Link>
+                   
                   </DropdownItem>
                   <DropdownItem
                     href=""
@@ -230,8 +275,18 @@ function IndexNavbar() {
                     style={{ marginBottom: "-20px" }}
 
                   >
-                    {/* <i className="now-ui-icons design_bullet-list-67 mr-1"></i> */}
-                    For public sector
+                    <Link>For public sector</Link>
+                    
+                  </DropdownItem>
+
+                  <DropdownItem
+                    href=""
+                    target="_blank"
+                    style={{ marginBottom: "-20px" }}
+
+                  >
+                    <Link>For DE&I</Link>
+                    
                   </DropdownItem>
                   <DropdownItem
                     href=""
@@ -239,26 +294,8 @@ function IndexNavbar() {
                     style={{ marginBottom: "-20px" }}
 
                   >
-                    {/* <i className="now-ui-icons design_bullet-list-67 mr-1"></i> */}
-                    For public sector
-                  </DropdownItem>
-                  <DropdownItem
-                    href=""
-                    target="_blank"
-                    style={{ marginBottom: "-20px" }}
-
-                  >
-                    {/* <i className="now-ui-icons design_bullet-list-67 mr-1"></i> */}
-                    For DE&I
-                  </DropdownItem>
-                  <DropdownItem
-                    href=""
-                    target="_blank"
-                    style={{ marginBottom: "-20px" }}
-
-                  >
-                    {/* <i className="now-ui-icons design_bullet-list-67 mr-1"></i> */}
-                    For governance
+                    <Link>For governance</Link>
+                    
                   </DropdownItem>
                   <DropdownItem
                     href=""
@@ -266,66 +303,80 @@ function IndexNavbar() {
                     style={{ marginBottom: "15px" }}
 
                   >
-                    {/* <i className="now-ui-icons design_bullet-list-67 mr-1"></i> */}
-                    App marketplace
+                    <Link>App marketplace</Link>
+                    
                   </DropdownItem>
                   </DropdownMenu>
+{/* )} */}
           </Dropdown>
+</NavItem>
           <NavItem>
   <NavLink
     to="/services"
     tag={Link}
     className="nav-link"
   >
-    <p style={{fontSize: "120%"}}>Services</p>
+    <Link style={{textDecoration: "none"}}>Services</Link>
   </NavLink>
 </NavItem>
 
-
+<NavItem>
 <Dropdown
-            isOpen={dropdowns.find((d) => d.id === "learn").isOpen}
+            // isOpen={dropdowns.find((d) => d.id === "learn").isOpen}
             toggle={() => toggleDropdown("learn")}
             nav
-            onMouseEnter={() => openDropdownOnMouseEnter("learn")}
-            onMouseLeave={() => closeDropdownOnMouseLeave("learn")}
-          >            <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
-              <p>Learn</p>
+            onMouseEnter={() => setActiveDropdown("learn")} // Set active dropdown on mouse enter
+                onMouseLeave={() => setActiveDropdown(null)} // Reset active dropdown on mouse leave
+            // onMouseEnter={() => openDropdownOnMouseEnter("learn")}
+            // onMouseLeave={() => closeDropdownOnMouseLeave("learn")}
+          >       
+         <DropdownToggle color="default" nav 
+        //  onClick={() => toggleDropdown("learn")} // Toggle dropdown on click
+        className="custom-dropdown-toggle mr-2 menu-trigger"
+        >
+              <Link style={{textDecoration: "none"}}>Learn</Link>
             </DropdownToggle>
+{/* {dropdowns.find((d) => d.id === "learn").isOpen && ( */}
+  
             <DropdownMenu
-  className={`custom-dropdown-menu ${open ? 'active' : 'inactive'}`}
-  style={{ marginTop: "20%", marginLeft: "-500%", height: "500%"}}
+  className={`custom-dropdown-menu ${
+              activeDropdown === "learn" ? "active" : "inactive"
+            }`}
+  style={{ marginTop: "50%", marginLeft: "-500%", height: "500%"}}
 >
   <Container style={{ width: "950px", height: "100%" , display: "flex"}}>
     <Row>
-      <Col md="3" style={{ marginBottom: "-15px" }}>
+      <Col md="3" style={{ left: "-2%",marginBottom: "-15px", justifyContent: "flex-start",
+    textAlign: "left", alignItems: "flex-start" }}>
   {/* Dropdown items */}
-  <DropdownItem to="/index" tag={Link} style={{ marginBottom: "-15px" }}>
-    Talent intelligence library
+  <DropdownItem style={{ marginBottom: "-15px" }}>
+    <Link>Talent intelligence library</Link>
+    
   </DropdownItem>
   <DropdownItem
-    href=""
-    target="_blank"
+    
     style={{ marginBottom: "-15px" }}
   >
-    Eightfold AI talent research
+    <Link>Eightfold AI talent research</Link>
+    
   </DropdownItem>
   <DropdownItem
-    href=""
-    target="_blank"
+    
     style={{ marginBottom: "-15px" }}tyj
   >
-    The New Talent Code podcast
+    <Link>The New Talent Code podcast</Link>
+    
   </DropdownItem>
   <DropdownItem
-    href=""
-    target="_blank"
+    
   >
-    Blog
+    <Link>Blog</Link>
+    
   </DropdownItem>
   
 </Col>
 
-                  <Col md="9" style={{ marginTop: "-1.2%" ,height: "110%",background: "linear-gradient(to right, #008BE8, #5B4B6E )", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
+                  <Col md="9" style={{ marginTop: "-1.1%" ,height: "110%",background: "linear-gradient(to right, #008BE8, #5B4B6E )", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
   {/* First Column */}
   <div style={{ flex: 1, padding: "20px" }}>
     <h5 style={{ fontSize: "20px", fontWeight: 700 }}>Responsible Al at Eightfold</h5>
@@ -350,23 +401,35 @@ function IndexNavbar() {
       </Row>
     </Container>
   </DropdownMenu>
+{/* )} */}
           </Dropdown>
+</NavItem>
+
+          <NavItem>
           <Dropdown
-            isOpen={dropdowns.find((d) => d.id === "customers").isOpen}
+            // isOpen={dropdowns.find((d) => d.id === "customers").isOpen}
             toggle={() => toggleDropdown("customers")}
             nav
-            onMouseEnter={() => openDropdownOnMouseEnter("customers")}
-            onMouseLeave={() => closeDropdownOnMouseLeave("customers")}
+            onMouseEnter={() => setActiveDropdown("customers")} // Set active dropdown on mouse enter
+                onMouseLeave={() => setActiveDropdown(null)} // Reset active dropdown on mouse leave
+            // onMouseEnter={() => openDropdownOnMouseEnter("customers")}
+            // onMouseLeave={() => closeDropdownOnMouseLeave("customers")}
           >           
-           <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2"
+           <DropdownToggle color="default" nav 
+          // onClick={() => toggleDropdown("customers")} // Toggle dropdown on click
+          className="custom-dropdown-toggle mr-2 menu-trigger"
            >
-              <p>Customers</p>
+              <Link style={{textDecoration: "none"}}>Customers</Link>
             </DropdownToggle>
-            <DropdownMenu className={`custom-dropdown-menu ${open? 'active' : 'inactive'}`} style={{marginTop: "20%",}}>
-                  <DropdownItem to="/index" tag={Link}     style={{ marginBottom: "-15px" }}
+            {/* {dropdowns.find((d) => d.id === "customers").isOpen && ( */}
+
+            <DropdownMenu 
+ className={`custom-dropdown-menu ${
+  activeDropdown === "customers" ? "active" : "inactive"
+}`}            style={{marginTop: "40%",}}>
+                  <DropdownItem style={{ marginBottom: "-15px" }}
 >
-                    {/* <i className="now-ui-icons business_chart-pie-36 mr-1"></i> */}
-                    Eightfold customers
+                    <Link>Eightfold customers</Link>
                   </DropdownItem>
                   <DropdownItem
                     href=""
@@ -374,54 +437,61 @@ function IndexNavbar() {
                     style={{ marginBottom: "-15px" }}
 
                   >
-                    {/* <i className="now-ui-icons design_bullet-list-67 mr-1"></i> */}
-                    Customer stories
+                    <Link>Customer stories</Link>
                   </DropdownItem>
-                  <DropdownItem to="/index" tag={Link}     style={{ marginBottom: "15px" }}
+                  <DropdownItem style={{ marginBottom: "15px" }}
 >
-                    {/* <i className="now-ui-icons business_chart-pie-36 mr-1"></i> */}
-                    Community
+                    <Link>Community</Link>
                   </DropdownItem>
                   
                   </DropdownMenu>
+{/* )} */}
                 </Dropdown>
+</NavItem>
            
+<NavItem>
                 <Dropdown
-            isOpen={dropdowns.find((d) => d.id === "events").isOpen}
+            // isOpen={dropdowns.find((d) => d.id === "events").isOpen}
             toggle={() => toggleDropdown("events")}
             nav
-            onMouseEnter={() => openDropdownOnMouseEnter("events")}
-            onMouseLeave={() => closeDropdownOnMouseLeave("events")}
+            onMouseEnter={() => setActiveDropdown("events")} // Set active dropdown on mouse enter
+                onMouseLeave={() => setActiveDropdown(null)} // Reset active dropdown on mouse leave
+            // onMouseEnter={() => openDropdownOnMouseEnter("events")}
+            // onMouseLeave={() => closeDropdownOnMouseLeave("events")}
           >            
-          <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2">
-              <p>Events</p>
+          <DropdownToggle color="default" nav 
+          //  onClick={() => toggleDropdown("events")} // Toggle dropdown on click
+          className="custom-dropdown-toggle mr-2 menu-trigger"
+          >
+              <Link style={{textDecoration: "none"}}>Events</Link>
             </DropdownToggle>
+{/* {dropdowns.find((d) => d.id === "events").isOpen && ( */}
+
             <DropdownMenu
-  className={`custom-dropdown-menu ${open ? 'active' : 'inactive'}`}
-  style={{  marginTop: "20%",marginLeft: "-700%", height: "500%"}}
+  className={`custom-dropdown-menu ${
+  activeDropdown === "events" ? "active" : "inactive"
+}`}  style={{  marginTop: "50%",marginLeft: "-700%", height: "500%"}}
 >
     <Container style={{ width: "950px", height: "100%", display: "flex" }}>
       <Row>
-      <Col md="3" style={{ marginBottom: "-15px" }}>
+      <Col md="3" style={{ left: "-2%",marginBottom: "-15px", justifyContent: "flex-start",
+    textAlign: "left", alignItems: "flex-start" }}>
   <DropdownItem
-    href=""
-    target="_blank"
+    
     style={{ marginBottom: "-15px" }}
   >
-    All Events
+    <Link>All Events</Link>
   </DropdownItem>
   <DropdownItem
-    href=""
-    target="_blank"
+    
     style={{ marginBottom: "-15px" }}
   >
-    Cultivate
+    <Link>Cultivate</Link>
   </DropdownItem>
   <DropdownItem
-    href=""
-    target="_blank"
+    
   >
-    Webinars
+    <Link>Webinars</Link>
   </DropdownItem>
 </Col>
 
@@ -451,26 +521,38 @@ function IndexNavbar() {
       </Row>
     </Container>
   </DropdownMenu>
+{/* )} */}
                 </Dropdown>
+</NavItem>
+
+                <NavItem>
                 <Dropdown
-            isOpen={dropdowns.find((d) => d.id === "company").isOpen}
+            // isOpen={dropdowns.find((d) => d.id === "company").isOpen}
             toggle={() => toggleDropdown("company")}
             nav
-            onMouseEnter={() => openDropdownOnMouseEnter("company")}
-            onMouseLeave={() => closeDropdownOnMouseLeave("company")}
+            onMouseEnter={() => setActiveDropdown("company")} // Set active dropdown on mouse enter
+                onMouseLeave={() => setActiveDropdown(null)} // Reset active dropdown on mouse leave
+            // onMouseEnter={() => openDropdownOnMouseEnter("company")}
+            // onMouseLeave={() => closeDropdownOnMouseLeave("company")}
           >            
-          <DropdownToggle color="default" nav className="custom-dropdown-toggle mr-2"
+          <DropdownToggle color="default" nav 
+          // onClick={() => toggleDropdown("company")} // Toggle dropdown on click
+          className="custom-dropdown-toggle mr-2 menu-trigger"
          
            >
-                  <Link to="/company" style={{textDecoration: "none", fontSize: "120%"}}>Company</Link> {/* Link to "/company" */}
+                  <Link to="/company" style={{textDecoration: "none"}}>Company</Link> {/* Link to "/company" */}
             </DropdownToggle>
+{/* {dropdowns.find((d) => d.id === "company").isOpen && ( */}
+
             <DropdownMenu
-  className={`custom-dropdown-menu ${open ? 'active' : 'inactive'}`}
-  style={{ marginTop: "20%", marginLeft: "-600%", height: "500%"}}
+  className={`custom-dropdown-menu ${
+  activeDropdown === "company" ? "active" : "inactive"
+}`}
+  style={{ marginTop: "45%", marginLeft: "-650%", height: "500%"}}
 >
   <Container style={{ width: "950px", height: "100%", display: "flex" }}>
       <Row>
-      <Col md="3" style={{ marginBottom: "-15px" }}>
+      <Col md="3" style={{   left: "-2%", marginBottom: "-15px" }}>
   {/* Dropdown items */}
   <DropdownItem style={{ marginBottom: "-20px" }}>
     
@@ -552,15 +634,12 @@ function IndexNavbar() {
       </Row>
     </Container>
   </DropdownMenu>
+{/* )} */}
                 </Dropdown>
+</NavItem>
               </Nav>
-              </Collapse>
 
-              <Collapse
-  className="justify-content-end"
-  isOpen={collapseOpen}
-  navbar
->
+
   <Nav navbar>
   <NavItem>
   <FontAwesomeIcon
@@ -594,24 +673,32 @@ function IndexNavbar() {
 
 </NavItem>
 
-    <NavItem>
+    <NavItem className="ml-auto">
       <NavbarBrand
         className="mt-2"
-        href="https://demos.creative-tim.com/now-ui-kit-react/#/index?ref=nukr-index-navbar"
-        target="_blank"
+        href=""
         id="navbar-brand"
-        style={{fontWeight:700}}
+        style={{ fontWeight: 700 }}
       >
         Login                
       </NavbarBrand>
     </NavItem>
+
   </Nav>
-</Collapse>
 <SearchModal isOpen={searchModalOpen} toggleSearchModal={toggleSearchModal} />
 
 </Container>
 <style>
   {`
+
+/* Add this CSS to your stylesheets or in a <style> tag */
+.navbar-top {
+  top: -5%;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1000; /* Adjust the z-index as needed */
+}
 
 .menu-trigger dropdown-toggle{
   position: absolute;
@@ -624,7 +711,7 @@ function IndexNavbar() {
   cursor: pointer;
 }
 
-.custom-dropdown-menu {
+.custom-dropdown-menu  {
   position: absolute;
   // top: 1000px;
   // right: 20px;
@@ -650,34 +737,28 @@ function IndexNavbar() {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-  transition: 1000ms ease;
+  transition: 500ms ease;
 }
 
 .custom-dropdown-menu.inactive{
   opacity: 0;
   visibility: hidden;
   transform: translateY(-20px);
-  transition: 1000ms ease;
+  transition: 500ms ease;
 }
 
 .custom-dropdown-menu a {
   text-decoration: none;
   border-bottom: 2px solid transparent;
   transition: border-bottom 0.3s ease-in-out;
-}
+font-size: 90%;
 
-/* Hover effect for dropdown menu items */
+}
 .custom-dropdown-menu a:hover {
-  background-image: linear-gradient(to right, #1d212b, #1d212b);
-  background-size: 100% 100%;
-  background-position: 0 90%;
-  background-clip: text;
   border-bottom: 2.5px solid transparent;
-  border-image: linear-gradient(0.25turn, rgba(50, 94, 168), rgba(24, 9, 230), rgba(169, 11, 227));
-  border-image-slice: 1;
-  width: 100%;
+    border-image: linear-gradient(0.25turn, #0582a8, rgba(1, 63, 82), rgba(169, 11, 227));
+    border-image-slice: 1;
 }
-
  
   .close-button{
      color:white
@@ -689,7 +770,7 @@ function IndexNavbar() {
   
   .dropdown-menu {
     background-color: rgb(29, 33, 43); 
-    font-size: 120%;
+    font-size: 100%;
     font-weight: 200;
     color: white; 
     border-radius: 20px;
@@ -702,14 +783,46 @@ function IndexNavbar() {
     position: absolute;
   }
   
+/* Reduce the distance between link and border-bottom */
+  .nav-link a {
+    font-size: 110%;
+
+  }
+
+  
+  .nav-link a:hover::before {
+    content: "";
+    position: absolute;
+    left: 50%; /* Adjust the left position as needed */
+    bottom: 25%; /* Place it in the middle of the element */
+    transform: translateY(50%); /* Center it vertically */
+    height: 3px; /* Adjust the height as needed */
+    width: 20%; /* Adjust the width as needed */
+    background-image:  linear-gradient(0.25turn, #87CEEB, #1E90FF);
+  }
+  
+  
+.nav-link a:focus {
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(0.25turn, #87CEEB, #1E90FF);
+  border-image-slice: 1;
+}
+// .dropdown-item:hover {
+//   border-bottom: 2.5px solid transparent;
+//   border-image: linear-gradient(0.25turn, rgba(50, 94, 168), rgba(24, 9, 230), rgba(169, 11, 227));
+//   border-image-slice: 1;
+// }
+
 
   .custom-dropdown-toggle p {
-    font-size: 120%;
+    font-size: 210%;
+font-weight: 500;
   }
   ` 
   }
 </style>
 </Navbar>
+) : <NavbarShort />} 
 
 </div>
 );
