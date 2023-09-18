@@ -104,8 +104,7 @@ Our values guide everything we do.
 {screenWidth >= 1000 && (
 
 <Row style={{ display: "flex" }}>
-
-            <Col style={{ maxWidth:"20%",margin: "0 0", display: "flex" , 
+<Col xs={12} xl={4} style={{ maxWidth:"20%",margin: "0 0", display: "flex" , 
 }}>
 
 <motion.Card style={{ 
