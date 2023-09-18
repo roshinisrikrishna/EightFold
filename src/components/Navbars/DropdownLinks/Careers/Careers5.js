@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-
-// reactstrap components
-import { Container, Row, Col, Card, CardBody } from "reactstrap";
-
+import { Container, Row, Col, Card } from "reactstrap";
 import logo from "../../../../assets/img/Globe-together-animated.svg";
 
 import { motion } from "framer-motion";
@@ -19,8 +16,8 @@ const fadeInAnimationVariants = {
     y: 0,
     transition: {
       delay: 0.1 * index,
-      duration: 1, // Duration set to 1000ms (1 second)
-      ease: "easeInOut", // Use a valid easing function here
+      duration: 1,
+      ease: "easeInOut",
     },
   }),
 };
@@ -33,6 +30,7 @@ function Typography() {
     updatedVisibility[index] = !updatedVisibility[index];
     setDropdownVisible(updatedVisibility);
   };
+
   return (
     <>
     
@@ -41,17 +39,14 @@ function Typography() {
 background: "linear-gradient(to right, #000 50%, #455e8f)",
           color: "#FFF",
           display: "flex",
-          flexDirection: "column", // Display items in a column
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          maxWidth: "100%", // Adjust this value to match the screen width
         }}
       >
-         <Container className="" style={{ maxWidth: "100%",minHeight: "100vh", paddingTop: "100px" }}>
-        <Container className="" style={{ maxWidth: "100%",paddingBottom: "150px" }}>
+         <Container className="" style={{ maxWidth: "100%", paddingBottom: "150px" }}>
           <Row>
-            
-            <Col md="6" style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-start" }}>
+            <Col md={6} xl={6} xs={12} style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-start" }}>
   <Container className="" style={{ position: "relative" }}>
   <Card style={{ 
     background: "transparent", 
@@ -72,28 +67,28 @@ background: "linear-gradient(to right, #000 50%, #455e8f)",
   </Container>
  
 </Col>
-<Col md="6" className="pr-2">
-              <Container className="" style={{paddingTop: "220px",display: "flex", justifyContent: "center", alignItems: "center"}}>
-                <Row>
-                  <Col>
-                    <h2 style={{ 
-                fontSize: "450%", 
+<Col  md={6} xl={6} xs={12} className="pr-2">
+              <Container className="" style={{maxWidth: "95%", paddingTop: "220px", display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                                    <h2 style={{ 
+                fontSize: "4.3em", 
                 fontWeight: 900,
                 lineHeight: "1em", 
-                fontFamily: "Museo Sans Rounded, sans-serif" }}>
+                fontFamily: "Museo Sans Rounded, sans-serif",
+                }}>
                     Transforming work. One hire at a time.
                     </h2>
 
         
 
     <h2 style={{ 
-      paddingTop: "50px",
-                fontSize: "21px", 
+      paddingTop: "45px",
+                fontSize: "1.1em", 
                 fontWeight: 600,
                 lineHeight: "1.5em", 
-                fontFamily: "roboto, sans-serif" }}>
-                    We’re helping every worker and organization unlock their potential.</h2>
-
+                fontFamily: "roboto, sans-serif",
+                }}>
+                    We’re helping every worker and organization unlock their potential.
+                </h2>
                     <motion.button
   className="hover-white-button"
           style={{
@@ -104,9 +99,9 @@ background: "linear-gradient(to right, #000 50%, #455e8f)",
     cursor: "pointer",
     marginTop: "20px",
             fontWeight: "bolder",
-    fontSize: "80%", // Set font size relative to viewport width
-    maxWidth: "100%", // Ensure the button takes up the full width
-    padding: "2% 6%", // Set padding as a percentage of the button's width and height
+    fontSize: "0.8em",
+    maxWidth: "100%",
+    padding: "10px 30px",
     fontFamily: "Museo Sans Rounded, sans-serif",
           }}
           variants={fadeInAnimationVariants}
@@ -117,8 +112,7 @@ background: "linear-gradient(to right, #000 50%, #455e8f)",
         >
           View open roles
         </motion.button>
-        </Col>
-          </Row>
+        
               </Container>
             </Col>
 
@@ -126,7 +120,6 @@ background: "linear-gradient(to right, #000 50%, #455e8f)",
           </Row>
    
         </Container>
-      </Container>
       
         
     </div>

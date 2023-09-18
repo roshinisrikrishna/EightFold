@@ -34,17 +34,14 @@ function Typography() {
     setDropdownVisible(updatedVisibility);
   };
   return (
-    <div style={{minHeight: "28vh",height: "100%",  
-    background: "linear-gradient(rgba(0, 139, 232, 0.2), rgba(147, 112, 219, 0.2), rgba(255,255,255))",
-    backdropFilter: "blur(10px)", // Add this line for blur effect    
-              // color: "#FFF",
-    // filter: "blur(60px)",
-  }}
-    >
+    <div style={{background: "linear-gradient(rgba(0, 139, 232, 0.2) 50%, rgba(147, 112, 219, 0.2) 50%, rgba(255,255,255))", 
+   minHeight: "180px",
+    backdropFilter: "blur(50px)"}}>
     
       <div
         style={{
-         
+         // background: "#000",
+          // color: "#FFF",
           display: "flex",
           flexDirection: "column", // Display items in a column
           justifyContent: "center",
@@ -55,13 +52,12 @@ function Typography() {
           <Container 
             style={{
               background: "#fff",
-              maxWidth: "95%",
+              maxWidth: "98%",
               height: "auto", // Adjust the height as needed
               padding: "2vw",
               borderRadius: "0.5vw",
               justifyContent: "center",
-              textAlign: "center",
-              marginTop: "-20px"
+              textAlign: "center"
             }}
           >
               <h4
@@ -69,7 +65,7 @@ function Typography() {
                 color: "#484B58",
                 fontWeight: "normal",
                 fontFamily: "roboto, sans-serif",
-                fontSize: "2vw",
+                fontSize: "22px",
                 // maxWidth: "70%"
                             }}
               

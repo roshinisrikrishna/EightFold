@@ -89,7 +89,7 @@ function IndexHeader() {
         <Container>
           
         <div className="content-center brand" 
-        style={{ marginTop: "30%", marginLeft: "0%" , maxWidth: "100%", minHeight: "100vh"}}>
+        style={{ marginTop: "30%", marginLeft: "0%" , maxWidth: "100%", minHeight: "700px"}}>
   <motion.h1
     style={{
       fontWeight: "bolder",

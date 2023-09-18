@@ -31,6 +31,7 @@ import NavbarShort from "./NavbarShort";
 
 
 function IndexNavbar() {
+const [collapseOpen, setCollapseOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [closeTimeout, setCloseTimeout] = useState(null);
 const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -210,6 +211,7 @@ const [screenWidth, setScreenWidth] = useState(window.innerWidth);
         <DropdownItem
           href=""
           target="_blank"
+style={{ marginBottom: "15px" }}
         >
           <Link>Workforce Exchange</Link>
           
@@ -735,14 +737,14 @@ className={`custom-dropdown-menu ${
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-  transition: 1000ms ease;
+  transition: 500ms ease;
 }
 
 .custom-dropdown-menu.inactive{
   opacity: 0;
   visibility: hidden;
   transform: translateY(-20px);
-  transition: 1000ms ease;
+  transition: 500ms ease;
 }
 
 .custom-dropdown-menu a {
@@ -768,7 +770,7 @@ font-size: 90%;
   
   .dropdown-menu {
     background-color: rgb(29, 33, 43); 
-    font-size: 120%;
+    font-size: 100%;
     font-weight: 200;
     color: white; 
     border-radius: 20px;

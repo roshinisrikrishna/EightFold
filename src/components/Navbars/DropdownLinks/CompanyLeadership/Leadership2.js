@@ -9,6 +9,8 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
+
+
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
@@ -66,22 +68,13 @@ function Typography() {
                 color: "#484B58",
                 fontWeight: "normal",
                 fontFamily: "roboto, sans-serif",
-                fontSize: "1.8vw"
+                fontSize: "22px"
                             }}
               
             >
               Our team has deep expertise in developing and implementing
               best-in-class 
-            </h4>
-            <h4
-              style={{
-                color: "#484B58",
-                fontWeight: "normal",
-                fontFamily: "roboto, sans-serif",
-                fontSize: "1.8vw"
-              }}
-              
-            >
+            <br/>
                AI-powered HR technology that delivers results
             </h4>
           </Container>
@@ -110,17 +103,20 @@ function Typography() {
           learning, and deep-learning AI to transform the talent industry by finding the best 
           roles for everyone while driving extraordinary business outcomes.
         </motion.p>
- <Container
-          style={{
-            maxWidth: "95%",
-            display: "flex",
-            flexDirection: "row",
+ <Row style={{
+            maxWidth: "93%",
+            // display: "flex",
+            // flexWrap: "wrap" ,
             marginTop: "40px",
-            justifyContent: "center",
-            alignItems: "stretch",
+            // justifyContent: "center",
+            // alignItems: "stretch",
             paddingBottom: "7vw"
-          }}
-        >
+          }}>
+
+<Col xs={12} md={6} xl={6} style={{
+  //  margin: "10px 0", 
+   display: "flex" }}>
+
           <motion.Card
             style={{
               borderBottom: "2px solid transparent",
@@ -130,10 +126,10 @@ function Typography() {
               borderImage: "linear-gradient(to right, #a90bde, #002aeb) 2",
               padding: "4%",
               height: "auto",
-              flex: "0.5",
-              display: "flex",
-              flexDirection: "column",
-              margin: "0 10px", 
+              // flex: "0.5",
+              // display: "flex",
+              // flexDirection: "column",
+              margin: "0 2px", 
               justifyContent: "center",
               alignItems: "flex-start",
               boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
@@ -161,7 +157,7 @@ function Typography() {
             <div className="dropdown">
               {dropdownVisible[0] && (
                 <div className="dropdown-content">
-                  <p style={{ fontWeight: 400, fontSize: "1.1vw" }}>
+                  <p style={{ fontWeight: 400, fontSize: "70%" }}>
                     Co-Author of the books “What’s Next for You – The Eightfold Path To Transforming The Way We
                     Hire And Manage Talent” and “Deep Talent – How to transform your organization and empower your
                     employees through AI.”
@@ -189,6 +185,11 @@ function Typography() {
               </p>
             </div>
           </motion.Card>
+</Col>
+<Col xs={12} md={6} xl={6} style={{ 
+  // margin: "10px 0", 
+  display: "flex" 
+  }}>
 
           <motion.Card
             style={{
@@ -199,10 +200,10 @@ function Typography() {
               borderImage: "linear-gradient(to right, #a90bde, #002aeb) 2",
               padding: "5vw",
               height: "auto",
-              flex: "0.5",
-              display: "flex",
-              flexDirection: "column",
-              margin: "0 10px", 
+              // flex: "0.5",
+              // display: "flex",
+              // flexDirection: "column",
+              margin: "0 2px", 
               justifyContent: "center",
               alignItems: "flex-start",
               boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
@@ -219,7 +220,7 @@ function Typography() {
       fontWeight: 700,
       fontFamily: "Museo Sans Rounded, sans-serif",
       fontSize: "20px",
-      marginTop: "5vw", // Margin from the top
+      marginTop: "7%", // Margin from the top
     }}
   >
     Varun Kacholia
@@ -228,14 +229,15 @@ function Typography() {
     CEO & Co-Founder
   </h4>
 
-  <p style={{ fontWeight: 400, fontSize: "1.1vw" }}>
+  <p style={{ fontWeight: 400, fontSize: "70%" }}>
     Varun Kacholia is one of the world’s leaders when it comes to search, ranking and machine-learning. Prior to
     founding Eightfold, Varun led the News Feed team at Facebook and the YouTube Search and Recommendations team at
     Google.
   </p>
 </motion.Card>
+</Col>
+</Row>
 
-        </Container>
 
         
       </div>

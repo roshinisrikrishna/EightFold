@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Container,
   Row,
@@ -11,16 +11,61 @@ import lead4 from "../../../../assets/img/lead4.jpg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { zoomIn } from "react-animations";
+import { keyframes } from "styled-components";
+import styled from "styled-components";
+
+const ZoomIn = styled.div`animation: 1s ${keyframes`${zoomIn}`}`;
 
 function Company3() {
   const [pills, setPills] = useState("2");
   const [dropdownVisible, setDropdownVisible] = useState([false, false, false]);
+const [animationCompleted, setAnimationCompleted] = useState([false, false, false]);
 
-  const toggleDropdown = (index) => {
-    const updatedVisibility = [...dropdownVisible];
-    updatedVisibility[index] = !updatedVisibility[index];
-    setDropdownVisible(updatedVisibility);
-  };
+  // Create a separate ref for each image
+  const imageRefs = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ];
+
+  useEffect(() => {
+    const observers = imageRefs.map((imageRef, index) => {
+      return new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          if (entry.isIntersecting && !animationCompleted[index]) {
+            // Trigger animation when the image is in the viewport
+            setAnimationCompleted((prev) => {
+              const updated = [...prev];
+              updated[index] = true;
+              return updated;
+            });
+          }
+        },
+        {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.5, // Adjust the threshold as needed
+        }
+      );
+    });
+
+    // Observe each image with its corresponding observer
+    imageRefs.forEach((imageRef, index) => {
+      if (imageRef.current) {
+        observers[index].observe(imageRef.current);
+      }
+    });
+
+    // Cleanup the observers when the component unmounts
+    return () => {
+      observers.forEach((observer) => {
+        observer.disconnect();
+      });
+    };
+  }, [animationCompleted]);
 
   return (
     <>
@@ -52,12 +97,18 @@ function Company3() {
             </Col>
             <Col md="6" style={{ marginRight: "-20%", display: "flex", justifyContent: "flex-end", alignItems: "flex-end" }}>
               <div style={{ position: "relative" }}>
+<div ref={imageRefs[0]}> {/* Use imageRefs[0] */}
+                  {animationCompleted[0] && ( // Conditionally apply the animation
+                    <ZoomIn>               
                 <img
                   src={lead1}
                   alt="Eightfold.ai Logo"
                   className="navbar-logo"
                   style={{ width: "90%", height: "auto", marginTop: "20%", borderRadius: "15px" }}
                 />
+</ZoomIn>
+                  )}
+                </div>
               </div>
             </Col>
           </Row>
@@ -67,12 +118,18 @@ function Company3() {
           <Row>
             <Col md="6" style={{ display: "flex", justifyContent: "left", alignItems: "flex-start" }}>
               <div style={{ position: "relative" }}>
+<div ref={imageRefs[1]}> {/* Use imageRefs[0] */}
+                  {animationCompleted[1] && ( // Conditionally apply the animation
+                    <ZoomIn>          
                 <img
                   src={lead2}
                   alt="Eightfold.ai Logo"
                   className="navbar-logo"
                   style={{ width: "90%", height: "auto", marginTop: "20%", borderRadius: "15px" }}
                 />
+</ZoomIn>
+                  )}
+                </div>
               </div>
             </Col>
             <Col md="6" style={{ marginTop: "5%", justifyContent: "left", alignItems: "flex-start" }}>
@@ -125,12 +182,18 @@ function Company3() {
             </Col>
             <Col md="6" style={{ marginRight: "-20%", display: "flex", justifyContent: "flex-end", alignItems: "flex-end" }}>
               <div style={{ position: "relative" }}>
+<div ref={imageRefs[2]}> {/* Use imageRefs[0] */}
+                  {animationCompleted[2] && ( // Conditionally apply the animation
+                    <ZoomIn>           
                 <img
                   src={lead3}
                   alt="Eightfold.ai Logo"
                   className="navbar-logo"
                   style={{ width: "90%", height: "auto", marginTop: "20%", borderRadius: "15px" }}
                 />
+</ZoomIn>
+                  )}
+                </div>
               </div>
             </Col>
           </Row>
@@ -140,12 +203,18 @@ function Company3() {
           <Row>
             <Col md="6" style={{ display: "flex", justifyContent: "left", alignItems: "flex-start" }}>
               <div style={{ position: "relative" }}>
+<div ref={imageRefs[3]}> {/* Use imageRefs[0] */}
+                  {animationCompleted[3] && ( // Conditionally apply the animation
+                    <ZoomIn>               
                 <img
                   src={lead4}
                   alt="Eightfold.ai Logo"
                   className="navbar-logo"
                   style={{ width: "90%", height: "auto", marginTop: "20%", borderRadius: "15px" }}
                 />
+</ZoomIn>
+                  )}
+                </div>
               </div>
             </Col>
             <Col md="6" style={{ marginTop: "5%", justifyContent: "left", alignItems: "flex-end" }}>

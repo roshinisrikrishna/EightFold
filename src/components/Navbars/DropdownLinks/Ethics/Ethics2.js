@@ -58,8 +58,8 @@ function Typography() {
               background: "#fff",
               maxWidth: "97%", // Adjust the width as needed
 height: "auto",
-              padding: "2vw",
-              borderRadius: "0.5vw",
+              padding: "2%",
+              borderRadius: "0.5%",
               justifyContent: "flex-end",
               textAlign: "center",
             marginTop: "-10%",
@@ -95,19 +95,19 @@ height: "auto",
             alignItems: "stretch",
           }}
         >
-         <Container style={{ maxWidth: "95%", height: "100%", display: "flex" }}>
+         <Container style={{ maxWidth: "95%", height: "100%", display: "flex" , alignItems: "center", justifyContent: "center"}}>
       <Row>
-      <Col md="2" >
+      <Col md={2} xl={2} xs={6} >
   {/* Dropdown items */}
   <img src={img1} alt="Logo" style={{ width: "100%" }} />
 
   
     </Col>
 
-                  <Col md="10" style={{ width: "90%" }}>
+                  <Col md={10} xl={10} xs={12} style={{ justifyContent: "center",alignItems: "center", width: "90%" }}>
 
       <h2 style={{ fontSize: "130%", fontWeight: 500 }}>Victoria Ann Lipnic</h2>
-      <h4 style={{ fontSize: "90%", color: "#484B58", marginTop: "-2vw" }}>Former EEOC Commissioner</h4>
+      <h4 style={{ fontSize: "90%", color: "#484B58", marginTop: "-2%" }}>Former EEOC Commissioner</h4>
       <h4 style={{fontSize: "87%", color: "#484B58",  lineHeight: "1.5em", }}>An American lawyer and public figure. She served in multiple senior United States
       government positions. She was Commissioner of the U.S. Equal Employment Opportunity 
       Commission (EEOC), nominated to two terms by President Barack Obama, 2010 – 2020.
@@ -116,7 +116,7 @@ height: "auto",
               {dropdownVisible[0] && (
                 <Container className="dropdown-content">
               <h4 style={{
-              fontSize: "87%", color: "#484B58", marginTop: "0vw",
+              fontSize: "87%", color: "#484B58", marginTop: "0%",
                   lineHeight: "1.5em", // Adjust the line height as needed
                 }}>
                     She served as Chair (Acting) of the EEOC under President Donald J. Trump 
@@ -129,7 +129,7 @@ height: "auto",
 
               <p
                 style={{marginLeft: "2%",
-                  fontSize: "1.4vw",
+                  fontSize: "17px",
                   color: "#008FBF",
                   fontWeight: "normal",
                   cursor: "pointer",
@@ -164,19 +164,19 @@ height: "auto",
             maxWidth: "100%"
           }}
         >
-           <Container style={{ maxWidth: "95%", height: "100%", display: "flex" }}>
+           <Container style={{ maxWidth: "95%", height: "100%", display: "flex" , alignItems: "center", justifyContent: "center"}}>
       <Row>
-      <Col md="2" >
+      <Col md={2} xl={2} xs={6} >
   {/* Dropdown items */}
   <img src={img2} alt="Logo" style={{ width: "100%" }} />
 
   
     </Col>
 
-                  <Col md="10" style={{ width: "90%" }}>
+                  <Col md={10} xl={10} xs={12} style={{ width: "90%" }}>
 
       <h2 style={{fontSize: "130%", fontWeight: 500}}>Craig E. Leen</h2>
-      <h4 style={{fontSize: "90%", color: "#484B58", marginTop: "-2vw"}}>Former OFCCP Director</h4>
+      <h4 style={{fontSize: "90%", color: "#484B58", marginTop: "-2%"}}>Former OFCCP Director</h4>
       <h4 style={{fontSize: "87%", color: "#484B58",  lineHeight: "1.5em",  }}>
         Craig Leen is an attorney, adjunct  professor, and former senior executive, who has 
         served as a public official at the 
@@ -188,13 +188,13 @@ height: "auto",
       <Container className="dropdown" style={{marginLeft: "-3.5%"}}>
               {dropdownVisible[1] && (
                 <Container className="dropdown-content">
-              <h4 style={{fontSize: "87%", color: "#484B58", marginTop: "0vw",
+              <h4 style={{fontSize: "87%", color: "#484B58", marginTop: "0%",
                               lineHeight: "1.5em", // Adjust the line height as needed
                             }}>
               Prior to serving at OFCCP, Craig also was formerly City Attorney of Coral Gables, Florida, where he served as the chief ethics officer among other responsibilities.
 
                   </h4>
-                  <h4 style={{fontSize: "87%", color: "#484B58", marginTop: "0vw",
+                  <h4 style={{fontSize: "87%", color: "#484B58", marginTop: "0%",
                                   lineHeight: "1.5em", // Adjust the line height as needed
                                 }}>
 
@@ -205,7 +205,7 @@ In addition to serving on Eightfold’s Advisory Board (including on this AI Eth
 
               <p
                 style={{marginLeft: "2%",
-                  fontSize: "1.4vw",
+                  fontSize: "17px",
                   color: "#008FBF",
                   fontWeight: "normal",
                   cursor: "pointer",
@@ -244,29 +244,29 @@ In addition to serving on Eightfold’s Advisory Board (including on this AI Eth
             // marginTop: "40px",
             // justifyContent: "center",
             // alignItems: "stretch",
-            // paddingBottom: "7vw"
+            // paddingBottom: "7%"
           }}
         >
-         <Container style={{ maxWidth: "95%", height: "100%", display: "flex" }}>
+         <Container style={{ maxWidth: "95%", height: "100%", display: "flex" , alignItems: "center", justifyContent: "center"}}>
       <Row>
-      <Col md="2" >
+      <Col md={2} xl={2} xs={6} >
   {/* Dropdown items */}
   <img src={img3} alt="Logo" style={{  width: "100%" }} />
 
   
     </Col>
 
-                  <Col md="10" style={{ width: "90%" }}>
+                  <Col md={10} xl={10} xs={12} style={{ width: "90%" }}>
 
       <h2 style={{fontSize: "130%", fontWeight: 500}}>Roy Wang</h2>
-      <h4 style={{fontSize: "90%", color: "#484B58", marginTop: "-2vw"}}>General Counsel</h4>
+      <h4 style={{fontSize: "90%", color: "#484B58", marginTop: "-2%"}}>General Counsel</h4>
       <h4 style={{fontSize: "87%", color: "#484B58",  lineHeight: "1.5em",  }}>
       Roy is a seasoned business lawyer as well as an AI expert. He has spent his entire legal career advising technology companies on wide-ranging legal issues, from navigating complex commercial transactions and litigation issues to expanding enterprise value through numerous mergers and acquisitions.
       </h4>
       <Container className="dropdown" style={{marginLeft: "-3.5%"}}>
               {dropdownVisible[2] && (
                 <div className="dropdown-content">
-              <h4 style={{fontSize: "87%", color: "#484B58", marginTop: "0vw",
+              <h4 style={{fontSize: "87%", color: "#484B58", marginTop: "0%",
                               lineHeight: "1.5em", // Adjust the line height as needed
                             }}>Before joining Eightfold, Roy was Associate General Counsel at Marvell Technology Group Ltd. Before that; he was a partner of Kirkland & Ellis LLP. He received his J.D. from U.C. Berkeley, and his Ph.D. in machine learning from UIUC.
       </h4>
@@ -275,7 +275,7 @@ In addition to serving on Eightfold’s Advisory Board (including on this AI Eth
 
               <p
                 style={{marginLeft: "2%",
-                  fontSize: "1.4vw",
+                  fontSize: "17px",
                   color: "#008FBF",
                   fontWeight: "normal",
                   cursor: "pointer",
@@ -314,21 +314,21 @@ In addition to serving on Eightfold’s Advisory Board (including on this AI Eth
             // marginTop: "40px",
             // justifyContent: "center",
             // alignItems: "stretch",
-            // paddingBottom: "7vw"
+            // paddingBottom: "7%"
           }}
         >
-         <Container style={{ maxWidth: "95%", height: "100%", display: "flex" }}>
+         <Container style={{ maxWidth: "95%", height: "100%", display: "flex" , alignItems: "center", justifyContent: "center"}}>
       <Row>
-      <Col md="2" >
+      <Col md={2} xl={2} xs={6} >
   {/* Dropdown items */}
   <img src={img4} alt="Logo" style={{ width: "100%" }} />
 
   
     </Col>
 
-                  <Col md="10" style={{ width: "90%" }}>
+                  <Col md={10} xl={10} xs={12} style={{ width: "90%" }}>
       <h2 style={{fontSize: "130%", fontWeight: 500}}>Ayisha Piotti</h2>
-      <h4 style={{fontSize: "90%", color: "#484B58", marginTop: "-2vw"}}>Managing Partner at RegHorizon,
+      <h4 style={{fontSize: "90%", color: "#484B58", marginTop: "-2%"}}>Managing Partner at RegHorizon,
 <br />
 Director of AI Policy at ETH Zurich</h4>
       <h4 style={{fontSize: "87%", color: "#484B58",  lineHeight: "1.5em", }}>Ayisha is the Managing Partner at the Swiss-based firm RegHorizon and the Director of AI Policy at the Center for Law and Economics of the Swiss Federal Institute of Technology (ETH Zurich).
@@ -336,7 +336,7 @@ Director of AI Policy at ETH Zurich</h4>
       <Container className="dropdown" style={{marginLeft: "-3.5%"}}>
               {dropdownVisible[3] && (
                 <div className="dropdown-content">
-              <h4 style={{fontSize: "87%", color: "#484B58", marginTop: "0vw",
+              <h4 style={{fontSize: "87%", color: "#484B58", marginTop: "0%",
                               lineHeight: "1.5em", // Adjust the line height as needed
                             }}>
               Ayisha is a strategic alliance builder with a strong business background and extensive experience in Government Affairs, tackling complex regulatory & fiscal challenges through working with politicians, diplomatic missions, international organizations, government ministries, and consumer and business associations.
@@ -346,7 +346,7 @@ Director of AI Policy at ETH Zurich</h4>
 
               <p
                 style={{marginLeft: "2%",
-                  fontSize: "1.4vw",
+                  fontSize: "17px",
                   color: "#008FBF",
                   fontWeight: "normal",
                   cursor: "pointer",

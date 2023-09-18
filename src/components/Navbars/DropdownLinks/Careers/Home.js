@@ -61,7 +61,7 @@ borderBottomLeftRadius: "5vw"
             className="brand"
             style={{
               textAlign: "center",
-              maxWidth: "100%",
+              // maxWidth: "100%",
               borderBottomLeftRadius: "5vw",
               paddingBottom: "20px"
             }}
@@ -71,7 +71,7 @@ borderBottomLeftRadius: "5vw"
                 
                 fontFamily: "Museo Sans Rounded, sans-serif",
                 fontWeight: "bolder",
-                fontSize: "4.5vw",
+                fontSize: "52px",
                 // marginTop: "10%",
               }}
               variants={fadeInAnimationVariants}
@@ -82,21 +82,7 @@ borderBottomLeftRadius: "5vw"
             >
               Finding the right career for 
 
-            </motion.h2>
-            <motion.h2
-              style={{
-                
-                fontFamily: "Museo Sans Rounded, sans-serif",
-                fontWeight: "bolder",
-                fontSize: "4.5vw",
-                marginTop: "-2vw",
-              }}
-              variants={fadeInAnimationVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              custom={3}
-            >
+            <br />
 everyone starts here
             </motion.h2>
             <motion.button
@@ -110,7 +96,7 @@ everyone starts here
                 marginTop: "10px",
                 fontWeight: 900,
                 fontSize: "14px",
-                width: "20%",
+                width: "180px",
                 padding: "10px",
 
                 fontFamily: "Museo Sans Rounded, sans-serif",

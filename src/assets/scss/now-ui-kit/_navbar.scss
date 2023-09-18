@@ -107,8 +107,8 @@
             bottom: 10px; /* Adjust this value to shift the border more to the top */
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(to right, #87CEEB, #1E90FF); 
+            // height: 3px;
+            // background: linear-gradient(to right, #87CEEB, #1E90FF); 
             border-radius: $border-radius-small;
         }
         
@@ -118,12 +118,12 @@
             position: relative;
             // width: 20%;
             // border-bottom: 3px solid #1E90FF;
-            margin-left: 19%;
-            top: -2px; 
-            border-bottom: 3px solid transparent;
-            border-image: linear-gradient(0.25turn, #87CEEB, #1E90FF);
-            border-image-slice: 1;
-            width:50%;
+            // margin-left: 19%;
+            // top: -2px; 
+            // border-bottom: 3px solid transparent;
+            // border-image: linear-gradient(0.25turn, #87CEEB, #1E90FF);
+            // border-image-slice: 1;
+            // width:50%;
         }
         
 
@@ -141,7 +141,7 @@
     }
 
     .navbar-brand{
-        font-size: $font-size-mini;
+        font-size: $font-size-small;
         padding-top: $padding-base-vertical;
         padding-bottom: $padding-base-vertical;
         line-height: $line-height-nav-link;

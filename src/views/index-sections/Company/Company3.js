@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Container,
   Row,
@@ -7,12 +7,44 @@ import {
 import leftImg from "../../../assets/img/company_left.webp";
 import rightImg from "../../../assets/img/company_right.webp";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { zoomIn } from "react-animations";
+import { keyframes } from "styled-components";
+import styled from "styled-components";
 
+const ZoomIn = styled.div`animation: 1s ${keyframes`${zoomIn}`}`;
 function Company3() {
   const [pills, setPills] = useState("2");
   const [dropdownVisible, setDropdownVisible] = useState([false, false, false]);
+const [animationCompleted, setAnimationCompleted] = useState(false);
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting && !animationCompleted) {
+          // Trigger animation when the image is in the viewport
+          setAnimationCompleted(true);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5, // Adjust the threshold as needed
+      }
+    );
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current);
+    }
+
+    // Cleanup the observer when the component unmounts
+    return () => {
+      if (imageRef.current) {
+        observer.unobserve(imageRef.current);
+      }
+    };
+  }, [animationCompleted]);
 
   const toggleDropdown = (index) => {
     const updatedVisibility = [...dropdownVisible];
@@ -46,12 +78,18 @@ function Company3() {
             </Col>
             <Col md="5" style={{ marginRight: "-20%", display: "flex", justifyContent: "flex-end", alignItems: "flex-end" }}>
               <div style={{ position: "relative" }}>
+<div ref={imageRef}>
+                  {animationCompleted && ( // Conditionally apply the animation
+                    <ZoomIn>
                 <img
                   src={rightImg}
                   alt="Eightfold.ai Logo"
                   className="navbar-logo"
                   style={{ width: "100%", height: "auto", marginTop: "20%", borderRadius: "15px" }}
                 />
+</ZoomIn>
+                  )}
+                </div>
               </div>
             </Col>
           </Row>
@@ -61,12 +99,18 @@ function Company3() {
           <Row>
             <Col md="6" style={{ display: "flex", justifyContent: "left", alignItems: "flex-start" }}>
               <div style={{ position: "relative" }}>
+<div ref={imageRef}>
+                  {animationCompleted && ( // Conditionally apply the animation
+                    <ZoomIn>
                 <img
                   src={leftImg}
                   alt="Eightfold.ai Logo"
                   className="navbar-logo"
                   style={{ width: "200%", height: "auto", marginTop: "20%", borderRadius: "15px" }}
                 />
+</ZoomIn>
+                  )}
+                </div>
               </div>
             </Col>
             <Col md="6" style={{ marginTop: "5%", justifyContent: "left", alignItems: "flex-end" }}>

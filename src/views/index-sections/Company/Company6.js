@@ -127,7 +127,8 @@ function Company6() {
     <Col md="12" style={{ height: "10%", color: "white", display: "flex", flexDirection: "row", alignItems: "center"}}>
 
       {/* First Column */}
-      <div style={{ flex: 3, display: "flex", justifyContent: "center", alignItems: "center", height: "50%" }}>
+      <Row>
+      <Col xs="12" md="9" xl="9"style={{ justifyContent: "center", alignItems: "center", textAlign: "center",height: "50%", padding:"40px" }}>
         <img
           alt="..."
           className="n-logo"
@@ -138,8 +139,8 @@ function Company6() {
   Diversity.  Anonymization.  Prediction
 </h3>
 
-      </div>
-      <div style={{ flex: 1, padding: "60px", color: "white" }}>
+      </Col>
+      <Col xs="12" md="3" xl="3" style={{ justifyContent: "center", alignItems: "center", textAlign: "center",height: "50%", padding: "60px", color: "white" }}>
       <motion.button
   style={{
     borderRadius: "60px",
@@ -151,7 +152,7 @@ function Company6() {
     fontWeight: 900, // Increase the fontWeight value for more boldness
     fontSize: "15px",
     width: "180px",
-    padding: "5% 15%",
+    padding: "2%",
     fontFamily: "Museo Sans Rounded, sans-serif",
   }}
   variants={fadeInAnimationVariants}
@@ -169,7 +170,8 @@ function Company6() {
           src={require("assets/img/dotted_waves_reversed.png")}
           style={{ width: "25%", height: "auto", position: "absolute", bottom: "0%", right: "0.5%" }}
         />
-      </div>
+      </Col>
+      </Row>
     </Col>
   </Row>
 </Container>

@@ -48,7 +48,7 @@ useEffect(() => {
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundAttachment = "fixed";
-    // document.body.style.borderBottomRadius = "20%";
+    // document.body.style.borderBottomRadius = "120%";
 
     return () => {
       document.body.style.backgroundImage = null;
@@ -63,7 +63,7 @@ useEffect(() => {
   }, []);
 
   return (
-    <div style={{borderBottomRadius: "50%",minHeight:"570px", height: "100%"}}>
+    <div style={{borderBottomRadius: "0%",minHeight:"570px", height: "100%"}}>
       <div
         className="page-header clear-filter"
         filter-color="black"
@@ -73,7 +73,7 @@ useEffect(() => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-        borderBottomLeftRadius: "50%"
+        // borderRadius: "100px",
 
         }}
       >
@@ -86,7 +86,7 @@ useEffect(() => {
         </div> */}
 
         <Container style={{              
-           borderBottomLeftRadius: "15vw",
+           //  borderRadius: "30px",
 }}>
         
 
@@ -103,7 +103,7 @@ useEffect(() => {
                 
                 fontFamily: "Museo Sans Rounded, sans-serif",
                 fontWeight: "bolder",
-                fontSize: "4.5vw",
+                fontSize: "270%",
                 // marginTop: "10vw",
               }}
               variants={fadeInAnimationVariants}

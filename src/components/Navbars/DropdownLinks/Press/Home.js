@@ -74,7 +74,7 @@ borderBottomRadius: "80%",
                 
                 fontFamily: "Museo Sans Rounded, sans-serif",
                 fontWeight: "bolder",
-                fontSize: "4.5vw",
+                fontSize: "52px",
                 // marginTop: "10vw",
               }}
               variants={fadeInAnimationVariants}

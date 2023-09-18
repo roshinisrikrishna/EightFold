@@ -152,7 +152,7 @@ function IndexNavbar() {
 </div>
 
             {click && (
-              <Container className="" style={{minHeight: "1500px",height:"100%",maxWidth: "100%",width: "100%"}}>
+              <Container className="pl-5" style={{minHeight: "400px",height:"100%",maxWidth: "100%",width: "100%"}}>
    <NavItem>
    <div>
     <Dropdown 
@@ -171,7 +171,8 @@ function IndexNavbar() {
 
       >
       
-      <p className={dropdowns.find((d) => d.id === "products").isOpen ? "blueText" : ""}>Products</p>
+      <p className={dropdowns.find((d) => d.id === "products").isOpen ? "blueText" : ""}
+      style={{fontSize: "120%"}}>Products</p>
      
 
   </DropdownToggle>
@@ -210,7 +211,8 @@ function IndexNavbar() {
           <DropdownToggle nav 
             onClick={() => toggleDropdown("solutions")} // Toggle dropdown on click
                       >
-              <p className={dropdowns.find((d) => d.id === "solutions").isOpen ? "blueText" : ""}>Solutions</p>
+              <p className={dropdowns.find((d) => d.id === "solutions").isOpen ? "blueText" : ""}
+              style={{fontSize: "120%"}}>Solutions</p>
             </DropdownToggle>
 
 {dropdowns.find((d) => d.id === "solutions").isOpen && (
@@ -254,7 +256,7 @@ function IndexNavbar() {
     tag={Link}
     className="nav-link"
   >
-    <p style={{fontSize: "100%"}}>Services</p>
+    <p style={{fontSize: "120%"}}>Services</p>
   </NavLink>
 </NavItem>
 
@@ -271,7 +273,8 @@ function IndexNavbar() {
           <DropdownToggle nav 
          onClick={() => toggleDropdown("learn")} // Toggle dropdown on click
                       >
-              <p className={dropdowns.find((d) => d.id === "learn").isOpen ? "blueText" : ""}>Learn</p>
+              <p className={dropdowns.find((d) => d.id === "learn").isOpen ? "blueText" : ""}
+              style={{fontSize: "120%"}}>Learn</p>
             </DropdownToggle>
             {dropdowns.find((d) => d.id === "learn").isOpen && (
         <div>      
@@ -311,7 +314,8 @@ function IndexNavbar() {
            onClick={() => toggleDropdown("customers")} // Toggle dropdown on click
 
            >
-              <p className={dropdowns.find((d) => d.id === "customers").isOpen ? "blueText" : ""}>Customers</p>
+              <p className={dropdowns.find((d) => d.id === "customers").isOpen ? "blueText" : ""}
+              style={{fontSize: "120%"}}>Customers</p>
             </DropdownToggle>
             {dropdowns.find((d) => d.id === "customers").isOpen && (
         <div>
@@ -348,7 +352,8 @@ function IndexNavbar() {
            onClick={() => toggleDropdown("events")} // Toggle dropdown on click
 
            >
-              <p className={dropdowns.find((d) => d.id === "events").isOpen ? "blueText" : ""}>Events</p>
+              <p className={dropdowns.find((d) => d.id === "events").isOpen ? "blueText" : ""}
+              style={{fontSize: "120%"}}>Events</p>
             </DropdownToggle>
             {dropdowns.find((d) => d.id === "events").isOpen && (
         <div> 
@@ -387,7 +392,8 @@ function IndexNavbar() {
           onClick={() => toggleDropdown("company")} // Toggle dropdown on click
 
            >
-                  <p  className={dropdowns.find((d) => d.id === "company").isOpen ? "blueText" : ""}>Company</p> {/* Link to "/company" */}
+                  <p  className={dropdowns.find((d) => d.id === "company").isOpen ? "blueText" : ""}
+                  style={{fontSize: "120%"}}>Company</p> {/* Link to "/company" */}
             </DropdownToggle>
             {dropdowns.find((d) => d.id === "company").isOpen && (
         <div>  {/* Dropdown items */}

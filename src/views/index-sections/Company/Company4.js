@@ -81,7 +81,9 @@ style={{
     marginTop: "6%", 
     marginBottom: "8%",
     justifyContent: "center", 
-    alignItems: "center" }}>
+    alignItems: "center",
+       flexWrap: "wrap", // Allow items to wrap to the next line
+    }}>
   <motion.Card   style={{
     flex: 1,
     display: "flex",
@@ -102,7 +104,7 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "55%", height: "auto" }} 
+  style={{ width: "70px", height: "auto" }} 
   />
     <h4 style={{ fontWeight: 700, 
     // maxWidth: "320px", 
@@ -150,7 +152,7 @@ style={{
     display: "flex",
     flexDirection: "column",
     marginTop: "-2%", 
-    marginRight: "-4%",
+    marginRight: "-4.5%",
     // Adjust this value to move the image upwards
     // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
   }}
@@ -165,7 +167,7 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "55%", height: "auto" }} 
+  style={{ width: "70px", height: "auto" }} 
   />
     <h4 style={{ fontWeight: 700, 
     // maxWidth: "300px", 
@@ -226,7 +228,7 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "55%", height: "auto" }} 
+  style={{ width: "70px", height: "auto" }} 
   />
     <h4 style={{ fontWeight: 700, 
     // maxWidth: "300px", 
@@ -290,7 +292,7 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "55%", height: "auto" }} 
+  style={{ width: "70px", height: "auto" }} 
   />
     <h4 style={{ fontWeight: 700,
     //  maxWidth: "300px", 
@@ -347,7 +349,7 @@ style={{
         whileInView="animate"
         viewport={{once: true,}}
         custom={2}
-  style={{ width: "55%", height: "auto" }} 
+  style={{ width: "70px", height: "auto" }} 
   />
     <h4 style={{ fontWeight: 700, 
     // maxWidth: "300px", 

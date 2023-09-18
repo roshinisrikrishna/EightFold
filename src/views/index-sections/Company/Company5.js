@@ -1,13 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
 import logo from "../../../assets/img/company_why.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { zoomIn } from "react-animations";
+import { keyframes } from "styled-components";
+import styled from "styled-components";
 
+const ZoomIn = styled.div`animation: 1s ${keyframes`${zoomIn}`}`;
 
 function Company5() {
   const [pills, setPills] = useState("2");
   const [dropdownVisible, setDropdownVisible] = useState([false, false, false]);
+
+  const [animationCompleted, setAnimationCompleted] = useState(false);
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting && !animationCompleted) {
+          // Trigger animation when the image is in the viewport
+          setAnimationCompleted(true);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5, // Adjust the threshold as needed
+      }
+    );
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current);
+    }
+
+    // Cleanup the observer when the component unmounts
+    return () => {
+      if (imageRef.current) {
+        observer.unobserve(imageRef.current);
+      }
+    };
+  }, [animationCompleted]);
 
   const toggleDropdown = (index) => {
     const updatedVisibility = [...dropdownVisible];
@@ -139,6 +174,9 @@ function Company5() {
             </Col>
             <Col md="6" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
   <div style={{ position: "relative" }}>
+<div ref={imageRef}>
+                  {animationCompleted && ( // Conditionally apply the animation
+                    <ZoomIn>
     <img
       src={logo}
       alt="Eightfold.ai Logo"
@@ -152,7 +190,9 @@ function Company5() {
                     marginRight: "-5vw", // Adjust margin-right for responsiveness
                   }}
     />
-    
+    </ZoomIn>
+                  )}
+                </div>
   </div>
  
 </Col>

@@ -201,6 +201,10 @@ function CardComponent({ card }) {
         src={card.imgSrc}
         alt="Logo"
         style={{
+paddingLeft: "10%", // Increase left padding
+        paddingTop: "10%", // Increase top padding
+        paddingRight: "10%", // Increase right padding
+        paddingBottom: "10%", // Increase bottom padding
           borderTopLeftRadius: "10px",
           paddingTop:"8%",
           borderTopRightRadius: "10px",
@@ -209,23 +213,27 @@ function CardComponent({ card }) {
         }}
       />
 
-      <p
+      <div
         style={{
           color: "#484B58",
-          paddingLeft: "5%",
-          paddingTop: "8%",
-          paddingRight: "2%",
+          paddingLeft: "10%", // Increase left padding
+          paddingTop: "10%", // Increase top padding
+          paddingRight: "10%", // Increase right padding
+        paddingBottom: "10%", // Increase bottom padding
           fontWeight: 700,
           textAlign: "center",
           fontSize: "85%",
           maxWidth: "100%",
-          lineHeight: "1em"
+          lineHeight: "1em",
+        flex: 1,
         }}
       >
         {card.content}
-      </p>
- 
+      </div>
     </motion.div>
+
+  
+
   );
 }
 function Company3() {
@@ -254,10 +262,10 @@ function Company3() {
   return (
     <>
       <div className="mb-5">
-        <Container className="mb-5" style={{  maxWidth: "65%" }}>
-          <Row>
+        <Container className="mb-5">
+          <Row style={{ justifyContent: "center", alignItems: "center" }}>
+          <Col xs={12} sm={6} md={3} xl={3}>
     
-            <Col md={3} xl={3} xs={12}>
             <button
   className="hover-white-button"
   style={{
@@ -268,7 +276,7 @@ function Company3() {
     cursor: "pointer",
     marginTop: "10px",
     fontWeight: "bolder",
-    fontSize: "80%", // Set font size relative to viewport width
+    fontSize: "14px", // Set font size relative to viewport width
     maxWidth: "100%", // Ensure the button takes up the full width
     padding: "5% 15%", // Set padding as a percentage of the button's width and height
     fontFamily: "Museo Sans Rounded, sans-serif",
@@ -289,7 +297,7 @@ News coverage
     cursor: "pointer",
     marginTop: "10px",
     fontWeight: "bolder",
-    fontSize: "80%", // Set font size relative to viewport width
+    fontSize: "14px", // Set font size relative to viewport width
     maxWidth: "100%", // Ensure the button takes up the full width
     padding: "5% 15%", // Set padding as a percentage of the button's width and height
     fontFamily: "Museo Sans Rounded, sans-serif",
@@ -310,7 +318,7 @@ Press releases
     cursor: "pointer",
     marginTop: "10px",
     fontWeight: "bolder",
-    fontSize: "80%", // Set font size relative to viewport width
+    fontSize: "14px", // Set font size relative to viewport width
     maxWidth: "100%", // Ensure the button takes up the full width
     padding: "5% 15%", // Set padding as a percentage of the button's width and height
     fontFamily: "Museo Sans Rounded, sans-serif",
@@ -331,7 +339,7 @@ Industry awards
     cursor: "pointer",
     marginTop: "10px",
     fontWeight: "bolder",
-    fontSize: "80%", // Set font size relative to viewport width
+    fontSize: "14px", // Set font size relative to viewport width
     maxWidth: "100%", // Ensure the button takes up the full width
     padding: "5% 15%", // Set padding as a percentage of the button's width and height
     fontFamily: "Museo Sans Rounded, sans-serif",
@@ -360,9 +368,9 @@ Patents
             {displayedCards.map((card) => (
               <Col
                 key={card.id}
-                xs={12}
-                md={4}
-                xl={4}
+                xs={12}  // On extra small screens, each card takes full width
+                sm={6}   // On small screens, each card takes half width
+                md={4}   // On medium screens and above, each card takes one-third width
                 style={{ margin: "10px 0", display: "flex" }}
               >
                 <CardComponent card={card} />
@@ -370,6 +378,7 @@ Patents
             ))}
           </Row>
         </Container>
+
         <Container className="mt-3">
   <Row className="justify-content-center">
     <ul className="pagination">

@@ -245,9 +245,11 @@ function Typography() {
         justifyContent: "flex-start",
         alignItems: "flex-start"
       }}>
-   <Container style={{ maxWidth: "95%",display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+   <Container style={{ maxWidth: "95%" }}>
+<Row>
             {/* Partner Type Dropdown */}
-            <div style={{ flex: 1, marginRight: "16px" }}>
+            <Col md={4} xs={12} xl={4} className="mb-3">
+      <div>
               <h2 style={{ fontWeight: 700, fontSize: "90%", color: "#484B58", marginBottom: "8px" }}>
                 Partner Type
               </h2>
@@ -257,12 +259,12 @@ function Typography() {
         style={{
           fontSize: "90%",
           color: "#484B58",
-          borderRadius: "10px", // Adjust the border radius as needed
-          padding: "8px", // Adjust the padding as needed
-          border: "1px solid #ccc", // Add a border
-          backgroundColor: "#fff", // Background color
-          fontSize: "16px", // Adjust the font size as needed
-          width: "100%" // Ensure it takes full width
+          borderRadius: "10px",
+          padding: "8px",
+          border: "1px solid #ccc",
+          backgroundColor: "#fff",
+          fontSize: "16px",
+          width: "100%"
         }}
       >
         <option value="All">All Types</option>
@@ -274,9 +276,11 @@ function Typography() {
         <option value="Technology Partner">Technology Partner</option>
       </select>
     </div>
+</Col>
 
     {/* Geography Dropdown */}
-    <div style={{ flex: 1, marginRight: "16px" }}>
+    <Col md={4} xs={12} xl={4} className="mb-3">
+      <div>
               <h2 style={{ fontWeight: 700, fontSize: "90%", color: "#484B58", marginBottom: "8px" }}>
                 Geography
               </h2>
@@ -302,9 +306,11 @@ function Typography() {
         <option value="UKI">UKI</option>
       </select>
       </div>
+</Col>
 
 {/* Search Box */}
-<div className="mt-4" style={{ flex: 1, display: "flex", alignItems: "center" }}>
+<Col md={4} xs={12} xl={4} className="mb-3">
+      <div className="mt-4">
   <input
     type="text"
     placeholder="Search partners"
@@ -322,7 +328,10 @@ function Typography() {
     }}
   />
 </div>
+</Col>
+  </Row>
 </Container>
+
 <div className="mr-5"  style={{justifyContent: "flex-end", alignItems: "flex-end", textAlign: "right"}}>
               <p
                 onClick={clearFilters}

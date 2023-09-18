@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useState, useRef, useEffect} from "react";
 import { Button, Container, Row, Col } from "reactstrap";
 import intImg from "../../../../assets/img/partner_contact_img.jpg.webp";
 import { motion } from "framer-motion";
+import { zoomIn } from "react-animations";
+import { keyframes } from "styled-components";
+import styled from "styled-components";
+
+const ZoomIn = styled.div`animation: 1s ${keyframes`${zoomIn}`}`;
 
 const fadeInAnimationVariants = {
   initial: {
@@ -20,6 +25,38 @@ const fadeInAnimationVariants = {
 };
 
 function NucleoIcons() {
+
+  const [animationCompleted, setAnimationCompleted] = useState(false);
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting && !animationCompleted) {
+          // Trigger animation when the image is in the viewport
+          setAnimationCompleted(true);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5, // Adjust the threshold as needed
+      }
+    );
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current);
+    }
+
+    // Cleanup the observer when the component unmounts
+    return () => {
+      if (imageRef.current) {
+        observer.unobserve(imageRef.current);
+      }
+    };
+  }, [animationCompleted]);
+
   return (
     <>
       <Container
@@ -97,7 +134,10 @@ function NucleoIcons() {
               </Container>
             </Col>
             <Col md="6" className="mt-4 " style={{right: "-5%"}}>
-              <motion.img
+              <div ref={imageRef}>
+                  {animationCompleted && ( // Conditionally apply the animation
+                    <ZoomIn>
+              <img
                   src={intImg}
                   alt="Eightfold.ai Logo"
                   className="navbar-logo"
@@ -109,6 +149,9 @@ function NucleoIcons() {
                 viewport={{ once: true }}
                 custom={1}
                 />
+</ZoomIn>
+                  )}
+                </div>
             </Col>
           </Row>
         </Container>

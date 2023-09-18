@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
   Container,
   Row,
-  Col
+  Col,
 } from "reactstrap";
 import lead1 from "../../../../assets/img/lead1.webp";
 import lead2 from "../../../../assets/img/lead2.jpg";
@@ -11,8 +11,7 @@ import lead4 from "../../../../assets/img/lead4.jpg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import {motion} from "framer-motion";
-
+import { motion } from "framer-motion";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -24,8 +23,8 @@ const fadeInAnimationVariants = {
     y: 0,
     transition: {
       delay: 0.1 * index,
-      duration: 1, // Duration set to 1000ms (1 second)
-      ease: "easeInOut", // Use a valid easing function here
+      duration: 1,
+      ease: "easeInOut",
     },
   }),
 };
@@ -43,35 +42,47 @@ function Company3() {
 
   return (
     <>
-      <div className="" style={{  background: "rgb(250,250,250)",
-}}>
-      <Container className="pt-5 pb-5" style={{ 
+      <div
+        className=""
+        style={{
+          background: "rgb(250, 250, 250)",
+}}
+      >
+      <Container
+          className="pt-5 pb-5"
+          style={{ 
   maxWidth: "95%", 
   // display: "flex", 
   // flexDirection: "row", 
   marginTop: "5%", 
   justifyContent: "center", 
-  alignItems: "center" }}>
+  alignItems: "center",
+          }}
+        >
     <h2 
     className="pt-3"
 style={{
   color: "#484B58",
   fontFamily: "Museo Sans Rounded, sans-serif",
         fontWeight: 900,
-        fontSize: "32px"
+        fontSize: "32px",
       }}
                 >
 Office locations
                   </h2>
 
-<Row style={{ display: "flex" }}>
-            <Col xs={12} md={6} xl={6} style={{ margin: "10px 0", display: "flex" , 
-}}>
-
-<motion.Card style={{ 
-   borderTop: "none", // Top border
-   borderRight: "none", // Right border
-   borderBottom: "none", // Bottom border
+<Row style={{ display: "flex", flexWrap: "wrap" }}>
+            <Col
+              xs={12}
+              md={6}
+              xl={6}
+              style={{ margin: "10px 0", display: "flex" }}
+            >
+<motion.Card
+                style={{ 
+   borderTop: "none",
+   borderRight: "none",
+   borderBottom: "none",
    background: "rgb(255, 255, 255)",
    borderRadius: "10px",
    height: "100%",
@@ -83,47 +94,75 @@ Office locations
    alignItems: "flex-start",
    margin: "0 0",
    width: "100%",
-   borderLeft: "10px solid transparent", // Left border
+   borderLeft: "10px solid transparent",
    borderImage:
-     "linear-gradient(to bottom, #0582a8, #013f52, #a90be3) 1", // Gradient border
-   borderImageSlice: "1", // Ensure the entire border is covered by the gradient
+     "linear-gradient(to bottom, #0582a8, #013f52, #a90be3) 1",
+   borderImageSlice: "1",
 }}
 variants={fadeInAnimationVariants}
 initial="initial"
 whileInView="animate"
-viewport={{once: true,}}
-custom={2}>
-
-    <h4 style={{   paddingLeft: "5%",paddingRight: "2%",
-fontWeight: 900, maxWidth: "100%", 
-    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "72%",
-    letterSpacing: "0.3em"
-    }}>
+viewport={{ once: true }}
+custom={2}
+              >
+    <h4
+                  style={{
+                    paddingLeft: "5%",
+                    paddingRight: "2%",
+fontWeight: 900,
+                    maxWidth: "100%", 
+    fontFamily: "Museo Sans Rounded, sans-serif",
+                    fontSize: "72%",
+    letterSpacing: "0.3em",
+    }}
+                >
 WORLDWIDE CORPORATE HEADQUARTERS
  </h4>
- <p style={{  paddingTop: "5%", paddingLeft: "5%",paddingRight: "2%",
-fontSize: "80%", fontWeight: 700, color: "#484B58",lineHeight: "0.05em"}}>Eightfold AI® Inc</p>
-
-    <p style={{   paddingLeft: "5%",paddingRight: "2%",
-fontWeight: 400, fontSize: "80%", maxWidth: "100%",    color: "#484B58",
-}}>
+ <p
+                  style={{
+                    paddingTop: "5%",
+                    paddingLeft: "5%",
+                    paddingRight: "2%",
+fontSize: "80%",
+                    fontWeight: 700,
+                    color: "#484B58",
+                    lineHeight: "0.05em",
+                  }}
+                >
+                  Eightfold AI® Inc
+                </p>
+    <p
+                  style={{
+                    paddingLeft: "5%",
+                    paddingRight: "2%",
+fontWeight: 400,
+                    fontSize: "80%",
+                    maxWidth: "100%",
+                    color: "#484B58",
+}}
+                >
 2625 Augustine Drive<br />
 Suite 601<br />
 Santa Clara, CA 95054<br />
 888-325-8222<br />
-<span style={{color: "#2285ba"}}>Contact Sales<br />
-info@eightfold.ai  </span>  </p>
-   
-</motion.Card>
+<span style={{ color: "#2285ba" }}>
+                    Contact Sales<br />
+info@eightfold.ai
+                  </span>
+                </p>
+   </motion.Card>
 </Col>
-<Col xs={12} md={6} xl={6} style={{ margin: "10px 0", display: "flex", width: "100%"
- }}>
-
+<Col
+              xs={12}
+              md={6}
+              xl={6}
+              style={{ margin: "10px 0", display: "flex" }}
+            >
 <motion.Card
   style={{
-    borderTop: "none", // Top border
-  borderRight: "none", // Right border
-  borderBottom: "none", // Bottom border
+    borderTop: "none",
+  borderRight: "none",
+  borderBottom: "none",
   background: "rgb(255, 255, 255)",
   borderRadius: "10px",
   height: "100%",
@@ -135,10 +174,10 @@ info@eightfold.ai  </span>  </p>
   alignItems: "flex-start",
   margin: "0 0",
   width: "100%",
-  borderLeft: "10px solid transparent", // Left border
+  borderLeft: "10px solid transparent",
   borderImage:
-    "linear-gradient(to bottom, #0582a8, #013f52, #a90be3) 1", // Gradient border
-  borderImageSlice: "1", // Ensure the entire border is covered by the gradient
+    "linear-gradient(to bottom, #0582a8, #013f52, #a90be3) 1",
+  borderImageSlice: "1",
   }}
   variants={fadeInAnimationVariants}
   initial="initial"
@@ -146,11 +185,17 @@ info@eightfold.ai  </span>  </p>
   viewport={{ once: true }}
   custom={3}
 >
-<h4 style={{   paddingLeft: "5%",paddingRight: "2%",
-fontWeight: 900, maxWidth: "100%", 
-    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "72%",
-    letterSpacing: "0.3em"
-    }}>
+<h4
+                  style={{
+                    paddingLeft: "5%",
+                    paddingRight: "2%",
+fontWeight: 900,
+                    maxWidth: "100%", 
+    fontFamily: "Museo Sans Rounded, sans-serif",
+                    fontSize: "72%",
+    letterSpacing: "0.3em",
+    }}
+                >
     EUROPE
   </h4>
 
@@ -167,19 +212,29 @@ fontWeight: 900, maxWidth: "100%",
       {/* Left half of the card */}
       <p
         style={{
-          fontSize: "80%",
+          // paddingLeft: "5%",
+                      // paddingRight: "2%",
           fontWeight: 700,
+maxWidth: "100%",
           color: "#484B58",
-          lineHeight: "0.05em",
+          
+                      // fontFamily: "Museo Sans Rounded, sans-serif",
+                      fontSize: "80%",
         }}
       >
 Eightfold AI UK Limited
       </p>
       <p
         style={{
+// paddingLeft: "5%",
+                      // paddingRight: "2%",
           fontWeight: 400,
-          fontSize: "80%",
+          maxWidth: "100%",
           color: "#484B58",
+
+                      // fontFamily: "Museo Sans Rounded, sans-serif",
+                      fontSize: "80%",
+                   
         }}
       >
         Highlands House<br />
@@ -205,15 +260,21 @@ RG7 1NT<br />
       {/* Right half of the card */}
       <p
         style={{
-          fontSize: "80%",
+          // paddingLeft: "5%",
+                      // paddingRight: "2%",
           fontWeight: 700,
+maxWidth: "100%",
           color: "#484B58",
-          lineHeight: "0.05em",
+          
+                      // fontFamily: "Museo Sans Rounded, sans-serif",
+                      fontSize: "80%",
         }}
       >
-Eightfold AI IRE Limited      </p>
+Eightfold AI IRE Limited
+                    </p>
       <p
         style={{
+maxWidth: "100%",
           fontWeight: 400,
           fontSize: "80%",
           color: "#484B58",
@@ -231,14 +292,17 @@ D02KW80<br />
 </motion.Card>
 
 </Col>
-<Col xs={12} md={6} xl={6} style={{ margin: "10px 0", display: "flex", width: "100%"
- }}>
-
+<Col
+              xs={12}
+              md={6}
+              xl={6}
+              style={{ margin: "10px 0", display: "flex" }}
+            >
 <motion.Card
  style={{
-  borderTop: "none", // Top border
-  borderRight: "none", // Right border
-  borderBottom: "none", // Bottom border
+  borderTop: "none",
+  borderRight: "none",
+  borderBottom: "none",
   background: "rgb(255, 255, 255)",
   borderRadius: "10px",
   height: "100%",
@@ -250,10 +314,10 @@ D02KW80<br />
   alignItems: "flex-start",
   margin: "0 0",
   width: "100%",
-  borderLeft: "10px solid transparent", // Left border
+  borderLeft: "10px solid transparent",
   borderImage:
-    "linear-gradient(to bottom, #0582a8, #013f52, #a90be3) 1", // Gradient border
-  borderImageSlice: "1", // Ensure the entire border is covered by the gradient
+    "linear-gradient(to bottom, #0582a8, #013f52, #a90be3) 1",
+  borderImageSlice: "1",
 }}
   variants={fadeInAnimationVariants}
   initial="initial"
@@ -261,11 +325,17 @@ D02KW80<br />
   viewport={{ once: true }}
   custom={3}
 >
-<h4 style={{   paddingLeft: "5%",paddingRight: "2%",
-fontWeight: 900, maxWidth: "100%", 
-    fontFamily: "Museo Sans Rounded, sans-serif", fontSize: "72%",
-    letterSpacing: "0.3em"
-    }}>
+<h4
+                  style={{
+                    paddingLeft: "5%",
+                    paddingRight: "2%",
+fontWeight: 900,
+                    maxWidth: "100%", 
+    fontFamily: "Museo Sans Rounded, sans-serif",
+                    fontSize: "72%",
+    letterSpacing: "0.3em",
+    }}
+                >
 ASIA PACIFIC​
   </h4>
 
@@ -279,19 +349,24 @@ ASIA PACIFIC​
         maxWidth: "100%",
       }}
     >
-      {/* Left half of the card */}
+      
       <p
         style={{
-          fontSize: "80%",
+          // paddingLeft: "5%",
+                        // paddingRight: "2%",
           fontWeight: 700,
+maxWidth: "100%",
           color: "#484B58",
-          lineHeight: "0.05em",
+          
+                        // fontFamily: "Museo Sans Rounded, sans-serif",
+                        fontSize: "80%",
         }}
       >
 Eightfold AI India Pvt Ltd
       </p>
       <p
         style={{
+maxWidth: "100%",
           fontWeight: 400,
           fontSize: "80%",
           color: "#484B58",
@@ -310,25 +385,31 @@ Noida, Uttar Pradesh, 201301<br />
     <div
       style={{
         flex: 1,
-        paddingLeft: "8%",
+        paddingLeft: "5%",
         paddingRight: "2%",
         paddingTop: "5%",
         maxWidth: "100%",
+// overflowWrap: "break-word", // Add this line to allow text to break and wrap
       }}
     >
       {/* Right half of the card */}
       <p
         style={{
-          fontSize: "80%",
+          // paddingLeft: "5%",
+                      // paddingRight: "2%",
           fontWeight: 700,
+maxWidth: "100%",
           color: "#484B58",
-          lineHeight: "0.05em",
+          
+                      // fontFamily: "Museo Sans Rounded, sans-serif",
+                      fontSize: "80%",
         }}
       >
 Eightfold AI India Pvt Ltd
       </p>
       <p
         style={{
+maxWidth: "100%",
           fontWeight: 400,
           fontSize: "80%",
           color: "#484B58",
