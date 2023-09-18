@@ -42,19 +42,25 @@ const fadeImageVariants = {
 
 function CompanyLeadership() {
   return (
-    <>
+    <div style={{  
+  }}>
       <div
         className="page-header clear-filter"
         filter-color="black"
         style={{
           background: "linear-gradient(to right, #008BE8, #5B4B6E )",
-          height: "100%",
+          // height: "100%",
+width: "100%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
+borderBottomRadius: "80%",
+          minHeight: "570px", height: "100%"
+
         }}
       >
-        <Container>
+        <Container style={{  borderBottomRadius: "20vw"
+}}>
           <div
             className="brand"
             style={{
@@ -63,13 +69,13 @@ function CompanyLeadership() {
               borderBottomLeftRadius: "5vw"
             }}
           >
-            <motion.h2
+            <motion.h2 className="pt-5"
               style={{
                 
                 fontFamily: "Museo Sans Rounded, sans-serif",
                 fontWeight: "bolder",
-                fontSize: "4.5vw",
-                marginTop: "10vw",
+                fontSize: "52px",
+                // marginTop: "10vw",
               }}
               variants={fadeInAnimationVariants}
               initial="initial"
@@ -80,21 +86,7 @@ function CompanyLeadership() {
              Eightfold
 
 
-            </motion.h2>
-            <motion.h2
-              style={{
-                
-                fontFamily: "Museo Sans Rounded, sans-serif",
-                fontWeight: "bolder",
-                fontSize: "4.5vw",
-                marginTop: "-2vw",
-              }}
-              variants={fadeInAnimationVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              custom={3}
-            >
+            <br/>
 news center
             </motion.h2>
             
@@ -116,6 +108,22 @@ news center
             position: "absolute",
             top: "0",
             right: "0",
+          }}
+          variants={fadeImageVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        />
+<motion.img
+          alt="..."
+          className="n-logo"
+          src={require("assets/img/dotted_waves.png")}
+          style={{
+            width: "50vw",
+            height: "auto",
+            position: "absolute",
+            bottom: "0",
+            left: "0",
           }}
           variants={fadeImageVariants}
           initial="initial"
@@ -144,7 +152,7 @@ news center
           }
         `}
       </style>
-    </>
+    </div>
   );
 }
 

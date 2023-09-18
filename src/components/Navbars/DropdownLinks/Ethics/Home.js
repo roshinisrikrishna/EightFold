@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import { motion } from "framer-motion";
 
+
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
@@ -43,34 +44,70 @@ const fadeImageVariants = {
 
 function CompanyLeadership() {
   return (
-    <>
+    <div style={{}}>
       <div
         className="page-header clear-filter"
         filter-color="black"
         style={{
           background: "linear-gradient(to right, #045d78, #043a4a)",
-          height: "100%",
-          display: "flex",
+          minHeight: "650px", height:"100%",
+                    display: "flex",
           flexDirection: "column",
           justifyContent: "center",
+        borderBottomLeftRadius: "20%"
+
         }}
       >
+<motion.img
+          alt="..."
+          className="n-logo"
+          src={require("assets/img/dotted_waves.png")}
+          style={{
+            width: "40%",
+            height: "auto",
+            position: "absolute",
+            top: "0",
+            left: "0",
+          }}
+          variants={fadeImageVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        />
+         <motion.img
+          alt="..."
+          className="n-logo"
+          src={require("assets/img/dotted_waves_reversed.png")}
+          style={{
+            width: "50vw",
+            height: "auto",
+            position: "absolute",
+            bottom: "0",
+            right: "0",
+          }}
+          variants={fadeImageVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        />
         <Container>
           <div
-            className="brand"
+            className="brand mt-5 pt-4"
             style={{
               textAlign: "center",
               maxWidth: "100%",
-              borderBottomLeftRadius: "5vw"
+              borderBottomLeftRadius: "5vw",
+              justifyContent: "center",
+              alignItems: "center"
             }}
           >
             <motion.h2
               style={{
                 color: "white",
                 fontFamily: "Museo Sans Rounded, sans-serif",
-                fontWeight: "bolder",
-                fontSize: "4.5vw",
-                marginTop: "10vw", // You can reduce this value to reduce the space
+                fontWeight: 900,
+                fontSize: "280%",
+                // marginTop: "10vw", // You can reduce this value to reduce the space
               }}
               variants={fadeInAnimationVariants}
               initial="initial"
@@ -88,7 +125,8 @@ function CompanyLeadership() {
                 WebkitTextFillColor: "transparent",
                 fontFamily: "Museo Sans Rounded, sans-serif",
                 fontWeight: "bolder",
-                fontSize: "4.5vw",
+                paddingBottom: "150px",
+                fontSize: "280%",
                 marginTop: "-2vw", // Adjust this value to reduce space
               }}
               variants={fadeInAnimationVariants}
@@ -102,8 +140,8 @@ function CompanyLeadership() {
           </div>
         </Container>
 
-        {/* Your image */}
-        <motion.img
+        {/* <DottedWaves style ={{top: 0, left: 0}} /> */}
+        {/* <motion.img
           alt="..."
           className="n-logo"
           src={require("assets/img/dotted_waves_reversed.png")}
@@ -118,7 +156,7 @@ function CompanyLeadership() {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-        />
+        /> */}
       </div>
 
       <style>
@@ -132,15 +170,10 @@ function CompanyLeadership() {
             background-color: #28607E;
           }
 
-          @media (max-width: 768px) {
-            .brand h2 {
-              font-size: 6vw;
-              margin-top: -2vw;
-            }
-          }
+          
         `}
       </style>
-    </>
+    </div>
   );
 }
 

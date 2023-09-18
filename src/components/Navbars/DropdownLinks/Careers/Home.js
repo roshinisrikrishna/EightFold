@@ -42,16 +42,18 @@ const fadeImageVariants = {
 
 function CompanyLeadership() {
   return (
-    <>
+    <div style={{background: "#000"}}>
       <div
         className="page-header clear-filter"
         filter-color="black"
         style={{
-          background: "linear-gradient(to right, #008BE8, #5B4B6E )",
+          background: "linear-gradient(to right, #02b0e6, #5B4B6E )",
           height: "100%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
+borderBottomLeftRadius: "5vw"
+
         }}
       >
         <Container>
@@ -59,8 +61,9 @@ function CompanyLeadership() {
             className="brand"
             style={{
               textAlign: "center",
-              maxWidth: "100%",
-              borderBottomLeftRadius: "5vw"
+              // maxWidth: "100%",
+              borderBottomLeftRadius: "5vw",
+              paddingBottom: "20px"
             }}
           >
             <motion.h2
@@ -68,8 +71,8 @@ function CompanyLeadership() {
                 
                 fontFamily: "Museo Sans Rounded, sans-serif",
                 fontWeight: "bolder",
-                fontSize: "4.5vw",
-                marginTop: "10vw",
+                fontSize: "52px",
+                // marginTop: "10%",
               }}
               variants={fadeInAnimationVariants}
               initial="initial"
@@ -79,21 +82,7 @@ function CompanyLeadership() {
             >
               Finding the right career for 
 
-            </motion.h2>
-            <motion.h2
-              style={{
-                
-                fontFamily: "Museo Sans Rounded, sans-serif",
-                fontWeight: "bolder",
-                fontSize: "4.5vw",
-                marginTop: "-2vw",
-              }}
-              variants={fadeInAnimationVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              custom={3}
-            >
+            <br />
 everyone starts here
             </motion.h2>
             <motion.button
@@ -101,14 +90,15 @@ everyone starts here
               style={{
                 borderRadius: "60px",
                 backgroundColor: "#fff",
-                color: "#008BE8",
+                color: "#049cc9",
                 border: "none",
                 cursor: "pointer",
                 marginTop: "10px",
-                fontWeight: "bolder",
+                fontWeight: 900,
                 fontSize: "14px",
-                width: "20%",
+                width: "180px",
                 padding: "10px",
+
                 fontFamily: "Museo Sans Rounded, sans-serif",
               }}
               variants={fadeInAnimationVariants}
@@ -165,7 +155,7 @@ everyone starts here
           }
         `}
       </style>
-    </>
+    </div>
   );
 }
 

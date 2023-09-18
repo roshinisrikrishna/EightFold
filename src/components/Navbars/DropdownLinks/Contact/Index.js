@@ -8,10 +8,9 @@ import React from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import SearchModal from "components/Navbars/SearchModal.js";
 import Home from "components/Navbars/DropdownLinks/Contact/Home";
-import Leadership2 from "components/Navbars/DropdownLinks/Contact/Leadership2";
-import Leadership3 from "components/Navbars/DropdownLinks/Contact/Leadership3";
-import Leadership4 from "components/Navbars/DropdownLinks/Contact/Leadership4";
-import Leadership5 from "components/Navbars/DropdownLinks/Contact/Leadership5";
+import Contact2 from "components/Navbars/DropdownLinks/Contact/Contact2";
+import Contact3 from "components/Navbars/DropdownLinks/Contact/Contact3";
+
 
 
 
@@ -38,10 +37,9 @@ function Index() {
       <div className="wrapper">
         <Home />
         <div className="main">
-        <Leadership2 />
-        <Leadership3 />
-        <Leadership4 />
-        <Leadership5 />
+        <Contact2 />
+        <Contact3 />
+        
 
 
 

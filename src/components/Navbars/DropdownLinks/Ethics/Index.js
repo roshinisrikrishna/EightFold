@@ -39,9 +39,7 @@ function Index() {
         <Home />
         <div className="main">
         <Ethics2 />
-        {/* <Ethics3 />
-        <Ethics4 />
-        <Ethics5 /> */}
+        
 
 
 

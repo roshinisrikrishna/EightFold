@@ -73,8 +73,8 @@ function CompanyHome() {
       WebkitTextFillColor: "transparent",
       fontFamily: "Museo Sans Rounded, sans-serif",
       fontWeight: "bolder",
-      fontSize: "4vw", // Responsive font size
-      marginTop: "10vw", // Adjust margin for responsiveness
+      fontSize: "56px", // Responsive font size
+      marginTop: "10px", // Adjust margin for responsiveness
     }}
     variants={fadeInAnimationVariants}
     initial="initial"
@@ -83,24 +83,7 @@ function CompanyHome() {
     custom={3}
   >
           The right career for 
-  </motion.h2>
-  <motion.h2
-    style={{
-      background: "-webkit-linear-gradient(45deg, #FFFFFF, #199BC2)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      fontFamily: "Museo Sans Rounded, sans-serif",
-      fontWeight: "bolder",
-      fontSize: "4vw", // Responsive font size
-      fontWeight: 800,
-      marginTop: "-1vw", // Adjust margin for responsiveness
-    }}
-    variants={fadeInAnimationVariants}
-    initial="initial"
-    whileInView="animate"
-    viewport={{ once: true }}
-    custom={3}
-  >
+ <br />
            everyone in the world
   </motion.h2>
 

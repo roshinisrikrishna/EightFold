@@ -42,11 +42,12 @@ const fadeImageVariants = {
 
 function CompanyLeadership() {
   return (
-    <div style={{background: "#000", height: "100vh"}}>
+    <div style={{background: "#000", minHeight: "650px", height:"100%"}}>
       <div
         className="page-header clear-filter"
         filter-color="black"
         style={{
+          minHeight: "700px",
           background: "linear-gradient(to right, #045d78, #043a4a)",
           height: "100%",
           display: "flex",
@@ -61,6 +62,7 @@ function CompanyLeadership() {
             style={{
               textAlign: "center",
               maxWidth: "100%",
+borderBottomLeftRadius: "5vw"
             }}
           >
             <motion.h2
@@ -70,9 +72,10 @@ function CompanyLeadership() {
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 fontFamily: "Museo Sans Rounded, sans-serif",
-                fontWeight: "bolder",
-                fontSize: "4vw",
-                marginTop: "10vw",
+                fontWeight: 900,
+                fontSize: "50px",
+                // marginTop: "10vw",
+                paddingBottom: "50px"
               }}
               variants={fadeInAnimationVariants}
               initial="initial"
@@ -88,7 +91,22 @@ function CompanyLeadership() {
         </Container>
 
       
-
+        <motion.img
+          alt="..."
+          className="n-logo"
+          src={require("assets/img/dotted_waves.png")}
+          style={{
+            width: "50vw",
+            height: "auto",
+            position: "absolute",
+            top: "0",
+            left: "0",
+          }}
+          variants={fadeImageVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        />
         {/* Your image */}
         <motion.img
           alt="..."

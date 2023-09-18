@@ -27,56 +27,33 @@ const fadeInAnimationVariants = {
 
 const items = [
   {
-    src: require("assets/img/Activision.webp"),
+    src: require("assets/img/logo_capital_one_ventures.png"),
     altText: "img1",
     caption: "img1"
   },
   {
-    src: require("assets/img/BNY-Mellon.webp"),
+    src: require("assets/img/logo_lightspeed.png"),
     altText: "img2",
     caption: "img2"
   },
   {
-    src: require("assets/img/bayer_logo.png"),
+    src: require("assets/img/logo_general_catalyst.png"),
     altText: "img2",
     caption: "img2"
   }
   ,
   {
-    src: require("assets/img/Chevron-modified.webp"),
+    src: require("assets/img/logo_citi_ventures.png"),
     altText: "img4",
     caption: "img4"
   },
    ,
   {
-    src: require("assets/img/logo_noom.webp"),
+    src: require("assets/img/logo_softbank.png"),
     altText: "img6",
     caption: "img6"
   }
-  ,
-  {
-    src: require("assets/img/logo_nutanix.webp"),
-    altText: "img7",
-    caption: "img7"
-  }
-  ,
-  {
-    src: require("assets/img/Defense.webp"),
-    altText: "img8",
-    caption: "img8"
-  }
-  ,
-  {
-    src: require("assets/img/OneTen.webp"),
-    altText: "img9",
-    caption: "img9"
-  }
-  ,
-  {
-    src: require("assets/img/Vodaphone.webp"),
-    altText: "img10",
-    caption: "img10"
-  }
+  
 
 ];
 
@@ -89,7 +66,7 @@ function CarouselSection() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          marginLeft: "30px",
+          // marginLeft: "30px",
           marginTop: "130px",
           marginBottom: "130px",
           maxWidth: "1280px",
@@ -97,7 +74,7 @@ function CarouselSection() {
       >
         <motion.h2
           style={{
-            fontSize: "32px",
+            fontSize: "180%",
             textAlign: "center",
             fontWeight: "bolder", // Increase the fontWeight
             fontFamily: "Museo Sans Rounded, sans-serif"
@@ -148,7 +125,7 @@ function CarouselSection() {
           }
           
           .carousel-image {
-            height: 120px; // Set a fixed height
+            5height: 120px; // Set a fixed height
             margin-right: 120px;
           }
           .carousel-image:hover {
@@ -156,10 +133,10 @@ function CarouselSection() {
           }
           @keyframes slide{
             from{
-              transform: translateX(0);
+              transform: translateX(-100%);
             }
             to{
-              transform: translateX(-100%);
+              transform: translateX(0);
             }
           }
         `}
