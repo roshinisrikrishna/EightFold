@@ -52,7 +52,7 @@ function CompanyHome() {
       style={{
         background: "linear-gradient(to right, #045d78, #043a4a)",
       // minHeight: "100vh", // Set a minimum height for the page
-          height: "100%",
+          height: "100vh",
           display: "flex",
           flexDirection: "column", // Align content vertically
           justifyContent: "center", // Center content vertically
@@ -63,7 +63,8 @@ function CompanyHome() {
             className="brand"
             style={{
               textAlign: "center",
-              maxWidth: "100%",
+              maxWidth: "100vw",
+              paddingTop:"8vh"
             }}
           >
   <motion.h2

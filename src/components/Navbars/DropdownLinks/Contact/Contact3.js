@@ -31,7 +31,6 @@ const fadeInAnimationVariants = {
 
 
 function Company3() {
-  const [pills, setPills] = useState("2");
   const [dropdownVisible, setDropdownVisible] = useState([false, false, false]);
 
   const toggleDropdown = (index) => {
@@ -45,13 +44,14 @@ function Company3() {
       <div
         className=""
         style={{
+          maxWidth:"100vw",
           background: "rgb(250, 250, 250)",
 }}
       >
       <Container
           className="pt-5 pb-5"
           style={{ 
-  maxWidth: "95%", 
+  maxWidth: "100vw", 
   // display: "flex", 
   // flexDirection: "row", 
   marginTop: "5%", 
@@ -93,7 +93,7 @@ Office locations
    flexDirection: "column",
    alignItems: "flex-start",
    margin: "0 0",
-   width: "100%",
+   maxWidth: "100vw",
    borderLeft: "10px solid transparent",
    borderImage:
      "linear-gradient(to bottom, #0582a8, #013f52, #a90be3) 1",
@@ -173,7 +173,7 @@ info@eightfold.ai
   flexDirection: "column",
   alignItems: "flex-start",
   margin: "0 0",
-  width: "100%",
+  maxWidth: "100vw",
   borderLeft: "10px solid transparent",
   borderImage:
     "linear-gradient(to bottom, #0582a8, #013f52, #a90be3) 1",
@@ -206,7 +206,7 @@ fontWeight: 900,
         paddingLeft: "5%",
         paddingRight: "2%",
         paddingTop: "5%",
-        maxWidth: "100%",
+        maxWidth: "50vw",
       }}
     >
       {/* Left half of the card */}
@@ -215,7 +215,7 @@ fontWeight: 900,
           // paddingLeft: "5%",
                       // paddingRight: "2%",
           fontWeight: 700,
-maxWidth: "100%",
+maxWidth: "50vw",
           color: "#484B58",
           
                       // fontFamily: "Museo Sans Rounded, sans-serif",
@@ -229,7 +229,7 @@ Eightfold AI UK Limited
 // paddingLeft: "5%",
                       // paddingRight: "2%",
           fontWeight: 400,
-          maxWidth: "100%",
+          maxWidth: "50vw",
           color: "#484B58",
 
                       // fontFamily: "Museo Sans Rounded, sans-serif",
@@ -254,7 +254,7 @@ RG7 1NT<br />
         paddingLeft: "8%",
         paddingRight: "2%",
         paddingTop: "5%",
-        maxWidth: "100%",
+        maxWidth: "50vw",
       }}
     >
       {/* Right half of the card */}

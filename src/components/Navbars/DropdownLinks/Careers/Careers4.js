@@ -43,7 +43,7 @@ style={{
     // marginLeft: "30px",
     // marginTop: "130px",
     // marginBottom: "130px",
-    // maxWidth: "1500px", // Adjust this value to match the screen width
+    maxWidth: "100vw", // Adjust this value to match the screen width
   }}
 >
 
@@ -56,6 +56,7 @@ style={{
    className="mt-5 mb-3"
    style={{    
     paddingTop: "8%",
+    textAlign:"center",
     fontFamily: "Museo Sans Rounded, sans-serif",
 
     fontWeight: "bold", fontSize: "230%"}}
@@ -71,10 +72,10 @@ style={{
   width: "55%", height: "auto" }} 
   />
  
-<div style={{ 
-    maxWidth: "100%",
-    display: "flex",
-    flexDirection: "row",
+<Container style={{ 
+    width: "100vw",
+    // display: "flex",
+    // flexDirection: "row",
     paddingTop: "1%" ,
     marginBottom: "8vw",
     color: "#484B58",
@@ -82,16 +83,16 @@ style={{
     alignItems: "center",
     textAlign: "center" }}>
  
-
-
+<Row>
+  <Col md={4} lg={4} xs={12}>
   <motion.Card   style={{
     flex: 1,
     display: "flex",
     flexDirection: "column",
     // marginTop: "-2vw", 
     // marginRight: "-4%",
-    margin: "0 30px",
-maxWidth: "23%"
+//     margin: "0 6%",
+// width: "30%"
 
     // Adjust this value to move the image upwards
     // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
@@ -125,6 +126,8 @@ maxWidth: "23%"
   
   </motion.Card>
 
+  </Col>
+  <Col md={4} lg={4} xs={12}>
 
   <motion.Card   style={{
     flex: 1,
@@ -132,8 +135,8 @@ maxWidth: "23%"
     flexDirection: "column",
     // marginTop: "-2vw", 
     // marginRight: "-4%",
-    margin: "0 30px",
-maxWidth: "23%"
+//     margin: "0 6%",
+// width: "30%"
 
 
     // margin: "0 -1px", // Reduce the margin here
@@ -167,7 +170,9 @@ transformation
     
     
   </motion.Card>
- 
+ </Col>
+ <Col md={4} lg={4} xs={12}>
+
 
   <motion.Card   style={{
     flex: 1,
@@ -175,8 +180,8 @@ transformation
     flexDirection: "column",
     // marginTop: "-2vw", 
     // marginRight: "-4%",
-    margin: "0 30px",
-maxWidth: "23%"
+    // margin: "0 3%",
+// width: "30%"
 
     // margin: "0 -1px", // Reduce the margin here
     // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow here
@@ -215,10 +220,11 @@ and inclusion    </h4>
    
    
   </motion.Card>
-  
- 
+  </Col>
+  </Row>
 
-</div>
+
+</Container>
 
 
 </div>

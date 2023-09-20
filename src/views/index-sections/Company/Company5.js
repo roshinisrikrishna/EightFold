@@ -52,10 +52,10 @@ function Company5() {
 
   return (
     <>
-     <div style={{ minHeight: "100vh", paddingTop: "100px" }}>
+     <div style={{ minHeight: "100vh", paddingTop: "10vh", minWidth: "100vw" }}>
         <Container className="mt-5 mb-5" style={{ paddingBottom: "150px" }}>
           <Row>
-            <Col md="6" className="ml-auto mr-auto">
+            <Col md="12" className="ml-auto mr-auto">
               <Container className="mt-2" style={{ marginLeft: "-20px" }}>
                 <Row>
                   <Col>
@@ -71,7 +71,7 @@ function Company5() {
                     <p
                       style={{
                         fontSize: "17px", // Responsive font size
-                        maxWidth: "100%",
+                        maxWidth: "100vw",
                         fontWeight: 400,
                         fontFamily: "Roboto, sans-serif",
                       }}
@@ -172,7 +172,7 @@ function Company5() {
                 </Row>
               </Container>
             </Col>
-            <Col md="6" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <Col md="12" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
   <div style={{ position: "relative" }}>
 <div ref={imageRef}>
                   {animationCompleted && ( // Conditionally apply the animation
@@ -182,8 +182,8 @@ function Company5() {
       alt="Eightfold.ai Logo"
       className="navbar-logo"
       style={{
-                    width: "70vw", // Responsive width
-                    maxWidth: "580px", // Maximum width
+                    width: "70%", // Responsive width
+                    // maxWidth: "580px", // Maximum width
                     height: "auto",
                     marginTop: "0px",
                     borderRadius: "15px",

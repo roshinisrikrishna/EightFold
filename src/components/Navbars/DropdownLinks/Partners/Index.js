@@ -12,6 +12,7 @@ import Partners2 from "components/Navbars/DropdownLinks/Partners/Partners2";
 import Partners3 from "components/Navbars/DropdownLinks/Partners/Partners3";
 import Partners4 from "components/Navbars/DropdownLinks/Partners/Partners4";
 
+import TransparentFooter from "components/Footers/TransparentFooter";
 
 
 import DashboardLast from "views/index-sections/Dashboard/DashboardLast";
@@ -49,6 +50,7 @@ function Index() {
          
         </div>
         <DashboardLast />
+        <TransparentFooter />
 
       </div>
     </>

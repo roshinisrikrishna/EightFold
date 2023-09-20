@@ -49,7 +49,7 @@ function Typography() {
           flexDirection: "column", // Display items in a column
           justifyContent: "center",
           alignItems: "center",
-          maxWidth: "100%", // Adjust this value to match the screen width
+          maxWidth: "100vw", // Adjust this value to match the screen width
         }}
       >
           <Container 
@@ -62,29 +62,32 @@ marginTop: "-10%",
               padding: "0vw",
               borderRadius: "0.5vw",
               justifyContent: "center",
+              alignItems: "center",
               textAlign: "center",
               lineHeight: "1.2em"
             }}
           >
+            <Container style={{   justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                maxWidth: "75%"}}>
             <h4
               style={{
                 color: "#484B58",
                 fontWeight: "normal",
                 fontFamily: "roboto, sans-serif",
                 fontSize: "22px",
-lineHeight: "2em"
-                // maxWidth: "70%"
+                lineHeight: "2em",
+             
                             }}
               
             >
               We're proud to work with exceptional partners who share our vision of talent
-            <br/>
 greatness. Together, we're revolutionizing the ways organizations manage talent,         
-<br />
   create more equitable workforces, drive innovation, and shape the future of work.           </h4>
           </Container>
        
- 
+          </Container>
 
         
       </div>

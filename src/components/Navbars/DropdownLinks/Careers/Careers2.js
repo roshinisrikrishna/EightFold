@@ -44,7 +44,7 @@ function Typography() {
           flexDirection: "column", // Display items in a column
           justifyContent: "center",
           alignItems: "center",
-          maxWidth: "100%", // Adjust this value to match the screen width
+          maxWidth: "100vw", // Adjust this value to match the screen width
         }}
       >
           <Container 
@@ -86,7 +86,7 @@ Join our mission to help everyone fulfill their potential  and change
         <Container className="ml-3 mt-5" style={{ maxWidth: "100%",paddingBottom: "150px" }}>
           <Row>
             
-            <Col md="5" style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-start" }}>
+            <Col md="12" lg={5} style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-start" }}>
   <Container className="pr-5" style={{ position: "relative" }}>
     <img
       src={logo}
@@ -98,7 +98,7 @@ Join our mission to help everyone fulfill their potential  and change
   </Container>
  
 </Col>
-<Col md="7" className="">
+<Col md="12" lg={7} className="">
               <Container className="mt-2" style={{display: "flex", justifyContent: "flex-start", alignItems: "flex-start"}}>
                 <Row>
                   <Col>
@@ -116,24 +116,24 @@ Join our mission to help everyone fulfill their potential  and change
                      tremendous. People take ownership<br />
                       of their work, which allows us to be <br />
                       creative and try new things.</h2>
-
+{/* <Container style={{backgroundColor:"red",textAlign:"center", justifyContent:"center", alignItems:"center"}}> */}
             <div className="elementor-element color-bar" 
                       // style={{alignItems: "flex-start",justifyContent: "flex-start"}}
                       >
-        <div className="elementor-testimonial__cite:before" style={{
+        <div className="elementor-testimonial__cite:before " style={{
             content: "",
-            width: "240px",
+            width: "100%",
             height: "3px",
             position: "relative",
             top: 0,
-            left: "25%",
+            left: "50%",
             transform: "translateX(-50%)",
             marginBottom: "20px",
             background: "linear-gradient(115.67deg, #008FBF 15.9%, #7E3A77 67.54%)",
             borderRadius: "5px",
                   }}></div>
             </div>
-          
+            {/* </Container>   */}
     <h2 style={{ 
                 fontSize: "100%", 
                 fontWeight: 500,

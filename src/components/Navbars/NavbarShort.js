@@ -109,14 +109,14 @@ function IndexNavbar() {
 
      
   return (
-    <div ref={menuRef}>
+    <div ref={menuRef} >
  
       
       <Navbar
   className='navbar-top fixed-top'
 //   expand="lg"
   color="default"
-  style={{ fontFamily: "Museo Sans Rounded, sans-serif",maxWidth: "1400px", width: "100%" }}
+  style={{ maxWidth:"100vw",background: "#2B3140",fontFamily: "Museo Sans Rounded, sans-serif" }}
 >
           <Nav navbar style={{ width: "100%"}}>
             
@@ -125,7 +125,7 @@ function IndexNavbar() {
     <i
       className={click ? "fas fa-times d-flex align-items-left justify-content-left" : "fas fa-bars d-flex align-items-left justify-content-left"}
       onClick={handleClick}
-      style={{ fontSize: "30px",position: "absolute", left: "15px", cursor: "pointer" }}
+      style={{ fontSize: "30px",position: "absolute", left: "15px", cursor: "pointer", color:"white", }}
     />
     <NavbarBrand
       id="navbar-brand"
@@ -152,7 +152,14 @@ function IndexNavbar() {
 </div>
 
             {click && (
-              <Container className="pl-5" style={{minHeight: "400px",height:"100%",maxWidth: "100%",width: "100%"}}>
+              <Container
+  className=""
+  style={{
+    minHeight: "100vh",
+    height: "100%",
+    maxWidth: "100vw", // Set maxWidth to 100% to occupy full width
+  }}
+>
    <NavItem>
    <div>
     <Dropdown 
@@ -444,7 +451,8 @@ function IndexNavbar() {
         background: "linear-gradient(to right, #008BE8, #5B4B6E )",
         color: "white",
         fontSize: "80%",
-        width: "25%",
+        maxWidth: "100%",
+        padding: "2% 17%", // Set padding as a percentage of the button's width and height
         whiteSpace: "nowrap",
       }}
       to=""
@@ -479,73 +487,6 @@ function IndexNavbar() {
   position: fixed;
   z-index: 1000; /* Adjust the z-index as needed */
 }
-
-
-
-
-// .custom-dropdown-menu {
-//   position: absolute;
-//   // top: 1000px;
-//   // right: 20px;
-//   padding: 10px 20px;
-//   max-width: 800%;
-//   max-height: 500%;
-
-// }
-
-
-// .custom-dropdown-menu::before{
-//   content: '';
-//   position: absolute;
-//   top: -5px;
-//   right: 20px;
-//   height: 0.1%;
-//   width: 0.1%;
-//   color: rgb(29, 33, 43);
-//   // transform: rotate(45deg);
-// }
-
-// .custom-dropdown-menu.active{
-//   opacity: 1;
-//   visibility: visible;
-//   transform: translateY(0);
-//   transition: 1000ms ease;
-// }
-
-// .custom-dropdown-menu.inactive{
-//   opacity: 0;
-//   visibility: hidden;
-//   transform: translateY(-20px);
-//   transition: 1000ms ease;
-// }
-
-// .custom-dropdown-menu a {
-//   text-decoration: none;
-//   border-bottom: 2px solid transparent;
-//   transition: border-bottom 0.3s ease-in-out;
-// }
-
-// /* Hover effect for dropdown menu items */
-// .custom-dropdown-menu a:hover {
-//   background-image: linear-gradient(to right, #1d212b, #1d212b);
-//   background-size: 100% 100%;
-//   background-position: 0 90%;
-//   background-clip: text;
-//   border-bottom: 2.5px solid transparent;
-//   border-image: linear-gradient(0.25turn, rgba(50, 94, 168), rgba(24, 9, 230), rgba(169, 11, 227));
-//   border-image-slice: 1;
-//   width: 100%;
-// }
-
- 
-//   .close-button{
-//      color:white
-//   }
-//   .close-button:hover {
-//     color: blue;
-
-//   }
-  
   .dropdown-menu {
     background-color: rgb(29, 33, 43); 
     font-size: 120%;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 // react plugins that creates an input with a date picker
 import Datetime from "react-datetime";
 // reactstrap components
@@ -39,8 +39,23 @@ const fadeInAnimationVariants = {
 };
 
 function Javascript() {
-  const [modal1, setModal1] = React.useState(false);
-  const [modal2, setModal2] = React.useState(false);
+   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    // Function to update screen width when the window is resized
+  const handleResize = () => {
+    setScreenWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    // Attach the event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
      
@@ -65,7 +80,10 @@ function Javascript() {
   }}
 >
 <motion.h2 
-style={{ fontSize: "230%", textAlign: "center", fontWeight: 600, fontFamily: "Museo Sans Rounded, sans-serif" }}
+style={{ 
+  paddingTop: "5vh",
+  fontSize: screenWidth < 700 ? "8vw" : "4vw", 
+  textAlign: "center", fontWeight: 600, fontFamily: "Museo Sans Rounded, sans-serif" }}
 variants={fadeInAnimationVariants}
 initial="initial"
 whileInView="animate"
@@ -78,7 +96,7 @@ custom={1}>
  
 
 <Container style={{ 
-  maxWidth: "100%", 
+  maxWidth: "100vw", 
   // display: "flex", 
   // flexDirection: "row", 
   marginTop: "5%", 
@@ -86,7 +104,7 @@ custom={1}>
   alignItems: "center" }}>
 
 <Row style={{ display: "flex" }}>
-            <Col xs={12} md={4} xl={4} style={{ margin: "10px 0", display: "flex" , 
+            <Col xs={12} md={6} lg={4} xl={4} style={{ margin: "10px 0", display: "flex" , 
 }}>
 
 <motion.Card style={{ 
@@ -130,7 +148,7 @@ fontWeight: 400, fontSize: "80%", maxWidth: "100%", }}>
 fontSize: "80%", fontWeight: 500, }}>Read customer story</p>
 </motion.Card>
 </Col>
-<Col xs={12} md={4} xl={4} style={{ margin: "10px 0", display: "flex" }}>
+<Col xs={12} md={6} lg={4} xl={4} style={{ margin: "10px 0", display: "flex" }}>
 
 <motion.Card style={{ 
   borderBottom: "1px solid transparent", 
@@ -173,7 +191,7 @@ fontWeight: 400, fontSize: "80%", maxWidth: "100%",  }}>
 fontSize: "80%", fontWeight: 500,  }}>Read customer story</p>
 </motion.Card>
 </Col>
-<Col xs={12} md={4} xl={4} style={{ margin: "10px 0", display: "flex" }}>
+<Col xs={12} md={6} lg={4} xl={4} style={{ margin: "10px 0", display: "flex" }}>
 <motion.Card style={{ 
   borderBottom: "1px solid transparent", 
   borderRight: "1px solid transparent", 

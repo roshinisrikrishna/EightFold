@@ -67,16 +67,16 @@ function CarouselSection() {
           justifyContent: "center",
           alignItems: "center",
           // marginLeft: "30px",
-          marginTop: "130px",
-          marginBottom: "130px",
-          maxWidth: "1280px",
+          marginTop: "18vh",
+          marginBottom: "10vh",
+          maxWidth: "100vw",
         }}
       >
         <motion.h2
           style={{
-            fontSize: "180%",
+            fontSize: "150%",
             textAlign: "center",
-            fontWeight: "bolder", // Increase the fontWeight
+            fontWeight: 900, // Increase the fontWeight
             fontFamily: "Museo Sans Rounded, sans-serif"
           }}
           variants={fadeInAnimationVariants}
@@ -95,7 +95,7 @@ function CarouselSection() {
                 src={item.src}
                 alt={item.altText}
                 className="carousel-image" 
-                style={{paddingRight: "100px"}}
+                style={{paddingRight: "10vw"}}
               />
             ))}
             {items.map((item, index) => (
@@ -104,7 +104,7 @@ function CarouselSection() {
                 src={item.src}
                 alt={item.altText}
                 className="carousel-image" 
-                style={{paddingRight: "100px"}}
+                style={{paddingRight: "10vw"}}
               />
             ))}
           </div>

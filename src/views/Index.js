@@ -8,7 +8,7 @@ import React from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import SearchModal from "components/Navbars/SearchModal.js";
 import DashboardHome from "components/Headers/DashboardHome.js";
-import DarkFooter from "components/Footers/DarkFooter.js";
+import TransparentFooter from "components/Footers/TransparentFooter.js";
 
 // sections for this page
 import Dashboard2 from "./index-sections/Dashboard/Dashboard2.js";
@@ -54,6 +54,7 @@ function Index() {
          
         </div>
         <DashboardLast />
+        <TransparentFooter />
       </div>
     </>
   );

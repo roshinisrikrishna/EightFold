@@ -6,7 +6,6 @@ import React from "react";
 
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import SearchModal from "components/Navbars/SearchModal.js";
 import Home from "components/Navbars/DropdownLinks/Careers/Home";
 import Careers2 from "components/Navbars/DropdownLinks/Careers/Careers2";
 import Careers3 from "components/Navbars/DropdownLinks/Careers/Careers3";
@@ -14,6 +13,7 @@ import Careers4 from "components/Navbars/DropdownLinks/Careers/Careers4";
 import Careers5 from "components/Navbars/DropdownLinks/Careers/Careers5";
 import Careers6 from "components/Navbars/DropdownLinks/Careers/Careers6";
 
+import TransparentFooter from "components/Footers/TransparentFooter";
 
 
 import DashboardLast from "views/index-sections/Dashboard/DashboardLast";
@@ -34,7 +34,6 @@ function Index() {
   return (
     <>
       <IndexNavbar />
-      {/* <SearchModal isOpen={searchModalOpen} toggleSearchModal={toggleSearchModal} /> Display the SearchModal */}
 
       <div className="wrapper">
         <Home />
@@ -56,6 +55,7 @@ function Index() {
          
         </div>
         <DashboardLast />
+        <TransparentFooter />
 
       </div>
     </>
