@@ -66,7 +66,7 @@ function NucleoIcons() {
           paddingTop: "5%",
           paddingBottom: "5%",
           position: "relative",
-          maxWidth: "100%",
+          maxWidth: "100vw",
         }}
       >
               <img
@@ -83,11 +83,11 @@ function NucleoIcons() {
         />
         <Container style={{ paddingBottom: "70px" }}>
           <Row>
-            <Col md="6" className="mt-5" style={{left: "-5%"}}>
+            <Col md="6" className="mt-5" >
               <Container
                 className="mt-2"
                 style={{ width: "100%",  marginRight: "0", 
-                justifyContent: "flex-start", alignItems: "flex-start", textAlign: "le" }}
+                justifyContent: "flex-start", alignItems: "flex-start", textAlign: "left" }}
               >
                 <Row>
                   <Col>
@@ -133,7 +133,7 @@ function NucleoIcons() {
                 </Row>
               </Container>
             </Col>
-            <Col md="6" className="mt-4 " style={{right: "-5%"}}>
+            <Col md="6" className="mt-4" >
               <div ref={imageRef}>
                   {animationCompleted && ( // Conditionally apply the animation
                     <ZoomIn>
@@ -141,7 +141,7 @@ function NucleoIcons() {
                   src={intImg}
                   alt="Eightfold.ai Logo"
                   className="navbar-logo"
-                  style={{ width: "100%", height: "auto",  borderRadius: "10px",right: "-10%"
+                  style={{ width: "100%", height: "auto",  borderRadius: "10px"
               }}
                 variants={fadeInAnimationVariants}
                 initial="initial"
@@ -164,7 +164,7 @@ function NucleoIcons() {
             height: "auto",
             position: "absolute",
             bottom: 0,
-            right: "5px",
+            right: "5%",
           }}
         />
         </Container>

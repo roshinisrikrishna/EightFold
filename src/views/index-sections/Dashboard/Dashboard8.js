@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {
   Container,
   Row,
@@ -82,8 +82,26 @@ const items = [
 ];
 
 function CarouselSection() {
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  // Function to update screen width when the window is resized
+  const handleResize = () => {
+    setScreenWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    // Attach the event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <Container style={{ maxWidth: "100%",fontWeight: "bolder", paddingTop: "7%" }}>
+    <Container style={{ maxWidth: "100vw",fontWeight: "bolder", paddingTop: "7%" }}>
       <Container
         style={{
           display: "flex",
@@ -98,9 +116,10 @@ function CarouselSection() {
       >
         <motion.h2
           style={{
-            fontSize: "160%",
+            fontSize: screenWidth < 700 ? "6vw" : "2.5vw",
+            maxWidth: "70vw",
             textAlign: "center",
-            fontWeight: "bolder",
+            fontWeight: 900,
             fontFamily: "Museo Sans Rounded, sans-serif",
             paddingBottom: "3%"
           }}

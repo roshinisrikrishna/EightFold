@@ -69,17 +69,17 @@ const [animationCompleted, setAnimationCompleted] = useState([false, false, fals
 
   return (
     <>
-      <div className="mt-5 mb-5">
-        <Container className="mt-5 mb-5" style={{ paddingTop: "5vh", maxWidth: "100%" }}>
+      <div className="mt-5 mb-5" style={{ maxWidth: "100vw" }}>
+        <Container className="mt-5 mb-5" style={{ maxWidth:"90vw",paddingTop: "2vh"}}>
           <Row>
-            <Col  md="6" style={{ marginTop: "5%" }}>
-              <Container className="mt-5 ml-4">
+            <Col  md="6" xs="12" style={{ marginTop: "5%" }}>
+              <Container className="mt-5 ml-1">
                 <Row>
                   <Col style={{textAlign: "left", alignItems: "flex-start"}}>
                     <h3 style={{ fontSize: "160%", fontWeight: "bolder", fontFamily: "Museo Sans Rounded, sans-serif" }}>
                     AI thought leaders​
                     </h3>
-                    <p style={{ color: "#484b58", fontSize: "95%", maxWidth: "500px", fontWeight: 500, fontFamily: "Roboto, sans-serif" }}>
+                    <p style={{ color: "#484b58", fontSize: "95%", maxWidth: "90vw", fontWeight: 500, fontFamily: "Roboto, sans-serif" }}>
                     Our AI thought leaders drive innovation and are shaping the future of <span style={{color: "#008FBF"}}>talent acquisition</span> and management. 
                     They are experts in AI, machine learning, data science, and business dedicated to creating exceptional 
                     workforces through cutting-edge solutions.
@@ -87,7 +87,7 @@ const [animationCompleted, setAnimationCompleted] = useState([false, false, fals
                     <a href="" style={{color: "#008FBF"}}>Meet with team
                     <FontAwesomeIcon
                           icon={faAngleDown}
-                          style={{ color: "#000",fontSize: "80%", marginLeft: "5px"}}
+                          style={{ color: "#000",fontSize: "80%", marginLeft: "1%"}}
                         />
                     </a>
 
@@ -95,7 +95,7 @@ const [animationCompleted, setAnimationCompleted] = useState([false, false, fals
                 </Row>
               </Container>
             </Col>
-            <Col md="6" style={{ marginRight: "-20%", display: "flex", justifyContent: "flex-end", alignItems: "flex-end" }}>
+            <Col md="6" xs="12" style={{ marginRight: "-20%", display: "flex", justifyContent: "flex-end", alignItems: "flex-end" }}>
               <div style={{ position: "relative" }}>
 <div ref={imageRefs[0]}> {/* Use imageRefs[0] */}
                   {animationCompleted[0] && ( // Conditionally apply the animation
@@ -114,9 +114,9 @@ const [animationCompleted, setAnimationCompleted] = useState([false, false, fals
           </Row>
         </Container>
 
-        <Container className="mt-5 mb-5 ml-5" style={{ paddingTop: "5vh", maxWidth: "100%" }}>
+        <Container className="mt-5 mb-5 ml-1" style={{ paddingTop: "5vh", maxWidth: "90vw" }}>
           <Row>
-            <Col md="6" style={{ display: "flex", justifyContent: "left", alignItems: "flex-start" }}>
+            <Col md="6" xs="12" style={{ display: "flex", justifyContent: "left", alignItems: "flex-start" }}>
               <div style={{ position: "relative" }}>
 <div ref={imageRefs[1]}> {/* Use imageRefs[0] */}
                   {animationCompleted[1] && ( // Conditionally apply the animation
@@ -132,7 +132,7 @@ const [animationCompleted, setAnimationCompleted] = useState([false, false, fals
                 </div>
               </div>
             </Col>
-            <Col md="6" style={{ marginTop: "5%", justifyContent: "left", alignItems: "flex-start" }}>
+            <Col md="6" xs="12" style={{ maxWidth:"90vw", marginTop: "5%", justifyContent: "left", alignItems: "flex-start" }}>
               <Container className="mt-5">
                 <Row>
                   <Col>
@@ -147,7 +147,7 @@ const [animationCompleted, setAnimationCompleted] = useState([false, false, fals
                     <a href="" style={{color: "#008FBF"}}>Meet the team
                     <FontAwesomeIcon
                           icon={faAngleDown}
-                          style={{ color: "#000",fontSize: "80%", marginLeft: "5px"}}
+                          style={{ color: "#000",fontSize: "80%", marginLeft: "1%"}}
                         />
                     </a>
                   </Col>
@@ -156,10 +156,10 @@ const [animationCompleted, setAnimationCompleted] = useState([false, false, fals
             </Col>
           </Row>
         </Container>
-        <Container className="mt-5 mb-5" style={{ paddingTop: "5vh", maxWidth: "100%" }}>
+        <Container className="mt-5 mb-5" style={{ paddingTop: "5vh", maxWidth: "90vw" }}>
           <Row>
-            <Col md="6" style={{ marginTop: "5%" }}>
-              <Container className="mt-5 ml-4">
+            <Col md="6" xs="12" style={{ marginTop: "5%" }}>
+              <Container className="mt-5 ml-1">
                 <Row>
                   <Col>
                     <h3 style={{ fontSize: "160%", fontWeight: 600, fontFamily: "Museo Sans Rounded, sans-serif" }}>
@@ -172,7 +172,7 @@ const [animationCompleted, setAnimationCompleted] = useState([false, false, fals
                     <a href="" style={{color: "#008FBF"}}>Meet the team
                     <FontAwesomeIcon
                           icon={faAngleDown}
-                          style={{ color: "#000",fontSize: "80%", marginLeft: "5px"}}
+                          style={{ color: "#000",fontSize: "80%", marginLeft: "1%"}}
                         />
                     </a>
 
@@ -180,7 +180,7 @@ const [animationCompleted, setAnimationCompleted] = useState([false, false, fals
                 </Row>
               </Container>
             </Col>
-            <Col md="6" style={{ marginRight: "-20%", display: "flex", justifyContent: "flex-end", alignItems: "flex-end" }}>
+            <Col md="6" xs="12" style={{ marginRight: "-20%", display: "flex", justifyContent: "flex-end", alignItems: "flex-end" }}>
               <div style={{ position: "relative" }}>
 <div ref={imageRefs[2]}> {/* Use imageRefs[0] */}
                   {animationCompleted[2] && ( // Conditionally apply the animation
@@ -199,9 +199,9 @@ const [animationCompleted, setAnimationCompleted] = useState([false, false, fals
           </Row>
         </Container>
 
-        <Container className="mt-5 mb-5 ml-5" style={{ paddingTop: "5vh", maxWidth: "100%" }}>
+        <Container className="mt-5 mb-5 ml-1" style={{ paddingTop: "5vh", maxWidth: "90vw" }}>
           <Row>
-            <Col md="6" style={{ display: "flex", justifyContent: "left", alignItems: "flex-start" }}>
+            <Col md="6" xs="12" style={{ display: "flex", justifyContent: "left", alignItems: "flex-start" }}>
               <div style={{ position: "relative" }}>
 <div ref={imageRefs[3]}> {/* Use imageRefs[0] */}
                   {animationCompleted[3] && ( // Conditionally apply the animation
@@ -217,7 +217,7 @@ const [animationCompleted, setAnimationCompleted] = useState([false, false, fals
                 </div>
               </div>
             </Col>
-            <Col md="6" style={{ marginTop: "5%", justifyContent: "left", alignItems: "flex-end" }}>
+            <Col md="6" xs="12" style={{ marginTop: "5%", justifyContent: "left", alignItems: "flex-end" }}>
               <Container className="mt-5">
                 <Row>
                   <Col>
@@ -232,7 +232,7 @@ const [animationCompleted, setAnimationCompleted] = useState([false, false, fals
                     <a href="" style={{color: "#008FBF"}}>Meet the team  
                     <FontAwesomeIcon
                           icon={faAngleDown}
-                          style={{ color: "#000",fontSize: "80%", marginLeft: "5px"}}
+                          style={{ color: "#000",fontSize: "80%", marginLeft: "1%"}}
                         />
                         </a>
                   </Col>

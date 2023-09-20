@@ -41,6 +41,8 @@ const fadeInAnimationVariants = {
   }),
 };
 
+// Import statements...
+
 function BasicElements() {
   const sliderRegularRef = useRef(null);
   const sliderDoubleRef = useRef(null);
@@ -65,64 +67,86 @@ function BasicElements() {
     }
   }, []);
 
- return (
-  <>
-    <div className="section section-basic" id="basic-elements" style={{paddingTop: "12%",fontFamily: "Museo Sans Rounded, sans-serif", justifyContent:"flex-start"}}>
-      <Container>
-        <Row>
-        <Col className="justify-content-start" md="1" xl="1">
-  <Card style={{ 
-    background: "linear-gradient(45deg, rgba(0, 139, 232, 0.2) 50%, rgba(147, 112, 219, 0.5)) 50%", 
-    width: "200px", 
-    height: "250px",
-    borderRadius: "0px 50px 50px 0px",
-    filter: "blur(60px)"
-  }}>
-    <CardBody>
-    </CardBody>
-  </Card>
-</Col>
+  return (
+    <>
+      <div className="section section-basic" id="basic-elements" style={{ maxWidth: "100vw", paddingTop: "12%", fontFamily: "Museo Sans Rounded, sans-serif", justifyContent: "flex-start" }}>
+        <Container>
+          <Row>
+            {/* Use d-none d-md-block to hide the column on screens smaller than md (medium) */}
+            <Col className="justify-content-start d-none d-md-block" md="1" xl="1">
+              <Card style={{
+                background: "linear-gradient(45deg, rgba(0, 139, 232, 0.2) 50%, rgba(147, 112, 219, 0.5)) 50%",
+                width: "100%",
+                height: "250px",
+                borderRadius: "0px 50px 50px 0px",
+                filter: "blur(60px)"
+              }}>
+                <CardBody>
+                </CardBody>
+              </Card>
+            </Col>
 
+            <Col md="11" xl="11" xs="12">
+              <div className="content-center gradient-background">
+                <Container >
+                  <div className="brand" style={{ marginLeft: "0%", textAlign: "center", width: "100%" }}>
+                    <motion.h1
+                    className="brand-h1"
+                      style={{
+                        fontWeight: 600,
+                        letterSpacing: "0.01em",
+                        fontSize: "200%",
+                        background: "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                      }}
+                      variants={fadeInAnimationVariants}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{ once: true, }}
+                      custom={1}
+                    >
+                      We are transforming the world of work by pairing people with possibilities. From talent acquisition to <a href="/link-to-text-management" style={{ background: "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>text management</a> and talent insights, this is the single AI platform that does it all.
+                    </motion.h1>
+                  </div>
+                </Container>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <style>
+        {`
+        /* Media query for screens less than 768px wide */
+        @media (max-width: 768px) {
+          .page-header-image {
+            min-height: 80vh;
+          }
+          .brand {
+            margin-top: 10vh;
+            padding-top: 10%; /* Add padding for smaller screens */
+          }
+          .brand > div {
+            min-width: 100vw !important;
+            
+          }
+          .brand-h1 {
+            font-size: 155% !important; /* Set font size to 52px with !important */
+          }
+          .brand p {
+            font-size: 80% !important;
+          }
 
-
-
-          <Col md="11" xl="11">
-            <div className="content-center gradient-background">
-              <Container>
-               
-                    <div className="brand" style={{  marginLeft: "0%",textAlign: "center", width: "100%" }}>
-                      <motion.h1
-                        style={{
-                          fontWeight: 600,
-                          letterSpacing: "0.01em",
-                          fontSize: "200%",
-                          background:
-                            "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent",
-                        }}
-                        variants={fadeInAnimationVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{once: true,}}
-          custom={1}
-                      >
-                        We are transforming the world of work by pairing people with possibilities. From talent acquisition to <a href="/link-to-text-management" style={{background:
-                            "-webkit-linear-gradient(45deg, #008BE8, #5B4B6E 85%)",
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent"}}>text management</a> and talent insights, this is the single AI platform that does it all.
-                      </motion.h1>
-        
-                    </div>
-                  
-              </Container>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </div>
-  </>
-);
+          .brand button {
+            max-width: 70vw !important;
+            padding: 4% 12% !important;
+            font-size: 90% !important;
+          }
+        }
+        `}
+      </style>
+    </>
+  );
 }
 
 export default BasicElements;

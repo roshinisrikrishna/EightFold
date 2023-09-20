@@ -58,6 +58,7 @@ function Navbars() {
   };
   return (
     <div style={{ 
+      maxWidth:"100vw",
       background: "linear-gradient(rgba(0, 139, 232, 0.1) 3%, rgba(147, 112, 219, 0.1) 3%, rgba(255,255,255) 97%)",
     backdropFilter: "blur(10px)", // Add this line for blur effect 
   }}>

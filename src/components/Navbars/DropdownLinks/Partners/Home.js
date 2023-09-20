@@ -42,7 +42,7 @@ const fadeImageVariants = {
 
 function CompanyLeadership() {
   return (
-    <div>
+    <div style={{maxWidth:"100vw"}}>
       
       <div
         className="page-header clear-filter"

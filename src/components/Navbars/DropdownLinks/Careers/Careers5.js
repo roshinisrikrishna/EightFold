@@ -42,16 +42,19 @@ background: "linear-gradient(to right, #000 50%, #455e8f)",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          maxWidth:"100vw"
         }}
       >
-         <Container className="" style={{ maxWidth: "100%", paddingBottom: "150px" }}>
+         <Container className="" style={{justifyContent: "flex-start", alignItems: "flex-start", textAlign:"left", paddingTop:"10%",maxWidth: "90vw",  }}>
           <Row>
-            <Col md={6} xl={6} xs={12} style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-start" }}>
+            <Col md={6} xl={6} xs={1} style={{ 
+              marginLeft:"-30%",
+              display: "flex", justifyContent: "flex-start", alignItems: "flex-start" }}>
   <Container className="" style={{ position: "relative" }}>
   <Card style={{ 
     background: "transparent", 
-    width: "900px", 
-    left: "-70%"
+    width: "76vw", 
+    // left: "-70%"
   }}>
     <img
       src={logo}
@@ -67,11 +70,14 @@ background: "linear-gradient(to right, #000 50%, #455e8f)",
   </Container>
  
 </Col>
-<Col  md={6} xl={6} xs={12} className="pr-2">
-              <Container className="" style={{maxWidth: "95%", paddingTop: "220px", display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+<Col  md={6} xl={6} xs={12} className="pr-2" 
+style={{left:"25%", width:"24vw"}}
+>
+              <Container className="" style={{ width:"49vw", marginTop: "140px", paddingBottom:"10vh",display: "flex", flexDirection: "column", alignItems: "center", justifyContent:"center", textAlign:"left" }}>
                                     <h2 style={{ 
-                fontSize: "4.3em", 
-                fontWeight: 900,
+
+                fontSize: "6.5vw", 
+                fontWeight: 800,
                 lineHeight: "1em", 
                 fontFamily: "Museo Sans Rounded, sans-serif",
                 }}>
@@ -82,7 +88,7 @@ background: "linear-gradient(to right, #000 50%, #455e8f)",
 
     <h2 style={{ 
       paddingTop: "45px",
-                fontSize: "1.1em", 
+                fontSize: "100%", 
                 fontWeight: 600,
                 lineHeight: "1.5em", 
                 fontFamily: "roboto, sans-serif",

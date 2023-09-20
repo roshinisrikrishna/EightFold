@@ -54,7 +54,7 @@ const [animationCompleted, setAnimationCompleted] = useState(false);
 
   return (
     <>
-      <div className="mb-5">
+      <div className="mb-5" style={{maxWidth:"100vw"}}>
         <Container className=" mb-5" style={{  }}>
           <Row>
             <Col md="7" style={{ marginTop: "5%" }}>
@@ -64,7 +64,7 @@ const [animationCompleted, setAnimationCompleted] = useState(false);
                     <h3 style={{ fontSize: "32px", fontWeight: 600, fontFamily: "Museo Sans Rounded, sans-serif" }}>
                       Illuminating career paths, opening up a world of possibilities
                     </h3>
-                    <p style={{ color: "#484b58", fontSize: "17px", maxWidth: "500px", fontWeight: 500, fontFamily: "Roboto, sans-serif" }}>
+                    <p style={{ color: "#484b58", fontSize: "17px", maxWidth: "100vw", fontWeight: 500, fontFamily: "Roboto, sans-serif" }}>
                       In Buddhism, the Eightfold Path of eight practices guides each person to wisdom 
                       and nirvana. Inspired by this ideal, we want to empower everyone to discover and
                       pursue the right career path, where they can showcase their skills, take pride 
@@ -120,7 +120,7 @@ const [animationCompleted, setAnimationCompleted] = useState(false);
                     <h3 style={{ fontSize: "32px", fontWeight: 600, fontFamily: "Museo Sans Rounded, sans-serif" }}>
                       Achieving talent greatness takes a great team
                     </h3>
-                    <p style={{ color: "#484b58", fontSize: "17px", maxWidth: "500px", fontWeight: 500, fontFamily: "Roboto, sans-serif" }}>
+                    <p style={{ color: "#484b58", fontSize: "17px", maxWidth: "100vw", fontWeight: 500, fontFamily: "Roboto, sans-serif" }}>
                       We’ve assembled the world’s best and brightest in AI and HR to help our customers create 
                       and build their ideal future workforces. Our experts in machine learning, artificial 
                       intelligence, search, personalization, enterprise solutions, and more are dedicated to 

@@ -6,10 +6,10 @@ import React from "react";
 
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import SearchModal from "components/Navbars/SearchModal.js";
 import Home from "components/Navbars/DropdownLinks/Contact/Home";
 import Contact2 from "components/Navbars/DropdownLinks/Contact/Contact2";
 import Contact3 from "components/Navbars/DropdownLinks/Contact/Contact3";
+import TransparentFooter from "components/Footers/TransparentFooter";
 
 
 
@@ -48,6 +48,7 @@ function Index() {
          
         </div>
         <DashboardLast />
+        <TransparentFooter />
 
       </div>
     </>

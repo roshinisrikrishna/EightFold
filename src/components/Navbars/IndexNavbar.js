@@ -30,6 +30,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import NavbarShort from "./NavbarShort";
 
 
+
 function IndexNavbar() {
 const [collapseOpen, setCollapseOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);

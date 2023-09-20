@@ -44,14 +44,15 @@ const fadeImageVariants = {
 
 function CompanyLeadership() {
   return (
-    <div style={{}}>
+    <div style={{maxWidth:"100vw"}}>
       <div
         className="page-header clear-filter"
         filter-color="black"
         style={{
           background: "linear-gradient(to right, #045d78, #043a4a)",
-          minHeight: "650px", height:"100%",
-                    display: "flex",
+          minHeight: "100vh", 
+          height:"100%",
+          display: "flex",
           flexDirection: "column",
           justifyContent: "center",
         borderBottomLeftRadius: "20%"

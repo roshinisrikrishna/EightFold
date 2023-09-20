@@ -8,7 +8,7 @@ import React from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import SearchModal from "components/Navbars/SearchModal.js";
 import CompanyHome from "views/index-sections/Company/CompanyHome";
-import DarkFooter from "components/Footers/DarkFooter.js";
+import TransparentFooter from "components/Footers/TransparentFooter";
 
 // sections for this page
 import Company2 from "views/index-sections/Company/Company2";
@@ -50,7 +50,7 @@ function Index() {
          
         </div>
         <DashboardLast />
-
+<TransparentFooter />
       </div>
     </>
   );

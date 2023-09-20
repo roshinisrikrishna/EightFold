@@ -31,7 +31,7 @@ function Typography() {
           // marginLeft: "30px",
           // marginTop: "130px",
           // marginBottom: "130px",
-          maxWidth: "100%",
+          maxWidth: "100vw",
           margin: "0 auto", // Center the content horizontally
         }}
       >

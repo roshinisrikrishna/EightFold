@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Button, Container, Row, Col } from "reactstrap";
 import intImg from "../../../assets/img/interface.webp";
 import { motion } from "framer-motion";
@@ -20,6 +20,23 @@ const fadeInAnimationVariants = {
 };
 
 function NucleoIcons() {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  // Function to update screen width when the window is resized
+  const handleResize = () => {
+    setScreenWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    // Attach the event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <Container
@@ -28,7 +45,9 @@ function NucleoIcons() {
           color: "#FFFFFF",
           paddingTop: "5%",
           position: "relative",
-          maxWidth: "100%",
+          maxWidth: "100vw",
+          justifyContent: "flex-start", alignItems:"flex-start",
+                textAlign:"left",
         }}
       >
         <img
@@ -45,18 +64,39 @@ function NucleoIcons() {
         />
         <Container style={{ paddingBottom: "50px" }}>
           <Row>
-            <Col md="5" className="ml-auto mt-5">
+            {screenWidth <700 && (
+                <Col md="6">
+              <motion.img
+                src={intImg}
+                alt="Eightfold.ai Logo"
+                className="navbar-logo"
+                style={{ width: "100%", height: "auto" }}
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                custom={1}
+              />
+            </Col>
+                          )}
+            <Col md="6" className="mt-5">
               <Container
                 className="mt-2"
-                style={{ width: "100%", marginLeft: "0", marginRight: "0" }}
+                style={{  maxWidth: screenWidth < 700 ? "100vw" : "50vw",
+                justifyContent: screenWidth < 700 ? "center" : "flex-start",
+                alignItems: screenWidth < 700 ? "center" : "flex-start",
+                textAlign: screenWidth < 700 ? "center" : "left",
+                 marginLeft: "0", marginRight: "0" }}
               >
                 <Row>
+                  
+
                   <Col>
                     <motion.h2
                       style={{
                         fontWeight: 600,
                         fontFamily: "Museo Sans Rounded, sans-serif",
-                        fontSize: "230%",
+                        fontSize: screenWidth < 700 ? "8vw" : "3.8vw",
                       }}
                       variants={fadeInAnimationVariants}
                       initial="initial"
@@ -91,10 +131,12 @@ function NucleoIcons() {
                       Request demo
                     </motion.button>
                   </Col>
+                 
                 </Row>
               </Container>
             </Col>
-            <Col md="7">
+             {screenWidth >= 700 && (
+             <Col md="6">
               <motion.img
                 src={intImg}
                 alt="Eightfold.ai Logo"
@@ -107,6 +149,7 @@ function NucleoIcons() {
                 custom={1}
               />
             </Col>
+                          )} 
           </Row>
         </Container>
         <img

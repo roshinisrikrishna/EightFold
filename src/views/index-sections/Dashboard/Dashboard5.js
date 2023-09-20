@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Container, Row, Col } from "reactstrap";
 import thunderImg from "../../../assets/img/thunderimg.svg";
 import fldrImg from "../../../assets/img/fldrImg.svg";
@@ -22,6 +22,24 @@ const fadeInAnimationVariants = {
 };
 
 function Notifications() {
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  // Function to update screen width when the window is resized
+  const handleResize = () => {
+    setScreenWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    // Attach the event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <Container
     fluid // Add the fluid property to make it full-width
@@ -38,7 +56,7 @@ function Notifications() {
         backgroundColor: "white",
         marginLeft: "0%",
         marginTop: "0%",
-        maxWidth: "100%",
+        maxWidth: "100vw",
       }}
     >
       <Container
@@ -67,7 +85,14 @@ function Notifications() {
             <Row>
               {/* Left section */}
               <Col xs={12} md={6}
-               style={{  border: "1px solid #ccc", borderTop: "none",borderLeft: "none", padding: "3%"}}>
+               style={{  
+                border: "1px solid #ccc",
+                 borderTop: screenWidth < 700 ? "1px solid #ccc" : "none",
+                 borderLeft: screenWidth < 700 ? "1px solid #ccc" : "none", 
+                 padding: "3%",
+ 
+
+                 }}>
                 <motion.img
                   src={thunderImg}
                   alt="Logo"
@@ -95,7 +120,13 @@ function Notifications() {
 
               {/* Right section */}
               <Col xs={12} md={6}              
-               style={{  borderBottom: "1px solid #ccc", padding: "3%"}}>
+               style={{  
+                borderBottom: "1px solid #ccc", 
+                borderTop: screenWidth < 700 ? "1px solid #ccc" : "none",
+                borderLeft: screenWidth < 700 ? "1px solid #ccc" : "none",
+                borderRight: screenWidth < 700 ? "1px solid #ccc" : "none",
+                padding: "3%",
+                }}>
 
                 <motion.img
                   src={fldrImg}
@@ -129,7 +160,12 @@ function Notifications() {
             <Row>
               {/* Left section */}
               <Col xs={12} md={6}
-                style={{  borderRight: "1px solid #ccc" ,padding: "3%"}}>
+                style={{  borderRight: "1px solid #ccc" ,
+                borderTop: screenWidth < 700 ? "1px solid #ccc" : "none",
+                borderLeft: screenWidth < 700 ? "1px solid #ccc" : "none",
+                borderBottom: screenWidth < 700 ? "1px solid #ccc" : "none",
+                padding: "3%",
+              }}>
 
               <motion.img src={magnetImg} alt="Logo" 
         variants={fadeInAnimationVariants}
@@ -145,7 +181,8 @@ function Notifications() {
               </Col>
 
               {/* Right section */}
-              <Col xs={12} md={6} style={{ padding: "3%"}}>
+              <Col xs={12} md={6} style={{ padding: "3%", border: screenWidth < 700 ? "1px solid #ccc" : "none",
+                                      }}>
               <motion.img src={magnetImg} alt="Logo"
         variants={fadeInAnimationVariants}
         initial="initial"

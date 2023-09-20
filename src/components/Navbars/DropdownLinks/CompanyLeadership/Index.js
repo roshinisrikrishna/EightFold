@@ -6,12 +6,12 @@ import React from "react";
 
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import SearchModal from "components/Navbars/SearchModal.js";
 import Home from "components/Navbars/DropdownLinks/CompanyLeadership/Home";
 import Leadership2 from "components/Navbars/DropdownLinks/CompanyLeadership/Leadership2";
 import Leadership3 from "components/Navbars/DropdownLinks/CompanyLeadership/Leadership3";
 import Leadership4 from "components/Navbars/DropdownLinks/CompanyLeadership/Leadership4";
 import Leadership5 from "components/Navbars/DropdownLinks/CompanyLeadership/Leadership5";
+import TransparentFooter from "components/Footers/TransparentFooter";
 
 
 
@@ -50,6 +50,7 @@ function Index() {
          
         </div>
         <DashboardLast />
+        <TransparentFooter />
 
       </div>
     </>

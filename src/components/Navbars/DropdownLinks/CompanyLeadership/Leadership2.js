@@ -46,7 +46,7 @@ function Typography() {
           flexDirection: "column", // Display items in a column
           justifyContent: "center",
           alignItems: "center",
-          maxWidth: "100%", // Adjust this value to match the screen width
+          maxWidth: "100vw", // Adjust this value to match the screen width
 
         }}
       >
@@ -84,7 +84,7 @@ function Typography() {
           whileInView="animate"
           viewport={{ once: true }}
           custom={1}
-          style={{fontSize: "40px", paddingTop: "7vw"
+          style={{fontSize: "40px", paddingTop: "7vw", textAlign:"center"
         }}
         >
           Grounded in AI, passionate about talent

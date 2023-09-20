@@ -1,4 +1,4 @@
- import React from "react";
+ import React, {useState, useEffect} from "react";
 import { Container } from "reactstrap";
 import {motion} from "framer-motion";
 
@@ -43,6 +43,23 @@ const fadeImageVariants = {
 function IndexHeader() {
   let pageHeader = React.createRef();
 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  // Function to update screen width when the window is resized
+  const handleResize = () => {
+    setScreenWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    // Attach the event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   React.useEffect(() => {
     if (window.innerWidth > 991) {
       const updateScroll = () => {
@@ -59,10 +76,12 @@ function IndexHeader() {
 
   return (
     <>
-      <div className="page-header clear-filter" filter-color="black">
+      <div className="page-header clear-filter" filter-color="black" style={{maxWidth:"100vw"}}>
         <div
           className="page-header-image"
           style={{
+            minHeight: "120vh",
+            height: '100%',
             background:
               "linear-gradient(to right , rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9) 50%, rgba(6, 18, 70, 0.88))",
           }}
@@ -78,91 +97,88 @@ function IndexHeader() {
               top: 0,
               left: "10px",
             }}
-             variants={fadeImageVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{once: true,}}
-            
+            variants={fadeImageVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
           />
         </div>
 
-        <Container>
-          
-        <div className="content-center brand" 
-        style={{ marginTop: "30%", marginLeft: "0%" , maxWidth: "100%", minHeight: "700px"}}>
-  <motion.h1
-    style={{
-      fontWeight: "bolder",
-      fontFamily: "Museo Sans Rounded, sans-serif",
-      fontSize: "310%"
-    }}
-    variants={fadeInAnimationVariants}
-    initial="initial"
-    whileInView="animate"
-    viewport={{ once: true }}
-    custom={4}
-  >
-    Everything talent,
-  </motion.h1>
-  <motion.h1
-    style={{
-      background: "-webkit-linear-gradient(45deg, #FFFFFF, #0fb3fa 85%)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      fontFamily: "Museo Sans Rounded, sans-serif",
-      fontWeight: "bolder",
-      marginTop: "-30px", // Adjust this margin to reduce space
-      fontSize: "310%"
+        <Container xs={12} lg={8}>
+          <div className="content-center brand" style={{ paddingBottom: "10%" }}>
+            <Container  style={{  
+              minWidth:"47vw",
+              marginLeft:"-12%",paddingTop: "55%", justifyContent: "flex-start", alignItems: "flex-start", textAlign: "left" }}>
+              <motion.h1
+                style={{
+                  fontWeight: "bolder",
+                  fontFamily: "Museo Sans Rounded, sans-serif",
+                  fontSize: screenWidth < 700 ? "10vw" : "5.5vw",
+                }}
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                custom={4}
+                className="brand-h1" // Added a class name for better specificity
 
-    }}
-    variants={fadeInAnimationVariants}
-    initial="initial"
-    whileInView="animate"
-    viewport={{ once: true }}
-    custom={3}
-  >
-    powered by AI
-  </motion.h1>
+              >
+                Everything talent,
+                <span
+                  style={{
+                    background: "-webkit-linear-gradient(45deg, #FFFFFF, #0fb3fa 85%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                  variants={fadeInAnimationVariants}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true }}
+                  custom={3}
+                >
+                  {` `} powered by AI
+                </span>
+              </motion.h1>
 
-            <motion.p
-              style={{
-                fontSize: "90%",
-                fontFamily: "Museo Sans Rounded, sans-serif",
-                fontWeight: "bold"
-              }}
-              variants={fadeInAnimationVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{once: true,}}
-          custom={2}
-            >
-              Our AI platform for all talent brings to light everything you need
-              to hire and develop people to their highest potential
-            </motion.p>
-            <motion.button
-  className="hover-white-button"
-  style={{
-    borderRadius: "60px",
-    color: "#fff",
-    backgroundColor: "#2285ba",
-    border: "none",
-    cursor: "pointer",
-    marginTop: "10px",
-    fontWeight: "bolder",
-    fontSize: "70%", // Set font size relative to viewport width
-    maxWidth: "100%", // Ensure the button takes up the full width
-    padding: "2% 7%", // Set padding as a percentage of the button's width and height
-    fontFamily: "Museo Sans Rounded, sans-serif",
-  }}
-  variants={fadeInAnimationVariants}
-  initial="initial"
-  whileInView="animate"
-  viewport={{ once: true }}
-  custom={1}
->
-  Ready for greatness?
-</motion.button>
-
+              <motion.p
+                style={{
+                  fontSize: "90%",
+                  fontFamily: "Museo Sans Rounded, sans-serif",
+                  fontWeight: "bold"
+                }}
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                custom={2}
+              >
+                Our AI platform for all talent brings to light everything you need
+                to hire and develop people to their highest potential
+              </motion.p>
+              <motion.button
+                className="hover-white-button"
+                style={{
+                  borderRadius: "60px",
+                  color: "#fff",
+                  backgroundColor: "#2285ba",
+                  border: "none",
+                  cursor: "pointer",
+                  marginTop: "10px",
+                  fontWeight: "bolder",
+                  fontSize: "70%", // Set font size relative to viewport width
+                  maxWidth: "100%", // Ensure the button takes up the full width
+                  padding: "2% 7%", // Set padding as a percentage of the button's width and height
+                  fontFamily: "Museo Sans Rounded, sans-serif",
+                }}
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                custom={1}
+              >
+                Ready for greatness?
+              </motion.button>
+            </Container>
           </div>
         </Container>
         <motion.img
@@ -179,7 +195,7 @@ function IndexHeader() {
           variants={fadeImageVariants}
           initial="initial"
           whileInView="animate"
-          viewport={{once: true,}}
+          viewport={{ once: true }}
         />
       </div>
       <style>
@@ -195,12 +211,31 @@ function IndexHeader() {
           /* Media query for screens less than 768px wide */
           @media (max-width: 768px) {
             .page-header-image {
-              min-height: 80vh; /* Adjust the header height for smaller screens */
+              min-height: 80vh;
             }
             .brand {
-              margin-top: 10vh; /* Adjust the top margin for smaller screens */
+              margin-top: 10vh;
+              padding-top: 10%; /* Add padding for smaller screens */
+            }
+            .brand > div {
+              min-width: 100vw !important;
+              
+            }
+            .brand-h1 {
+              font-size: 10vw !important; /* Set font size to 52px with !important */
+            }
+            .brand p {
+              font-size: 80% !important;
+            }
+
+            .brand button {
+              max-width: 70vw !important;
+              padding: 4% 12% !important;
+              font-size: 90% !important;
             }
           }
+
+
         `}
       </style>
     </>

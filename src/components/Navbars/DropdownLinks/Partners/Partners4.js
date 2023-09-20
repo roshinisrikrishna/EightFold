@@ -183,7 +183,7 @@ function CardComponent({ card }) {
       <p style={{ paddingLeft: "5%", paddingRight: "2%", fontSize: "90%", fontWeight: 500, color: "#2285ba" }}>
         Expand   <FontAwesomeIcon
                           icon={faAngleDown}
-                          style={{ color: "#008FBF",fontSize: "80%", marginLeft: "5px",}}
+                          style={{ color: "#008FBF",fontSize: "80%", }}
                         />
       </p>
     </motion.Card>
@@ -240,7 +240,7 @@ function Typography() {
   return (
     <>
       <Container style={{
-        maxWidth: "100%",
+        maxWidth: "100vw",
         marginTop: "5%",
         justifyContent: "flex-start",
         alignItems: "flex-start"
@@ -260,7 +260,7 @@ function Typography() {
           fontSize: "90%",
           color: "#484B58",
           borderRadius: "10px",
-          padding: "8px",
+          padding: "5%",
           border: "1px solid #ccc",
           backgroundColor: "#fff",
           fontSize: "16px",
@@ -361,7 +361,7 @@ function Typography() {
         }}
       >
         {currentCards.map((card) => (
-          <Col key={card.id} xs={12} md={3} xl={3} style={{ margin: "10px 0", display: "flex" }}>
+          <Col key={card.id} xs={12} md={3} xl={3} style={{ margin: "2% 0", display: "flex" }}>
             <CardComponent card={card} />
           </Col>
         ))}

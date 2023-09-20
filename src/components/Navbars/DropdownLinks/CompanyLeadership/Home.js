@@ -42,7 +42,7 @@ const fadeImageVariants = {
 
 function CompanyLeadership() {
   return (
-    <div style={{background: "#000", minHeight: "650px", height:"100%"}}>
+    <div style={{background: "#000", maxWidth: "100vw", minHeight: "100vh", height:"100%"}}>
       <div
         className="page-header clear-filter"
         filter-color="black"

@@ -63,7 +63,7 @@ useEffect(() => {
   }, []);
 
   return (
-    <div style={{borderBottomRadius: "0%",minHeight:"570px", height: "100%"}}>
+    <div style={{maxWidth:"100vw",borderBottomRadius: "0%",minHeight:"100vh", height: "100%"}}>
       <div
         className="page-header clear-filter"
         filter-color="black"

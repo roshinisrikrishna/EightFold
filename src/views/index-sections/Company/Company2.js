@@ -46,7 +46,7 @@ function Company2() {
       <div
         className="page-header clear-filter"
         style={{
-          minHeight: "50px",
+          minHeight: "50vh",
           fontFamily: "Museo Sans Rounded, sans-serif",
           fontWeight: 700,
           paddingTop: "10px", // Adjust the top padding
@@ -56,7 +56,7 @@ function Company2() {
         <Container>
           <div
             className="brand"
-            style={{ paddingTop: "30px", textAlign: "center", maxWidth: "100%" }}
+            style={{ paddingTop: "30px", textAlign: "center", maxWidth: "100vw" }}
           >
             <motion.h1
               style={{

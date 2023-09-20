@@ -6,16 +6,11 @@ import React from "react";
 
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import SearchModal from "components/Navbars/SearchModal.js";
 import Home from "components/Navbars/DropdownLinks/Ethics/Home";
 import Ethics2 from "components/Navbars/DropdownLinks/Ethics/Ethics2";
-import Ethics3 from "components/Navbars/DropdownLinks/Ethics/Ethics3";
-import Ethics4 from "components/Navbars/DropdownLinks/Ethics/Ethics4";
-import Ethics5 from "components/Navbars/DropdownLinks/Ethics/Ethics5";
-
-
 
 import DashboardLast from "views/index-sections/Dashboard/DashboardLast";
+import TransparentFooter from "components/Footers/TransparentFooter";
 
 
 function Index() {
@@ -48,6 +43,7 @@ function Index() {
          
         </div>
         <DashboardLast />
+        <TransparentFooter />
 
       </div>
     </>
