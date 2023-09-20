@@ -108,7 +108,7 @@ function IndexHeader() {
           <div className="content-center brand" style={{ paddingBottom: "10%" }}>
             <Container  style={{  
               minWidth:"47vw",
-              marginLeft:"-12%",paddingTop: "55%", justifyContent: "flex-start", alignItems: "flex-start", textAlign: "left" }}>
+              marginLeft:"-7%",paddingTop: "55%", justifyContent: "flex-start", alignItems: "flex-start", textAlign: "left" }}>
               <motion.h1
                 style={{
                   fontWeight: "bolder",
