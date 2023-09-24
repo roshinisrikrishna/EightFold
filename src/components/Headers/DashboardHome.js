@@ -1,7 +1,9 @@
- import React, {useState, useEffect} from "react";
+// Import necessary modules and components from external libraries
+import React, { useState, useEffect } from "react";
 import { Container } from "reactstrap";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
+// Define animation variants for fading in elements
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
@@ -11,38 +13,42 @@ const fadeInAnimationVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.1 * index,
-      duration: 1, // Duration set to 1000ms (1 second)
-      ease: "easeInOut", // Use a valid easing function here
+      delay: 0.1 * index,  // Delay the animation based on the index
+      duration: 1,         // Duration of the animation set to 1000ms (1 second)
+      ease: "easeInOut",   // Use the easeInOut easing function
     },
   }),
 };
+
+// Define animation variants for fading in images
 const fadeImageVariants = {
   animate: {
     opacity: 1,
     visibility: "visible",
     transform: "translateY(0px)",
     transition: {
-      delay: 0.5,
-      duration: 1,
-      ease: "ease"
-    }
+      delay: 0.5,          // Delay the animation by 0.5 seconds
+      duration: 1,         // Duration of the animation set to 1000ms (1 second)
+      ease: "ease",        // Use a standard easing function
+    },
   },
   initial: {
     opacity: 0,
     visibility: "hidden",
     transform: "translateY(-20px)",
     transition: {
-      delay: 0.1,
-      duration: 2,
-      ease: "ease"
-    }
+      delay: 0.1,          // Delay the animation by 0.1 seconds
+      duration: 2,         // Duration of the animation set to 2000ms (2 seconds)
+      ease: "ease",        // Use a standard easing function
+    },
   },
 };
 
 function IndexHeader() {
+  // Create a reference to the page header element
   let pageHeader = React.createRef();
 
+  // Use state to track the screen width
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   // Function to update screen width when the window is resized
@@ -50,6 +56,7 @@ function IndexHeader() {
     setScreenWidth(window.innerWidth);
   };
 
+  // Set up an effect to listen for window resize events and clean up on unmount
   useEffect(() => {
     // Attach the event listener for window resize
     window.addEventListener("resize", handleResize);
@@ -60,13 +67,17 @@ function IndexHeader() {
     };
   }, []);
 
+  // Use a useEffect hook to apply scroll animation only for screens wider than 991px
   React.useEffect(() => {
     if (window.innerWidth > 991) {
+      // Define a function to update the page header position on scroll
       const updateScroll = () => {
         let windowScrollTop = window.pageYOffset / 3;
         pageHeader.current.style.transform =
           "translate3d(0," + windowScrollTop + "px,0)";
       };
+
+      // Add a scroll event listener and clean up on unmount
       window.addEventListener("scroll", updateScroll);
       return function cleanup() {
         window.removeEventListener("scroll", updateScroll);
@@ -76,17 +87,17 @@ function IndexHeader() {
 
   return (
     <>
-      <div className="page-header clear-filter" filter-color="black" style={{maxWidth:"100vw"}}>
+      {/* Page Header */}
+      <div className="page-header clear-filter" filter-color="black" style={{ maxWidth: "100vw" }}>
+        {/* Page Header Image */}
         <div
           className="page-header-image"
           style={{
-            // minHeight: "120vh",
-            // height: '100%',
-            background:
-              "linear-gradient(to right , rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9) 50%, rgba(6, 18, 70, 0.88))",
+            background: "linear-gradient(to right , rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9) 50%, rgba(6, 18, 70, 0.88))",
           }}
           ref={pageHeader}
         >
+          {/* Motion-fading Image (Top) */}
           <motion.img
             alt="..."
             className="n-logo-top"
@@ -104,18 +115,12 @@ function IndexHeader() {
             viewport={{ once: true }}
           />
         </div>
-
+  
+        {/* Container for Content */}
         <Container xs={12} lg={8}>
-          <div className="content-center brand" style={{ 
-            // paddingBottom: "10%" 
-            }}>
-            <Container  style={{  
-              minWidth:"47vw",
-              marginLeft:"-7%",
-              // paddingTop: "55%", 
-              justifyContent: "flex-start", 
-              alignItems: "flex-start", 
-              textAlign: "left" }}>
+          <div className="content-center brand">
+            <Container style={{ minWidth: "47vw", marginLeft: "-7%", justifyContent: "flex-start", alignItems: "flex-start", textAlign: "left" }}>
+              {/* Motion-fading Heading */}
               <motion.h1
                 style={{
                   fontWeight: "bolder",
@@ -127,8 +132,7 @@ function IndexHeader() {
                 whileInView="animate"
                 viewport={{ once: true }}
                 custom={4}
-                className="brand-h1" // Added a class name for better specificity
-
+                className="brand-h1"
               >
                 Everything talent,
                 <span
@@ -146,7 +150,8 @@ function IndexHeader() {
                   {` `} powered by AI
                 </span>
               </motion.h1>
-
+  
+              {/* Motion-fading Paragraph */}
               <motion.p
                 style={{
                   fontSize: "90%",
@@ -160,9 +165,10 @@ function IndexHeader() {
                 custom={2}
                 className="brand-p"
               >
-                Our AI platform for all talent brings to light everything you need
-                to hire and develop people to their highest potential
+                Our AI platform for all talent brings to light everything you need to hire and develop people to their highest potential
               </motion.p>
+  
+              {/* Motion-fading Button */}
               <motion.button
                 className="hover-white-button brand-button"
                 style={{
@@ -173,8 +179,6 @@ function IndexHeader() {
                   cursor: "pointer",
                   marginTop: "10px",
                   fontWeight: "bolder",
-                  // fontSize: "70%", // Set font size relative to viewport width
-                  // maxWidth: "100%", // Ensure the button takes up the full width
                   fontFamily: "Museo Sans Rounded, sans-serif",
                 }}
                 variants={fadeInAnimationVariants}
@@ -188,6 +192,8 @@ function IndexHeader() {
             </Container>
           </div>
         </Container>
+  
+        {/* Motion-fading Image (Bottom) */}
         <motion.img
           alt="..."
           className="n-logo-bottom"
@@ -196,7 +202,6 @@ function IndexHeader() {
             width: "35%",
             height: "auto",
             position: "absolute",
-            // bottom: 0,
             right: "5px",
           }}
           variants={fadeImageVariants}
@@ -205,8 +210,12 @@ function IndexHeader() {
           viewport={{ once: true }}
         />
       </div>
+  
+      {/* Inline Styles */}
       <style>
         {`
+                        // CSS styles and media queries for different screen widths
+
           .hover-white-button {
             background-color: #1b9af5;
             color: #fff;
@@ -313,8 +322,8 @@ function IndexHeader() {
 /* CSS for screen width above 1023px */
 @media only screen and (min-width: 1024px) {
     .brand {
-              margin-top: 30vh;
-              padding-top: 15%; /* Add padding for smaller screens */
+              margin-top: 22vh;
+              // padding-top: 7%; /* Add padding for smaller screens */
             }
   .brand > div {
     min-width: 47vw !important;

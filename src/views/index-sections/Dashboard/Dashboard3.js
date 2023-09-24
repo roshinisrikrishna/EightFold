@@ -1,5 +1,6 @@
+//This line imports the necessary modules from the React library, including useState and useEffect for managing state and side effects.
 import React, {useState, useEffect} from "react";
-
+//These lines import various UI components from the reactstrap library, which is used to create responsive and styled components.
 // reactstrap components
 import {
   Card,
@@ -14,7 +15,12 @@ import {
   Row,
   Col,
 } from "reactstrap";
+//This line imports a component from the react-widgets library.
+
 import Widget from "react-widgets/cjs/Widget";
+
+//These lines import various icons from the FontAwesome library for use in the component.
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
@@ -27,23 +33,28 @@ import logo from "../../../assets/img/ryan.jpg";
 // core components
 
 function Tabs() {
+  //This line defines a functional React component named Tabs.
+
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [iconPills, setIconPills] = React.useState("1");
   const [pills, setPills] = React.useState("1");
   const [selectedTab, setSelectedTab] = useState("1"); // Add this state variable
 
-
+//These lines define various state variables using the useState hook. screenWidth, iconPills, pills, and selectedTab are initialized with their default values.
   const handleTabChange = (event) => {
     const selectedValue = event.target.value;
     setSelectedTab(selectedValue);
   };
-
+//This function handleTabChange is defined to handle changes in the selected tab value.
   // Add this function to handle dropdown selection change
   const handleDropdownChange = (event) => {
     const selectedValue = event.target.value;
     setPills(selectedValue);
   };
 
+  //This function handleDropdownChange is defined to handle changes in the selected dropdown value.
+
+  //This useEffect hook is used to add and remove a window resize event listener, updating the screenWidth state variable when the window is resized.
   useEffect(() => {
     // Add a window resize event listener to update the screen width state
     const handleResize = () => {

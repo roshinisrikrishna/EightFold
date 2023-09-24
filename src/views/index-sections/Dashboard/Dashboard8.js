@@ -1,4 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+// Import necessary dependencies from React and other libraries
+
+// Import various components and styles from the Reactstrap library
 import {
   Container,
   Row,
@@ -7,8 +10,11 @@ import {
   CarouselItem,
   CarouselIndicators,
 } from "reactstrap";
+
+// Import motion for animations
 import { motion } from "framer-motion";
 
+// Define animation variants for the Framer Motion library
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
@@ -25,7 +31,7 @@ const fadeInAnimationVariants = {
   }),
 };
 
-
+// Define an array of items for the carousel
 const items = [
   {
     src: require("assets/img/Activision.webp"),
@@ -82,7 +88,7 @@ const items = [
 ];
 
 function CarouselSection() {
-
+  // Define a state variable "screenWidth" and a function "setScreenWidth" to manage it
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   // Function to update screen width when the window is resized
@@ -90,8 +96,8 @@ function CarouselSection() {
     setScreenWidth(window.innerWidth);
   };
 
+  // Attach an event listener for window resize when the component mounts
   useEffect(() => {
-    // Attach the event listener for window resize
     window.addEventListener("resize", handleResize);
 
     // Clean up the event listener when the component unmounts
@@ -101,7 +107,7 @@ function CarouselSection() {
   }, []);
 
   return (
-    <Container style={{ maxWidth: "100vw",fontWeight: "bolder", paddingTop: "7%" }}>
+    <Container style={{ maxWidth: "100vw", fontWeight: "bolder", paddingTop: "7%" }}>
       <Container
         style={{
           display: "flex",
@@ -118,7 +124,7 @@ function CarouselSection() {
           style={{
             textAlign: "center",
             fontFamily: "Museo Sans Rounded, sans-serif",
-            paddingBottom: "3%"
+            paddingBottom: "3%",
           }}
           variants={fadeInAnimationVariants}
           initial="initial"
@@ -129,19 +135,9 @@ function CarouselSection() {
         >
           Companies trust Eightfold with their talent transformation
         </motion.h2>
-        <Container className="logos" style={{maxWidth: "100%", paddingBottom: "10%"
-}}>
+        <Container className="logos" style={{ maxWidth: "100%", paddingBottom: "10%" }}>
           <Container className="logos-slide">
             {items.map((item, index) => (
-              <img
-                key={index}
-                src={item.src}
-                alt={item.altText}
-                className="carousel-image"
-                style={{ paddingRight: "10vw" }} // Adjust spacing based on width
-              />
-            ))}
-             {items.map((item, index) => (
               <img
                 key={index}
                 src={item.src}
@@ -155,6 +151,7 @@ function CarouselSection() {
       </Container>
       <style>
         {`
+          /* CSS styles for carousel section */
           .logos {
             overflow: hidden;
             padding: 2vh 0; // Adjust padding based on height
@@ -187,7 +184,7 @@ function CarouselSection() {
           }
 
           @media (max-width: 768px) {
-            // Adjust styles for smaller screens (e.g., tablets and mobile)
+            /* Adjust styles for smaller screens (e.g., tablets and mobile) */
             .logos-slide {
               animation: none; // Disable the animation on small screens
               justify-content: center; // Center logos on smaller screens
@@ -197,41 +194,34 @@ function CarouselSection() {
               margin-right: 1vw; // Adjust spacing for smaller screens
             }
           }
-                 
-      /* CSS for screen width 280px to 540px */
-      @media only screen and (min-width: 280px) and (max-width: 766px) {
-        
-         .carousel-h2 {
-            font-size: 23px !important;
-            font-weight: bold !important;
-          }
-         
-         
-           }
-      @media only screen and (min-width: 767px) and (max-width: 912px) {
 
-          .carousel-h2 {
-            font-size: 24px !important;
-            font-weight: bold !important;
+          /* CSS media queries for different screen widths */
+          @media only screen and (min-width: 280px) and (max-width: 766px) {
+            /* Adjust styles for screens with width between 280px and 766px */
+            .carousel-h2 {
+              font-size: 23px !important;
+              font-weight: bold !important;
+            }
           }
-         
-         
-           }
-      @media only screen and (min-width: 1024px) {
-        
-             
-          .carousel-h2 {
-            font-size: 30px !important;
-            font-weight: bold !important;
+          @media only screen and (min-width: 767px) and (max-width: 912px) {
+            /* Adjust styles for screens with width between 767px and 912px */
+            .carousel-h2 {
+              font-size: 24px !important;
+              font-weight: bold !important;
+            }
           }
-         
-         
-           }
-      
+          @media only screen and (min-width: 1024px) {
+            /* Adjust styles for screens with width larger than 1024px */
+            .carousel-h2 {
+              font-size: 30px !important;
+              font-weight: bold !important;
+            }
+          }
         `}
       </style>
     </Container>
   );
 }
 
+// Export the component as the default export
 export default CarouselSection;

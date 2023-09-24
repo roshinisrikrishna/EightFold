@@ -3,6 +3,7 @@ import { Container, Row, Col, Card } from "reactstrap";
 import typoImg from "../../../assets/img/woman.jpg";
 import { motion } from "framer-motion";
 
+// Animation variants for fading in elements
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,

@@ -1,10 +1,12 @@
-import React, {useState, useEffect} from "react";
+// Import necessary modules and components
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
 import thunderImg from "../../../assets/img/thunderimg.svg";
 import fldrImg from "../../../assets/img/fldrImg.svg";
 import magnetImg from "../../../assets/img/magnetImg.svg";
 import { motion } from "framer-motion";
 
+// Define animation variants for the fade-in animation
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
@@ -14,15 +16,15 @@ const fadeInAnimationVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.1 * index,
-      duration: 1,
-      ease: "easeInOut",
+      delay: 0.1 * index, // Delay animation for each element
+      duration: 1, // Animation duration
+      ease: "easeInOut", // Easing function
     },
   }),
 };
 
 function Notifications() {
-
+  // State variable to track screen width
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   // Function to update screen width when the window is resized
@@ -30,6 +32,7 @@ function Notifications() {
     setScreenWidth(window.innerWidth);
   };
 
+  // Effect to attach and clean up window resize event listener
   useEffect(() => {
     // Attach the event listener for window resize
     window.addEventListener("resize", handleResize);
@@ -39,6 +42,7 @@ function Notifications() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
 
   return (
     <Container className="solutions-container"

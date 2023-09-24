@@ -1,7 +1,10 @@
-import React, {useState, useEffect} from "react";
-// react plugins that creates an input with a date picker
+import React, { useState, useEffect } from "react";
+// Import necessary dependencies from React and other libraries
+
+// Importing Date and Time picker component from react-datetime
 import Datetime from "react-datetime";
-// reactstrap components
+
+// Importing various components and styles from the Reactstrap library
 import {
   Button,
   FormGroup,
@@ -16,12 +19,16 @@ import {
   PopoverHeader,
   UncontrolledPopover,
 } from "reactstrap";
-import {motion} from "framer-motion";
 
+// Import motion for animations
+import { motion } from "framer-motion";
+
+// Importing images for use in the component
 import js1Img from "../../../assets/img/JS1.webp";
 import js2Img from "../../../assets/img/JS2.jpg";
 import js3Img from "../../../assets/img/JS3.jpg";
 
+// Define animation variants for the Framer Motion library
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
@@ -38,16 +45,18 @@ const fadeInAnimationVariants = {
   }),
 };
 
+// Define the functional component named "Javascript"
 function Javascript() {
-   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  // Define a state variable "screenWidth" and a function "setScreenWidth" to manage it
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-    // Function to update screen width when the window is resized
+  // Function to update screen width when the window is resized
   const handleResize = () => {
     setScreenWidth(window.innerWidth);
   };
 
+  // Attach an event listener for window resize when the component mounts
   useEffect(() => {
-    // Attach the event listener for window resize
     window.addEventListener("resize", handleResize);
 
     // Clean up the event listener when the component unmounts
@@ -55,6 +64,8 @@ function Javascript() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  // Return the JSX for the component
 
   return (
     <>

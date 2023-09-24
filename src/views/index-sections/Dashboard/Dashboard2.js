@@ -139,11 +139,16 @@ function BasicElements() {
         /* Media query for screens less than 768px wide */
         /* CSS for screen width 280px to 540px */
         @media only screen and (min-width: 280px) and (max-width: 766px) {
-          
+          // CSS for small screens
+
           .dashboard {   
+            // Adjust styles for smaller screens
+
             // height: 10% !important;  
         
             .dashboard-h1 {
+              // Adjust styles for smaller screens
+
               // margin-top: -40% !important;
               font-size: 28px !important;
               font-weight : 900 !important;
@@ -157,16 +162,19 @@ function BasicElements() {
         
         /* CSS for screen width 768px to 912px */
         @media only screen and (min-width: 767px) and (max-width: 912px) {
-          
-          .section{
+          // CSS for medium screens
+          .section {
+            // Adjust styles for medium screens
             // margin-bottom: -40% !important;
 
           }
-            .dashboard {
+          .dashboard {
+            // Adjust styles for medium screens
               // margin-bottom: -100% !important;
               // height: 50% !important;
         
-            .dashboard-h1 {
+              .dashboard-h1 {
+                // Adjust styles for medium screens
               // margin-top: -40% !important;
               font-size: 28px !important;
               font-weight: 900 !important;

@@ -1,3 +1,4 @@
+// Importing necessary modules and components from React, Reactstrap, and other libraries
 import React, { useState, useEffect, useRef } from "react";
 import {
   Container,
@@ -11,10 +12,12 @@ import { zoomIn, bounceInRight } from "react-animations";
 import { keyframes } from "styled-components";
 import styled from "styled-components";
 
+// Creating styled components for animations
 const ZoomIn = styled.div`animation: 2s ${keyframes`${zoomIn}`}`;
 const BounceIn = styled.div`animation: 2s ${keyframes`${bounceInRight}`}`;
 
 function Dashboard4() {
+  // State variables
   const [pills, setPills] = useState("2");
   const [dropdownVisible, setDropdownVisible] = useState([false, false, false]);
   const [animationCompleted, setAnimationCompleted] = useState(false);
@@ -23,6 +26,7 @@ function Dashboard4() {
   // State to track the screen width
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
+  // Effect to observe intersection with an element for triggering animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -51,6 +55,7 @@ function Dashboard4() {
     };
   }, [animationCompleted]);
 
+  // Function to toggle dropdown visibility
   const toggleDropdown = (index) => {
     const updatedVisibility = [...dropdownVisible];
     updatedVisibility[index] = !updatedVisibility[index];
@@ -62,6 +67,7 @@ function Dashboard4() {
     setScreenWidth(window.innerWidth);
   };
 
+  // Effect to attach and clean up window resize event listener
   useEffect(() => {
     // Attach the event listener for window resize
     window.addEventListener("resize", handleResize);
@@ -91,23 +97,22 @@ function Dashboard4() {
               <Container className="why-container mt-2" style={{ marginLeft: "-20px" }}>
                 <Row>
                   <Col>
+                    {/* Heading */}
                     <h2
-                    className="why-h2"
+                      className="why-h2"
                       style={{
                         fontWeight: 700,
                         fontFamily: "Museo Sans Rounded, sans-serif",
                         fontSize: "195%",
-                        // textAlign: screenWidth < 700 ? "center" : "left", // Apply maxWidth based on screenWidth
-                        // maxWidth: screenWidth < 700 ? "100vw" : "50vw", // Apply maxWidth based on screenWidth
-
                       }}
                     >
                       Why Eightfold
                     </h2>
-                    <p  className="why-p"
-                        style={{
-                        // textAlign: screenWidth < 700 ? "center" : "left", // Apply maxWidth based on screenWidth
-                        // width: screenWidth < 700 ? "90vw" : "38vw",
+
+                    {/* Paragraph */}
+                    <p
+                      className="why-p"
+                      style={{
                         fontSize: "17px",
                         fontWeight: 500,
                         textAlign: "left",
@@ -117,30 +122,32 @@ function Dashboard4() {
                       Great talent teams deserve a great platform. That's why we
                       built a single AI platform that does it all:
                     </p>
-                    <div className="dropdown ml-2">
-                    <p className="why-p1"
-  style={{
-    fontSize: "18px",
-    fontWeight: 500,
-    cursor: "pointer",
-    display: "flex",
-    alignItems: "center", // Center the icon vertically
-    justifyContent: "space-between", // Add this line
 
-  }}
-  onClick={() => toggleDropdown(0)}
->
-  Best-in-class intelligence and talent insights
-  <FontAwesomeIcon
-    icon={faAngleDown}
-    style={{
-      fontSize: "14px",
-      color: "#05c5fa",
-      marginLeft: "2%",
-      transform: dropdownVisible[0] ? "rotate(180deg)" : "rotate(0deg)",
-    }}
-  />
-</p>
+                    {/* Dropdown 1 */}
+                    <div className="dropdown ml-2">
+                      <p
+                        className="why-p1"
+                        style={{
+                          fontSize: "18px",
+                          fontWeight: 500,
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                        }}
+                        onClick={() => toggleDropdown(0)}
+                      >
+                        Best-in-class intelligence and talent insights
+                        <FontAwesomeIcon
+                          icon={faAngleDown}
+                          style={{
+                            fontSize: "14px",
+                            color: "#05c5fa",
+                            marginLeft: "2%",
+                            transform: dropdownVisible[0] ? "rotate(180deg)" : "rotate(0deg)",
+                          }}
+                        />
+                      </p>
 
                       {dropdownVisible[0] && (
                         <div className="why-dropdown-content">
@@ -153,29 +160,30 @@ function Dashboard4() {
                     </div>
                     <hr style={{ border: "1px solid #585959" }} />
 
+                    {/* Dropdown 2 */}
                     <div className="dropdown ml-2">
-                    <p className="why-p1"
-  style={{
-    fontSize: "18px",
-    fontWeight: 500,
-    cursor: "pointer",
-    display: "flex",
-    alignItems: "center", // Center the icon vertically
-    justifyContent: "space-between", // Add this line
-
-  }}
-  onClick={() => toggleDropdown(1)}
->
-  Unparalleled AI technology helps you make better decisions
-  <FontAwesomeIcon
-    icon={faAngleDown}
-    style={{
-      fontSize: "14px",
-      color: "#05c5fa",
-      transform: dropdownVisible[1] ? "rotate(180deg)" : "rotate(0deg)",
-    }}
-  />
-</p>
+                      <p
+                        className="why-p1"
+                        style={{
+                          fontSize: "18px",
+                          fontWeight: 500,
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                        }}
+                        onClick={() => toggleDropdown(1)}
+                      >
+                        Unparalleled AI technology helps you make better decisions
+                        <FontAwesomeIcon
+                          icon={faAngleDown}
+                          style={{
+                            fontSize: "14px",
+                            color: "#05c5fa",
+                            transform: dropdownVisible[1] ? "rotate(180deg)" : "rotate(0deg)",
+                          }}
+                        />
+                      </p>
 
                       {dropdownVisible[1] && (
                         <div className="dropdown-content">
@@ -190,31 +198,31 @@ function Dashboard4() {
                     </div>
                     <hr style={{ border: "1px solid #585959" }} />
 
+                    {/* Dropdown 3 */}
                     <div className="dropdown ml-2">
-                    <p className="why-p1"
-  style={{
-    fontSize: "18px",
-    fontWeight: 500,
-    cursor: "pointer",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between", // Add this line
-  }}
-  onClick={() => toggleDropdown(2)}
->
-  Our products are designed to deliver greatness
-  <FontAwesomeIcon
-    icon={faAngleDown}
-    style={{
-      fontSize: "14px",
-      color: "#05c5fa",
-      fontWeight: 900,
-      // marginLeft: "5px",
-      transform: dropdownVisible[2] ? "rotate(180deg)" : "rotate(0deg)",
-    }}
-  />
-</p>
-
+                      <p
+                        className="why-p1"
+                        style={{
+                          fontSize: "18px",
+                          fontWeight: 500,
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                        }}
+                        onClick={() => toggleDropdown(2)}
+                      >
+                        Our products are designed to deliver greatness
+                        <FontAwesomeIcon
+                          icon={faAngleDown}
+                          style={{
+                            fontSize: "14px",
+                            color: "#05c5fa",
+                            fontWeight: 900,
+                            transform: dropdownVisible[2] ? "rotate(180deg)" : "rotate(0deg)",
+                          }}
+                        />
+                      </p>
 
                       {dropdownVisible[2] && (
                         <div className="dropdown-content">
@@ -229,19 +237,21 @@ function Dashboard4() {
                 </Row>
               </Container>
             </Col>
+
+            {/* Column for the image */}
             <Col
               xl="6" lg="6" md="6" xs="12"
               style={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                // maxWidth: screenWidth < 700 ? "100vw" : "50vw", // Apply maxWidth based on screenWidth
               }}
             >
               <div style={{ position: "relative" }}>
                 <div ref={imageRef}>
                   <div style={{ position: "relative" }}>
-                    {animationCompleted && ( // Conditionally apply the animation
+                    {/* Conditionally apply animation */}
+                    {animationCompleted && (
                       <ZoomIn>
                         <img
                           src={logo}
@@ -255,25 +265,25 @@ function Dashboard4() {
                             borderRadius: "15px",
                             marginRight: "-40px",
                             zIndex: 2,
-                          }} // Adjust the margin-top value as needed
+                          }}
                         />
                       </ZoomIn>
                     )}
                     {/* Create a black box behind the image */}
-                      <BounceIn>
-                        <div className="dashboard-black-box"
-                          style={{
-                            position: "absolute",
-                            bottom: "-25%",
-                            right: "-15%",
-                            width: "40vw", // Adjust the width as needed
-                            height: "85%", // Adjust the height as needed
-                            background: "black",
-                            borderBottomLeftRadius: "80px",
-                            zIndex: 1,
-                          }}
-                        ></div>
-                      </BounceIn>
+                    <BounceIn>
+                      <div className="dashboard-black-box"
+                        style={{
+                          position: "absolute",
+                          bottom: "-25%",
+                          right: "-15%",
+                          width: "40vw",
+                          height: "85%",
+                          background: "black",
+                          borderBottomLeftRadius: "80px",
+                          zIndex: 1,
+                        }}
+                      ></div>
+                    </BounceIn>
                   </div>
                 </div>
               </div>
@@ -281,6 +291,8 @@ function Dashboard4() {
           </Row>
         </Container>
       </div>
+
+      {/* Inline CSS for media queries */}
       <style>
         {`
          /* Media query for screens less than 700px wide */
@@ -293,11 +305,9 @@ function Dashboard4() {
 
          /* CSS for screen width 280px to 540px */
          @media only screen and (min-width: 280px) and (max-width: 766px) {
-           
            .why-container{     
             width: 95vw !important;
             margin-top: -10% !important;
-
          
              .why-h2 {
                font-size: 28px !important;
@@ -308,129 +318,92 @@ function Dashboard4() {
              .why-p {
               font-size: 16px !important;
               padding-bottom: 10% !important;
-              
             }
-              .why-p1 {
-                font-size: 18px !important;
-              }
             
+            .why-p1 {
+              font-size: 18px !important;
+            }
             
-           
             .why-p1:focus {
              text-decoration: underline !important;
            }
             
             .why-dropdown-content {
               font-size: 16px !important;
-             //  width: 80vw !important;
             }
            }
-           
-          
-          
-           
-              }
+          }
          @media only screen and (min-width: 767px) and (max-width: 912px) {
-
           .why-main-container{ 
             min-height: 65vh !important;
-
-            // height: 60% !important;   
           } 
 
-           
           .why-container{     
             width: 45vw !important;
             margin-top: -10% !important;
             margin-left: -15% !important;
             margin-bottom: -55% !important;
-
          
              .why-h2 {
                font-size: 28px !important;
                font-weight : 700 !important;
-              //  text-align: center !important;
              }
             
              .why-p {
               font-size: 18px !important;
               padding-bottom: 10% !important;
-              
             }
-              .why-p1 {
-                font-size: 18px !important;
-                width: 40vw !important;
-
-              }
             
+            .why-p1 {
+              font-size: 18px !important;
+              width: 40vw !important;
+            }
             
-           
             .why-p1:focus {
              text-decoration: underline !important;
            }
             
             .why-dropdown-content {
               font-size: 16px !important;
-             //  width: 80vw !important;
             }
-            
            }
            .dashboard-black-box{
             width:41vw !important;
             right: -17% !important;
           }
-          
-          
-           
-              }
+        }
          @media only screen and (min-width: 1024px) {
-           
           .why-container{     
             width: 47vw !important;
             margin-top: -10% !important;
             margin-left: -10% !important;
-
-
          
              .why-h2 {
                font-size: 40px !important;
                font-weight : 700 !important;
-              //  text-align: center !important;
              }
             
              .why-p {
               font-size: 18px !important;
               padding-bottom: 10% !important;
               width: 38vw !important;
-
-              
             }
-              .why-p1 {
-                font-size: 20px !important;
-                 width: 40vw !important;
-
-              }
             
+            .why-p1 {
+              font-size: 20px !important;
+              width: 40vw !important;
+            }
             
-           
             .why-p1:focus {
              text-decoration: underline !important;
            }
             
             .why-dropdown-content {
               font-size: 16px !important;
-             //  width: 80vw !important;
             }
-           }
-           
-          
-          
-           
-              }
-         
-         
+          }
+        }
          /* CSS for screen width above 1023px */
-         
          `}
       </style>
     </>

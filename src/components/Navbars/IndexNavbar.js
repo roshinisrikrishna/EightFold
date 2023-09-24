@@ -1,3 +1,5 @@
+//These lines import necessary libraries, components, and assets for the Navbar component.
+
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -30,7 +32,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import NavbarShort from "./NavbarShort";
 
 
-
+//These lines define the IndexNavbar functional component and set up various state variables to manage the Navbar's behavior and appearance.
 function IndexNavbar() {
 const [collapseOpen, setCollapseOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
@@ -40,6 +42,7 @@ const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
 
+//Here, an array of objects is used to manage the state of dropdown menus within the Navbar.
 
   const [dropdowns, setDropdowns] = useState([
     { id: "products", isOpen: false },
@@ -52,11 +55,14 @@ const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   ]);
 
-  const [open, setOpen] = useState(false);
+  //This state variable is used to manage the state of a dropdown menu.
 
+  const [open, setOpen] = useState(false);
+//A ref is created to reference an HTML element within the component.
   const menuRef = useRef();
 
 // Add logic to set click to true when screen width is 1000px
+//This useEffect listens for changes in the window's size and updates the screenWidth and click state variables accordingly.
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
@@ -66,7 +72,7 @@ const [screenWidth, setScreenWidth] = useState(window.innerWidth);
         setClick(false);
       }      
     };
-
+//These lines initialize the state and set up event listeners for window resizing. The event listeners are removed when the component unmounts
     handleResize(); // Initial call to set the click state
 
     window.addEventListener("resize", handleResize);
@@ -76,6 +82,7 @@ const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     };
   }, []);
 
+  //This function toggles the state of a dropdown menu by updating the dropdowns state variable.
   const toggleDropdown = (id) => {
     const updatedDropdowns = dropdowns.map((dropdown) => {
       if (dropdown.id === id) {
@@ -86,11 +93,12 @@ const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     setDropdowns(updatedDropdowns);
   };
 
-
+//This function toggles the state of the search modal.
   const toggleSearchModal = () => {
     setSearchModalOpen(!searchModalOpen);
   };
   
+  //This function opens a dropdown menu when the mouse enters its area.
   const openDropdownOnMouseEnter = (dropdownId) => {
     setDropdowns((prevDropdowns) =>
       prevDropdowns.map((dropdown) =>
@@ -99,12 +107,14 @@ const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     );
   };
 
+  //This function is responsible for closing a dropdown menu when the mouse leaves its area. It sets a timeout to trigger the closing action after a delay.
   const closeDropdownOnMouseLeave = (dropdownId) => {
     // Clear any existing timeout
     if (closeTimeout) {
       clearTimeout(closeTimeout);
     }
   
+    //This code sets a new timeout and stores its ID in the closeTimeout state variable to later clear it if needed.
     // Set a new timeout to close the dropdown after a delay
     const timeoutId = setTimeout(() => {
       setDropdowns((prevDropdowns) =>
@@ -119,6 +129,7 @@ const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   
 
   return (
+    //A div element is given a reference (menuRef) to be used later in the component.
     <div ref={menuRef}>
       {screenWidth >= 1200 || click ? ( // Check screenWidth or click state
     
@@ -127,6 +138,9 @@ const [screenWidth, setScreenWidth] = useState(window.innerWidth);
       borderBottomRightRadius: "25px",
       background: "#2B3140",
       fontFamily: "Museo Sans Rounded, sans-serif" }}>
+        {/* A fluid Container component is used to structure the content inside the Navbar. */}
+
+
         <Container fluid>
           
             <Nav navbar>

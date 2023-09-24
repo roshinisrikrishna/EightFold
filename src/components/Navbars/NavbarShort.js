@@ -1,8 +1,8 @@
+// Import React and various components and libraries
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Button,
-  // Collapse,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
@@ -18,6 +18,7 @@ import {
   Container,
 } from "reactstrap";
 
+// Import FontAwesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/img/logoeightfold-fotor-bg-remover-20230823133343.png";
@@ -29,8 +30,8 @@ import evtImg from "../../assets/img/events.webp";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
-
 function IndexNavbar() {
+  // Define various state variables
   const [collapseOpen, setCollapseOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [closeTimeout, setCloseTimeout] = useState(null);
@@ -38,12 +39,12 @@ function IndexNavbar() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const whiteTextColorClass = screenWidth < 1000 ? 'slate-text' : '';
 
-
+  // Function to handle click event
   const handleClick = () => {
     setClick(!click); // Toggle the click state
   };
 
-
+  // Define state for dropdown menus
   const [dropdowns, setDropdowns] = useState([
     { id: "products", isOpen: false },
     { id: "solutions", isOpen: false },
@@ -51,53 +52,60 @@ function IndexNavbar() {
     { id: "customers", isOpen: false },
     { id: "events", isOpen: false },
     { id: "company", isOpen: false },
-
-
   ]);
 
   const [open, setOpen] = useState(false);
-  // const [isOpen, setIsOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+
+  // Function to open the modal
   const openModal = () => {
     setModalOpen(true);
   };
   
+  // Function to close the modal
   const closeModal = () => {
     setModalOpen(false);
   };
-  
 
-
+  // Create a reference to the menu element
   const menuRef = useRef();
 
+  // Use useEffect for side effects and event listeners
   useEffect(() => {
+    // Function to handle window resize
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };
-  
+
+    // Add a window resize event listener
     window.addEventListener("resize", handleResize);
+
+    // Function to handle clicks outside of the menu
     let handler = (e) => {
       if (!menuRef.current.contains(e.target)) {
         setOpen(false);
         console.log(menuRef.current);
       }
     };
-  
+
+    // Add a document click event listener
     document.addEventListener("mousedown", handler);
-  
+
     // Add logic to set click to true when screen width is 1000px
     if (window.innerWidth >= 1000) {
       setClick(true);
     } else {
       setClick(false);
     }
-  
+
+    // Cleanup: remove event listeners
     return () => {
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("mousedown", handler);
     };
   }, []);
-  
+
+  // Function to toggle a dropdown menu
   const toggleDropdown = (id) => {
     const updatedDropdowns = dropdowns.map((dropdown) => {
       if (dropdown.id === id) {
@@ -107,6 +115,7 @@ function IndexNavbar() {
     });
     setDropdowns(updatedDropdowns);
   };
+
 
      
   return (

@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
+// Import React, useState, and useEffect from React library
+
 import { Link } from "react-router-dom";
+// Import the Link component from React Router DOM
+
 import {
   Button, 
   Container, 
@@ -7,16 +11,23 @@ import {
   NavbarBrand, 
   UncontrolledTooltip,
   Col,
- } from "reactstrap";
+} from "reactstrap";
+// Import various components and styles from the Reactstrap library
+
 import logo from "../../../assets/img/logoeightfold-fotor-bg-remover-20230823133343.png";
+// Import an image from assets
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+// Import FontAwesome icons
 
 function Examples() {
+  // Define state variables for showing/hiding lists
   const [showList, setShowList] = useState(false);
   const [showPrivacyList, setShowPrivacyList] = useState(false);
 
+  // Define a state variable "screenWidth" and a function "setScreenWidth" to manage it
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   // Function to update screen width when the window is resized
@@ -24,8 +35,8 @@ function Examples() {
     setScreenWidth(window.innerWidth);
   };
 
+  // Attach an event listener for window resize when the component mounts
   useEffect(() => {
-    // Attach the event listener for window resize
     window.addEventListener("resize", handleResize);
 
     // Clean up the event listener when the component unmounts
@@ -34,8 +45,7 @@ function Examples() {
     };
   }, []);
 
-  
-
+  // Effect to hide the list on small screens
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 700) {
@@ -50,15 +60,17 @@ function Examples() {
     };
   }, []);
 
+  // Toggle function for showing/hiding the "Learn More" list
   const toggleList = () => {
     if (window.innerWidth < 700) {
       setShowList(!showList);
     }
   };
+
+  // Toggle function for showing/hiding the "Privacy & Legal" list
   const togglePrivacyList = () => {
     if (window.innerWidth < 700) {
-
-    setShowPrivacyList(!showPrivacyList);
+      setShowPrivacyList(!showPrivacyList);
     }
   };
 
