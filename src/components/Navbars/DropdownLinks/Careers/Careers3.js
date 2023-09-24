@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 // reactstrap components
 import { Container, Row, Col, Card } from "reactstrap";

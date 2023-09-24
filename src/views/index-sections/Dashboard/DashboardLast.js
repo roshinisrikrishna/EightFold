@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
+// Import React, useState, and useEffect from React library
+
 import { Link } from "react-router-dom";
+// Import the Link component from React Router DOM
+
 import {
   Button, 
   Container, 
@@ -7,16 +11,23 @@ import {
   NavbarBrand, 
   UncontrolledTooltip,
   Col,
- } from "reactstrap";
+} from "reactstrap";
+// Import various components and styles from the Reactstrap library
+
 import logo from "../../../assets/img/logoeightfold-fotor-bg-remover-20230823133343.png";
+// Import an image from assets
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+// Import FontAwesome icons
 
 function Examples() {
+  // Define state variables for showing/hiding lists
   const [showList, setShowList] = useState(false);
   const [showPrivacyList, setShowPrivacyList] = useState(false);
 
+  // Define a state variable "screenWidth" and a function "setScreenWidth" to manage it
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   // Function to update screen width when the window is resized
@@ -24,8 +35,8 @@ function Examples() {
     setScreenWidth(window.innerWidth);
   };
 
+  // Attach an event listener for window resize when the component mounts
   useEffect(() => {
-    // Attach the event listener for window resize
     window.addEventListener("resize", handleResize);
 
     // Clean up the event listener when the component unmounts
@@ -34,8 +45,7 @@ function Examples() {
     };
   }, []);
 
-  
-
+  // Effect to hide the list on small screens
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 700) {
@@ -50,15 +60,17 @@ function Examples() {
     };
   }, []);
 
+  // Toggle function for showing/hiding the "Learn More" list
   const toggleList = () => {
     if (window.innerWidth < 700) {
       setShowList(!showList);
     }
   };
+
+  // Toggle function for showing/hiding the "Privacy & Legal" list
   const togglePrivacyList = () => {
     if (window.innerWidth < 700) {
-
-    setShowPrivacyList(!showPrivacyList);
+      setShowPrivacyList(!showPrivacyList);
     }
   };
 
@@ -77,7 +89,7 @@ function Examples() {
           <Row>
             <Col lg="6" md="6">
               
-            <NavbarBrand
+            <NavbarBrand className="last-logo"
                   href=""
                   target="_blank"
                   id="navbar-brand"
@@ -100,7 +112,7 @@ function Examples() {
                    
                   eightfold.ai
                 </NavbarBrand>
-                  <p
+                  <p className="last-p"
               style={{
                 paddingTop: "20px", // Adjust spacing for responsiveness
                 fontSize: "14px",
@@ -116,9 +128,9 @@ function Examples() {
             </p>
 {screenWidth > 700 && (
 <Container >
-  <div
+  <div className="symbols"
               style={{
-                maxWidth: "50%",
+                // maxWidth: "50%",
                 paddingTop: "20px", // Adjust spacing for responsiveness
                 // margin: "0 auto", // Center the social icons horizontally
               }}
@@ -195,15 +207,84 @@ function Examples() {
         </Container>
 )}
 
-{screenWidth < 700 && (
-<Container  style={{
-    // position: "sticky",
 
-    bottom: 0,
-    left: 0,
+            </Col>
+            <Col lg="6" md="6">
+              <Row>
+                
+              <Col md="6"  id="learnMoreDropdown" className={showList ? "show-list learn-col" : "learn-col"}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          cursor: "pointer",
+        }}
+        onClick={toggleList}
+      >
+        <h4 className="last-h4" style={{ fontSize: "18px", fontWeight: 600 }}>Learn More</h4>
+        {screenWidth <= 700 && (
+                  <FontAwesomeIcon
+                    icon={showList ? faAngleUp : faAngleDown}
+                    style={{
+                      fontSize: "18px",
+                      color: "#05c5fa",
+                      marginLeft: "5px",
+                    }}
+                  />
+                )}
+      </div>
+      <div className="learn-more-list">
+        <p style={{ fontSize: "14px" }}>Leadership</p>
+        <p style={{ fontSize: "14px" }}>Talent Intelligence Platform</p>
+        <p style={{ fontSize: "14px" }}>Careers</p>
+        <p style={{ fontSize: "14px" }}>Contact us</p>
+        <p style={{ fontSize: "14px" }}>Responsible AI at Eightfold</p>
+      </div>
+    </Col>
+                
+    
+    <Col md="6" id="privacyMoreDropdown" className={showPrivacyList ? "show-privacy-list privacy-col" : "privacy-col"}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          cursor: "pointer",
+        }}
+        onClick={togglePrivacyList}
+      >
+        <h4 className="last-h4" style={{ fontSize: "18px", fontWeight: 600 }}>
+          Privacy & Legal{" "}
+        </h4>
+        {screenWidth <= 700 && (
+                  <FontAwesomeIcon
+                    icon={showPrivacyList ? faAngleUp : faAngleDown}
+                    style={{
+                      fontSize: "18px",
+                      color: "#05c5fa",
+                      marginLeft: "5px",
+                    }}
+                  />
+                )}
+      </div>
+        <div className="privacy-list">
+          <p style={{ fontSize: "14px" }}>Privacy Policy</p>
+          <p style={{ fontSize: "14px" }}>Governance</p>
+          <p style={{ fontSize: "14px" }}>Cookie notice</p>
+          <p style={{ fontSize: "14px" }}>
+            <FontAwesomeIcon
+              icon={faCheckCircle}
+              className="check-icon"
+            />
+            Your California privacy choices
+          </p>
+        </div>
+    </Col>
+    {screenWidth < 700 && (
+<Container  style={{
     width: "95vw",
     // backgroundColor: "rgba(0, 0, 0, 0.8)", // Change the background color if needed
-    zIndex: 999, // Adjust the z-index as necessary
   }} >
   <div
               style={{
@@ -283,79 +364,6 @@ function Examples() {
         </div>
         </Container>
 )}
-            </Col>
-            <Col lg="6" md="6">
-              <Row>
-                
-              <Col md="6" id="learnMoreDropdown" className={showList ? "show-list" : ""}>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          cursor: "pointer",
-        }}
-        onClick={toggleList}
-      >
-        <h4 style={{ fontSize: "18px", fontWeight: 600 }}>Learn More</h4>
-        {screenWidth <= 700 && (
-                  <FontAwesomeIcon
-                    icon={showList ? faAngleUp : faAngleDown}
-                    style={{
-                      fontSize: "18px",
-                      color: "#05c5fa",
-                      marginLeft: "5px",
-                    }}
-                  />
-                )}
-      </div>
-      <div className="learn-more-list">
-        <p style={{ fontSize: "14px" }}>Leadership</p>
-        <p style={{ fontSize: "14px" }}>Talent Intelligence Platform</p>
-        <p style={{ fontSize: "14px" }}>Careers</p>
-        <p style={{ fontSize: "14px" }}>Contact us</p>
-        <p style={{ fontSize: "14px" }}>Responsible AI at Eightfold</p>
-      </div>
-    </Col>
-                
-    
-    <Col md="6" id="privacyMoreDropdown" className={showPrivacyList ? "show-privacy-list" : ""}>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          cursor: "pointer",
-        }}
-        onClick={togglePrivacyList}
-      >
-        <h4 style={{ fontSize: "18px", fontWeight: 600 }}>
-          Privacy & Legal{" "}
-        </h4>
-        {screenWidth <= 700 && (
-                  <FontAwesomeIcon
-                    icon={showPrivacyList ? faAngleUp : faAngleDown}
-                    style={{
-                      fontSize: "18px",
-                      color: "#05c5fa",
-                      marginLeft: "5px",
-                    }}
-                  />
-                )}
-      </div>
-        <div className="privacy-list">
-          <p style={{ fontSize: "14px" }}>Privacy Policy</p>
-          <p style={{ fontSize: "14px" }}>Governance</p>
-          <p style={{ fontSize: "14px" }}>Cookie notice</p>
-          <p style={{ fontSize: "14px" }}>
-            <FontAwesomeIcon
-              icon={faCheckCircle}
-              className="check-icon"
-            />
-            Your California privacy choices
-          </p>
-        </div>
-    </Col>
               </Row>
             </Col>
           </Row>
@@ -370,6 +378,9 @@ function Examples() {
           #learnMoreDropdown.show-list .learn-more-list {
             display: block;
           }
+          .show-list {
+            border-bottom: 1px solid #ccc !important;
+          }
         }
 
         @media (max-width: 700px) {
@@ -380,6 +391,136 @@ function Examples() {
             display: block;
           }
         }
+
+        /* CSS for screen width 280px to 540px */
+        @media only screen and (min-width: 280px) and (max-width: 766px) {
+          
+          
+         
+            .last-logo {
+              font-size: 18px !important;
+              
+            }
+           
+             .last-p{
+               font-size: 14px !important;
+               font-weight: 400 !important;
+               color: rgb(238,238,238) !important;'
+               line-height: 1.8em !important;
+               max-width: 87vw !important;
+
+
+  
+             }
+             .last-h4{
+              font-size: 16px !important;
+              // border-bottom: 1px solid #ccc !important;
+             }  
+             .learn-col{
+              border-bottom: 0.5px solid #ccc !important;
+              
+
+             }
+             .privacy-col{
+              border-bottom: 0.5px solid #ccc !important;
+              
+
+             }
+            
+            
+           
+             }
+        @media only screen and (min-width: 767px) and (max-width: 912px) {
+
+  
+          .navbar-brand {
+            font-size: 26px !important;
+            
+          }
+         
+           .last-p{
+             font-size: 14px !important;
+             font-weight: 400 !important;
+             color: rgb(238,238,238) !important;'
+             line-height: 1.8em !important;
+             max-width: 30vw !important;
+
+
+           }
+           .last-h4{
+            font-size: 16px !important;
+            // border-bottom: 1px solid #ccc !important;
+           }  
+         
+            .symbols{
+              max-width: 70% !important;
+              padding-top: 30% !important;
+            }
+            
+          
+          
+         
+           }
+        @media only screen and (min-width: 1024px) {
+          
+          
+  
+          .last-logo {
+            font-size: 24px !important;
+            margin-left: -10% !important;
+
+            
+          }
+          .last-logo img{
+            width: 8% !important;
+            // margin-left: -10% !important;
+
+            
+          }
+         
+           .last-p{
+             font-size: 13px !important;
+             font-weight: 400 !important;
+             color: rgb(238,238,238) !important;'
+             line-height: 1.8em !important;
+             max-width: 32vw !important;
+             margin-left: -10% !important;
+
+
+
+           }
+           .last-h4{
+            font-size: 18px !important;
+            // border-bottom: 1px solid #ccc !important;
+            // margin-left: -15% !important;
+            
+
+           }  
+           .learn-more-list p{
+            font-size: 13px !important;
+            font-weight: 400 !important;
+
+           }
+           .privacy-list p{
+            font-size: 13px !important;
+            font-weight: 400 !important;
+
+           }
+         
+         
+            .symbols{
+              max-width: 40% !important;
+              margin-left: -15% !important;
+              padding-top: 15% !important;
+            }
+            .copyright{
+              font-size: 12px !important;
+
+              margin-left: -15% !important;
+
+            }
+
+             }
         
         `}
       </style>

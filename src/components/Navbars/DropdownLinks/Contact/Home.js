@@ -41,7 +41,7 @@ const fadeImageVariants = {
   },
 };
 
-function CompanyLeadership() {
+function Contact() {
 useEffect(() => {
     document.body.style.backgroundImage = `linear-gradient(rgba(2, 115, 191, 0.9), rgba(67, 50, 87, 0.9)), url(${mapImage})`;
     document.body.style.backgroundSize = "cover";
@@ -166,4 +166,4 @@ useEffect(() => {
   );
 }
 
-export default CompanyLeadership;
+export default Contact;

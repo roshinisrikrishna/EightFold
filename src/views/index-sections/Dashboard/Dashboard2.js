@@ -3,7 +3,7 @@
 import Switch from "react-bootstrap-switch";
 // plugin that creates slider
 import Slider from "nouislider";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import noUiSlider from "nouislider";
 import "nouislider/dist/nouislider.css";
 import {motion} from "framer-motion";
@@ -44,6 +44,21 @@ const fadeInAnimationVariants = {
 // Import statements...
 
 function BasicElements() {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    // Update the screenWidth when the window is resized
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      // Remove the event listener when the component unmounts
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const sliderRegularRef = useRef(null);
   const sliderDoubleRef = useRef(null);
 
@@ -69,11 +84,13 @@ function BasicElements() {
 
   return (
     <>
-      <div className="section section-basic" id="basic-elements" style={{ maxWidth: "100vw", paddingTop: "12%", fontFamily: "Museo Sans Rounded, sans-serif", justifyContent: "flex-start" }}>
-        <Container>
+      <div className="section section-basic" id="basic-elements" style={{ minHeight: "10vh",maxWidth: "100vw", paddingTop: "12%", fontFamily: "Museo Sans Rounded, sans-serif", justifyContent: "flex-start" }}>
+        <Container className="page-header-image">
           <Row>
             {/* Use d-none d-md-block to hide the column on screens smaller than md (medium) */}
-            <Col className="justify-content-start d-none d-md-block" md="1" xl="1">
+            {screenWidth >= 912 && (
+
+            <Col className="justify-content-start d-none d-md-block" lg="1" md="0">
               <Card style={{
                 background: "linear-gradient(45deg, rgba(0, 139, 232, 0.2) 50%, rgba(147, 112, 219, 0.5)) 50%",
                 width: "100%",
@@ -85,14 +102,16 @@ function BasicElements() {
                 </CardBody>
               </Card>
             </Col>
+            )}
 
-            <Col md="11" xl="11" xs="12">
+            <Col md="12" xl="12" xs="12">
               <div className="content-center gradient-background">
                 <Container >
-                  <div className="brand" style={{ marginLeft: "0%", textAlign: "center", width: "100%" }}>
+                  <div className="dashboard" style={{ height: "50%",marginLeft: "0%", textAlign: "center", width: "100%" }}>
                     <motion.h1
-                    className="brand-h1"
+                    className="dashboard-h1"
                       style={{
+                        // marginTop: "-70%",
                         fontWeight: 600,
                         letterSpacing: "0.01em",
                         fontSize: "200%",
@@ -118,30 +137,75 @@ function BasicElements() {
       <style>
         {`
         /* Media query for screens less than 768px wide */
-        @media (max-width: 768px) {
-          .page-header-image {
-            min-height: 80vh;
-          }
-          .brand {
-            margin-top: 10vh;
-            padding-top: 10%; /* Add padding for smaller screens */
-          }
-          .brand > div {
-            min-width: 100vw !important;
+        /* CSS for screen width 280px to 540px */
+        @media only screen and (min-width: 280px) and (max-width: 766px) {
+          // CSS for small screens
+
+          .dashboard {   
+            // Adjust styles for smaller screens
+
+            // height: 10% !important;  
+        
+            .dashboard-h1 {
+              // Adjust styles for smaller screens
+
+              // margin-top: -40% !important;
+              font-size: 28px !important;
+              font-weight : 900 !important;
+              margin-top: 10% !important;
+            }
+           
             
           }
-          .brand-h1 {
-            font-size: 155% !important; /* Set font size to 52px with !important */
-          }
-          .brand p {
-            font-size: 80% !important;
-          }
+          
+        }
+        
+        /* CSS for screen width 768px to 912px */
+        @media only screen and (min-width: 767px) and (max-width: 912px) {
+          // CSS for medium screens
+          .section {
+            // Adjust styles for medium screens
+            // margin-bottom: -40% !important;
 
-          .brand button {
-            max-width: 70vw !important;
-            padding: 4% 12% !important;
-            font-size: 90% !important;
           }
+          .dashboard {
+            // Adjust styles for medium screens
+              // margin-bottom: -100% !important;
+              // height: 50% !important;
+        
+              .dashboard-h1 {
+                // Adjust styles for medium screens
+              // margin-top: -40% !important;
+              font-size: 28px !important;
+              font-weight: 900 !important;
+            }
+           
+            
+          }
+        
+        }
+        
+        /* CSS for screen width above 1023px */
+        @media only screen and (min-width: 1024px) {
+          .page-header-image {
+            // min-height: 1vh !important;
+            // height: 60% !important;
+          }
+            .dashboard {
+              // min-height: 1vh !important;
+            // height: 20% !important;
+        
+            .dashboard-h1 {
+              margin-top: -30% !important;
+              // margin-bottom: -50vh;
+              // background: red !important;
+              font-size: 36px !important;
+              font-weight: bolder !important;
+            }
+           
+            
+          }
+        
         }
         `}
       </style>

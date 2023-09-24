@@ -1,8 +1,8 @@
+// Import React and various components and libraries
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Button,
-  // Collapse,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
@@ -18,6 +18,7 @@ import {
   Container,
 } from "reactstrap";
 
+// Import FontAwesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/img/logoeightfold-fotor-bg-remover-20230823133343.png";
@@ -27,22 +28,23 @@ import learnImg from "../../assets/img/learn.webp";
 import cmpnyImg from "../../assets/img/forbes.webp";
 import evtImg from "../../assets/img/events.webp";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 function IndexNavbar() {
+  // Define various state variables
   const [collapseOpen, setCollapseOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [closeTimeout, setCloseTimeout] = useState(null);
   const [click, setClick] = useState(false); // Add a click state
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const whiteTextColorClass = screenWidth < 1000 ? 'white-text' : '';
+  const whiteTextColorClass = screenWidth < 1000 ? 'slate-text' : '';
 
-
+  // Function to handle click event
   const handleClick = () => {
     setClick(!click); // Toggle the click state
   };
 
-
+  // Define state for dropdown menus
   const [dropdowns, setDropdowns] = useState([
     { id: "products", isOpen: false },
     { id: "solutions", isOpen: false },
@@ -50,53 +52,60 @@ function IndexNavbar() {
     { id: "customers", isOpen: false },
     { id: "events", isOpen: false },
     { id: "company", isOpen: false },
-
-
   ]);
 
   const [open, setOpen] = useState(false);
-  // const [isOpen, setIsOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+
+  // Function to open the modal
   const openModal = () => {
     setModalOpen(true);
   };
   
+  // Function to close the modal
   const closeModal = () => {
     setModalOpen(false);
   };
-  
 
-
+  // Create a reference to the menu element
   const menuRef = useRef();
 
+  // Use useEffect for side effects and event listeners
   useEffect(() => {
+    // Function to handle window resize
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };
-  
+
+    // Add a window resize event listener
     window.addEventListener("resize", handleResize);
+
+    // Function to handle clicks outside of the menu
     let handler = (e) => {
       if (!menuRef.current.contains(e.target)) {
         setOpen(false);
         console.log(menuRef.current);
       }
     };
-  
+
+    // Add a document click event listener
     document.addEventListener("mousedown", handler);
-  
+
     // Add logic to set click to true when screen width is 1000px
     if (window.innerWidth >= 1000) {
       setClick(true);
     } else {
       setClick(false);
     }
-  
+
+    // Cleanup: remove event listeners
     return () => {
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("mousedown", handler);
     };
   }, []);
-  
+
+  // Function to toggle a dropdown menu
   const toggleDropdown = (id) => {
     const updatedDropdowns = dropdowns.map((dropdown) => {
       if (dropdown.id === id) {
@@ -107,6 +116,7 @@ function IndexNavbar() {
     setDropdowns(updatedDropdowns);
   };
 
+
      
   return (
     <div ref={menuRef} >
@@ -116,24 +126,29 @@ function IndexNavbar() {
   className='navbar-top fixed-top'
 //   expand="lg"
   color="default"
-  style={{ maxWidth:"100vw",background: "#2B3140",fontFamily: "Museo Sans Rounded, sans-serif" }}
+  style={{ maxWidth:"110vw",background: "#2B3140",
+  fontFamily: "Museo Sans Rounded, sans-serif",
+  borderBottomLeftRadius: "45px",
+  borderBottomRightRadius: "25px" }}
 >
-          <Nav navbar style={{ width: "100%"}}>
             
-          <div className="sticky-nav" style={{backgroundColor: "transparent"}}>
-  <NavItem className="d-flex align-items-center justify-content-center">
+          <div className="sticky-nav" style={{width: "100%",backgroundColor: "transparent"}}>
+          <Nav navbar style={{ width: "100%" }}>
+  <NavItem className={click ? "d-flex align-items-center justify-content-center sticky-border" : "d-flex align-items-center justify-content-center"}>
     <i
-      className={click ? "fas fa-times d-flex align-items-left justify-content-left" : "fas fa-bars d-flex align-items-left justify-content-left"}
+      className={click ? "fas fa-times d-flex align-items-left justify-content-left ml-2" : "fas fa-bars d-flex align-items-left justify-content-left ml-2"}
       onClick={handleClick}
-      style={{ fontSize: "30px",position: "absolute", left: "15px", cursor: "pointer", color:"white", }}
+      style={{ fontSize: "30px", position: "absolute", left: "15px", cursor: "pointer", color: "white" }}
     />
     <NavbarBrand
+      className="navbar-logo-main mx-auto" // Added mx-auto class to center the NavbarBrand horizontally
       id="navbar-brand"
       href="/"
       style={{
         fontFamily: "Museo Sans Rounded, sans-serif",
-        fontWeight: "bold",
-        fontSize: "80%"
+        fontWeight: "normal",
+        fontSize: "40%",
+        color: "white"
       }}
     >
       <img
@@ -149,17 +164,22 @@ function IndexNavbar() {
       eightfold.ai
     </NavbarBrand>
   </NavItem>
+</Nav>
+
 </div>
 
             {click && (
               <Container
-  className=""
-  style={{
-    minHeight: "100vh",
-    height: "100%",
+              className="pl-5" // Apply the "sticky-border" class here
+              style={{
+    // height: "100vh",
+    // height: "100%",
+    // borderTop: "1px solid #ccc",
     maxWidth: "100vw", // Set maxWidth to 100% to occupy full width
   }}
 >
+<Nav navbar style={{  width: "100%"}}>
+ 
    <NavItem>
    <div>
     <Dropdown 
@@ -170,19 +190,19 @@ function IndexNavbar() {
    nav 
   
    >
-     <DropdownToggle
-        nav
-        // onMouseEnter={() => toggleDropdown("products")}
-        //     onMouseLeave={() => toggleDropdown("products")}
-            onClick={() => toggleDropdown("products")} // Toggle dropdown on click
+<DropdownToggle
+  nav
+  onClick={() => toggleDropdown("products")} // Toggle dropdown on click
+>
+  <p
+    className={`dropdown-toggle-text ${dropdowns.find((d) => d.id === "products").isOpen ? "blueText" : "white-text"}`}
+    style={{ fontSize: "100%", margin: "0", padding: "5px 0" }}
+    >
+    Products <FontAwesomeIcon icon={faAngleDown} style={{color: "black"}}/>
+  </p>
+</DropdownToggle>
 
-      >
-      
-      <p className={dropdowns.find((d) => d.id === "products").isOpen ? "blueText" : ""}
-      style={{fontSize: "120%"}}>Products</p>
-     
 
-  </DropdownToggle>
   {dropdowns.find((d) => d.id === "products").isOpen && (
         <div>
           {/* <DropdownMenu > */}
@@ -218,8 +238,12 @@ function IndexNavbar() {
           <DropdownToggle nav 
             onClick={() => toggleDropdown("solutions")} // Toggle dropdown on click
                       >
-              <p className={dropdowns.find((d) => d.id === "solutions").isOpen ? "blueText" : ""}
-              style={{fontSize: "120%"}}>Solutions</p>
+             <p
+    className={`dropdown-toggle-text ${dropdowns.find((d) => d.id === "solutions").isOpen ? "blueText" : "white-text"}`}
+    style={{ fontSize: "100%", margin: "0", padding: "5px 0" }}
+    >
+    Solutions <FontAwesomeIcon icon={faAngleDown} style={{color: "black"}}/>
+  </p>
             </DropdownToggle>
 
 {dropdowns.find((d) => d.id === "solutions").isOpen && (
@@ -263,7 +287,7 @@ function IndexNavbar() {
     tag={Link}
     className="nav-link"
   >
-    <p style={{fontSize: "120%"}}>Services</p>
+    <p className="service-p" style={{fontSize: "90%", color: "white", marginBottom: "-0.25%"}}>Services</p>
   </NavLink>
 </NavItem>
 
@@ -280,8 +304,12 @@ function IndexNavbar() {
           <DropdownToggle nav 
          onClick={() => toggleDropdown("learn")} // Toggle dropdown on click
                       >
-              <p className={dropdowns.find((d) => d.id === "learn").isOpen ? "blueText" : ""}
-              style={{fontSize: "120%"}}>Learn</p>
+                     <p
+    className={`dropdown-toggle-text ${dropdowns.find((d) => d.id === "learn").isOpen ? "blueText" : "white-text"}`}
+    style={{ fontSize: "100%", margin: "0", padding: "5px 0" }}
+    >
+    Learn <FontAwesomeIcon icon={faAngleDown} style={{color: "black"}}/>
+  </p>
             </DropdownToggle>
             {dropdowns.find((d) => d.id === "learn").isOpen && (
         <div>      
@@ -321,8 +349,12 @@ function IndexNavbar() {
            onClick={() => toggleDropdown("customers")} // Toggle dropdown on click
 
            >
-              <p className={dropdowns.find((d) => d.id === "customers").isOpen ? "blueText" : ""}
-              style={{fontSize: "120%"}}>Customers</p>
+                         <p
+    className={`dropdown-toggle-text ${dropdowns.find((d) => d.id === "customers").isOpen ? "blueText" : "white-text"}`}
+    style={{ fontSize: "100%", margin: "0", padding: "5px 0" }}
+    >
+    Customers <FontAwesomeIcon icon={faAngleDown} style={{color: "black"}}/>
+  </p>
             </DropdownToggle>
             {dropdowns.find((d) => d.id === "customers").isOpen && (
         <div>
@@ -359,8 +391,12 @@ function IndexNavbar() {
            onClick={() => toggleDropdown("events")} // Toggle dropdown on click
 
            >
-              <p className={dropdowns.find((d) => d.id === "events").isOpen ? "blueText" : ""}
-              style={{fontSize: "120%"}}>Events</p>
+                     <p
+    className={`dropdown-toggle-text ${dropdowns.find((d) => d.id === "events").isOpen ? "blueText" : "white-text"}`}
+    style={{ fontSize: "100%", margin: "0", padding: "5px 0" }}
+    >
+    Events <FontAwesomeIcon icon={faAngleDown} style={{color: "black"}}/>
+  </p>
             </DropdownToggle>
             {dropdowns.find((d) => d.id === "events").isOpen && (
         <div> 
@@ -399,44 +435,48 @@ function IndexNavbar() {
           onClick={() => toggleDropdown("company")} // Toggle dropdown on click
 
            >
-                  <p  className={dropdowns.find((d) => d.id === "company").isOpen ? "blueText" : ""}
-                  style={{fontSize: "120%"}}>Company</p> {/* Link to "/company" */}
+                            <p
+    className={`dropdown-toggle-text ${dropdowns.find((d) => d.id === "company").isOpen ? "blueText" : "white-text"}`}
+    style={{ fontSize: "100%", margin: "0", padding: "5px 0" }}
+    >
+    Company <FontAwesomeIcon icon={faAngleDown} style={{color: "black"}}/>
+  </p>
             </DropdownToggle>
             {dropdowns.find((d) => d.id === "company").isOpen && (
         <div>  {/* Dropdown items */}
-  <NavItem className={whiteTextColorClass}>
+  <NavItem >
     
-    <Link to="/company">About Eightfold</Link>
+    <Link className={whiteTextColorClass} to="/company">About Eightfold</Link>
 
   </NavItem>
-  <NavItem className={whiteTextColorClass}>
-          <Link to="/company/leadership">Leadership & Advisory Board</Link>
+  <NavItem>
+          <Link className={whiteTextColorClass} to="/company/leadership">Leadership & Advisory Board</Link>
 
     
   </NavItem>
-  <NavItem className={whiteTextColorClass}>
-      <Link to="/ethics">Ethics council</Link>
+  <NavItem>
+      <Link className={whiteTextColorClass} to="/ethics">Ethics council</Link>
   </NavItem>
-  <NavItem className={whiteTextColorClass}>
+  <NavItem>
   
-          <Link to="/careers">Careers</Link>
+          <Link className={whiteTextColorClass} to="/careers">Careers</Link>
 
     
   </NavItem>
-  <NavItem className={whiteTextColorClass}>
+  <NavItem>
   
-              <Link to="/partners">Partners</Link>
+              <Link className={whiteTextColorClass} to="/partners">Partners</Link>
 
     
   </NavItem>
-  <NavItem className={whiteTextColorClass}>
+  <NavItem>
   
-                  <Link to="/press">Press</Link>
+                  <Link className={whiteTextColorClass} to="/press">Press</Link>
 
     
   </NavItem>
-  <NavItem className={whiteTextColorClass}>
-      <Link to="/contact"> Contact Us</Link>
+  <NavItem >
+      <Link className={whiteTextColorClass} to="/contact"> Contact Us</Link>
   </NavItem>
   </div>
       )}
@@ -461,6 +501,8 @@ function IndexNavbar() {
       Login
     </Button>
   </NavItem>
+  </Nav>
+
   </Container>
 
 )}
@@ -501,27 +543,125 @@ function IndexNavbar() {
     border-radius: 20px;
     position: absolute;
   }
-  
+ 
 
   .custom-dropdown-toggle p {
     font-size: 120%;
   }
   .white-text {
-    color: #b8ccd4;
-    font-size: 80%;
+    color: #fff;
+    font-size: 60%;
     padding-left: 3%;
     padding-top: 1%;
     padding-bottom: 1%;
 
   }
+  .slate-text{
+    color: #bad1e8;
+    padding-bottom: 5% !important;
+
+  }
   .blueText {
     color: #008FBF; /* Change this to your desired blue color */
   }
+    
+  /* CSS for screen width 280px to 540px */
+  @media only screen and (min-width: 280px) and (max-width: 766px) {
+    
+   .navbar-logo-main{
+    font-size: 18px !important;
+    // padding-left: 10% !important;
+   }
+
+   .slate-text{
+    color: #bad1e8;
+    padding-bottom: 5% !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    padding-left: 2% !important;
+
+
+  }
+  .slate-text link{
+    color: #bad1e8;
+    padding-bottom: 5% !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    padding-left: 2% !important;
+
+
+  }
+  .blueText {
+    color: #008FBF; /* Change this to your desired blue color */
+    font-size: 16px !important;
+    // margin-left: -5% !important;
+
+
+  }
+  .white-text {
+    font-size: 16px !important;
+    // margin-left: -5% !important;
+
+   
+
+  }
+  .service-p{
+    // margin-left: -5% !important;
+
+  }
+
+    
+       }
+  @media only screen and (min-width: 767px) and (max-width: 912px) {
+
+    
+    .navbar-logo-main{
+      font-size: 14px !important;
+     }
+   
+     .slate-text{
+      color: #bad1e8;
+      margin-bottom: -2% !important;
+      font-size: 14px !important;
+      font-weight: 400 !important;
+      padding-left: 2% !important;
+  
+    }
+    .blueText {
+      color: #008FBF; /* Change this to your desired blue color */
+      font-size: 16px !important;
+  
+    }
+    .white-text {
+      font-size: 16px !important;
+     
+  
+    }
+   
+    
+       }
+       .dropdown-toggle-text {
+        display: flex;
+        align-items: center; /* Align vertically in the middle */
+        justify-content: space-between;
+      }
+  
+      .dropdown-toggle-text .blueText {
+        margin-right: 5px; /* Add spacing between text and icon */
+      }
+  
+      .sticky-border {
+        position: sticky;
+        // top: 0;
+        // background-color: white; /* Add a background color if needed */
+        // z-index: 1; /* You may need to adjust the z-index based on your layout */
+        border-bottom: 0.5px solid #ccc; /* Adjust border properties as needed */
+      }
+      
   
   ` 
   }
 </style>
-</Nav>
 </Navbar>
 
     </div>
