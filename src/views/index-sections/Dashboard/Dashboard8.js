@@ -116,10 +116,7 @@ function CarouselSection() {
       >
         <motion.h2
           style={{
-            fontSize: screenWidth < 700 ? "6vw" : "2.5vw",
-            maxWidth: "70vw",
             textAlign: "center",
-            fontWeight: 900,
             fontFamily: "Museo Sans Rounded, sans-serif",
             paddingBottom: "3%"
           }}
@@ -128,6 +125,7 @@ function CarouselSection() {
           whileInView="animate"
           viewport={{ once: true }}
           custom={1}
+          className="carousel-h2"
         >
           Companies trust Eightfold with their talent transformation
         </motion.h2>
@@ -199,6 +197,37 @@ function CarouselSection() {
               margin-right: 1vw; // Adjust spacing for smaller screens
             }
           }
+                 
+      /* CSS for screen width 280px to 540px */
+      @media only screen and (min-width: 280px) and (max-width: 766px) {
+        
+         .carousel-h2 {
+            font-size: 23px !important;
+            font-weight: bold !important;
+          }
+         
+         
+           }
+      @media only screen and (min-width: 767px) and (max-width: 912px) {
+
+          .carousel-h2 {
+            font-size: 24px !important;
+            font-weight: bold !important;
+          }
+         
+         
+           }
+      @media only screen and (min-width: 1024px) {
+        
+             
+          .carousel-h2 {
+            font-size: 30px !important;
+            font-weight: bold !important;
+          }
+         
+         
+           }
+      
         `}
       </style>
     </Container>

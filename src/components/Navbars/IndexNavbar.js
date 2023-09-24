@@ -120,18 +120,24 @@ const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   return (
     <div ref={menuRef}>
-      {screenWidth >= 1100 || click ? ( // Check screenWidth or click state
+      {screenWidth >= 1200 || click ? ( // Check screenWidth or click state
     
-      <Navbar className="fixed-top" expand="lg" color="default" style={{ fontFamily: "Museo Sans Rounded, sans-serif" }}>
+      <Navbar className="fixed-top ml-4 mt-2" expand="lg" style={{ maxWidth: "95vw",
+      borderBottomLeftRadius: "25px",
+      borderBottomRightRadius: "25px",
+      background: "#2B3140",
+      fontFamily: "Museo Sans Rounded, sans-serif" }}>
         <Container fluid>
           
             <Nav navbar>
               <NavItem>
               <NavbarBrand
+              className="mt-1"
                   target="_blank"
                   id="navbar-brand"
                   href="/"
-                  style={{fontFamily: "Museo Sans Rounded, sans-serif",fontWeight: "bold",
+                  style={{fontFamily: "Museo Sans Rounded, sans-serif", color: "white", // Add this line to set the font color to white
+                  fontWeight: "bold",
                 fontSize: "80%"}}
                 >
                   <img
@@ -173,7 +179,7 @@ const [screenWidth, setScreenWidth] = useState(window.innerWidth);
  className={`custom-dropdown-menu ${
   activeDropdown === "products" ? "active" : "inactive"
 }`} 
-  style={{ marginTop: "50%", marginLeft: "-100%", height: "500%" }}>
+  style={{ marginTop: "51%", marginLeft: "-100%", height: "500%" }}>
   <Container style={{ width: "950px", height: "100%", display: "flex" }}>
       <Row>
       
@@ -224,7 +230,7 @@ style={{ marginBottom: "15px" }}
           <div style={{ flex: 1, height: "100%", paddingTop: "7%" }}>
             <h5 style={{ fontSize: "20px", fontWeight: 1000 }}>A single AI platform for all talent</h5>
             <p style={{ fontSize: "14px", fontWeight: 500, whiteSpace: "normal" }}>Powered by global talent datasets so you can realize the full potential of your workforce</p>
-            <a href="your-link-url-here" style={{ fontSize: "13px", fontWeight: 500, color: "black" }}>Explore talent suite  <FontAwesomeIcon icon={faArrowRight} /></a>
+            <p style={{ fontSize: "13px", fontWeight: 500, color: "black" }}>Explore talent suite  <FontAwesomeIcon icon={faArrowRight} /></p>
 
           </div>
           <div style={{ flex: 1, display: "flex", justifyContent: "flex-end", alignItems: "center", height: "100%" }}>
@@ -264,7 +270,7 @@ style={{ marginBottom: "15px" }}
             <DropdownMenu 
 className={`custom-dropdown-menu ${
   activeDropdown === "solutions" ? "active" : "inactive"
-}`}        style={{marginTop: "50%",}}>
+}`}        style={{marginTop: "51%",}}>
                   <DropdownItem style={{ marginBottom: "-20px" }}
 >
                     <Link> For enterprise</Link>
@@ -315,9 +321,9 @@ className={`custom-dropdown-menu ${
   <NavLink
     to="/services"
     tag={Link}
-    className="nav-link"
+    className="nav-link mt-1"
   >
-    <Link style={{textDecoration: "none"}}>Services</Link>
+    <p style={{fontSize: '75%', color: "#FFF"}}>Services</p>
   </NavLink>
 </NavItem>
 
@@ -343,7 +349,7 @@ className={`custom-dropdown-menu ${
   className={`custom-dropdown-menu ${
               activeDropdown === "learn" ? "active" : "inactive"
             }`}
-  style={{ marginTop: "50%", marginLeft: "-500%", height: "500%"}}
+  style={{ marginTop: "51%", marginLeft: "-500%", height: "500%"}}
 >
   <Container style={{ width: "950px", height: "100%" , display: "flex"}}>
     <Row>
@@ -377,13 +383,13 @@ className={`custom-dropdown-menu ${
   
 </Col>
 
-                  <Col md="9" style={{ marginTop: "-1.1%" ,height: "110%",background: "linear-gradient(to right, #008BE8, #5B4B6E )", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
+                  <Col md="9" style={{ marginTop: "-1%" ,height: "110%",background: "linear-gradient(to right, #008BE8, #5B4B6E )", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
   {/* First Column */}
   <div style={{ flex: 1, padding: "20px" }}>
     <h5 style={{ fontSize: "20px", fontWeight: 700 }}>Responsible Al at Eightfold</h5>
     <p style={{ fontSize: "13px", fontWeight: 500 }}>We believe in helping everyone see their full potential - and the career opportunities 
     that come with that view</p>
-    <a href="your-link-url-here" style={{ fontSize: "13px", fontWeight: 500, color: "black" }}>Learn more <FontAwesomeIcon icon={faArrowRight} /></a>
+    <p style={{ fontSize: "13px", fontWeight: 500, color: "black" }}>Learn more <FontAwesomeIcon icon={faArrowRight} /></p>
 
   </div>
   
@@ -497,13 +503,13 @@ className={`custom-dropdown-menu ${
 </Col>
 
   <Col md="9"  
-  style={{ marginTop: "-1.15%" ,height: "110%",background: "linear-gradient(to right, #7cf3f7, #04b6d1)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
+  style={{ marginTop: "-1%" ,height: "110%",background: "linear-gradient(to right, #7cf3f7, #04b6d1)", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
   {/* First Column */}
         <div style={{ flex: 1, padding: "20px", height: "100%" }}>
     <h5 style={{ fontSize: "20px", fontWeight: 700 }}>Let's get you future ready</h5>
     <p style={{ fontSize: "14px", fontWeight: 500 }}>Cultivate is the premier global HR industry event for champions of talent excellence, 
     delivering innovation, inspiration, insights, and best practices from today'top talent leaders.</p>
-    <a href="your-link-url-here" style={{ fontSize: "13px", fontWeight: 500, color: "black" }}>Watch on demand <FontAwesomeIcon icon={faArrowRight} /></a>
+    <p  style={{ fontSize: "13px", fontWeight: 500, color: "black" }}>Watch on demand <FontAwesomeIcon icon={faArrowRight} /></p>
 
   </div>
   
@@ -602,7 +608,7 @@ className={`custom-dropdown-menu ${
   
 </Col>
 
-                  <Col md="9" style={{ marginTop: "-1.4%" ,height: "111%",background: "linear-gradient(to right, #008BE8, #5B4B6E )", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
+                  <Col md="9" style={{ marginTop: "-1%" ,height: "110%",background: "linear-gradient(to right, #008BE8, #5B4B6E )", color: "black", display: "flex", flexDirection: "row", alignItems: "center", borderTopRightRadius: "20px", borderBottomRightRadius: "20px" }}>
 
   {/* First Column */}
   <div style={{ flex: 2, padding: "20px", color: "white" }}>
@@ -613,7 +619,7 @@ className={`custom-dropdown-menu ${
       We are proud to be the only HR technology company featured in Forbes annual list recognizing the most promising
       privately held global companies building business out of AI.
     </p>
-    <a href="your-link-url-here" style={{ fontSize: "13px", fontWeight: 500 }}> Read article <FontAwesomeIcon icon={faArrowRight} /></a>
+    <p style={{ fontSize: "13px", fontWeight: 500 }}> Read article <FontAwesomeIcon icon={faArrowRight} /></p>
 
   </div>
 
@@ -679,7 +685,8 @@ className={`custom-dropdown-menu ${
         className="mt-2"
         href=""
         id="navbar-brand"
-        style={{ fontWeight: 700 }}
+        style={{ fontWeight: 700, color: "white", fontSize: "80%"
+      }}
       >
         Login                
       </NavbarBrand>
@@ -752,7 +759,8 @@ className={`custom-dropdown-menu ${
   text-decoration: none;
   border-bottom: 2px solid transparent;
   transition: border-bottom 0.3s ease-in-out;
-font-size: 90%;
+font-size: 100%;
+color: #FFF;
 
 }
 .custom-dropdown-menu a:hover {
@@ -786,7 +794,8 @@ font-size: 90%;
   
 /* Reduce the distance between link and border-bottom */
   .nav-link a {
-    font-size: 110%;
+    font-size: 75%;
+    color: #FFF;
 
   }
 
@@ -794,7 +803,7 @@ font-size: 90%;
   .nav-link a:hover::before {
     content: "";
     position: absolute;
-    left: 50%; /* Adjust the left position as needed */
+    left: 40%; /* Adjust the left position as needed */
     bottom: 25%; /* Place it in the middle of the element */
     transform: translateY(50%); /* Center it vertically */
     height: 3px; /* Adjust the height as needed */
@@ -802,7 +811,13 @@ font-size: 90%;
     background-image:  linear-gradient(0.25turn, #87CEEB, #1E90FF);
   }
   
-  
+  // Modify the CSS rule for the "Services" link to remove the border-bottom
+.nav-link a[href="/services"]:hover::before {
+  /* Remove or comment out the border-bottom property or set it to none */
+  /* border-bottom: 4px solid transparent; */
+  border: none; /* This will remove the border-bottom */
+  border-image: none; /* This will remove the border-image */
+}
 .nav-link a:focus {
   border-bottom: 4px solid transparent;
   border-image: linear-gradient(0.25turn, #87CEEB, #1E90FF);

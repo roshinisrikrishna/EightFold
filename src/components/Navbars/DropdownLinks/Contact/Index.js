@@ -1,10 +1,6 @@
 import React from "react";
 
-// reactstrap components
-// import {
-// } from "reactstrap";
 
-// core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Home from "components/Navbars/DropdownLinks/Contact/Home";
 import Contact2 from "components/Navbars/DropdownLinks/Contact/Contact2";

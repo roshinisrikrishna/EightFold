@@ -74,8 +74,8 @@ function Dashboard4() {
 
   return (
     <>
-      <div
-        className="mt-5 mb-5"
+      <div 
+        className="mt-5 mb-5 why-main-container"
         style={{
           maxWidth: "100vw",
           backgroundColor: "#242f40",
@@ -88,25 +88,26 @@ function Dashboard4() {
         <Container className="mt-5 mb-5" style={{ maxWidth: "90vw", paddingBottom: "150px" }}>
           <Row>
             <Col xl="6" lg="6" md="6" xs="12" className="ml-auto mr-auto">
-              <Container className="mt-2" style={{ marginLeft: "-20px" }}>
+              <Container className="why-container mt-2" style={{ marginLeft: "-20px" }}>
                 <Row>
                   <Col>
                     <h2
+                    className="why-h2"
                       style={{
                         fontWeight: 700,
                         fontFamily: "Museo Sans Rounded, sans-serif",
                         fontSize: "195%",
-                        textAlign: screenWidth < 700 ? "center" : "left", // Apply maxWidth based on screenWidth
+                        // textAlign: screenWidth < 700 ? "center" : "left", // Apply maxWidth based on screenWidth
                         // maxWidth: screenWidth < 700 ? "100vw" : "50vw", // Apply maxWidth based on screenWidth
 
                       }}
                     >
                       Why Eightfold
                     </h2>
-                    <p
-                      style={{
-                        textAlign: screenWidth < 700 ? "center" : "left", // Apply maxWidth based on screenWidth
-                        width: screenWidth < 700 ? "90vw" : "38vw",
+                    <p  className="why-p"
+                        style={{
+                        // textAlign: screenWidth < 700 ? "center" : "left", // Apply maxWidth based on screenWidth
+                        // width: screenWidth < 700 ? "90vw" : "38vw",
                         fontSize: "17px",
                         fontWeight: 500,
                         textAlign: "left",
@@ -117,7 +118,7 @@ function Dashboard4() {
                       built a single AI platform that does it all:
                     </p>
                     <div className="dropdown ml-2">
-                    <p
+                    <p className="why-p1"
   style={{
     fontSize: "18px",
     fontWeight: 500,
@@ -142,8 +143,8 @@ function Dashboard4() {
 </p>
 
                       {dropdownVisible[0] && (
-                        <div className="dropdown-content">
-                          <p style={{ fontSize: "14px", fontWeight: 400 }}>
+                        <div className="why-dropdown-content">
+                          <p className="why-dropdown-content" style={{ fontSize: "14px", fontWeight: 400 }}>
                             Powered by deep-learning AI, we surface insights when
                             and where you need them most →
                           </p>
@@ -153,7 +154,7 @@ function Dashboard4() {
                     <hr style={{ border: "1px solid #585959" }} />
 
                     <div className="dropdown ml-2">
-                    <p
+                    <p className="why-p1"
   style={{
     fontSize: "18px",
     fontWeight: 500,
@@ -178,7 +179,7 @@ function Dashboard4() {
 
                       {dropdownVisible[1] && (
                         <div className="dropdown-content">
-                          <p style={{ fontSize: "14px", fontWeight: 400 }}>
+                          <p className="why-dropdown-content" style={{ fontSize: "14px", fontWeight: 400 }}>
                             We harness the data of 1B+ career trajectories and
                             1M+ skills worldwide to give a truly global view of
                             talent and skills insights. Learn more about
@@ -190,7 +191,7 @@ function Dashboard4() {
                     <hr style={{ border: "1px solid #585959" }} />
 
                     <div className="dropdown ml-2">
-                    <p
+                    <p className="why-p1"
   style={{
     fontSize: "18px",
     fontWeight: 500,
@@ -217,7 +218,7 @@ function Dashboard4() {
 
                       {dropdownVisible[2] && (
                         <div className="dropdown-content">
-                          <p style={{ fontSize: "14px", fontWeight: 400 }}>
+                          <p className="why-dropdown-content" style={{ fontSize: "14px", fontWeight: 400 }}>
                             Our Talent Intelligence Platform is easy to use,
                             insightful, and delivers fast results →
                           </p>
@@ -234,7 +235,7 @@ function Dashboard4() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                maxWidth: screenWidth < 700 ? "100vw" : "50vw", // Apply maxWidth based on screenWidth
+                // maxWidth: screenWidth < 700 ? "100vw" : "50vw", // Apply maxWidth based on screenWidth
               }}
             >
               <div style={{ position: "relative" }}>
@@ -259,14 +260,13 @@ function Dashboard4() {
                       </ZoomIn>
                     )}
                     {/* Create a black box behind the image */}
-                    {animationCompleted && screenWidth >= 700 && ( // Conditionally render the black box
                       <BounceIn>
-                        <div
+                        <div className="dashboard-black-box"
                           style={{
                             position: "absolute",
                             bottom: "-25%",
-                            right: "-17%",
-                            width: "42vw", // Adjust the width as needed
+                            right: "-15%",
+                            width: "40vw", // Adjust the width as needed
                             height: "85%", // Adjust the height as needed
                             background: "black",
                             borderBottomLeftRadius: "80px",
@@ -274,7 +274,6 @@ function Dashboard4() {
                           }}
                         ></div>
                       </BounceIn>
-                    )}
                   </div>
                 </div>
               </div>
@@ -291,6 +290,147 @@ function Dashboard4() {
              display: none;
            }
          }
+
+         /* CSS for screen width 280px to 540px */
+         @media only screen and (min-width: 280px) and (max-width: 766px) {
+           
+           .why-container{     
+            width: 95vw !important;
+            margin-top: -10% !important;
+
+         
+             .why-h2 {
+               font-size: 28px !important;
+               font-weight : 700 !important;
+               text-align: center !important;
+             }
+            
+             .why-p {
+              font-size: 16px !important;
+              padding-bottom: 10% !important;
+              
+            }
+              .why-p1 {
+                font-size: 18px !important;
+              }
+            
+            
+           
+            .why-p1:focus {
+             text-decoration: underline !important;
+           }
+            
+            .why-dropdown-content {
+              font-size: 16px !important;
+             //  width: 80vw !important;
+            }
+           }
+           
+          
+          
+           
+              }
+         @media only screen and (min-width: 767px) and (max-width: 912px) {
+
+          .why-main-container{ 
+            min-height: 65vh !important;
+
+            // height: 60% !important;   
+          } 
+
+           
+          .why-container{     
+            width: 45vw !important;
+            margin-top: -10% !important;
+            margin-left: -15% !important;
+            margin-bottom: -55% !important;
+
+         
+             .why-h2 {
+               font-size: 28px !important;
+               font-weight : 700 !important;
+              //  text-align: center !important;
+             }
+            
+             .why-p {
+              font-size: 18px !important;
+              padding-bottom: 10% !important;
+              
+            }
+              .why-p1 {
+                font-size: 18px !important;
+                width: 40vw !important;
+
+              }
+            
+            
+           
+            .why-p1:focus {
+             text-decoration: underline !important;
+           }
+            
+            .why-dropdown-content {
+              font-size: 16px !important;
+             //  width: 80vw !important;
+            }
+            
+           }
+           .dashboard-black-box{
+            width:41vw !important;
+            right: -17% !important;
+          }
+          
+          
+           
+              }
+         @media only screen and (min-width: 1024px) {
+           
+          .why-container{     
+            width: 47vw !important;
+            margin-top: -10% !important;
+            margin-left: -10% !important;
+
+
+         
+             .why-h2 {
+               font-size: 40px !important;
+               font-weight : 700 !important;
+              //  text-align: center !important;
+             }
+            
+             .why-p {
+              font-size: 18px !important;
+              padding-bottom: 10% !important;
+              width: 38vw !important;
+
+              
+            }
+              .why-p1 {
+                font-size: 20px !important;
+                 width: 40vw !important;
+
+              }
+            
+            
+           
+            .why-p1:focus {
+             text-decoration: underline !important;
+           }
+            
+            .why-dropdown-content {
+              font-size: 16px !important;
+             //  width: 80vw !important;
+            }
+           }
+           
+          
+          
+           
+              }
+         
+         
+         /* CSS for screen width above 1023px */
+         
          `}
       </style>
     </>

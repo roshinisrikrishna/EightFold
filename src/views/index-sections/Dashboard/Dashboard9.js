@@ -79,7 +79,7 @@ function NucleoIcons() {
               />
             </Col>
                           )}
-            <Col md="6" className="mt-5">
+            <Col md="5" className="mt-5">
               <Container
                 className="mt-2"
                 style={{  maxWidth: screenWidth < 700 ? "100vw" : "50vw",
@@ -96,19 +96,20 @@ function NucleoIcons() {
                       style={{
                         fontWeight: 600,
                         fontFamily: "Museo Sans Rounded, sans-serif",
-                        fontSize: screenWidth < 700 ? "8vw" : "3.8vw",
+                        // fontSize: screenWidth < 700 ? "8vw" : "3.8vw",
                       }}
                       variants={fadeInAnimationVariants}
                       initial="initial"
                       whileInView="animate"
                       viewport={{ once: true }}
                       custom={2}
+                      className="ready-h2"
                     >
                       Ready for greatness? Transform your talent process with AI.
                     </motion.h2>
 
                     <motion.button
-                      className="hover-white-button"
+                      className="hover-white-button ready-btn"
                       style={{
                         borderRadius: "60px",
                         backgroundColor: "#fff",
@@ -136,12 +137,12 @@ function NucleoIcons() {
               </Container>
             </Col>
              {screenWidth >= 700 && (
-             <Col md="6">
+             <Col md="7" className="img-container">
               <motion.img
                 src={intImg}
                 alt="Eightfold.ai Logo"
-                className="navbar-logo"
-                style={{ width: "100%", height: "auto" }}
+                className="navbar-logo ready-img1"
+                // style={{ width: "100%", height: "auto" }}
                 variants={fadeInAnimationVariants}
                 initial="initial"
                 whileInView="animate"
@@ -174,6 +175,72 @@ function NucleoIcons() {
             }
             /* Add more responsive styles as needed */
           }
+
+          /* CSS for screen width 280px to 540px */
+      @media only screen and (min-width: 280px) and (max-width: 766px) {
+        
+         .ready-h2 {
+            font-size: 31px !important;
+            font-weight: bold !important;
+            width: 80vw !important;
+          }
+          .ready-btn{
+            padding: 4% !important;
+            font-size: 16px !important;
+            width: 55% !important;
+          }
+         
+         
+           }
+      @media only screen and (min-width: 767px) and (max-width: 912px) {
+
+        .ready-h2 {
+          font-size: 32px !important;
+          font-weight: bold !important;
+          width: 35vw !important;
+        }
+        .ready-btn{
+          padding: 4% !important;
+          font-size: 16px !important;
+          width: 55% !important;
+        }
+        .img-container{
+          width: 100vw !important;
+          // background: red;
+        }
+        .ready-img1{
+          width: 100% !important;
+        }
+         
+         
+           }
+      @media only screen and (min-width: 1024px) {
+        
+             
+        .ready-h2 {
+          font-size: 46px !important;
+          font-weight: bold !important;
+          width: 100% !important;
+          // margin-left: -20% !important;
+        }
+        .ready-btn{
+          padding: 4% !important;
+          font-size: 14px !important;
+          width: 45% !important;
+          // margin-left: -20% !important;
+
+        }
+        .img-container{
+          width: 100vw !important;
+          // background: red;
+        }
+        .ready-img1{
+          width: 100% !important;
+
+        }
+         
+         
+           }
         `}
       </style>
     </>

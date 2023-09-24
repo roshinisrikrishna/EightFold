@@ -80,8 +80,8 @@ function IndexHeader() {
         <div
           className="page-header-image"
           style={{
-            minHeight: "120vh",
-            height: '100%',
+            // minHeight: "120vh",
+            // height: '100%',
             background:
               "linear-gradient(to right , rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9) 50%, rgba(6, 18, 70, 0.88))",
           }}
@@ -89,6 +89,7 @@ function IndexHeader() {
         >
           <motion.img
             alt="..."
+            className="n-logo-top"
             src={require("assets/img/dotted_waves.png")}
             style={{
               width: "30%",
@@ -105,15 +106,21 @@ function IndexHeader() {
         </div>
 
         <Container xs={12} lg={8}>
-          <div className="content-center brand" style={{ paddingBottom: "10%" }}>
+          <div className="content-center brand" style={{ 
+            // paddingBottom: "10%" 
+            }}>
             <Container  style={{  
               minWidth:"47vw",
-              marginLeft:"-7%",paddingTop: "55%", justifyContent: "flex-start", alignItems: "flex-start", textAlign: "left" }}>
+              marginLeft:"-7%",
+              // paddingTop: "55%", 
+              justifyContent: "flex-start", 
+              alignItems: "flex-start", 
+              textAlign: "left" }}>
               <motion.h1
                 style={{
                   fontWeight: "bolder",
                   fontFamily: "Museo Sans Rounded, sans-serif",
-                  fontSize: screenWidth < 700 ? "10vw" : "5.5vw",
+                  fontSize: "64px"
                 }}
                 variants={fadeInAnimationVariants}
                 initial="initial"
@@ -151,12 +158,13 @@ function IndexHeader() {
                 whileInView="animate"
                 viewport={{ once: true }}
                 custom={2}
+                className="brand-p"
               >
                 Our AI platform for all talent brings to light everything you need
                 to hire and develop people to their highest potential
               </motion.p>
               <motion.button
-                className="hover-white-button"
+                className="hover-white-button brand-button"
                 style={{
                   borderRadius: "60px",
                   color: "#fff",
@@ -165,9 +173,8 @@ function IndexHeader() {
                   cursor: "pointer",
                   marginTop: "10px",
                   fontWeight: "bolder",
-                  fontSize: "70%", // Set font size relative to viewport width
-                  maxWidth: "100%", // Ensure the button takes up the full width
-                  padding: "2% 7%", // Set padding as a percentage of the button's width and height
+                  // fontSize: "70%", // Set font size relative to viewport width
+                  // maxWidth: "100%", // Ensure the button takes up the full width
                   fontFamily: "Museo Sans Rounded, sans-serif",
                 }}
                 variants={fadeInAnimationVariants}
@@ -183,13 +190,13 @@ function IndexHeader() {
         </Container>
         <motion.img
           alt="..."
-          className="n-logo"
+          className="n-logo-bottom"
           src={require("assets/img/dotted_waves_reversed.png")}
           style={{
             width: "35%",
             height: "auto",
             position: "absolute",
-            bottom: 0,
+            // bottom: 0,
             right: "5px",
           }}
           variants={fadeImageVariants}
@@ -208,32 +215,137 @@ function IndexHeader() {
           .hover-white-button:hover {
             background-color: #28607E;
           }
-          /* Media query for screens less than 768px wide */
-          @media (max-width: 768px) {
-            .page-header-image {
-              min-height: 80vh;
-            }
-            .brand {
-              margin-top: 10vh;
-              padding-top: 10%; /* Add padding for smaller screens */
-            }
-            .brand > div {
-              min-width: 100vw !important;
-              
-            }
-            .brand-h1 {
-              font-size: 10vw !important; /* Set font size to 52px with !important */
-            }
-            .brand p {
-              font-size: 80% !important;
-            }
+         
+          /* CSS for screen width 280px to 540px */
+@media only screen and (min-width: 280px) and (max-width: 766px) {
+  .page-header-image {
+    margin-top: -100% !important;
 
-            .brand button {
-              max-width: 70vw !important;
-              padding: 4% 12% !important;
-              font-size: 90% !important;
+        min-height: 15vh !important;
+        height: 105% !important;
+      }
+  .brand {
+    margin-top: 10vh;
+    min-height: 10vh;
+
+  }
+  .brand > div {
+    min-width: 100vw !important;
+
+
+    .brand-h1 {
+      margin-top: -50% !important;
+      font-size: 40px !important;
+      font-weight : 900 !important;
+    }
+    .brand-p {
+      font-size: 17px !important;
+    }
+    .brand-button {
+      font-size: 16px !important;
+      width: 180px !important;
+      padding: 2% 1% 2% 1% !important;
+    }
+
+    
+  }
+  .n-logo-bottom{
+    bottom: 35% !important;  
+
+  }
+  .n-logo-top{
+    top: 50% !important;  
+    left: -5% !important;
+
+  }
+  
+}
+
+/* CSS for screen width 768px to 912px */
+@media only screen and (min-width: 767px) and (max-width: 912px) {
+  .page-header-image {
+    margin-top: -50% !important;
+    min-height: 10vh !important;
+    height: 100% !important;
+  }
+  .brand {
+    margin-top: 10vh;
+    height: 10% !important;
+    min-height: 50vh;
+  }
+  .brand > div {
+    min-width: 100vw !important;
+  
+
+    .brand-h1 {
+      font-size: 40px !important;
+      font-weight : 900 !important;
+    }
+    .brand-p {
+      max-width: 95vw !important;
+      font-size: 18px !important;
+      font-weight : 500 !important;
+
+    }
+    .brand-button {
+      font-size: 17px !important;
+      width: 280px !important;
+      padding: 2% 1% 2% 1% !important;
+     
+  
+    }
+  }
+  .n-logo-bottom{
+    bottom: 30% !important;  
+
+  }
+  .n-logo-top{
+    top: 45% !important;  
+    left: -5% !important;
+
+  }
+  
+  
+ 
+
+}
+
+/* CSS for screen width above 1023px */
+@media only screen and (min-width: 1024px) {
+    .brand {
+              margin-top: 30vh;
+              padding-top: 15%; /* Add padding for smaller screens */
             }
-          }
+  .brand > div {
+    min-width: 47vw !important;
+
+    .brand > h1 {
+      font-size: 66px !important;
+      font-weight: 900 !important;
+    }
+    .brand-p {
+      font-size: 18px !important;
+    }
+    .brand-button {
+      font-size: 16px !important;
+      max-width: 100% !important;
+      padding: 2% 7% !important; // Set padding as a percentage of the button's width and height
+  
+    }
+    
+  }
+  .n-logo-bottom{
+    bottom: 0 !important;  
+
+  }
+  // .n-logo-top{
+  //   top: 45% !important;  
+  //   left: -5% !important;
+
+  // }
+
+}
+
 
 
         `}

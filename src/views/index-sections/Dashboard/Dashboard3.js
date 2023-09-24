@@ -64,8 +64,8 @@ function Tabs() {
         <Container>
           <Row>
             <Col className="ml-auto mr-auto" md="10" xl="12" style={{maxWidth:"100vw"}}>
-            <div className="brand" >
-                      <h1
+            <div className="talent-tab" >
+                      <h1 className="talent-tab-h1"
                         style={{
                           textAlign: "center",
                           fontWeight: 600,
@@ -77,11 +77,11 @@ function Tabs() {
                        The Talent Intelligence Platform
                       </h1>
                     </div>
-                    <p className="ml-auto mr-auto" 
+                    <p className="ml-auto mr-auto talent-tab-ps"
                     style={{color: "rgb(72, 75, 88, 0.8)",fontWeight: 400,
                     fontSize: "90%", textAlign: "center", width: "92%"}}>
                       Powered by deep-learning AI, our unrivaled Talent Intelligence Platform shows you what you need, when you need it. Whether you’re finding or developing talent, our skills-driven approach backed by our unparalleled talent insights enables the outcomes you need to stay ahead.</p>
- 
+ {/* <Container className="tab-content" style={{width: "90vw"}}> */}
                       {screenWidth < 1000 ? (
 
 <select
@@ -174,7 +174,7 @@ onChange={handleDropdownChange} // Handle dropdown selection change
                             <Row>
                             <Col className="mt-5" xs="12" md="5" lg="5" xl="5" style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-start" }}>
                                 <iframe
-                                className="mt-5"
+                                className="mt-5 talent-img"
                                   width="85%"
                                   height="55%"
                                   src="https://www.youtube.com/embed/DwajEW_8k4s?controls=0&rel=0"
@@ -187,23 +187,23 @@ onChange={handleDropdownChange} // Handle dropdown selection change
 
 
                               <Col xs="12" md="7" lg="7" xl="7" style={{minWidth:"30vw"}}>
-  <h4 style={{ fontWeight: "600", fontSize: "140%", textAlign: "center"}}>Go beyond reviewing résumés</h4>
-  <p style={{ fontSize: "90%", width: "100%", fontWeight: 500, color: "RGB(72, 75, 88)" }}>
+  <h4 className="talent-tab-h4" style={{ fontWeight: "600", fontSize: "140%", textAlign: "center"}}>Go beyond reviewing résumés</h4>
+  <p className="talent-tab-p4" style={{ fontSize: "90%", width: "100%", fontWeight: 500, color: "RGB(72, 75, 88)" }}>
     Our intuitive and agile deep-learning AI makes it easier to find candidates and work with your talent management team to overcome informational silos.
   </p>
   <Row style={{maxWidth: "100vw"}}>
-  <Col md="4" className="icon-column">
+  <Col lg="4" md="12" className="icon-column">
 <Row>
-  <Col xs="2" md="12">
+  <Col xs="2"  md="12">
      <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
      </Col>
-     <Col  xs="10" md="12">
-    <p style={{ fontSize: "14.5px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
+     <Col  xs="10"  md="12">
+    <p className="talent-tab-p6" style={{ fontSize: "14.5px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
 Find great new talent, anytime</p>
 </Col>
 </Row>
   </Col>
-  <Col md="4" className="icon-column">
+  <Col lg="4" md="12" className="icon-column">
   <Row>
 
   <Col xs="2" md="12">
@@ -211,32 +211,32 @@ Find great new talent, anytime</p>
      <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
      </Col>
      <Col  xs="10" md="12">
-    <p style={{ fontSize: "14.2px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
+    <p className="talent-tab-p6" style={{ fontSize: "14.2px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
     Surface the skills you need, build your workforce</p>
   </Col>
   </Row>
   </Col>
-  <Col md="4" className="icon-column">
+  <Col lg="4" md="12" className="icon-column">
   <Row>
 
 <Col xs="2" md="12">
      <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
      </Col>
      <Col  xs="10" md="12">
- <p style={{ fontSize: "14.2px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
+ <p className="talent-tab-p6" style={{ fontSize: "14.2px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
  Discover greatness — see what candidates can do</p>
  </Col>
  </Row>
   
   </Col>
 </Row>
-<div style={{ width: "100%",backgroundColor: "#f5f5f5", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
+<div className="talent-tab-p5" style={{ width: "45vw",backgroundColor: "#f5f5f5", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
   <div style={{ display: "flex", alignItems: "center" }}>
     <div style={{ border: "2px solid #007bff", borderRadius: "50%", padding: "5px", marginRight: "10px" }}>
       <img src={logo} alt="Logo" style={{ width: "50px", height: "50px", borderRadius: "50%" }} />
     </div>
     <div style={{ borderRadius: "10px", padding: "10px", flex: 1, fontStyle: "italic" }}>
-      <p style={{ fontSize: "14.2px", fontWeight: 600, color: "RGB(72, 75, 88)" }}>
+      <p  style={{ fontSize: "14.2px", fontWeight: 600, color: "RGB(72, 75, 88)" }}>
         <span style={{
           background: "-webkit-linear-gradient(45deg, #008BE8, #3F036E 85%)",
           WebkitBackgroundClip: "text",
@@ -251,7 +251,7 @@ Find great new talent, anytime</p>
     </div>
   </div>
 </div>
-<Container className="brand-button" >
+<Container className="talent-tab-button" >
 <button style={{
         backgroundColor: "#2f77ba",
         borderRadius: "60px",
@@ -273,13 +273,14 @@ Find great new talent, anytime</p>
 
 
                             </Row>
+
                           </TabPane>
                           <TabPane tabId="pills2" style={{fontSize:"16px", textAlign:"left"}}>
                             <Row>
                             <Col className="mt-5" xs="12" md="5" lg="5" xl="5" style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-start" }}>
                             <iframe
-                                className="mt-5"
-                                  width="85%"
+                                className="mt-5 talent-img"
+                                width="85%"
                                   height="55%"
                                   src="https://www.youtube.com/embed/DwajEW_8k4s?controls=0&rel=0"
                                   title="YouTube Video"
@@ -291,24 +292,24 @@ Find great new talent, anytime</p>
 
 
                               <Col xs="12" md="7" lg="7" xl="7" style={{minWidth:"30vw",}}>
-                              <h4 style={{ fontWeight: "600", fontSize: "140%",textAlign: "center"}}>
+                              <h4 className="talent-tab-h4" style={{ fontWeight: "600", fontSize: "140%",textAlign: "center"}}>
                                 Retain, engage, and champion your workforce</h4>
-     <p style={{ fontSize: "90%", width: "100%", fontWeight: 500, color: "RGB(72, 75, 88)" }}>
+     <p className="talent-tab-p4" style={{ fontSize: "90%", width: "100%", fontWeight: 500, color: "RGB(72, 75, 88)" }}>
      Use data-driven insights to develop meaningful and rewarding career paths
   </p>
   <Row style={{maxWidth: "100vw"}}>
-  <Col md="4" className="icon-column">
+  <Col lg="4" md="12" className="icon-column">
 <Row>
   <Col xs="2" md="12">
      <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
      </Col>
      <Col  xs="10" md="12">
-    <p style={{ fontSize: "14.5px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
+     <p className="talent-tab-p6" style={{ fontSize: "14.5px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
       Match employees with the right internal jobs</p>
       </Col>
 </Row>
   </Col>
-  <Col md="4" className="icon-column">
+  <Col lg="4" md="12" className="icon-column">
   <Row>
 
   <Col xs="2" md="12">
@@ -316,26 +317,26 @@ Find great new talent, anytime</p>
      <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
      </Col>
      <Col  xs="10" md="12">
-    <p style={{ fontSize: "14.2px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
+     <p className="talent-tab-p6" style={{ fontSize: "14.2px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
       Offer learning and development opportunities to advance your people's skills — and set them up for success</p>
       </Col>
   </Row>
   </Col>
-  <Col md="4" className="icon-column">
+  <Col lg="4" md="12" className="icon-column">
   <Row>
 
 <Col xs="2" md="12">
      <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
      </Col>
      <Col  xs="10" md="12">
- <p style={{ fontSize: "14.2px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
+     <p className="talent-tab-p6" style={{ fontSize: "14.2px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
   Connect people with the right upskilling and reskilling options, at the right time</p>
   </Col>
  </Row>
   
   </Col>
 </Row>
-<div className="brand-div" style={{ maxWidth: "100vw",backgroundColor: "#f5f5f5", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
+<div className="talent-tab-p5" style={{ width: "45vw",backgroundColor: "#f5f5f5", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
   <div style={{ display: "flex", alignItems: "center" }}>
     <div style={{ border: "2px solid #007bff", borderRadius: "50%", padding: "5px", marginRight: "10px" }}>
       <img src={logo} alt="Logo" style={{ width: "50px", height: "50px", borderRadius: "50%" }} />
@@ -356,7 +357,7 @@ Find great new talent, anytime</p>
     </div>
   </div>
 </div>
-<Container className="brand-button" >
+<Container className="talent-tab-button" >
 
 <button style={{
         backgroundColor: "#2f77ba",
@@ -380,13 +381,14 @@ Find great new talent, anytime</p>
 
                             </Row>
                           </TabPane>
+
                           <TabPane tabId="pills3" style={{fontSize:"16px", textAlign:"left"}}>
-                            <Row>
-                            <Col className="mt-5" md="5" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                                <iframe
-                                className="mt-5"
-                                  width="85%"
-                                  height="235"
+                          <Row>
+                            <Col className="mt-5" xs="12" md="5" lg="5" xl="5" style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-start" }}>
+                            <iframe
+                                className="mt-5 talent-img"
+                                width="85%"
+                                  height="55%"
                                   src="https://www.youtube.com/embed/DwajEW_8k4s?controls=0&rel=0"
                                   title="YouTube Video"
                                   frameBorder="0"
@@ -396,27 +398,52 @@ Find great new talent, anytime</p>
                               </Col>
 
 
-                              <Col md="7">
-  <h4 style={{ fontWeight: 500 }}>Find better contingent talent, faster</h4>
-  <p style={{ fontSize: "14.5px", width: "600px", fontWeight: 400, color: "RGB(72, 75, 88)" }}>
+                              <Col xs="12" md="7" lg="7" xl="7" style={{minWidth:"30vw",}}>
+                              <h4 className="talent-tab-h4" style={{ fontWeight: "600", fontSize: "140%",textAlign: "center"}}>
+                                Find better contingent talent, faster</h4>
+                                <p className="talent-tab-p4" style={{ fontSize: "90%", width: "100%", fontWeight: 500, color: "RGB(72, 75, 88)" }}>
   Build a stronger network of contingent workers with the skills you need
   </p>
+  <Row style={{maxWidth: "100vw"}}>
+  <Col lg="4" md="12" className="icon-column">
+<Row>
+  <Col xs="2" md="12">
+     <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
+     </Col>
+     <Col  xs="10" md="12">
+     <p className="talent-tab-p6" style={{ fontSize: "14.5px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
+     Get the flexibility you need to support your organization, no matter what comes your way</p>
+     </Col>
+</Row>
+  </Col>
+  <Col lg="4" md="12" className="icon-column">
   <Row>
-  <Col md="4" className="icon-column">
-  <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
-    <p style={{ fontSize: "14.5px", fontWeight: 400, color: "RGB(72, 75, 88)" }}>Get the flexibility you need to support your organization, no matter what comes your way</p>
+
+  <Col xs="2" md="12">
+
+     <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
+     </Col>
+     <Col  xs="10" md="12">
+     <p className="talent-tab-p6" style={{ fontSize: "14.2px", fontWeight: 400, color: "RGB(72, 75, 88)" }}>
+      Access a strong talent pool that's always ready to deliver</p>
+      </Col>
+  </Row>
   </Col>
-  <Col md="4" className="icon-column">
-  <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
-    <p style={{ fontSize: "14.5px", fontWeight: 400, color: "RGB(72, 75, 88)" }}>Access a strong talent pool that's always ready to deliver</p>
-  </Col>
-  <Col md="4" className="icon-column">
-    
-  <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
- <p style={{ fontSize: "14.5px", fontWeight: 400, color: "RGB(72, 75, 88)" }}>Directly engage — and rehire — contingent workers who know your organization</p>
+  <Col lg="4" md="12" className="icon-column">
+  <Row>
+
+<Col xs="2" md="12">
+     <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
+     </Col>
+     <Col  xs="10" md="12">
+     <p className="talent-tab-p6" style={{ fontSize: "14.2px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
+ Directly engage — and rehire — contingent workers who know your organization</p>
+ </Col>
+ </Row>
+  
   </Col>
 </Row>
-<div style={{ width: "600px",backgroundColor: "#f5f5f5", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
+<div className="talent-tab-p5" style={{ width: "45vw",backgroundColor: "#f5f5f5", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
   <div style={{ display: "flex", alignItems: "center" }}>
     <div style={{ border: "2px solid #007bff", borderRadius: "50%", padding: "5px", marginRight: "10px" }}>
       <img src={logo} alt="Logo" style={{ width: "50px", height: "50px", borderRadius: "50%" }} />
@@ -447,12 +474,12 @@ Find great new talent, anytime</p>
                             </Row>
                           </TabPane>
                           <TabPane tabId="pills4" style={{fontSize:"16px", textAlign:"left"}}>
-                            <Row>
-                            <Col className="mt-5" md="5" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                                <iframe
-                                className="mt-5"
-                                  width="85%"
-                                  height="235"
+                          <Row>
+                            <Col className="mt-5" xs="12" md="5" lg="5" xl="5" style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-start" }}>
+                            <iframe
+                                className="mt-5 talent-img"
+                                width="85%"
+                                  height="55%"
                                   src="https://www.youtube.com/embed/DwajEW_8k4s?controls=0&rel=0"
                                   title="YouTube Video"
                                   frameBorder="0"
@@ -462,27 +489,52 @@ Find great new talent, anytime</p>
                               </Col>
 
 
-                              <Col md="7">
-  <h4 style={{ fontWeight: 500 }}>Engage people with rewarding work and opportunities</h4>
-  <p style={{ fontSize: "14.5px", width: "600px", fontWeight: 400, color: "RGB(72, 75, 88)" }}>
+                              <Col xs="12" md="7" lg="7" xl="7" style={{minWidth:"30vw",}}>
+                              <h4 className="talent-tab-h4" style={{ fontWeight: "600", fontSize: "140%",textAlign: "center"}}>
+                                Engage people with rewarding work and opportunities</h4>
+                                <p className="talent-tab-p4" style={{ fontSize: "90%", width: "100%", fontWeight: 500, color: "RGB(72, 75, 88)" }}>
   Connect job seekers, career supporters, and employers through public and private sector sponsored workforce exchanges.
   </p>
-  <Row>
-  <Col md="4" className="icon-column">
-  <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
-    <p style={{ fontSize: "14.5px", fontWeight: 400, color: "RGB(72, 75, 88)" }}>Deliver the best job and training recommendations to candidates</p>
-  </Col>
-  <Col md="4" className="icon-column">
-  <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
-    <p style={{ fontSize: "14.5px", fontWeight: 400, color: "RGB(72, 75, 88)" }}>See the potential of job seekers to succeed in roles</p>
-  </Col>
-  <Col md="4" className="icon-column">
-    
-  <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
- <p style={{ fontSize: "14.5px", fontWeight: 400, color: "RGB(72, 75, 88)" }}>Enable faster employment while supporting economic growth and diversity</p>
+  <Row style={{maxWidth: "100vw"}}>
+  <Col lg="4" md="12" className="icon-column">
+<Row>
+  <Col xs="2" md="12">
+     <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
+     </Col>
+     <Col  xs="10" md="12">
+     <p className="talent-tab-p6" style={{ fontSize: "14.5px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
+  Deliver the best job and training recommendations to candidates</p>
   </Col>
 </Row>
-<div style={{ width: "600px",backgroundColor: "#f5f5f5", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
+  </Col>
+  <Col lg="4" md="12" className="icon-column">
+  <Row>
+
+  <Col xs="2" md="12">
+
+     <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
+     </Col>
+     <Col  xs="10" md="12">
+     <p className="talent-tab-p6" style={{ fontSize: "14.2px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
+See the potential of job seekers to succeed in roles</p>
+</Col>
+  </Row>
+  </Col>
+  <Col lg="4" md="12" className="icon-column">
+  <Row>
+
+<Col xs="2" md="12">
+     <FontAwesomeIcon icon={faCheckCircle} className="check-icon" />
+     </Col>
+     <Col  xs="10" md="12">
+     <p className="talent-tab-p6" style={{ fontSize: "14.2px", fontWeight: 400, color: "RGB(72, 75, 88)" }}> 
+Enable faster employment while supporting economic growth and diversity</p>
+</Col>
+ </Row>
+  
+  </Col>
+</Row>
+<div className="talent-tab-p5" style={{ width: "45vw",backgroundColor: "#f5f5f5", borderRadius: "15px", padding: "10px", marginTop: "20px" }}>
   <div style={{ display: "flex", alignItems: "center" }}>
     <div style={{ border: "2px solid #007bff", borderRadius: "50%", padding: "5px", marginRight: "10px" }}>
       <img src={logo} alt="Logo" style={{ width: "50px", height: "50px", borderRadius: "50%" }} />
@@ -512,8 +564,11 @@ Find great new talent, anytime</p>
 
                             </Row>
                           </TabPane>
+
                   </TabContent>
                 </Container>
+                {/* </Container> */}
+
               
             </Col>
           </Row>
@@ -524,7 +579,7 @@ Find great new talent, anytime</p>
         /* Media query for screens less than 768px wide */
         @media (max-width: 700px) {
           
-          .brand-button {
+          .talent-tab-button {
             justify-content: center;
              align-items: center;
               text-align: center;
@@ -557,6 +612,158 @@ Find great new talent, anytime</p>
           }
           /* Adjust other styles as needed */
         }
+
+        /* CSS for screen width 280px to 540px */
+        @media only screen and (min-width: 280px) and (max-width: 766px) {
+          
+          .talent-tab {     
+            margin-top: -15% !important;
+        
+            .talent-tab-h1 {
+              // margin-top: -40% !important;
+              font-size: 32px !important;
+              font-weight : 700 !important;
+            }
+           
+            
+          }
+          .talent-tab-ps {
+            // margin-top: -40% !important;
+            font-size: 16px !important;
+          }
+          .talent-tab-h4 {
+            // margin-top: -40% !important;
+            font-size: 20px !important;
+          }
+          .talent-tab-p4 {
+            // margin-top: -40% !important;
+            font-size: 13px !important;
+            width: 80vw !important;
+            // background: red;
+          }
+          .talent-tab-p5 {
+            // margin-top: -40% !important;
+            font-size: 13px !important;
+            width: 90vw !important;
+            // background: red;
+          }
+          .talent-tab-p6 {
+            // margin-top: -40% !important;
+            font-size: 13px !important;
+            width: 60w !important;
+            // background: red;
+          }
+          .talent-img{
+            width: 100% !important;
+            height: 85% !important;
+          }
+         
+          
+        }
+        @media only screen and (min-width: 767px) and (max-width: 912px) {
+          
+          .talent-tab {     
+        
+            .talent-tab-h1 {
+              margin-top: -40% !important;
+              font-size: 32px !important;
+              font-weight : 700 !important;
+            }
+           
+            
+          }
+          .talent-tab-ps {
+            // margin-top: -40% !important;
+            font-size: 16px !important;
+          }
+          .talent-tab-h4 {
+            // margin-top: -40% !important;
+            font-size: 20px !important;
+          }
+          .talent-tab-p4 {
+            // margin-top: -40% !important;
+            font-size: 13px !important;
+            width: 50vw !important;
+            font-weight: 500 !important;
+            // background: red;
+          }
+          .talent-tab-p5 {
+            // margin-top: -40% !important;
+            font-size: 13px !important;
+            width: 50vw !important;
+            // background: red;
+          }
+          .talent-tab-p6 {
+            // margin-top: -40% !important;
+            font-size: 13px !important;
+            width: 50vw !important;
+            // background: red;
+          }
+          .talent-img{
+            width: 100% !important;
+            height: 35% !important;
+          }
+         
+         
+          
+        }
+
+        @media only screen and (min-width: 1024px) {
+          
+          .talent-tab {     
+        
+            .talent-tab-h1 {
+              margin-top: -10% !important;
+              font-size: 42px !important;
+              font-weight : 700 !important;
+            }
+           
+            
+          }
+          .talent-tab-ps {
+            width: 60vw !important;
+            // margin-top: -40% !important;
+            font-size: 16px !important;
+          }
+          .talent-tab-h4 {
+            text-align: left !important;
+            // margin-top: -40% !important;
+            font-size: 22px !important;
+          }
+          .talent-tab-p4 {
+            // margin-top: -40% !important;
+            font-size: 14.4px !important;
+            width: 45vw !important;
+            font-weight: 500 !important;
+            // background: red;
+          }
+          .talent-tab-p5 {
+            // margin-top: -40% !important;
+            font-size: 14px !important;
+            width: 50vw !important;
+            // background: red;
+          }
+          .talent-tab-p6 {
+            // margin-top: -40% !important;
+            font-size: 14px !important;
+            width: 15vw !important;
+            // background: red;
+          }
+          .icon-column{
+            width: 100vw !important;
+          }
+          .talent-img{
+            width: 85% !important;
+            height: 55% !important;
+          }
+         
+          
+        }
+        
+        
+        
+        /* CSS for screen width above 1023px */
+        
         `}
       </style>
     </>
