@@ -20,6 +20,9 @@ import Dashboard7 from "./index-sections/Dashboard/Dashboard7.js";
 import Dashboard8 from "./index-sections/Dashboard/Dashboard8.js";
 import Dashboard9 from "./index-sections/Dashboard/Dashboard9.js";
 import DashboardLast from "./index-sections/Dashboard/DashboardLast.js";
+import Waves from "components/Navbars/Waves.js";
+import TopWaves from "components/Navbars/TopWaves.js";
+import Wave from "components/Navbars/Wave.js";
 
 function Index() {
   React.useEffect(() => {
@@ -35,16 +38,26 @@ function Index() {
   });
   return (
     <>
+
+              {/* <Waves /> */}
+
       <IndexNavbar />
+      <TopWaves/>
+
       {/* <SearchModal isOpen={searchModalOpen} toggleSearchModal={toggleSearchModal} /> Display the SearchModal */}
 
       <div className="wrapper">
         <DashboardHome />
+        {/* <Waves /> */}
         <div className="main">
           {/* <Images /> */}
+
           <Dashboard2 />
+
           <Dashboard3 />
-        
+          {/* <Waves /> */}
+
+
           <Dashboard4 />
           <Dashboard5 />
           <Dashboard6 />

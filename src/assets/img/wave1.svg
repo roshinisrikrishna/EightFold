@@ -1,45 +1,12 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="1009.000000pt" height="579.000000pt" viewBox="0 0 1009.000000 579.000000"
+ preserveAspectRatio="xMidYMid meet">
 
-const pathVariants = {
-  hidden: {
-    opacity: 0,
-    pathLength: 0,
-  },
-  visible: {
-    opacity: 1,
-    pathLength: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeInOut",
-    },
-  },
-};
-
-const AnimatedWave = ({ width, height }) => {
-  return (
-    <div style={{ position: 'absolute', bottom: 0, right: "-45px" }}>
-      <motion.svg
-        version="1.0"
-        xmlns="http://www.w3.org/2000/svg"
-        width={width}
-        height={height}
-        viewBox="0 0 1009.000000 579.000000"
-        preserveAspectRatio="xMidYMid meet"
-        variants={pathVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <defs>
-          <linearGradient id="blueToRed" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style={{ stopColor: '#1E3AFE' }} />
-            <stop offset="20%" style={{ stopColor: '#4673FE' }} />
-            <stop offset="40%" style={{ stopColor: '#67cffe' }} />
-            <stop offset="90%" style={{ stopColor: '#FFFFFF' }} />
-          </linearGradient>
-        </defs>
-    
-    <g transform="translate(0.000000,579.000000) scale(0.100000,-0.100000)" fill="url(#blueToRed)" stroke="none">
+<g transform="translate(0.000000,579.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
 <path d="M3745 5040 c3 -5 13 -10 21 -10 8 0 14 5 14 10 0 6 -9 10 -21 10 -11
 0 -17 -4 -14 -10z"/>
 <path d="M4025 5040 c3 -5 13 -10 21 -10 8 0 14 5 14 10 0 6 -9 10 -21 10 -11
@@ -1227,10 +1194,4 @@ const AnimatedWave = ({ width, height }) => {
 <path d="M7225 86 c-17 -14 -18 -17 -5 -26 20 -14 162 -8 167 6 5 15 -19 24
 -86 30 -42 4 -61 2 -76 -10z"/>
 </g>
-
-</motion.svg>
-</div>
-  )
-}
-
-export default AnimatedWave
+</svg>

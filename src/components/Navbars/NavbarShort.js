@@ -657,6 +657,12 @@ function IndexNavbar() {
         // z-index: 1; /* You may need to adjust the z-index based on your layout */
         border-bottom: 0.5px solid #ccc; /* Adjust border properties as needed */
       }
+
+      @media only screen and (min-width: 1024px) {
+        .navbar-logo-main{
+          font-size: 14px !important;
+         }
+      }
       
   
   ` 

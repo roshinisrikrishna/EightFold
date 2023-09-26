@@ -9,6 +9,7 @@ import "nouislider/dist/nouislider.css";
 import {motion} from "framer-motion";
 
 
+
 // reactstrap components
 import {
   Button,
