@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "reactstrap";
 import { motion } from "framer-motion";
+import TopWaves from "components/Navbars/TopWaves.js";
+import Waves from "components/Navbars/Waves.js";
+
 
 // Define animation variants for fading in elements
 const fadeInAnimationVariants = {
@@ -98,22 +101,22 @@ function IndexHeader() {
           ref={pageHeader}
         >
           {/* Motion-fading Image (Top) */}
-          <motion.img
+          {/* <TopWaves
             alt="..."
             className="n-logo-top"
-            src={require("assets/img/dotted_waves.png")}
             style={{
               width: "30%",
               height: "auto",
               position: "absolute",
-              top: 0,
+              top: "-80%",
               left: "10px",
             }}
             variants={fadeImageVariants}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-          />
+          /> */}
+
         </div>
   
         {/* Container for Content */}
@@ -194,7 +197,7 @@ function IndexHeader() {
         </Container>
   
         {/* Motion-fading Image (Bottom) */}
-        <motion.img
+        {/* <motion.img
           alt="..."
           className="n-logo-bottom"
           src={require("assets/img/dotted_waves_reversed.png")}
@@ -208,7 +211,8 @@ function IndexHeader() {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-        />
+        /> */}
+        <Waves />
       </div>
   
       {/* Inline Styles */}
